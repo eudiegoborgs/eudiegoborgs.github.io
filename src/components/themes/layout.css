@@ -636,26 +636,27 @@ footer a {
   }
 }
 
-.typewriter {
-  overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  /* The typwriter cursor */
-  white-space: nowrap;
-  /* Keeps the content on a single line */
-  margin: 0 auto;
-  /* Adjust as needed */
-  animation:
-    typing 4s steps(16, end)
-}
-
-
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0
+@media only screen and (min-width: 768px) {
+  .typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    /* The typwriter cursor */
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Adjust as needed */
+    animation:
+      typing 4s steps(16, end)
   }
 
-  to {
-    width: 100%
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0
+    }
+
+    to {
+      width: 100%
+    }
   }
 }
