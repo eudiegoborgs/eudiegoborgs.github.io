@@ -16,6 +16,7 @@ const Banner = () => (
   }}>
     <div style={{
       padding: '20vh 0',
+      height: '50vh',
       backgroundImage: 'linear-gradient(#212121, rgba(33,33,33, 0.8))'
     }}>
       <h1><div className="typewriter">Writing <span style={{color: '#ff8a80'}}>code</span> with love</div></h1>

@@ -7,6 +7,7 @@ module.exports = {
     wakatimeSecret: `sec_tXCtNKXp0qizbz2XPyBzHGOA1J2Ku1gdbYgpcBDZEy0qKgVDqNr0l35etEwjI2tvYCkcx2QXDnbm7frH`
   },
   plugins: [
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
