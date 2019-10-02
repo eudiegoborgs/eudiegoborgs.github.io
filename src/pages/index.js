@@ -3,6 +3,7 @@ import Layout from "../components/themes/layout"
 import SEO from "../components/organisms/seo"
 import Banner from "../components/organisms/banner"
 import Content from "../components/organisms/content"
+import BlogResume from "../components/organisms/blog-resume"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +19,7 @@ const IndexPage = () => (
           Atualmente trabalho como Engenheiro de Software na MaxMilhas, faço parte da organização do PHPMG no Vale e escrevo sobre desenvolvimento e carreira para blogs de tecnologia.
         </p>
       </main>
+      <BlogResume />
     </Content>
   </Layout>
 )

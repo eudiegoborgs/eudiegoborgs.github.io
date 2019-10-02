@@ -4,9 +4,9 @@ const Content = ({ children }) => {
   return (
       <div
         style={{
-          maxWidth: 650,
+          maxWidth: 700,
           margin: `3rem auto`,
-          paddingTop: 0,
+          padding: '0 30px',
         }}
       >
         <main>{children}</main>
