@@ -16,7 +16,7 @@ const style = `
   }
   blockquote {
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 0;
     font-weight: bold;
   }
