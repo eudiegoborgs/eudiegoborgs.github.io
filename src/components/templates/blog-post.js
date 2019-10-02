@@ -36,8 +36,6 @@ const BlogPost = (props) => {
   const next = props.pageContext.next
   const previous = props.pageContext.previous
 
-  console.log(post)
-
   return (
     
     <Layout>

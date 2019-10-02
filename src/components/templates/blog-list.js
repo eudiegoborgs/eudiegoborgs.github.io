@@ -13,8 +13,6 @@ const BlogList = (props) => {
   const nextPage = `/blog/page/${currentPage + 1}`
 
   const list = props.data.allMarkdownRemark.edges
-  
-  console.log(list)
 
   return (
     <Layout>
