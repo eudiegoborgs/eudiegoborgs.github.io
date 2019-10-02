@@ -120,8 +120,9 @@ Além disso, a alteração do comportamento de um código em um projeto que usa 
 Imagine um mundo onde você pode fazer um deploy na sexta, às 17:59, ir para o meio da amazonia conhecer as belezas da nossa floresta sem sinal de internet ou celular e voltar na segunda feira para trabalhar sem se preocupar? A existência da suite de testes é uma garantia que as coisas que funcionavam antes vão continuar funcionando e isso nos ajuda a alcançar este estado de utopia.
 ​
 
-> “Código sem testes é código ruim. Não importa o quão bem escrito, nem se ele é bonito, orientado a objetos ou se foi bem encapsulado. Com testes, podemos alterar o comportamento de nosso código de maneira rápida e verificável. Sem eles, não temos como saber se nosso código está melhorando ou piorando.” - Michael Feathers (Working Effectively with Legacy Code \[2004]).
-> ​
+> Código sem testes é código ruim. Não importa o quão bem escrito, nem se ele é bonito, orientado a objetos ou se foi bem encapsulado. Com testes, podemos alterar o comportamento de nosso código de maneira rápida e verificável. Sem eles, não temos como saber se nosso código está melhorando ou piorando. - Michael Feathers (Working Effectively with Legacy Code \[2004]).
+>
+> Os testes são tão importantes para a saúde de um projeto quanto o código de produção. Talvez até mais, pois eles preservam e aumentam a flexibilidade, capacidade de manutenção e reutilização do código de produção. - Uncle Bob (Clean Code \[2008])
 
 ## Conclusão
 
