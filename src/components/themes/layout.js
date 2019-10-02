@@ -14,10 +14,6 @@ import Footer from "../organisms/footer"
 import 'font-awesome/css/font-awesome.min.css';
 import "./layout.css"
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-149356099-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

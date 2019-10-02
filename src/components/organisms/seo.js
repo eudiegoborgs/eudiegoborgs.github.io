@@ -9,6 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import ReactGA from 'react-ga';
+
+if (typeof window !== `undefined`) {
+  ReactGA.initialize('UA-149356099-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
