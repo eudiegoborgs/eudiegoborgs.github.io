@@ -72,3 +72,7 @@ Muitas pessoas acham que TDD e teste unitário são a mesma coisa.
 ![](/assets/no.gif)
 
 Pra começar TDD é uma metodologia de desenvolvimento enquanto testes unitários são uma técnica de testes. É verdade que os testes unitários são muito úteis e é a técnica mais simples e barata de se implementar, mas não vamos desconsiderar as outras. São vários anos de estudos relacionados a disciplina de testes de software para elaboração, existem vários tipos de testes e cada um resolve um tipo de problema. Cabe a equipe de desenvolvimento entender quais a ou as técnicas que serão utilizadas em cada feature ou projeto.
+
+
+
+Então é isso pessoal! Se vocês sabem de algum mito sobre TDD que não tá aqui, me chama pra trocar uma ideia.
