@@ -4,6 +4,7 @@ import SEO from "../components/organisms/seo"
 import Banner from "../components/organisms/banner"
 import Content from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
+import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
@@ -20,6 +21,9 @@ const IndexPage = () => (
         </p>
       </main>
       <BlogResume />
+      <Link to="blog">
+        Ver mais posts
+      </Link>
     </Content>
   </Layout>
 )
