@@ -11,7 +11,7 @@ Para contextualizar vocês, durante a minha carreira como desenvolvedor já tive
 
 Esse é um clássico, talvez seja o argumento que eu mais ouvi em todas as vezes que estava conversando sobre o tema. 
 
-É sempre complicado analisar questões culturais, quantas vezes não escutamos em uma conversa sobre outras culturas coisas como _"Nossa, mas eles se vestem assim? Eles comem isso mesmo? Como eles que conseguem viver dessa forma? Etc."_ Se você olhar direito pro tema, o TDD além de uma metodologia, é uma questão de mudança cultural, muda a ordem do método comum e por esse motivo causa todo esse alvoroço.
+É sempre complicado analisar questões culturais, quantas vezes não escutamos em uma conversa sobre outras culturas coisas como _"Nossa, mas eles se vestem assim? Eles comem isso mesmo? Como eles que conseguem viver dessa forma? Etc."_ Se você olhar direito pro tema, o TDD além de uma metodologia, é uma questão de mudança cultural, muda a ordem do método de desenvolvimento comum e por esse motivo causa todo esse alvoroço.
 
 A príncipio é difício mesmo inverter a natural do ciclo de desenvolvimento, mas se você tem uma feature bem especificada é possível entender o que testar antes mesmo de começar, além disso, escrever os testes antes de escrever o código de produção, te ajuda a planejar e desenhar melhor a estrutura do seu código.
 
@@ -72,7 +72,5 @@ Muitas pessoas acham que TDD e teste unitário são a mesma coisa.
 ![](/assets/no.gif)
 
 Pra começar TDD é uma metodologia de desenvolvimento enquanto testes unitários são uma técnica de testes. É verdade que os testes unitários são muito úteis e é a técnica mais simples e barata de se implementar, mas não vamos desconsiderar as outras. São vários anos de estudos relacionados a disciplina de testes de software para elaboração, existem vários tipos de testes e cada um resolve um tipo de problema. Cabe a equipe de desenvolvimento entender quais a ou as técnicas que serão utilizadas em cada feature ou projeto.
-
-
 
 Então é isso pessoal! Se vocês sabem de algum mito sobre TDD que não tá aqui, me chama pra trocar uma ideia.
