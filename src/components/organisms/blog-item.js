@@ -6,7 +6,7 @@ const style = `
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 5px;
   padding: 20px 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   h3 {
     margin: 0;
   }
