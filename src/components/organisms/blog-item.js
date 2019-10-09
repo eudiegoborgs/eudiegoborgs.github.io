@@ -11,7 +11,6 @@ const style = `
     margin: 0;
   }
   a {
-    color: #212121; 
     text-decoration: none;
   }
 `
@@ -21,7 +20,7 @@ const BlogItem = ({ content }) => {
   return (
     <React.Fragment>
       <div className={ css`${style}` }>
-        <Link to={content.fields.slug}>
+        <Link to={content.fields.slug} className="blog-link">
           <h3 className>{ frontmatter.title }</h3>
           <small>{ frontmatter.date }</small>
         </Link>

@@ -6,7 +6,6 @@ import SEO from '../organisms/seo'
 import Content from '../organisms/content'
 
 const style = `
-  color: #212121; 
   text-decoration: none;
   h1 {
     margin: 0;

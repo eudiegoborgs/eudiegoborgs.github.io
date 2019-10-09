@@ -13,6 +13,7 @@ import Header from "../organisms/header"
 import Footer from "../organisms/footer"
 import 'font-awesome/css/font-awesome.min.css';
 import "./layout.css"
+import LightButton from "../atoms/light-button";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,11 +27,12 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <React.Fragment>
+    <div>
       <Header siteTitle={data.site.siteMetadata.title} />
       {children}
+      <LightButton />
       <Footer />
-    </React.Fragment>
+    </div>
   )
 }
 

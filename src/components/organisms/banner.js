@@ -1,24 +1,29 @@
 import React from 'react';
 import banner from '../../images/banner/banner.jpg';
+import { css } from 'emotion';
+
+const style = css`
+  background-color: #212121;
+  background-image: url(${banner});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 50vh;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  .caption {
+    padding: 20vh 0;
+    height: 50vh;
+    background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
+  }
+`
 
 const Banner = () => (
-  <div style={{
-    backgroundColor: '#212121',
-    backgroundImage: `url(${banner})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
-    height: '50vh',
-    color: '#ffffff',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    overflow: 'hidden'
-  }}>
-    <div style={{
-      padding: '20vh 0',
-      height: '50vh',
-      backgroundImage: 'linear-gradient(#212121, rgba(33,33,33, 0.8))'
-    }}>
+  <div className={style}>
+    <div className="caption">
       <h1><div className="typewriter">Writing <span style={{color: '#ff8a80'}}>code</span> with love</div></h1>
     </div>
   </div>

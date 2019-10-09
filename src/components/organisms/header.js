@@ -2,34 +2,34 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import SocialMenu from "../molecules/social-menu"
+import { css } from 'emotion';
+
+const style = css`
+  background: #212121;
+
+  .container {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 1rem 1.0875rem;
+  }
+
+  h1 {
+    margin: 0;
+    line-height: 1;
+    font-size: 1.5rem;
+  }
+
+  a {
+    color: white !important;
+    text-decoration: none;
+  }
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#212121`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1rem 1.0875rem`,
-      }}
-    >
-      <h1 
-        style={{ 
-          margin: 0,
-          lineHeight: 1,
-          fontSize: `1.5rem`,
-        }}
-      >
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <header className={style}>
+    <div className="container">
+      <h1>
+        <Link>
           <span>{siteTitle}</span>
         </Link>
         <SocialMenu />

@@ -8,6 +8,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #212121;
 }
 article,
 aside,
@@ -43,6 +44,22 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  color: #d50000;
+  text-decoration: none;
+}
+a.blog-link {
+  color: #212121;
+}
+.nightmode {
+  background: #212121;
+  color: white;
+}
+
+.nightmode a {
+  color: #ff8a80; 
+}
+.nightmode a.blog-link {
+  color: white;
 }
 a:active,
 a:hover {
