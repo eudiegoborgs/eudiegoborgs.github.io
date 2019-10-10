@@ -23,7 +23,7 @@ Se você fizer uma analise superfícial, talvez essa questão de escrever testes
 
 Vamos fazer um flashback rápido. 
 
-Quantas vezes você ou seu time de desenvolvimento teve que para de desenvolver coisas novas para investir um problema no código e no fim descobriu que isso estava ocorrendo por que publicaram uma alteração em outra parte do sistema?
+Quantas vezes você ou seu time de desenvolvimento teve que parar de desenvolver coisas novas para investir um problema no código e no fim descobriu que isso estava ocorrendo por que publicaram uma alteração em outra parte do sistema?
 
 Será que se esse código fosse coberto por testes esse problema não teria sido previnido?
 
