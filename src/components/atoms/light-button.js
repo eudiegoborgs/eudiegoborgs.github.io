@@ -17,20 +17,24 @@ const style = css`
 
 const LightButton = () => {
   const [theme, setTheme] = React.useState(null)
-  const defaultTheme = localStorage.getItem('theme');
   const darkMode = theme === 'dark'
   const buttonClass = darkMode ? "fa-toggle-off": "fa-toggle-on";
   const title = darkMode ? "Acender a luz": "Apagar a luz";
 
   React.useEffect(() => {
-    if (defaultTheme) {
-      setTheme(defaultTheme)
+    if (typeof localStorage !== 'undefined') {
+      const defaultTheme = localStorage.getItem('theme')
+      if (defaultTheme) {
+        setTheme(defaultTheme)
+      }
     }
   }, [])
 
   const change = () => {
     const newTheme = darkMode ? 'light' : 'dark'
-    localStorage.setItem('theme', newTheme);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('theme', newTheme);
+    }
     setTheme(newTheme)
   }
 
