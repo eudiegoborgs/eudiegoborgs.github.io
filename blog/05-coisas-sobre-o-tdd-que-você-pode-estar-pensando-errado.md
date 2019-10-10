@@ -13,7 +13,7 @@ Esse é um clássico, talvez seja o argumento que eu mais ouvi em todas as vezes
 
 É sempre complicado analisar questões culturais, quantas vezes não escutamos em uma conversa sobre outras culturas coisas como _"Nossa, mas eles se vestem assim? Eles comem isso mesmo? Como eles que conseguem viver dessa forma? Etc."_ Se você olhar direito pro tema, o TDD além de uma metodologia, é uma questão de mudança cultural, muda a ordem do método de desenvolvimento comum e por esse motivo causa todo esse alvoroço.
 
-A príncipio é difício mesmo inverter a natural do ciclo de desenvolvimento, mas se você tem uma feature bem especificada é possível entender o que testar antes mesmo de começar, além disso, escrever os testes antes de escrever o código de produção, te ajuda a planejar e desenhar melhor a estrutura do seu código.
+A príncipio é difícil mesmo inverter a natural do ciclo de desenvolvimento, mas se você tem uma feature bem especificada é possível entender o que testar antes mesmo de começar, além disso, escrever os testes antes de escrever o código de produção, te ajuda a planejar e desenhar melhor a estrutura do seu código.
 
 ## TDD é caro, consome muito tempo, vai atrasar o lançamento do meu produto e só serve para o time de desenvolvimento.
 
