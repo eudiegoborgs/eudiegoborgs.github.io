@@ -1,6 +1,7 @@
 import React from 'react';
 import banner from '../../images/banner/banner.jpg';
 import { css } from 'emotion';
+import SocialMenu from '../molecules/social-menu';
 
 const style = css`
   background-color: #212121;
@@ -19,12 +20,17 @@ const style = css`
     height: 50vh;
     background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
   }
+
+  a {
+    color: white !important;
+  }
 `
 
 const Banner = () => (
   <div className={style}>
     <div className="caption">
       <h1><div className="typewriter">Writing <span style={{color: '#ff8a80'}}>code</span> with love</div></h1>
+      <SocialMenu />
     </div>
   </div>
 )

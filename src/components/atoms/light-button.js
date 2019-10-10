@@ -3,28 +3,13 @@ import { Helmet } from 'react-helmet';
 import { css } from 'emotion'
 
 const style = css`
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  background: #212121;
+  background: transparent;
   color: white;
-  border: solid 1px white;
-  border-radius: 100%;
-  padding: 5px 10px;
-  line-height: 1;
-  width: 45px;
-  height: 45px;
+  border: none;
 
   :focus {
     outline: 0;
   }
-
-  :hover {
-    background: white;
-    border: solid 1px #212121;
-    color: #212121;
-  }
-
   i {
     line-height: 1;
   }
@@ -32,16 +17,21 @@ const style = css`
 
 const LightButton = () => {
   const [theme, setTheme] = React.useState(null)
+  const defaultTheme = localStorage.getItem('theme');
   const darkMode = theme === 'dark'
-  const buttonClass = darkMode ? "fa-sun-o": "fa-moon-o";
-  const title = darkMode ? "Desativar modo noturno": "Ativar modo noturno";
+  const buttonClass = darkMode ? "fa-toggle-off": "fa-toggle-on";
+  const title = darkMode ? "Acender a luz": "Apagar a luz";
 
   React.useEffect(() => {
-    setTheme(theme)
+    if (defaultTheme) {
+      setTheme(defaultTheme)
+    }
   }, [])
 
   const change = () => {
-    setTheme(darkMode ? 'light' : 'dark')
+    const newTheme = darkMode ? 'light' : 'dark'
+    localStorage.setItem('theme', newTheme);
+    setTheme(newTheme)
   }
 
   return (
