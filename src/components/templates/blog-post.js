@@ -38,7 +38,7 @@ const BlogPost = (props) => {
   return (
     
     <Layout>
-      <SEO title="Blog" />
+      <SEO title={`Blog - ${post.frontmatter.title}`} />
       <Content>
         <main className={ css`${style}` }>
           <header>
