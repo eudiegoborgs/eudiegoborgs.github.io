@@ -32,3 +32,11 @@ Uma das causas de lentidão nos testes é a dependência de coisas externas  com
 Também é esperado que um teste seja rápido para criar e executar, se um desenvolvedor tiver que fazer muitas coisas que levem muito tempo para criar um teste, ele não fará o teste.
 
 ### ISOLATED OR INDEPENDENT
+
+Seus testes devem ser capazes de se validar sozinhos, sem depender do resultado ou estado de um teste anterior. Isso garante que cada teste seja executado individualmente e que o seu resultado só interfira no cenário esperado. 
+
+Se seu teste depende de algum pre processamento de algum dado, estes dados devem ser processados na configuração do teste e restaurados após a sua execução para não afetar os testes que serão executados depois.
+
+### REPEATABLE
+
+Os testes devem ser capazes de ser executados repetidas vezes em qualquer ambiente sem variação dos seus resultados. Por esse motivo, devemos remover as dependencias externas como acesso a banco de dados, ambiente ou rede, seu teste unitário deve depender apenas do código para se resolver. Esse cuidado garante que o teste só falhe por causa de algum erro no código ou na configuração do teste e não por algum evento externo.
