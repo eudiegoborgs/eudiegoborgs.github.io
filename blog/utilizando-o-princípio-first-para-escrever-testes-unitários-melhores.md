@@ -21,9 +21,11 @@ Vamos esclarecer um pouco mais sobre o que esperado em cada uma das caracteristi
 
 ### FAST
 
-Os testes unitários devem ser rápidos, caso contrário serão um enorme gargalo no desenvolvimento de sua aplicação. Espera-se que em aplicações maiores, tenhamos milhares de testes.
+Os testes unitários devem ser rápidos, caso contrário serão um enorme gargalo no desenvolvimento de sua aplicação. 
 
-Agora imagine uma aplicação que contém 3000 testes e que cada teste leva 1 segundo para completar sua execução, serão necessários 50 minutos para finalizar a suite de testes. Por esse motivo, o ideal é que um teste seja executado em apenas alguns milisegundos.
+![](/assets/giphy.gif)
+
+Espera-se que em aplicações maiores, tenhamos milhares de testes. Agora imagine uma aplicação que contém 3000 testes e que cada teste leva 1 segundo para completar sua execução, serão necessários 50 minutos para finalizar a suite de testes. Por esse motivo, o ideal é que um teste seja executado em apenas alguns milisegundos.
 
 Uma das causas de lentidão nos testes é a dependência de coisas externas  como bancos de dados, arquivos e aplicações externas. Eles levam muito tempo para entregar algum resultado. Para criar essas dependências você pode usar mock em seus testes.
 
