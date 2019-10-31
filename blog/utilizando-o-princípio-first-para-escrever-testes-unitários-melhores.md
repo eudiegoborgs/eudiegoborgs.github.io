@@ -15,7 +15,7 @@ Então vamos lá.
 
 ## O que é princípio F.I.R.S.T?
 
-A sigla F.I.R.S.T significa, **F**ast, **I**solated or **I**ndependent, **R**epeatable, **S**elf-Validating and **T**imely, em um bom português Rápido, Isolado, Repetivel, Auto Validavél e Objetivo. A ideia é que comecemos a pensar nessas caracteristicas ao criar um teste.
+A sigla F.I.R.S.T significa, **F**ast (Rápido), **I**solated (Isolado), **R**epeatable (Repetivel), **S**elf-Validating (Auto Validavel) and **T**horough and **T**imely (Minuncioso e Objetivo). A ideia é que comecemos a pensar nessas caracteristicas ao criar um teste.
 
 Vamos esclarecer um pouco mais sobre o que esperado em cada uma das caracteristicas:
 
@@ -39,4 +39,14 @@ Se seu teste depende de algum pre processamento de algum dado, estes dados devem
 
 ### REPEATABLE
 
-Os testes devem ser capazes de ser executados repetidas vezes em qualquer ambiente sem variação dos seus resultados. Por esse motivo, devemos remover as dependencias externas como acesso a banco de dados, ambiente ou rede, seu teste unitário deve depender apenas do código para se resolver. Esse cuidado garante que o teste só falhe por causa de algum erro no código ou na configuração do teste e não por algum evento externo.
+Os testes devem ser capazes de ser executados repetidas vezes em qualquer ambiente sem variação dos seus resultados. Por esse motivo, devemos remover as dependencias externas como acesso a banco de dados, ambiente ou rede, seu teste unitário deve depender apenas do código para se resolver. Esse cuidado garante que o teste só falhe por causa de algum erro no código ou na configuração do teste e não por algum problema externo.
+
+### SELF-VALIDATING
+
+Os testes unitários devem ser capazes de validar a si mesmos, interpretando os resultados para ver se é o esperado ou não sem uma intervenção manual.
+
+### THOROUGH AND TIMELY
+
+O principal objetivo ao escrever testes não é ter 100% de cobertura de código. O objetivo é ter testes em que possamos confiar. Mas o que realmente significa confiança? Significa que ao passar, seus testes garantem que o seu código realmente funciona e retorna os valores esperados.
+
+Ao escrever testes primeiros sou obrigado a fazer com que minha implementação se adapte aos casos de testes que garantem o bom comportamento e não o contrario. Se eu decidir mudar alguma coisa na implementação sem alterar o comportamento", tudo o que preciso escrever o código de maneira que os testes continuem a passar.
