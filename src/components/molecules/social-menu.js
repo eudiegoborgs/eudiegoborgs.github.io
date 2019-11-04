@@ -3,7 +3,7 @@ import React from 'react';
 const socialList = [
   {
     icon: 'instagram',
-    link: 'https://www.instagram.com/eudiegoborgs/?hl=pt-br'
+    link: 'https://www.instagram.com/eudiegoborgs'
   },
   {
     icon: 'twitter',
@@ -11,7 +11,7 @@ const socialList = [
   },
   {
     icon: 'linkedin',
-    link: 'https://www.linkedin.com/in/eudiegoborgs/'
+    link: 'https://www.linkedin.com/in/eudiegoborgs'
   },
   {
     icon: 'github',
@@ -22,7 +22,7 @@ const socialList = [
 const SocialMenu = () => (
   <React.Fragment>
     { socialList.map(item => (
-      <a href={item.link} target="_blank" rel="noopener noreferrer" title={item.icon}>
+      <a href={item.link} target="_blank" rel="noopener noreferrer" title={item.icon} style={{ margin: '15px 10px' }} >
         <i class={`fa fa-${item.icon}`} style={{
           padding: '0 7px'
         }} />
