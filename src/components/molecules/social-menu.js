@@ -22,7 +22,7 @@ const socialList = [
 const SocialMenu = () => (
   <React.Fragment>
     { socialList.map(item => (
-      <a href={item.link} target="_blank" rel="noopener noreferrer">
+      <a href={item.link} target="_blank" rel="noopener noreferrer" title={item.icon}>
         <i class={`fa fa-${item.icon}`} style={{
           padding: '0 7px'
         }} />
