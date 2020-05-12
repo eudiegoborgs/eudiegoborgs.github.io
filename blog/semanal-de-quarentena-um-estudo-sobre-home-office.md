@@ -71,3 +71,5 @@ Se você estiver se sentindo improdutivo por um momento pare, faça outra coisa 
 É mais fácil se render a improdutividade e retomar as coisas num momento em que sua mente estiver funcionando melhor do que forçar ela e acabar ainda mais improdutivo por conta do cansaço. 
 
 Isso não é um sinal verde para procrastinar, é só um sinal verde para você respeitar sua mente e corpo.
+
+That's all folks
