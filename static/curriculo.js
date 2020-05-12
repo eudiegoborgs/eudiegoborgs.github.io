@@ -32,7 +32,7 @@
                 'Clean Code',
             ],
             soft: [
-                'Creatividade',
+                'Criatividade',
                 'Comunicação',
                 'Trabalho em equipe',
                 'Autodidata',
