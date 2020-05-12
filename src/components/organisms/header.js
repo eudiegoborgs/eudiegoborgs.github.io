@@ -25,6 +25,10 @@ const style = css`
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    @media (max-width: 780px) {
+      font-size: 0.7rem;
+      line-height: 2rem;
+    }
   }
 
   .right {
@@ -33,7 +37,22 @@ const style = css`
     align-items: center;
 
     >* {
-      padding: 0 5px;
+      padding: 0 10px;
+      @media (max-width: 780px) {
+        padding: 0 5px;
+      }
+    }
+  }
+
+  .hide-mobile {
+    @media (max-width: 780px) {
+      display: none;
+    }
+  }
+  .logo {
+    @media (max-width: 780px) {
+      font-size: 0.9rem;
+      line-height: 2rem;
     }
   }
 `;
@@ -42,11 +61,14 @@ const Header = ({ siteTitle }) => (
   <header className={style}>
     <div className="container">
       <h1>
-        <Link>
+        <Link className="logo">
           <span>{siteTitle}</span>
         </Link>
       </h1>
       <div className="right">
+        <Link to="curriculo">
+          Curriculo
+        </Link>
         <Link to="blog">
           Blog
         </Link>
