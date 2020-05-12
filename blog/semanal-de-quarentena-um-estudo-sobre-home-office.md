@@ -60,7 +60,7 @@ _"Necessário, somente o necessário o extraordinário é demais"._
 
 Procure a opinião das pessoas que realmente poderão esclarecer aquela duvida.
 
-PS: Uma dica de ferramenta de comunicação que tem me encantado com seus recursos é o [Discord](https://discord.com/).
+_PS: Uma dica de ferramenta de comunicação que tem me encantado com seus recursos é o_ [_Discord_](https://discord.com/)_._
 
 ## 5. Seja paciente
 
