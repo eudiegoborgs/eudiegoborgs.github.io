@@ -60,6 +60,8 @@ _"Necessário, somente o necessário o extraordinário é demais"._
 
 Procure a opinião das pessoas que realmente poderão esclarecer aquela duvida.
 
+PS: Uma dica de ferramenta de comunicação que tem me encantado com seus recursos é o [Discord](https://discord.com/).
+
 ## 5. Seja paciente
 
 Quem me conhece sabe o quanto eu sou ansioso né? Nesse período de crise econômica, sanitária e politica, minha ansiedade as vezes toma conta de tudo e fica difícil até pensar. É muito ruim quando uma crise dessa acontece no meio do horário de trabalho, mas se acontecer, pare tudo, descanse a mente e depois retome.
