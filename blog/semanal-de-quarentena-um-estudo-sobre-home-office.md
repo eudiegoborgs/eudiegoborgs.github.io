@@ -42,7 +42,7 @@ Ao meu supervisor tenho tentado manter uma boa comunicação e alinhar as expect
 
 ## 3. Aproveite os benefícios
 
-É óbvio que nem tudo no home office são problemas, existem diversos benefícios. Não se culpe por aproveitar alguns desses benefícios.
+É óbvio que nem tudo no home office são problemas, existem diversos benefícios. Não se culpe por aproveitar alguns desses benefícios. Curta suas folgas, leve seu cachorro para tomar um ar (de mascara ok?), brinque com as crianças, assista lives, filmes, leia livros, ouça musicas, isso tudo vai fazer bem para a sua mente e seu corpo.
 
 Eu mesmo estou adorando poder passar mais tempo com minha família, estou aprendendo a cozinhar com minha esposa no meu horário de almoço, algumas vezes durante o dia eu faço uma pausa pra brincar um pouquinho com os meninos, tudo isso tem sido muito bom pra mim.
 
