@@ -41,7 +41,7 @@ const NotFoundPage = () => (
         <p>
           Você pode me mandar uma mensagem por aqui mesmo.
         </p>
-        <form name="contact" method="POST" data-netlify="true" className={style}>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"  className={style}>
           <p>
             <label>Nome: <input type="text" name="name" /></label>   
           </p>
