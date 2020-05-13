@@ -49,9 +49,9 @@ const BlogPost = (props) => {
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
           <ReactDisqusComments
             shortname="eudiegoborgs"
-            identifier={`https://diegoborgs.com.br${post.fields.slug}`}
+            identifier={`https://diegoborgs.com.br/${post.fields.slug}`}
             title={post.frontmatter.title}
-            url={`https://diegoborgs.com.br${post.fields.slug}`}
+            url={`https://diegoborgs.com.br/${post.fields.slug}`}
           />
         </main>
       </Content>
