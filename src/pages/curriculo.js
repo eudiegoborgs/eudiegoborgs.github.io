@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/themes/layout"
 import SEO from "../components/organisms/seo"
-import Banner from "../components/organisms/banner"
 import Content from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
 import { Link } from "gatsby"

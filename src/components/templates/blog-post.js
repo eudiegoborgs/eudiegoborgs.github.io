@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDisqusComments from 'react-disqus-comments'
+import { Disqus } from 'gatsby-plugin-disqus'
 import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import Layout from '../themes/layout'
@@ -35,6 +35,11 @@ const BlogPost = (props) => {
   const post = props.data.markdownRemark
   const next = props.pageContext.next
   const previous = props.pageContext.previous
+  const disqusConfig = {
+    url: `https://diegoborgs.com.br/${post.fields.slug}`,
+    identifier: post.id,
+    title: post.title,
+  }
 
   return (
     
@@ -47,12 +52,7 @@ const BlogPost = (props) => {
             <small>{ post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
-          <ReactDisqusComments
-            shortname="eudiegoborgs"
-            identifier={`https://diegoborgs.com.br/${post.fields.slug}`}
-            title={post.frontmatter.title}
-            url={`https://diegoborgs.com.br/${post.fields.slug}`}
-          />
+          <Disqus config={disqusConfig} />
         </main>
       </Content>
     </Layout>

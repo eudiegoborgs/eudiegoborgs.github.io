@@ -10,6 +10,12 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `eudiegoborgs`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
