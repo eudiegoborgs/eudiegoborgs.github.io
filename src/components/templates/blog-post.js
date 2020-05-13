@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDisqusComments from 'react-disqus-comments'
 import { graphql } from 'gatsby'
 import { css } from 'emotion'
 import Layout from '../themes/layout'
@@ -46,6 +47,12 @@ const BlogPost = (props) => {
             <small>{ post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
+          <ReactDisqusComments
+            shortname="eudiegoborgs"
+            identifier={`https://diegoborgs.com.br${post.fields.slug}`}
+            title={post.frontmatter.title}
+            url={`https://diegoborgs.com.br${post.fields.slug}`}
+          />
         </main>
       </Content>
     </Layout>
