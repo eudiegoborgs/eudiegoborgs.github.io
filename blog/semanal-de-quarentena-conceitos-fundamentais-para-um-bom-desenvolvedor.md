@@ -25,9 +25,14 @@ Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrô
 **I. Interface Segregation Principle** (Princípio da Segregação da Interface)\
 **D. Dependency Inversion Principle** (Princípio da inversão da dependência)
 
-Design Patterns\
-SOLID\
-Arquitetura de software\
-Testes\
-Como funciona o HTTP\
-Code Review
+Para vocês aprofundarem seus estudos deixo com vocês o excelente artigo do João Roberto, [O que é SOLID: O guia completo para você entender os 5 princípios da POO.](https://medium.com/joaorobertopb/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)
+
+## 2. Design Patterns
+
+## 3. O protocolo HTTP
+
+## 4. Testes
+
+## 5. Arquitetura de Software
+
+## 6. Code Review
