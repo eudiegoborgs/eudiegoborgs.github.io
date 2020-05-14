@@ -33,7 +33,7 @@ Os design patterns ou padrões de projeto foram apresentados para mim ainda nos 
 
 Eu considero os Design Patterns um estudo essencial para um programador e também um manual para ser consultado com soluções generalistas para problemas recorrentes de durante o desenvolvimento de um software. Não tente decorar todos os padrões de projeto de uma vez, acredito que isso seja impossível, mas, com o tempo alguns padrões que você usar mais vão ficar mais familiares para você.
 
-
+Geralmente eu uso o [refactoring.guru](https://refactoring.guru/pt-br/design-patterns) para consulta sempre que necessário. Ele tem um material completo e em português sobre Design Patterns.
 
 ## 3. O protocolo HTTP
 
