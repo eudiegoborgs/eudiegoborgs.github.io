@@ -11,6 +11,8 @@ Apesar de ter feito minhas primeiras linhas de HTML em 2011, e de lá pra cá j�
 
 _PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é ser seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma boa pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico._
 
+__
+
 ## 1. Princípios S.O.L.I.D.
 
 Eu resolvi dedicar um tempo de estudo para este conceito depois de ser cobrado sobre ele em uma entrevista de emprego. Eu já até conhecia e aplicava alguns dos princípios em parte mesmo sem saber depois de ouvir algumas recomendações de melhorias em uma code review. 
@@ -27,6 +29,8 @@ Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrô
 
 Para vocês aprofundarem seus estudos deixo com vocês o excelente artigo do João Roberto, [O que é SOLID: O guia completo para você entender os 5 princípios da POO.](https://medium.com/joaorobertopb/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)
 
+
+
 ## 2. Design Patterns
 
 Os design patterns ou padrões de projeto foram apresentados para mim ainda nos primeiros períodos da faculdade e eu confesso que eu não dei nenhuma bola, alguns anos mais tarde tive um reencontro com eles na minha vida profissional. Acredite, apesar de ter trabalhado em vários projetos diferentes, muitos problemas que enfrentei eram exatamente iguais.
@@ -34,6 +38,8 @@ Os design patterns ou padrões de projeto foram apresentados para mim ainda nos 
 Eu considero os Design Patterns um estudo essencial para um programador e também um manual para ser consultado com soluções generalistas para problemas recorrentes de durante o desenvolvimento de um software. Os padrões de projeto são divididos em Criacionais, Estruturais e Comportamentais, mas não tente decorar todos de uma vez, acredito que isso seja impossível, com o tempo alguns padrões que você usar mais vão ficar mais familiares para você.
 
 Geralmente eu uso o [refactoring.guru](https://refactoring.guru/pt-br/design-patterns) para consulta sempre que necessário. Ele tem um material completo e em português sobre Design Patterns.
+
+
 
 ## 3. O protocolo HTTP
 
@@ -45,8 +51,34 @@ A grande questão é que com isso começamos a ter algumas aplicações que espe
 
 Eu fiz essa [apresentação](https://eudiegoborgs.github.io/introducao-web-dev) em 2018 para dar uma introdução para alguns colegas de trabalho não desenvolvedores sobre o desenvolvimento para web, nela eu falo um pouquinho sobre o protocolo HTTP. Acho que é uma boa base para começar a entender sobre o assunto.
 
+
+
 ## 4. Testes
 
+Eu percebo que nós desenvolvedores de software ainda discordamos completamente sobre esse assunto, mas vejo que é comum entre bons desenvolvedores a preocupação com testes, seja usando TDD ou não. 
+
+Esse foi o conceito que eu mais estudei até hoje, me encantei com o assunto e comecei a praticar como forma de entregar mais qualidade no código que escrevia. E posso dizer com muita sinceridade para vocês... deu muito certo, meu código ficou melhor.
+
+Eu poderia escrever mais uns 32 parágrafos sobre isso, mas eu já escrevi bastante aqui no blog, então eu vou deixar aqui em baixo o link dos posts pra vocês na sequência:
+
+* [A importância da cultura de TDD na vida dos desenvolvedores e dos não desenvolvedores​](https://diegoborgs.com.br/blog/a-import%C3%A2ncia-da-cultura-de-tdd-na-vida-dos-desenvolvedores-e-dos-n%C3%A3o-desenvolvedores%E2%80%8B)
+* [05 coisas sobre o TDD que você pode estar pensando errado](https://diegoborgs.com.br/blog/05-coisas-sobre-o-tdd-que-voc%C3%AA-pode-estar-pensando-errado)
+* [Utilizando o princípio First para escrever testes unitários melhores](https://diegoborgs.com.br/blog/utilizando-o-princ%C3%ADpio-first-para-escrever-testes-unit%C3%A1rios-melhores)
+
+
+
 ## 5. Arquitetura de Software
+
+Eu não acho que você tem que fazer uma pós em arquitetura de software para ser um bom desenvolvedor, mas ter uma noção de arquitetura ajuda demais. 
+
+Eu sempre parto da prerrogativa que entender como funciona é muito melhor do que só saber fazer alguma coisa, quando você começa a estudar a arquitetura de um software você começa a ver exatamente como as coisas funcionam e porque elas fazem o que fazem.
+
+Não existe um modelo de arquitetura melhor ou certo, existem alguns mais conhecidos e mais usados como Clean Architecture ou a Arquitetura Hexagonal, nestes modelos usa-se muito conceitos como interfaces de comunicação, separação em camadas e hierarquia de camadas. 
+
+Particularmente falando, eu acredito que uma boa arquitetura de software adia tomadas de decisões até o momento necessário e evita over engineerings.
+
+Para introduzir no assunto sugiro a leitura deste [artigo](https://www.devmedia.com.br/arquitetura-de-software-desenvolvimento-orientado-para-arquitetura/8033) do DevMedia e também pesquisas sobre Clean Architecture e Arquitetura Hexagonal.
+
+
 
 ## 6. Code Review
