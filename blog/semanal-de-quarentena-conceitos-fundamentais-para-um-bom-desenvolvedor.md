@@ -85,6 +85,14 @@ Para introduzir no assunto sugiro a leitura deste [artigo](https://www.devmedia.
 
 ## 7. Code Review
 
+Por último e não menos importante vem o Code Review, acredito que este é o único conceito impossível de aprender sozinho, ter a capacidade de realizar uma boa code review, imparcial e sem ego no código dos coleguinhas é importante, mas entender que as criticas ao seu código não são pessoais e devem ser levadas em consideração é essencial.
+
+Uma vez eu li que um bom Code Review é melhor que TDD, eu com certeza descordo plenamente. Acredito que são coisas complementares e diferentes. Geralmente um bom Code Review vai avaliar a sintaxe do código e os testes por outro lado tem uma avaliação mais comportamental. Hoje em dia existem ferramentas como o Sonarqube e o Scruntinizer que fazem uma analise automática, mas eu não dispensaria nunca a avaliação de um colega e a capacidade que ela vai ter de me ensinar.
+
+Para se tornar um bom desenvolvedor é necessário aprender o tempo todo e as Code Review's são os melhores momentos pra isso. Uma vez escutei que é sempre bom escutar o que as pessoas tem a dizer, independente de quem seja, do mais sábio ao mais ignorante a todo momento alguém sempre vai ter algo a te acrescentar. Por esse motivo não seja arrogante ao receber uma review de alguém menos experiente que você, ele pode estar certo e se estiver errado é um bom momento pra ensinar.
+
+Ao fazer uma code review de um colega, tenha empatia mas não tenha dó, aponte as falhas que encontrar no código sem implicâncias mesquinhas e também sugira soluções, fique atento as respostas, pois as vezes naquele contexto, apesar de não parecer aquela era a melhor solução.
+
 Sinceramente, não acredito que você deva ser um especialista em cada uma das coisas faladas para ser um bom desenvolvedor, mas acredito que ter uma noção do que se trata te ajudará a entregar projetos de softwares melhores e mais completos.
 
 E ai? Gostou da lista? Tem alguma coisa que gostaria de acrescentar? Comente ai para não deixarmos nada de fora.
