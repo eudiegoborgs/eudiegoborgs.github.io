@@ -9,7 +9,7 @@ Dando sequencia aos meus posts semanais de quarentena para vocês, hoje resolvi 
 
 Apesar de ter feito minhas primeiras linhas de HTML em 2011, e de lá pra cá já são 9 anos em que tive a oportunidade de trabalhar em muitos projetos com desafios diferentes e em times com muita gente boa, confesso que as vezes eu não acredito que minha carreira é tão longa assim para falar como outra pessoa deve lidar com a dela. O que eu vou deixar para vocês aqui são alguns conceitos que, depois que comecei a entender, me tornaram um desenvolvedor melhor, mas deixo com vocês a responsabilidade de decidir aplicar ou não eles em suas vidas profissionais.
 
-_PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é ser seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma boa pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico._
+_PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é que seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma boa pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico._
 
 __
 
