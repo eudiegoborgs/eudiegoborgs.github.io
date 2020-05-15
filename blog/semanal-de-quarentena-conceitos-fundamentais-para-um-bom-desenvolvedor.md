@@ -19,7 +19,7 @@ Eu resolvi dedicar um tempo de estudo para este conceito depois de ser cobrado s
 
 Até hoje consigo ouvir a voz do grão mestre [Danton](https://www.linkedin.com/in/danton-dietze/) fazendo um code review comigo e falando indiretamente sobre o princípio de responsabilidade única **(S - Single Responsability.** Coisas como... _Diego, essa função tá fazendo mais de uma coisa_ ou _Diego, isso que você colocou aqui, não deveria estar aqui porque não é responsabilidade dessa classe._
 
-Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrônimo criado por Michael Feather, autor do _Working Effectively with Legacy Code,_ baseado em orientações encontradas no artigo e abordados no artigo [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) do Tio Bob. Sendo eles:
+Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrônimo criado por Michael Feather, autor do _Working Effectively with Legacy Code,_ baseado em orientações encontradas no artigo [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) do Tio Bob. Sendo eles:
 
 **S. Single Responsiblity Principle** (Princípio da responsabilidade única)\
 **O. Open-Closed Principle** (Princípio Aberto-Fechado)\
