@@ -29,8 +29,6 @@ Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrô
 
 Para vocês aprofundarem seus estudos deixo com vocês o excelente artigo do João Roberto, [O que é SOLID: O guia completo para você entender os 5 princípios da POO.](https://medium.com/joaorobertopb/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530)
 
-
-
 ## 2. Design Patterns
 
 Os design patterns ou padrões de projeto foram apresentados para mim ainda nos primeiros períodos da faculdade e eu confesso que eu não dei nenhuma bola, alguns anos mais tarde tive um reencontro com eles na minha vida profissional. Acredite, apesar de ter trabalhado em vários projetos diferentes, muitos problemas que enfrentei eram exatamente iguais.
@@ -38,8 +36,6 @@ Os design patterns ou padrões de projeto foram apresentados para mim ainda nos 
 Eu considero os Design Patterns um estudo essencial para um programador e também um manual para ser consultado com soluções generalistas para problemas recorrentes de durante o desenvolvimento de um software. Os padrões de projeto são divididos em Criacionais, Estruturais e Comportamentais, mas não tente decorar todos de uma vez, acredito que isso seja impossível, com o tempo alguns padrões que você usar mais vão ficar mais familiares para você.
 
 Geralmente eu uso o [refactoring.guru](https://refactoring.guru/pt-br/design-patterns) para consulta sempre que necessário. Ele tem um material completo e em português sobre Design Patterns.
-
-
 
 ## 3. O protocolo HTTP
 
@@ -50,8 +46,6 @@ Com o surgimento e popularização dos frameworks, nós desenvolvedores, acabamo
 A grande questão é que com isso começamos a ter algumas aplicações que esperavam parâmetros em lugares inesperados e/ou davam respostas HTTP erradas e acabavam por deixar as aplicações que consumiam elas loucas e cheias de gambiarras para contornar isso. Quer ver um exemplo? O clássico 404 quando na verdade é um 200 de uma lista vazia, o 401 no lugar de 403 ou a aplicação que espera um token de autorização no body ao invés do header da requisição.
 
 Eu fiz essa [apresentação](https://eudiegoborgs.github.io/introducao-web-dev) em 2018 para dar uma introdução para alguns colegas de trabalho não desenvolvedores sobre o desenvolvimento para web, nela eu falo um pouquinho sobre o protocolo HTTP. Acho que é uma boa base para começar a entender sobre o assunto.
-
-
 
 ## 4. Testes
 
@@ -65,9 +59,9 @@ Eu poderia escrever mais uns 32 parágrafos sobre isso, mas eu já escrevi basta
 * [05 coisas sobre o TDD que você pode estar pensando errado](https://diegoborgs.com.br/blog/05-coisas-sobre-o-tdd-que-voc%C3%AA-pode-estar-pensando-errado)
 * [Utilizando o princípio First para escrever testes unitários melhores](https://diegoborgs.com.br/blog/utilizando-o-princ%C3%ADpio-first-para-escrever-testes-unit%C3%A1rios-melhores)
 
+## 5. DevOps e Cloud
 
-
-## 5. Arquitetura de Software
+## 6. Arquitetura de Software
 
 Eu não acho que você tem que fazer uma pós em arquitetura de software para ser um bom desenvolvedor, mas ter uma noção de arquitetura ajuda demais. 
 
@@ -79,6 +73,4 @@ Particularmente falando, eu acredito que uma boa arquitetura de software adia to
 
 Para introduzir no assunto sugiro a leitura deste [artigo](https://www.devmedia.com.br/arquitetura-de-software-desenvolvimento-orientado-para-arquitetura/8033) do DevMedia e também pesquisas sobre Clean Architecture e Arquitetura Hexagonal.
 
-
-
-## 6. Code Review
+## 7. Code Review
