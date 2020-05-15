@@ -37,6 +37,14 @@ Geralmente eu uso o [refactoring.guru](https://refactoring.guru/pt-br/design-pat
 
 ## 3. O protocolo HTTP
 
+Talvez esse conceito se aplique apenas aos desenvolvedores que trabalham com aplicações web, seja na sua implementação ou consumo _(se você é um desenvolvedor mobile que consome uma API você se encaixa aqui)_. 
+
+Com o surgimento e popularização dos frameworks, nós desenvolvedores, acabamos deixando um pouco de lado a obrigação de conhecer como funcionam os nossos protocolos de comunicação. Muito disso se deve ao fato de termos todo o funcionamento abstraído dentro dos frameworks que utilizamos.
+
+A grande questão é que com isso começamos a ter algumas aplicações que esperavam parâmetros em lugares inesperados e/ou davam respostas HTTP erradas e acabavam por deixar as aplicações que consumiam elas loucas e cheias de gambiarras para contornar isso. Quer ver um exemplo? O clássico 404 quando na verdade é um 200 de uma lista vazia, o 401 no lugar de 403 ou a aplicação que espera um token de autorização no body ao invés do header da requisição.
+
+Eu fiz essa [apresentação](https://eudiegoborgs.github.io/introducao-web-dev) em 2018 para dar uma introdução para alguns colegas de trabalho não desenvolvedores sobre o desenvolvimento para web, nela eu falo um pouquinho sobre o protocolo HTTP. Acho que é uma boa base para começar a entender sobre o assunto.
+
 ## 4. Testes
 
 ## 5. Arquitetura de Software
