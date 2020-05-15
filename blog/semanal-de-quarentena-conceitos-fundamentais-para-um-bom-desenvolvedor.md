@@ -69,7 +69,7 @@ Apesar de não ter um estudo tão profundo neste conceito acho sensacional os re
 
 Outra coisa que eu acho que um bom desenvolvedor deve ter é a capacidade de publicar o projeto no qual está trabalhando, para isso o conhecimento em algumas ferramentas de cloud, mesmo que seja básico, é extremamente necessário.
 
-Cada uma das coisas que falei renderia um artigo separado e no futuro posso até escrever um pouco mais sobre as coisas que falei, acho que pra começar bem com estes conceitos o ideal é ter uma noção de docker e estes [artigo](https://woliveiras.com.br/posts/uma-rapida-introducao-ao-docker-e-instalacao-no-ubuntu/) do William Oliveira vai te ajudar, no restante pode ir com calma e aprendendo aos poucos que vai dar tudo certo.
+Cada uma das coisas que falei renderia um artigo separado e no futuro posso até escrever um pouco mais, acho que pra começar bem com estes conceitos o ideal é ter uma noção de docker e este [artigo](https://woliveiras.com.br/posts/uma-rapida-introducao-ao-docker-e-instalacao-no-ubuntu/) do William Oliveira vai te ajudar, no restante pode ir com calma e aprendendo aos poucos que vai dar tudo certo.
 
 ## 6. Arquitetura de Software
 
@@ -95,6 +95,6 @@ Ao fazer uma code review de um colega, tenha empatia mas não tenha dó, aponte 
 
 ## Para finalizar...
 
-Sinceramente, não acredito que você deva ser um especialista em cada uma das coisas faladas para ser um bom desenvolvedor, mas acredito que ter uma noção do que se trata te ajudará a entregar projetos de softwares melhores e mais completos.
+Sinceramente, não acredito que você deva ser um especialista em cada uma das coisas desta lista para ser um bom desenvolvedor, mas acredito que ter uma noção do que se trata te ajudará a entregar projetos de softwares melhores e mais completos.
 
 E ai? Gostou da lista? Tem alguma coisa que gostaria de acrescentar? Comente ai para não deixarmos nada de fora.
