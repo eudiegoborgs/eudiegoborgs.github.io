@@ -93,6 +93,8 @@ Para se tornar um bom desenvolvedor é necessário aprender o tempo todo e as Co
 
 Ao fazer uma code review de um colega, tenha empatia mas não tenha dó, aponte as falhas que encontrar no código sem implicâncias mesquinhas e também sugira soluções, fique atento as respostas, pois as vezes naquele contexto, apesar de não parecer aquela era a melhor solução.
 
+## Para finalizar...
+
 Sinceramente, não acredito que você deva ser um especialista em cada uma das coisas faladas para ser um bom desenvolvedor, mas acredito que ter uma noção do que se trata te ajudará a entregar projetos de softwares melhores e mais completos.
 
 E ai? Gostou da lista? Tem alguma coisa que gostaria de acrescentar? Comente ai para não deixarmos nada de fora.
