@@ -63,6 +63,12 @@ Eu poderia escrever mais uns 32 parágrafos sobre isso, mas eu já escrevi basta
 
 ## 5. DevOps e Cloud
 
+Algumas pessoas acham que DevOps é um profissional/carreira dentro da tecnologia e na verdade não é DevOps é um termo criado para descrever uma cultura de otimização e integração entre desenvolvimento, infra e qualidade. 
+
+Apesar de não ter um estudo tão profundo neste conceito acho sensacional os resultados que conseguimos ao utilizar coisas como gerenciadores de tarefas (ex: gulp e webpack), ferramentas de CI (ex: Bitbucket Pipeline, Jenkins e CircleCi) e containers. Eu mesmo nunca mais precisei configurar o famoso LAMP (Linux, Apache, MySQL e PHP) desde que comecei usar o docker e o docker compose. 
+
+Outra coisa que eu acho que um bom desenvolvedor deve ter é a capacidade de publicar o projeto no qual está trabalhando, para isso o conhecimento em algumas ferramentas de cloud, mesmo que seja básico, é extremamente necessário.
+
 ## 6. Arquitetura de Software
 
 Eu não acho que você tem que fazer uma pós em arquitetura de software para ser um bom desenvolvedor, mas ter uma noção de arquitetura ajuda demais. 
