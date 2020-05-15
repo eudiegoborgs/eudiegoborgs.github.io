@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `<DiegoBorgs />`,
-    description: `I am a Information Systems Students in the Catholic University of Minas Gerais (PUC Minas), with complementary expertise in Programming, Graphic Design and Music. Web and Mobile Developer in MaxMilhas and love to know new things.`,
+    description: `I am a Information Systems Students in the Catholic University of Minas Gerais (PUC Minas), with complementary expertise in Programming, Graphic Design and Music. Web and Mobile Developer in Gamefik and love to know new things.`,
     author: `@eudiegoborgs`,
     wakatimeToken: `PkWSK58BpeU6GHyuaTMJChHj`,
     wakatimeSecret: `sec_tXCtNKXp0qizbz2XPyBzHGOA1J2Ku1gdbYgpcBDZEy0qKgVDqNr0l35etEwjI2tvYCkcx2QXDnbm7frH`
