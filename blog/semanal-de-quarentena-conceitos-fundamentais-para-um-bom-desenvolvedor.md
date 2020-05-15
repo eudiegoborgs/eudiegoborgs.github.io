@@ -11,7 +11,7 @@ Apesar de ter feito minhas primeiras linhas de HTML em 2011, e de lá pra cá j�
 
 _PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é que seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico._
 
-__
+
 
 ## 1. Princípios S.O.L.I.D.
 
