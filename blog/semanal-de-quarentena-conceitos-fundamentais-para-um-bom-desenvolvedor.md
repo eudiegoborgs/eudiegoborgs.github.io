@@ -53,6 +53,8 @@ Eu percebo que nós desenvolvedores de software ainda discordamos completamente 
 
 Esse foi o conceito que eu mais estudei até hoje, me encantei com o assunto e comecei a praticar como forma de entregar mais qualidade no código que escrevia. E posso dizer com muita sinceridade para vocês... deu muito certo, meu código ficou melhor.
 
+Saber escrever um bom código para teste te ajuda a escrever um bom código no geral.
+
 Eu poderia escrever mais uns 32 parágrafos sobre isso, mas eu já escrevi bastante aqui no blog, então eu vou deixar aqui em baixo o link dos posts pra vocês na sequência:
 
 * [A importância da cultura de TDD na vida dos desenvolvedores e dos não desenvolvedores​](https://diegoborgs.com.br/blog/a-import%C3%A2ncia-da-cultura-de-tdd-na-vida-dos-desenvolvedores-e-dos-n%C3%A3o-desenvolvedores%E2%80%8B)
