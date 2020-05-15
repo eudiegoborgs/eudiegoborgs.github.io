@@ -61,6 +61,8 @@ Eu poderia escrever mais uns 32 parágrafos sobre isso, mas eu já escrevi basta
 
 ## 5. DevOps e Cloud
 
+
+
 ## 6. Arquitetura de Software
 
 Eu não acho que você tem que fazer uma pós em arquitetura de software para ser um bom desenvolvedor, mas ter uma noção de arquitetura ajuda demais. 
@@ -74,3 +76,9 @@ Particularmente falando, eu acredito que uma boa arquitetura de software adia to
 Para introduzir no assunto sugiro a leitura deste [artigo](https://www.devmedia.com.br/arquitetura-de-software-desenvolvimento-orientado-para-arquitetura/8033) do DevMedia e também pesquisas sobre Clean Architecture e Arquitetura Hexagonal.
 
 ## 7. Code Review
+
+
+
+Sinceramente, não acredito que você deva ser um especialista em cada uma das coisas faladas para ser um bom desenvolvedor, mas acredito que ter uma noção do que se trata te ajudará a entregar projetos de softwares melhores e mais completos.
+
+E ai? Gostou da lista? Tem alguma coisa que gostaria de acrescentar? Comente ai para não deixarmos nada de fora.
