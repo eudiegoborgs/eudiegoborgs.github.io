@@ -15,12 +15,15 @@ const style = css`
   i {
     line-height: 1;
     padding: 0 3px;
+    font-size: 1.4rem;
+    font-weight: bold;
     @media (max-width: 780px) {
       padding: 0;
     }
   }
   .small {
     font-size: 0.85rem;
+    font-weight: normal;
     @media (max-width: 780px) {
       display: none;
     }

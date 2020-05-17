@@ -66,15 +66,13 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <div className="right">
+        <LightButton />
         <Link to="curriculo">
           Curriculo
         </Link>
         <Link to="blog">
           Blog
         </Link>
-        <h1>
-          <LightButton />
-        </h1>
       </div>
     </div>
   </header>
