@@ -18,11 +18,12 @@ const style = css`
 
 
 const Icon = (props) => {
+  const {className, source, small, bigger, disabled} = props;
   return (
     <i 
       {...props}
       className={
-        `${props.className} ${style} fa fa-${props.source} ${props.small ? 'small' : ''} ${props.bigger ? 'bigger' : ''} ${props.disabled ? 'disabled' : ''}`
+        `${className} ${style} fa fa-${source} ${small ? 'small' : ''} ${bigger ? 'bigger' : ''} ${disabled ? 'disabled' : ''}`
       }
     />
   )
