@@ -1,7 +1,7 @@
 ---
 path: semanal-de-quarentena-5
 date: 2020-05-19T21:55:30.292Z
-title: "[Semanal de quarentena] - 7 Conceitos fundamentais para um bom desenvolvedor"
+title: "[Semanal de quarentena] - 8 Conceitos fundamentais para um bom desenvolvedor"
 ---
 E ai galera, tudo bem? Eu espero que sim!
 
