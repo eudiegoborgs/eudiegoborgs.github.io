@@ -22,7 +22,6 @@ const style = css`
     font-weight: bold;
     @media (max-width: 780px) {
       font-size: 0.7rem;
-      line-height: 2rem;
     }
   }
 
@@ -37,7 +36,7 @@ const style = css`
       }
     }
   }
-  
+
   .logo {
     line-height: 1;
     font-size: 1.5rem;

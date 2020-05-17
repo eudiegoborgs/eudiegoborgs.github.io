@@ -17,7 +17,7 @@ const style = css`
   overflow: hidden;
 
   .caption {
-    padding: 20vh 0;
+    padding: 20vh 20px;
     height: 50vh;
     background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
   }
