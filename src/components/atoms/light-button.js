@@ -18,7 +18,7 @@ const style = css`
     font-size: 1.4rem;
     font-weight: bold;
     @media (max-width: 780px) {
-      padding: 0;
+      font-size: 1rem;
     }
   }
   .small {
@@ -54,14 +54,16 @@ const LightButton = () => {
   }
 
   return (
-    <button className={style} onClick={change}>
-      <Helmet>
-        <body className={darkMode && "nightmode"} />
-      </Helmet>
-      <i className={`fa fa-moon-o small`} />
-      <i className={`fa ${buttonClass}`} alt={title} title={title}/>
-      <i className={`fa fa-sun-o small`} />
-    </button>
+    <div>
+      <button className={style} onClick={change}>
+        <Helmet>
+          <body className={darkMode && "nightmode"} />
+        </Helmet>
+        <i className={`fa fa-moon-o small`} />
+        <i className={`fa ${buttonClass}`} alt={title} title={title}/>
+        <i className={`fa fa-sun-o small`} />
+      </button>
+    </div>
   )
 }
 

@@ -11,6 +11,8 @@ const style = css`
     margin: 0 auto;
     max-width: 960px;
     padding: 1rem 1.0875rem;
+    display: flex;
+    justify-content: space-between;
   }
 
   h1 {
@@ -31,8 +33,7 @@ const style = css`
     }
   }
 
-  .right {
-    float: right;
+  .right, .left {
     display: flex;
     align-items: center;
 
@@ -60,11 +61,13 @@ const style = css`
 const Header = ({ siteTitle }) => (
   <header className={style}>
     <div className="container">
-      <h1>
-        <Link className="logo">
-          <span>{siteTitle}</span>
-        </Link>
-      </h1>
+      <div className="left">
+        <h1>
+          <Link className="logo">
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
       <div className="right">
         <LightButton />
         <Link to="curriculo">
