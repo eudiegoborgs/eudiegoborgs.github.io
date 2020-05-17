@@ -5,6 +5,7 @@ import { css } from 'emotion'
 import Layout from '../themes/layout'
 import SEO from '../organisms/seo'
 import Content from '../organisms/content'
+import ReadTime from '../atoms/read-time';
 
 const style = `
   text-decoration: none;
@@ -49,7 +50,7 @@ const BlogPost = (props) => {
         <main className={ css`${style}` }>
           <header>
             <h1>{ post.frontmatter.title }</h1>
-            <small>{ post.frontmatter.date }</small>
+            <small><ReadTime time={post.fields.readingTime.minutes} /> - { post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
           <Disqus config={disqusConfig} />
@@ -67,6 +68,10 @@ export const query = graphql`
       html
       fields {
         slug
+        readingTime {
+          text
+          minutes
+        }
       }
       frontmatter {
         date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")

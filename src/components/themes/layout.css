@@ -235,9 +235,6 @@ body {
 header a {
   color: white;
 }
-header .fa {
-  float: right;
-}
 img {
   max-width: 100%;
   margin-left: 0;
