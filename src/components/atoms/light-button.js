@@ -6,12 +6,24 @@ const style = css`
   background: transparent;
   color: white;
   border: none;
+  display: flex;
+  align-items: center;
 
   :focus {
     outline: 0;
   }
   i {
     line-height: 1;
+    padding: 0 3px;
+    @media (max-width: 780px) {
+      padding: 0;
+    }
+  }
+  .small {
+    font-size: 0.85rem;
+    @media (max-width: 780px) {
+      display: none;
+    }
   }
 `;
 
@@ -43,7 +55,9 @@ const LightButton = () => {
       <Helmet>
         <body className={darkMode && "nightmode"} />
       </Helmet>
+      <i className={`fa fa-moon-o small`} />
       <i className={`fa ${buttonClass}`} alt={title} title={title}/>
+      <i className={`fa fa-sun-o small`} />
     </button>
   )
 }
