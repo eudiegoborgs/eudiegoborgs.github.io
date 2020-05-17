@@ -15,13 +15,6 @@ const style = css`
     justify-content: space-between;
   }
 
-  h1 {
-    display: inline;
-    margin: 0;
-    line-height: 1;
-    font-size: 1.5rem;
-  }
-
   a {
     color: white !important;
     text-decoration: none;
@@ -44,13 +37,10 @@ const style = css`
       }
     }
   }
-
-  .hide-mobile {
-    @media (max-width: 780px) {
-      display: none;
-    }
-  }
+  
   .logo {
+    line-height: 1;
+    font-size: 1.5rem;
     @media (max-width: 780px) {
       font-size: 0.9rem;
       line-height: 2rem;
@@ -62,11 +52,9 @@ const Header = ({ siteTitle }) => (
   <header className={style}>
     <div className="container">
       <div className="left">
-        <h1>
-          <Link className="logo">
-            {siteTitle}
-          </Link>
-        </h1>
+        <Link className="logo">
+          {siteTitle}
+        </Link>
       </div>
       <div className="right">
         <LightButton />
