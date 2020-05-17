@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from 'emotion'
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 const style = css`
   line-height: 1;
@@ -15,20 +15,23 @@ const style = css`
 `;
 
 const BrandName = () => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <Link className={style}>
-      {data.site.siteMetadata.title}
-    </Link>
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Link className={style}>
+          {data.site.siteMetadata.title}
+        </Link>
+      )}
+    />
   )
 }
 
