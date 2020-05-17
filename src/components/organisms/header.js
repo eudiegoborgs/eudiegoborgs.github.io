@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import { css } from 'emotion';
-import LightButton from "../atoms/light-button";
+import LightButton from "../molecules/light-button";
+import BrandName from '../atoms/brand-name';
 
 const style = css`
   background: #212121;
@@ -15,7 +15,7 @@ const style = css`
     justify-content: space-between;
   }
 
-  a {
+  .menu-item {
     color: white !important;
     text-decoration: none;
     text-transform: uppercase;
@@ -36,44 +36,25 @@ const style = css`
       }
     }
   }
-
-  .logo {
-    line-height: 1;
-    font-size: 1.5rem;
-    @media (max-width: 780px) {
-      font-size: 0.9rem;
-      line-height: 2rem;
-    }
-  }
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header className={style}>
     <div className="container">
       <div className="left">
-        <Link className="logo">
-          {siteTitle}
-        </Link>
+        <BrandName />
       </div>
       <div className="right">
         <LightButton />
-        <Link to="curriculo">
+        <Link to="curriculo" className="menu-item">
           Curriculo
         </Link>
-        <Link to="blog">
+        <Link to="blog" className="menu-item">
           Blog
         </Link>
       </div>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

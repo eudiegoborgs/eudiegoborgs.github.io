@@ -1,6 +1,6 @@
 import React from "react"
 import { render } from "@testing-library/react"
-import TypeWritter from "./typewritter"
+import TypeWritter from "./index"
 describe("TypeWritter", () => {
   it("renders correctly", () => {
     const { getByRole } = render(<TypeWritter />)

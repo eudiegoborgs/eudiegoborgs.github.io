@@ -1,6 +1,8 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet'
 import { css } from 'emotion'
+import SwitchInput from '../../atoms/switch-input';
+import Icon from '../../atoms/icon';
 
 const style = css`
   background: transparent;
@@ -12,32 +14,11 @@ const style = css`
   :focus {
     outline: 0;
   }
-  i {
-    line-height: 1;
-    padding: 0 3px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    @media (max-width: 780px) {
-      font-size: 1rem;
-    }
-  }
-  .small {
-    font-size: 0.85rem;
-    font-weight: normal;
-    opacity: .3;
-    @media (max-width: 780px) {
-      display: none;
-    }
-  }
-  .active {
-    opacity: 1;
-  }
 `;
 
 const LightButton = () => {
   const [theme, setTheme] = React.useState(null)
   const darkMode = theme === 'dark'
-  const buttonClass = darkMode ? "fa-toggle-off": "fa-toggle-on";
   const title = darkMode ? "Acender a luz": "Apagar a luz";
 
   React.useEffect(() => {
@@ -58,16 +39,14 @@ const LightButton = () => {
   }
 
   return (
-    <div>
-      <button className={style} onClick={change}>
-        <Helmet>
-          <body className={darkMode && "nightmode"} />
-        </Helmet>
-        <i className={`fa fa-moon-o small ${darkMode ? 'active' : ''}`} />
-        <i className={`fa ${buttonClass}`} alt={title} title={title}/>
-        <i className={`fa fa-sun-o small ${darkMode ? '' : 'active'}`} />
-      </button>
-    </div>
+    <button className={style} onClick={change} alt={title} title={title}>
+      <Helmet>
+        <body className={darkMode && "nightmode"} />
+      </Helmet>
+      <Icon className="hide-on-mobile" source="sun-o" small disabled={darkMode} />
+      <SwitchInput on={!darkMode} bigger />
+      <Icon className="hide-on-mobile" source="moon-o" small disabled={!darkMode} />
+    </button>
   )
 }
 

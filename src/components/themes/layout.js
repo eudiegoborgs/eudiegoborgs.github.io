@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../organisms/header"
 import Footer from "../organisms/footer"
@@ -15,19 +14,10 @@ import 'font-awesome/css/font-awesome.min.css';
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <div>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       {children}
       <Footer />
     </div>

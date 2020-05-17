@@ -2,7 +2,7 @@ import React from 'react';
 import banner from '../../images/banner/banner.jpg';
 import { css } from 'emotion';
 import SocialMenu from '../molecules/social-menu';
-import TypeWritter from '../atoms/typewritter.js';
+import TypeWritter from '../atoms/typewritter';
 
 const style = css`
   background-color: #212121;

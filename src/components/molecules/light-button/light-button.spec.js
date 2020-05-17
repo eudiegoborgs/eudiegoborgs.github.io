@@ -1,6 +1,6 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react"
-import LightButton from "./light-button"
+import LightButton from "./index"
 describe("LightButton", () => {
   it("renders correctly", () => {
     const { getByRole } = render(<LightButton />)
