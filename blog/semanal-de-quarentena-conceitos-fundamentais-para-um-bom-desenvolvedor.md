@@ -71,7 +71,7 @@ Cada uma das coisas que falei renderia um artigo separado e no futuro posso até
 
 ## 6. Fluxo de trabalho com Controles de Versão
 
-Confesso que pra mim o controle de versão é algo tão essencial para um desenvolvedor que eu já ia me esquecendo de colocar ele nessa lista. Digo isso porque essa lista são de conceitos para bons desenvolvedores e não acredito que o conhecimento de ferramentas como o git ou svn não são diferenciais de um bom desenvolvedor, são necessárias, quase tão necessárias quanto conhecer uma linguagem em si.
+Confesso que pra mim o controle de versão é algo tão essencial para um desenvolvedor que eu já ia me esquecendo de colocar ele nessa lista. Digo isso porque essa lista são de conceitos para bons desenvolvedores e não acredito que o conhecimento de ferramentas como o git ou svn não são diferenciais de um bom desenvolvedor, são necessárias para qualquer desenvolvedor, quase tão necessárias quanto conhecer uma linguagem em si.
 
 Mais do que um `git pull`, é necessário que um bom desenvolvedor seja capaz de trabalhar em equipe sem causar tenebrosos conflitos. Acredito que para isso, você deve deve ter em suas habilidades, o conhecimento de técnicas e ferramentas para o fluxos de trabalho com controles de versão.
 
