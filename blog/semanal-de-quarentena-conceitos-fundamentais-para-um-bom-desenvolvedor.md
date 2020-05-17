@@ -73,7 +73,7 @@ Cada uma das coisas que falei renderia um artigo separado e no futuro posso até
 
 Confesso que pra mim o controle de versão é algo tão essencial para um desenvolvedor que eu já ia me esquecendo de colocar ele nessa lista. Digo isso porque essa lista são de conceitos para bons desenvolvedores e não acredito que o conhecimento de ferramentas como o git ou svn não são diferenciais de um bom desenvolvedor, são necessárias, quase tão necessárias quanto conhecer uma linguagem em si.
 
-Mais do que um `git pull`, é necessário que um bom desenvolvedor seja capaz de trabalhar em equipe sem causar tenebrosos conflitos. Acredito que para isso, você deve deve ter em suas habilidades, o conhecimento de técnicas e ferramentas para o fluxos de trabalho com esses controles de versão, 
+Mais do que um `git pull`, é necessário que um bom desenvolvedor seja capaz de trabalhar em equipe sem causar tenebrosos conflitos. Acredito que para isso, você deve deve ter em suas habilidades, o conhecimento de técnicas e ferramentas para o fluxos de trabalho com controles de versão.
 
 Uma ferramenta que ajuda muito é o [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html), ele foi baseado nos modelos de branch do Vincent Driessen. A ideia é que você tenha root-branch's que só recebem alterações finalizadas e branch's de trabalho baseados nos root-branch's e que no fim sejam mesclados com o branch que serviu de origem. Acho esse método muito valido pra projetos que juntam muitas features em uma só release, para projetos de entregas continua, onde toda feature finalizada se torna uma release diferente. Eu prefiro trabalhar com um modelo feature/release, sem todo o processo do git-flow, que ao meu ver, nesse caso se torna desnecessário.
 
