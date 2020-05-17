@@ -1,7 +1,7 @@
 ---
 path: semanal-de-quarentena-5
 date: 2020-05-19T21:55:30.292Z
-title: '[Semanal de quarentena] - 7 Conceitos fundamentais para um bom desenvolvedor'
+title: "[Semanal de quarentena] - 7 Conceitos fundamentais para um bom desenvolvedor"
 ---
 E ai galera, tudo bem? Eu espero que sim!
 
@@ -9,17 +9,15 @@ Dando sequencia aos meus posts semanais de quarentena para vocês, hoje resolvi 
 
 Apesar de ter feito minhas primeiras linhas de HTML em 2011, e de lá pra cá já são 9 anos em que tive a oportunidade de trabalhar em muitos projetos com desafios diferentes e em times com muita gente boa, confesso que as vezes eu não acredito que minha carreira é tão longa assim para falar como outra pessoa deve lidar com a dela. O que eu vou deixar para vocês aqui são alguns conceitos que, depois que comecei a entender, me tornaram um desenvolvedor melhor, mas deixo com vocês a responsabilidade de decidir aplicar ou não eles em suas vidas profissionais.
 
-_PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é que seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico._
-
-
+*PS: Pra ser sincero, eu não vou me aprofundar em nenhum dos conceitos que vou citar nesse artigo, existem milhares de artigos técnicos sobre cada um dos assuntos na internet, a ideia é que seja um roadmap para vocês complementarem seus estudos depois, mas vou dar uma pincelada em cada um deles e indicar algum artigo que complemente o que eu falar no fim de cada tópico.*
 
 ## 1. Princípios S.O.L.I.D.
 
 Eu resolvi dedicar um tempo de estudo para este conceito depois de ser cobrado sobre ele em uma entrevista de emprego. Eu já até conhecia e aplicava alguns dos princípios em parte mesmo sem saber depois de ouvir algumas recomendações de melhorias em uma code review. 
 
-Até hoje consigo ouvir a voz do grão mestre [Danton](https://www.linkedin.com/in/danton-dietze/) fazendo um code review comigo e falando indiretamente sobre o princípio de responsabilidade única **(S - Single Responsability.** Coisas como... _Diego, essa função tá fazendo mais de uma coisa_ ou _Diego, isso que você colocou aqui, não deveria estar aqui porque não é responsabilidade dessa classe._
+Até hoje consigo ouvir a voz do grão mestre [Danton](https://www.linkedin.com/in/danton-dietze/) fazendo um code review comigo e falando indiretamente sobre o princípio de responsabilidade única **(S - Single Responsability.** Coisas como... *Diego, essa função tá fazendo mais de uma coisa* ou *Diego, isso que você colocou aqui, não deveria estar aqui porque não é responsabilidade dessa classe.*
 
-Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrônimo criado por Michael Feather, autor do _Working Effectively with Legacy Code,_ baseado em orientações encontradas no artigo [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) do Tio Bob. Sendo eles:
+Os S.O.L.I.D. são princípios da programação orientada a objetos, é um acrônimo criado por Michael Feather, autor do *Working Effectively with Legacy Code,* baseado em orientações encontradas no artigo [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) do Tio Bob. Sendo eles:
 
 **S. Single Responsiblity Principle** (Princípio da responsabilidade única)\
 **O. Open-Closed Principle** (Princípio Aberto-Fechado)\
@@ -39,7 +37,7 @@ Geralmente eu uso o [refactoring.guru](https://refactoring.guru/pt-br/design-pat
 
 ## 3. O protocolo HTTP
 
-Talvez esse conceito se aplique apenas aos desenvolvedores que trabalham com aplicações web, seja na sua implementação ou consumo _(se você é um desenvolvedor mobile que consome uma API você se encaixa aqui)_. 
+Talvez esse conceito se aplique apenas aos desenvolvedores que trabalham com aplicações web, seja na sua implementação ou consumo *(se você é um desenvolvedor mobile que consome uma API você se encaixa aqui)*. 
 
 Com o surgimento e popularização dos frameworks, nós desenvolvedores, acabamos deixando um pouco de lado a obrigação de conhecer como funcionam os nossos protocolos de comunicação. Muito disso se deve ao fato de termos todo o funcionamento abstraído dentro dos frameworks que utilizamos.
 
@@ -71,7 +69,17 @@ Outra coisa que eu acho que um bom desenvolvedor deve ter é a capacidade de pub
 
 Cada uma das coisas que falei renderia um artigo separado e no futuro posso até escrever um pouco mais, acho que pra começar bem com estes conceitos o ideal é ter uma noção de docker e este [artigo](https://woliveiras.com.br/posts/uma-rapida-introducao-ao-docker-e-instalacao-no-ubuntu/) do William Oliveira vai te ajudar, no restante pode ir com calma e aprendendo aos poucos que vai dar tudo certo.
 
-## 6. Arquitetura de Software
+## 6. Fluxo de trabalho com Controles de Versão
+
+Confesso que pra mim o controle de versão é algo tão essencial para um desenvolvedor que eu já ia me esquecendo de colocar ele nessa lista. Digo isso porque essa lista são de conceitos para bons desenvolvedores e não acredito que o conhecimento de ferramentas como o git ou svn não são diferenciais de um bom desenvolvedor, são necessárias, quase tão necessárias quanto conhecer uma linguagem em si.
+
+Mais do que um `git pull`, é necessário que um bom desenvolvedor seja capaz de trabalhar em equipe sem causar tenebrosos conflitos. Acredito que para isso, você deve deve ter em suas habilidades, o conhecimento de técnicas e ferramentas para o fluxos de trabalho com esses controles de versão, 
+
+Uma ferramenta que ajuda muito é o [git-flow](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html), ele foi baseado nos modelos de branch do Vincent Driessen. A ideia é que você tenha root-branch's que só recebem alterações finalizadas e branch's de trabalho baseados nos root-branch's e que no fim sejam mesclados com o branch que serviu de origem. Acho esse método muito valido pra projetos que juntam muitas features em uma só release, para projetos de entregas continua, onde toda feature finalizada se torna uma release diferente. Eu prefiro trabalhar com um modelo feature/release, sem todo o processo do git-flow, que ao meu ver, nesse caso se torna desnecessário.
+
+Além dos modelos de branch, para ter um fluxo de trabalho legal, também precisaremos de bons comentários nos commits e pull requests para que as alterações nos códigos sejam mapeadas antes de entrar no branch master. Ao meu ver, esse último parágrafo é algo que deve ser feito em conjunto com o time, você nunca deve decidir sozinho qual o melhor padrão de commit, se vai ser em inglês ou português e se vai ter pull request ou não. Assim que o acordo for definido cabe a todo time zelar por ele.
+
+## 7. Arquitetura de Software
 
 Eu não acho que você tem que fazer uma pós em arquitetura de software para ser um bom desenvolvedor, mas ter uma noção de arquitetura ajuda demais. 
 
@@ -83,7 +91,7 @@ Particularmente falando, eu acredito que uma boa arquitetura de software adia to
 
 Para introduzir no assunto sugiro a leitura deste [artigo](https://www.devmedia.com.br/arquitetura-de-software-desenvolvimento-orientado-para-arquitetura/8033) do DevMedia e também pesquisas sobre Clean Architecture e Arquitetura Hexagonal.
 
-## 7. Code Review
+## 8. Code Review
 
 Por último e não menos importante vem o Code Review, acredito que este é o único conceito impossível de aprender sozinho, ter a capacidade de realizar uma boa code review, imparcial e sem ego no código dos coleguinhas é importante, mas entender que as criticas ao seu código não são pessoais e devem ser levadas em consideração é essencial.
 
