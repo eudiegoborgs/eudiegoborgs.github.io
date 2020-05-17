@@ -24,9 +24,13 @@ const style = css`
   .small {
     font-size: 0.85rem;
     font-weight: normal;
+    opacity: .3;
     @media (max-width: 780px) {
       display: none;
     }
+  }
+  .active {
+    opacity: 1;
   }
 `;
 
@@ -59,9 +63,9 @@ const LightButton = () => {
         <Helmet>
           <body className={darkMode && "nightmode"} />
         </Helmet>
-        <i className={`fa fa-moon-o small`} />
+        <i className={`fa fa-moon-o small ${darkMode ? 'active' : ''}`} />
         <i className={`fa ${buttonClass}`} alt={title} title={title}/>
-        <i className={`fa fa-sun-o small`} />
+        <i className={`fa fa-sun-o small ${darkMode ? '' : 'active'}`} />
       </button>
     </div>
   )
