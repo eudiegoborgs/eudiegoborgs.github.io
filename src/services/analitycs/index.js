@@ -1,13 +1,16 @@
 import ReactGA from 'react-ga'
 
-ReactGA.initialize('UA-149356099-1')
+ReactGA.initialize('UA-149356099-1', {
+  debug: true,
+});
+
 
 export default class AnalyticsService {
   static pageview(page) {
-    ReactGA.pageview(page)
+    const result = ReactGA.pageview(page)
   }
 
   static event(data) {
-    ReactGA.event(data)
+    const result = ReactGA.event(data)
   }
 }
