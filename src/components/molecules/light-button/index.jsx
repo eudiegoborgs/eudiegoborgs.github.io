@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet'
 import { css } from 'emotion'
-import SwitchInput from '../../atoms/switch-input';
-import Icon from '../../atoms/icon';
+import ReactGA from 'react-ga'
+import SwitchInput from '../../atoms/switch-input'
+import Icon from '../../atoms/icon'
 
 const style = css`
   background: transparent;
@@ -15,6 +16,8 @@ const style = css`
     outline: 0;
   }
 `;
+
+ReactGA.initialize('UA-149356099-1')
 
 const LightButton = () => {
   const [theme, setTheme] = React.useState(null)
@@ -36,6 +39,10 @@ const LightButton = () => {
       localStorage.setItem('theme', newTheme);
     }
     setTheme(newTheme)
+    ReactGA.event({
+      category: 'User',
+      action: `Change site theme to ${newTheme}`
+    });
   }
 
   return (
