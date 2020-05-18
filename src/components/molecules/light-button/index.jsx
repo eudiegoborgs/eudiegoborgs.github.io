@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet'
 import { css } from 'emotion'
-import ReactGA from 'react-ga'
+import AnalyticsService from '../../../services/analitycs';
 import SwitchInput from '../../atoms/switch-input'
 import Icon from '../../atoms/icon'
 
@@ -16,8 +16,6 @@ const style = css`
     outline: 0;
   }
 `;
-
-ReactGA.initialize('UA-149356099-1')
 
 const LightButton = () => {
   const [theme, setTheme] = React.useState(null)
@@ -38,11 +36,12 @@ const LightButton = () => {
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('theme', newTheme);
     }
-    setTheme(newTheme)
-    ReactGA.event({
+    AnalyticsService.event({
       category: 'User',
-      action: `Change site theme to ${newTheme}`
+      action: `click`,
+      label: `Change site theme to ${newTheme}`
     });
+    setTheme(newTheme)
   }
 
   return (

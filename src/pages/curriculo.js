@@ -11,7 +11,7 @@ const CurriculoPage = () => (
     <SEO title="Curriculo" />
     <Content>
       <main style={{textAlign: 'center'}}>
-        <img src={curriculo} />
+        <img src={curriculo} alt="Meu curriculo" />
       </main>
       <BlogResume />
       <Link to="blog">
