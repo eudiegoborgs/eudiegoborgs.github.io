@@ -34,7 +34,7 @@ const style = css`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Conltato" />
+    <SEO title="Contato" />
     <Content>
       <main style={{textAlign: 'center'}}>
         <h1>Contato</h1>
