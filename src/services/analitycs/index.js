@@ -1,16 +1,22 @@
 import ReactGA from 'react-ga'
 
-ReactGA.initialize('UA-149356099-1', {
-  debug: true,
-});
+if (process.env.NODE_ENV !== 'test') {
+  ReactGA.initialize('UA-149356099-1', {
+    debug: true,
+  });
+}
 
 
 export default class AnalyticsService {
   static pageview(page) {
-    const result = ReactGA.pageview(page)
+    if (process.env.NODE_ENV !== 'test') {
+      const result = ReactGA.pageview(page)
+    }
   }
 
   static event(data) {
-    const result = ReactGA.event(data)
+    if (process.env.NODE_ENV !== 'test') {
+      const result = ReactGA.event(data)
+    }
   }
 }
