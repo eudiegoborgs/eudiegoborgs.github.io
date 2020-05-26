@@ -1,6 +1,6 @@
 ---
 path: semanal-de-quarentena-3
-date: 2020-05-14T21:55:30.292Z
+date: 2020-05-26T01:12:41.182Z
 title: "[Semanal de quarentena] - Como definir um preço sólido para projetos ágeis?"
 ---
 Olá seres humanos, hoje é o dia 397 desta quarentena insana e neste artigo resolvi contar pra vocês como eu faço para cobrar em projetos ágeis.
