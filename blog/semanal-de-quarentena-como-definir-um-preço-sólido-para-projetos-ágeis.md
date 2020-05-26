@@ -17,7 +17,7 @@ Acho que quanto e como cobrar é uma duvida recorrente para todas as pessoas que
 
 ## O projeto ágil nunca acaba?
 
-O que confunde muito a cabeça da galera é que o manifesto ágil diz em um de seus valores que a **colaboração com o cliente deve ter mais valor que a negociação de contratos**, além disso um de seus princípios é o de que **mudanças nos requisitos são bem-vindas, mesmo tardiamente no desenvolvimento e que processos ágeis tiram vantagem das mudanças visando vantagem competitiva para o cliente**. 
+O que confunde muito a cabeça da galera é que o manifesto ágil diz em um de seus valores que devemos **responder a mudanças mais que seguir um plano**, além disso um de seus princípios é o de que **mudanças nos requisitos são bem-vindas, mesmo tardiamente no desenvolvimento e que processos ágeis tiram vantagem das mudanças visando vantagem competitiva para o cliente**. 
 
 A ideia da galera que escreveu o manifesto, era tornar evidente as condutas que eles viam que funcionavam melhor e entregavam maior agilidade em projetos de desenvolvimento de software. Os princípios e valores tem como objetivo apenas ser um guia para a execução de um projeto de software de sucesso.
 
@@ -41,4 +41,8 @@ Nesse caso, comece com o que é o mais importante pra ele, talvez uma lista com 
 
 No fim das contas, o objetivo de alguém que trabalho de maneira ágil é entregar o melhor para o cliente e as vezes as mudanças que precisamos fazer para isso são muito grandes e afetam o trabalho feito até aqui. Quando isso acontece em entregas que ainda não começamos a trabalhar é mais fácil, difícil mesmo é quando isso acontece, vamos precisar mudar tudo e já estamos quase no final do trabalho. Nesse momento, apresente ao cliente o trabalho feito até aqui, mostre a ele o tempo que você gastou e o que você não vai poder reaproveitar e o quanto vai precisar trabalhar a mais para entregar algo tão bom quanto ele precisa.
 
-Um dos
+Um dos princípios ágeis fala sobre **construir projetos em torno de indivíduos motivados e dar a estes um ambiente e o suporte necessário e confie neles para fazer o trabalho.** Os patrocinadores devem entender esse princípio também e não só os que falam sobre a integridade do trabalho.
+
+## Para terminar...
+
+As coisas que escrevi aqui, serviram muito bem para mim. Faça seus testes e entenda o que funciona melhor pra você. Tem mais alguma dica pra dividir com a galera? Deixa ai nos comentários.
