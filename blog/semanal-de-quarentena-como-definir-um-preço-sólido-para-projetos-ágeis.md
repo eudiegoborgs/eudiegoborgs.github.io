@@ -1,7 +1,7 @@
 ---
 path: semanal-de-quarentena-3
 date: 2020-05-26T01:12:41.182Z
-title: "[Semanal de quarentena] - Como definir um preço sólido para projetos ágeis?"
+title: '[Semanal de quarentena] - Como definir um preço sólido para projetos ágeis?'
 ---
 Olá seres humanos, hoje é o dia 397 desta quarentena insana e neste artigo resolvi contar pra vocês como eu faço para cobrar em projetos ágeis.
 
@@ -11,7 +11,7 @@ Antes de qualquer outra coisa, gostaria de deixar bem claro que eu não sou espe
 
 A idéia para este conteúdo surgiu desta perguntinha no twitter do [@evi_son](https://twitter.com/evi_son):
 
-![No modelo Ágil, o projeto pode e deve ser ajustado conforme a própria evolução do mesmo. O projeto deixa de ser algo sólido e passa a ser fluído. Assim, como vocês trabalham com definição de escopo e estimativa de horas? Os projetos são abertos ou fechados?? Como se proteger?](assets/captura-de-tela-2020-05-25-às-23.26.15.png "Duvida no twitter")
+![No modelo Ágil, o projeto pode e deve ser ajustado conforme a própria evolução do mesmo. O projeto deixa de ser algo sólido e passa a ser fluído. Assim, como vocês trabalham com definição de escopo e estimativa de horas? Os projetos são abertos ou fechados?? Como se proteger?](/assets/1.png "Duvida no twitter")
 
 Acho que quanto e como cobrar é uma duvida recorrente para todas as pessoas que trabalham com serviços digitais. Eu mesmo, antes de sequer saber o que era trabalhar em projetos ágeis, tive que aprender muito pra chegar em um modelo que funcionava. Aí chega um tal de projeto ágil, onde não tem um escopo e o produto nunca acaba e bagunça tudo e traz várias questões a nossa cabeça.
 
