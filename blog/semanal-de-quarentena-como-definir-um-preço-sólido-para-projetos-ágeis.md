@@ -12,3 +12,33 @@ Antes de qualquer outra coisa, gostaria de deixar bem claro que eu não sou espe
 A idéia para este conteúdo surgiu desta perguntinha no twitter do [@evi_son](https://twitter.com/evi_son):
 
 ![No modelo Ágil, o projeto pode e deve ser ajustado conforme a própria evolução do mesmo. O projeto deixa de ser algo sólido e passa a ser fluído. Assim, como vocês trabalham com definição de escopo e estimativa de horas? Os projetos são abertos ou fechados?? Como se proteger?](assets/fireshot-capture-017-eversondacalmeida-no-twitter_-_no-modelo-ágil-o-projeto-pode-e-deve-_-twitter.com.png "Duvida no twitter")
+
+Acho que quanto e como cobrar é uma duvida recorrente para todas as pessoas que trabalham com serviços digitais. Eu mesmo, antes de sequer saber o que era trabalhar em projetos ágeis, tive que aprender muito pra chegar em um modelo que funcionava. Aí chega um tal de projeto ágil, onde não tem um escopo e o produto nunca acaba e bagunça tudo e traz várias questões a nossa cabeça.
+
+## O projeto ágil nunca acaba?
+
+O que confunde muito a cabeça da galera é que o manifesto ágil diz em um de seus valores que a **colaboração com o cliente deve ter mais valor que a negociação de contratos**, além disso um de seus princípios é o de que **mudanças nos requisitos são bem-vindas, mesmo tardiamente no desenvolvimento e que processos ágeis tiram vantagem das mudanças visando vantagem competitiva para o cliente**. 
+
+A ideia da galera que escreveu o manifesto, era tornar evidente as condutas que eles viam que funcionavam melhor e entregavam maior agilidade em projetos de desenvolvimento de software. Os princípios e valores tem como objetivo apenas ser um guia para a execução de um projeto de software de sucesso.
+
+Imagino eu, que quando eles colocaram o valor e o princípio citados acima, eles não queriam nos tornar escravos de incansáveis mudanças de escopo e sim evitar coisas como um projeto que é planejado com um objetivo x e que muito tempo depois quando é finalizado, não atende mais ao mercado porque não pode ser mudado no meio do caminho. 
+
+## Como dar um preço sólido, trabalhando de maneira fluída?
+
+Essa eu acredito ser a grande questão e para isso eu tenho algumas soluções bem simples:
+
+### 1. Divida o projeto em pequenas entregas e dê preço e prazo para elas
+
+Assim você poderá praticar um dos princípios que é a **entregar frequentemente software funcionando, de poucas semanas a poucos meses, com preferência à menor escala de tempo.** Além disso é muito mais fácil dar um preço para uma pequena entrega e aceitar uma pequena mudança de escopo no que você está fazendo do que fazer um preço cheio para todo o projeto e ser refém de várias mudanças no meio do caminho.
+
+### 2. Comece sempre por tarefas que forem mais importantes e que gerem maior valor para o seu cliente final.
+
+Imagine aqui que o seu cliente é uma corretora de imóveis e que ele quer que você faça um super app pra ele, algo que além de oferecer o serviço de compra e aluguel de imóveis online, também consiga atender o consumidor dele desde oferecer integração com transportadora e montadoras de moveis até instalações gerais.
+
+Nesse caso, comece com o que é o mais importante pra ele, talvez uma lista com imóveis disponíveis e o telefone dele para contato, divida em pequenas entregas, depois evolua para um login do usuário e salvar preferencias, ai faça um solicite o aluguel online e vá evoluindo, em alguns momentos vocês até chegaram a conclusão que algumas idéias nem merecem sair do papel. Fazendo assim você irá cumprir o primeiro princípio que é **nossa maior prioridade é satisfazer o cliente através da entrega contínua e adiantada de software com valor agregado.**
+
+### 3. Renegocie prazo e valores sempre que achar necessário
+
+No fim das contas, o objetivo de alguém que trabalho de maneira ágil é entregar o melhor para o cliente e as vezes as mudanças que precisamos fazer para isso são muito grandes e afetam o trabalho feito até aqui. Quando isso acontece em entregas que ainda não começamos a trabalhar é mais fácil, difícil mesmo é quando isso acontece, vamos precisar mudar tudo e já estamos quase no final do trabalho. Nesse momento, apresente ao cliente o trabalho feito até aqui, mostre a ele o tempo que você gastou e o que você não vai poder reaproveitar e o quanto vai precisar trabalhar a mais para entregar algo tão bom quanto ele precisa.
+
+Um dos
