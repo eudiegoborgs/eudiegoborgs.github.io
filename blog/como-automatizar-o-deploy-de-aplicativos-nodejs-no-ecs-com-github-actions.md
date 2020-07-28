@@ -50,7 +50,9 @@ Agora é só acessar o [IAM](https://console.aws.amazon.com/iam/home?region=us-e
 
 A Task Definition é um documento de configuração que vai explicar para o seu cluster como e quais containers ele vai rodar.
 
-Sei que criamos uma no item acima, mas ela foi apenas para facilitar a criação do executionRoleArn, se quiser reaproveitar ela basta usar o seu nome no campo family do documento abaixo que deverá ser criado na pasta raiz do seu projeto com o nome de ecs-task-definition.json:
+Você deverá ser criado na pasta raiz do seu projeto com o nome de **ecs-task-definition.json** substituindo o ARN da exection role e o link do repositório pelos dados criados nos passos anteriores.
+
+Sei que criamos uma no item acima, mas ela foi apenas para facilitar a criação do **executionRoleArn**, se quiser reaproveitar ela basta usar o seu nome no campo **family** do documento abaixo:
 
 ```json
 {
