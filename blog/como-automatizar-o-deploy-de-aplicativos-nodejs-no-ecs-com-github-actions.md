@@ -92,3 +92,11 @@ Esse comando vai registrar sua task definition na AWS.
 Para servir o seu projeto é necessário usar o ELB, ele serve para como uma porta de entrada da sua aplicação. Com o Load Balancer podemos fazer várias coisas, podemos aumentas a escalabilidade do projeto com o auto scaling, usar SSL, fazer teste A/B, etc. No caso deste tutorial, iremos usar o ELB apenas para apontar para o container da nossa aplicação com um Target Group.
 
 Para configurar um Load Balancer, no seu console AWS, vá em EC2 -> Load Balancer e clique em **"Create Load Balancer"** e depois selecione a opção **Application Load Balancer** para poder disponibilizar sua aplicação nos protocolos HTTP e HTTPS.
+
+No formulário de criação você vai preencher os campos com estes dados:
+
+![Configuracao Load Balancer](assets/5.png "Configuracao Load Balancer")
+
+Em VPC's coloque as VPC's e subnets desejadas e depois clique **"Next Configure Security Settings"**.
+
+Se você for usar o HTTPS a seção **"Security Settings"** serve para que você vincule um certificado de SSL a sua aplicação, se não for usar, pode pular esta seção.
