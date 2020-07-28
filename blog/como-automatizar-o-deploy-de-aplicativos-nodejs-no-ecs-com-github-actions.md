@@ -84,3 +84,5 @@ Sei que criamos uma no item acima, mas ela foi apenas para facilitar a criação
 Com o documento criado rode o seguinte comando na pasta raiz do seu projeto:
 
 `aws_ecs register-task-definition --region <REGIÃO ECOLHIDA> --cli-input-json file://./ecs-task-definition.json`
+
+Esse comando vai registrar sua task definition na AWS.
