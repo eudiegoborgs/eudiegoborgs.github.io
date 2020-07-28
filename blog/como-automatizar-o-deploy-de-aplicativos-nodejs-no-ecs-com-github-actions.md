@@ -30,9 +30,27 @@ Entre em sua conta da AWS e acesse o [ECR](https://us-east-2.console.aws.amazon.
 
 Você só precisa inserir o nome da sua imagem e clicar em **"Create Repository".** Guarde o nome completo da imagem, ele é o link para o seu repositório e você vai precisar dele um pouco mais tarde.
 
+### Configurando uma execution role
+
+O ideal é que para cada task definition (nós iremos criar uma no próximo tópico) que você possui no ECS, você deve ter um ARN de uma execution role em vigor. 
+
+Vá para ECS e na seção Task Definitions clique em **"Create new Task Definition".**
+
+Essa é a maneira mais fácil de criar uma função ecsTaskExecution.
+
+Na página Create new Task Definition, selecione Fargate, clique em **"Next step"** e procure por **Task execution IAM role**. Selecione a opção **ecsTaskExecutionRole** se já não estiver selecionado.
+
+![Tela de Create new Task Definition](assets/4.png "Tela de Create new Task Definition")
+
+Quando você salvar, será criado automaticamente uma execution role. 
+
+Agora é só acessar o [IAM](https://console.aws.amazon.com/iam/home?region=us-east-2#/roles), procurar a role executionRoleArn e pegar o ARN dele para inserir em sua task definition.
+
 ### Criando uma Task Definition
 
 A Task Definition é um documento de configuração que vai explicar para o seu cluster como e quais containers ele vai rodar.
+
+Sei que criamos uma no item acima, mas ela foi apenas para facilitar a criação do executionRoleArn, se quiser reaproveitar ela basta usar o seu nome no campo family do documento abaixo que deverá ser criado na pasta raiz do seu projeto com o nome de ecs-task-definition.json:
 
 ```json
 {
@@ -60,3 +78,9 @@ A Task Definition é um documento de configuração que vai explicar para o seu 
   "memory": "1024"
 }
 ```
+
+Com o documento criado rode o seguinte comando na pasta raiz do seu projeto:
+
+`aws_ecs register-task-definition --region <REGIÃO ECOLHIDA> --cli-input-json file://./ecs-task-definition.json`
+
+``
