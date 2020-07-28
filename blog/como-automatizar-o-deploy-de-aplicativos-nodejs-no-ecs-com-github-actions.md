@@ -3,7 +3,7 @@ path: Como automatizar o deploy de uma api nodejs no ECS com Github Actions
 date: 2020-07-28T16:10:53.987Z
 title: Como automatizar o deploy de uma api nodejs no ECS com Github Actions
 ---
-![Pipeline no Github Actions mostrando os passos do deploy com sucesso](assets/fireshot-capture-052-merge-branch-shopping-into-develop-·-gamefik_webspot-gamefik-fdbb24_-github.com.png "Pipeline no Github Actions mostrando os passos do deploy com sucesso")
+![Pipeline no Github Actions mostrando os passos do deploy com sucesso](assets/2.png "Pipeline no Github Actions mostrando os passos do deploy com sucesso")
 
 Não existe uma aplicação completa, se ela não estiver disponível para uso. Por este motivo a publicação de um projeto é parte essencial no desenvolvimento de um software. 
 
@@ -22,11 +22,11 @@ Neste artigo eu pretendo mostrar a vocês como criar um ambiente de publicação
 
 ### Criando um repositório no ECR para a sua imagem
 
-![Tela do ECR](assets/fireshot-capture-055-amazon-ecr-us-east-2.console.aws.amazon.com.png "Tela do ECR")
+![Tela do ECR](assets/3.png "Tela do ECR")
 
 Entre em sua conta da AWS e acesse o [ECR](https://us-east-2.console.aws.amazon.com/ecr/repositories?region=us-east-2#) *(o link aponta para a região que eu uso, se você usar outra é só procurar por ECR nos serviços da AWS)* e clique em **"Create Repository"** para criar um repositório.
 
-![Tela de criacao de um repositorio ECR](assets/1_vuoux4lib0etgqgbj3krsa.png "Tela de criacao de um repositorio ECR")
+![Tela de criacao de um repositorio ECR](assets/1.png "Tela de criacao de um repositorio ECR")
 
 Você só precisa inserir o nome da sua imagem e clicar em **"Create Repository".** Guarde o nome completo da imagem, ele é o link para o seu repositório e você vai precisar dele um pouco mais tarde.
 
