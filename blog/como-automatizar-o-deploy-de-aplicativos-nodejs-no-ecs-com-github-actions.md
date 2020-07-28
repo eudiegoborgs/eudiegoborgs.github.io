@@ -34,4 +34,29 @@ Você só precisa inserir o nome da sua imagem e clicar em **"Create Repository"
 
 A Task Definition é um documento de configuração que vai explicar para o seu cluster como e quais containers ele vai rodar.
 
-![Documento de configuracao da task definition](assets/code.png "Documento de configuracao da task definition")
+```json
+{
+  "family": "task-definition-name",
+  "executionRoleArn": "<ARN DA ECS EXECUTATION ROLE>",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+      {
+          "name": "container-name",
+          "image": "<LINK DO REPO DA IMAGEM NO ECR>",
+          "portMappings": [
+              {
+                  "containerPort": 8080,
+                  "hostPort": 8080,
+                  "protocol": "tcp"
+              }
+          ],
+          "essential": true
+      }
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024"
+}
+```
