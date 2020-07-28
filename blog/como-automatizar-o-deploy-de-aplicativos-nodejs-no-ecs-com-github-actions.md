@@ -9,11 +9,11 @@ Não existe uma aplicação completa, se ela não estiver disponível para uso. 
 
 Porém, a publicação é sempre uma sequencia de passos repetitivos e que podem roubar muito do seu tempo, além de que se feito de maneira errada, pode acarretar na indisponibilidade da sua aplicação. Neste caso a automação é uma ferramenta poderosa e muito importante para garantir a produtividade e segurança para você e a sua equipe.
 
-Neste artigo eu pretendo mostrar a vocês como criar um ambiente de publicação automatizado usando Docker, Github Actions e o AWS ECS. Este tutorial foi feito com uma aplicação em nodejs, mas acredito que possa ser usado por qualquer tipo de linguagem desde que devidamente feita em containers com Docker.
+Neste artigo eu pretendo mostrar a vocês como criar um ambiente de publicação automatizado usando Docker, Github Actions, o AWS ECS e o Load Balancer. Este tutorial foi feito com uma aplicação em nodejs, mas acredito que possa ser usado por qualquer tipo de linguagem desde que devidamente feita em containers com Docker.
 
 ## Pré-requisitos
 
-1. Uma conta na AWS com alguns créditos para usar o AWS ECS (com o Fargate);
+1. Uma conta na AWS com alguns créditos para usar o AWS ECS (com o Fargate) e o Load Balancer;
 2. O AWS CLI instalado em sua máquina;
 3. Um Dockerfile para servir o seu projeto em um container servindo ele em alguma porta (pode ser qualquer uma);
 4. Um repositório no Github com o seu projeto.
@@ -84,5 +84,3 @@ Sei que criamos uma no item acima, mas ela foi apenas para facilitar a criação
 Com o documento criado rode o seguinte comando na pasta raiz do seu projeto:
 
 `aws_ecs register-task-definition --region <REGIÃO ECOLHIDA> --cli-input-json file://./ecs-task-definition.json`
-
-``
