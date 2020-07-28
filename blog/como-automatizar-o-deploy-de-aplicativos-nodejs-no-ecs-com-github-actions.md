@@ -86,3 +86,9 @@ Com o documento criado rode o seguinte comando na pasta raiz do seu projeto:
 `aws_ecs register-task-definition --region <REGIÃO ECOLHIDA> --cli-input-json file://./ecs-task-definition.json`
 
 Esse comando vai registrar sua task definition na AWS.
+
+### Configurando um Load Balancer
+
+Para servir o seu projeto é necessário usar o ELB, ele serve para como uma porta de entrada da sua aplicação. Com o Load Balancer podemos fazer várias coisas, podemos aumentas a escalabilidade do projeto com o auto scaling, usar SSL, fazer teste A/B, etc. No caso deste tutorial, iremos usar o ELB apenas para apontar para o container da nossa aplicação com um Target Group.
+
+Para configurar um Load Balancer, no seu console AWS, vá em EC2 -> Load Balancer e clique em **"Create Load Balancer"** e depois selecione a opção **Application Load Balancer** para poder disponibilizar sua aplicação nos protocolos HTTP e HTTPS.
