@@ -22,9 +22,13 @@ Neste artigo eu pretendo mostrar a vocês como criar um ambiente de publicação
 
 ### Criando um repositório no ECR para a sua imagem
 
+![Tela do ECR](assets/fireshot-capture-055-amazon-ecr-us-east-2.console.aws.amazon.com.png "Tela do ECR")
+
 Entre em sua conta da AWS e acesse o [ECR](https://us-east-2.console.aws.amazon.com/ecr/repositories?region=us-east-2#) *(o link aponta para a região que eu uso, se você usar outra é só procurar por ECR nos serviços da AWS)* e clique em **"Create Repository"** para criar um repositório.
 
-![Tela do ECR](assets/fireshot-capture-055-amazon-ecr-us-east-2.console.aws.amazon.com.png "Tela do ECR")
+![Tela de criacao de um repositorio ECR](assets/1_vuoux4lib0etgqgbj3krsa.png "Tela de criacao de um repositorio ECR")
+
+Você só precisa inserir o nome da sua imagem e clicar em **"Create Repository".** Guarde o nome completo da imagem, ele é o link para o seu repositório e você vai precisar dele um pouco mais tarde.
 
 ### Criando uma Task Definition
 
