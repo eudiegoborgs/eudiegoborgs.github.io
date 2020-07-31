@@ -1,7 +1,7 @@
 ---
-path: Como automatizar o deploy de uma api nodejs no ECS com Github Actions
+path: Como automatizar o deploy de uma api com Docker no ECS usando o Github Actions
 date: 2020-07-28T16:10:53.987Z
-title: Como automatizar o deploy de uma api nodejs no ECS com Github Actions
+title: Como automatizar o deploy de uma api com Docker no ECS usando o Github Actions
 ---
 ![Pipeline no Github Actions mostrando os passos do deploy com sucesso](assets/2.png "Pipeline no Github Actions mostrando os passos do deploy com sucesso")
 
