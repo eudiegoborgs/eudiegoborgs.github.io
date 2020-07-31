@@ -125,4 +125,4 @@ No formulário de configuração do Service, selecione **"Fargate"** no campo La
 
 O seu formulário deverá estar bem parecido com o da imagem abaixo, se estiver tudo ok clique em **"Next step"**.
 
-![](assets/8.png)
+![Formulário de configuração do Service](assets/8.png "Formulário de configuração do Service")
