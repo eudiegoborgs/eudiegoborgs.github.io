@@ -129,4 +129,4 @@ O seu formulário deverá estar bem parecido com o da imagem abaixo, se estiver 
 
 
 
-*Este artigo foi traduzido e adaptado com base no artigo* *["Deploy your Node app to AWS Container Service via GitHub Actions & build a pipeline"](https://medium.com/javascript-in-plain-english/deploy-your-node-app-to-aws-container-service-via-github-actions-build-a-pipeline-c114adeb8903), algumas informações foram removidas e outras acrescentadas baseadas na minha experiência ao realizar essa automação e tem como objetivo deixar mais simples e claro o processo para você.*
+*Este artigo foi traduzido e adaptado com base no artigo* *["Deploy your Node app to AWS Container Service via GitHub Actions & build a pipeline"](https://medium.com/javascript-in-plain-english/deploy-your-node-app-to-aws-container-service-via-github-actions-build-a-pipeline-c114adeb8903), algumas informações foram removidas e outras acrescentadas baseadas na minha experiência ao realizar essa automação e tem como objetivo deixar mais simples e claro o processo para você, mas sinta-se a vontade para ler o artigo base caso não entenda algo.*
