@@ -135,4 +135,8 @@ Em Security Groups -> Edit, crie um novo Security Group ou use algum que já ten
 
 ![Formulario de novo Security Group](assets/10.png "Formulario de novo Security Group")
 
+Então, na seção **Load Balancer type**, selecione **Application Load Balancer** e escolha o que você acabou de criar.
+
+![seção Load Balancer type](assets/11.png "seção Load Balancer type")
+
 *Este artigo foi traduzido e adaptado com base no artigo* *["Deploy your Node app to AWS Container Service via GitHub Actions & build a pipeline"](https://medium.com/javascript-in-plain-english/deploy-your-node-app-to-aws-container-service-via-github-actions-build-a-pipeline-c114adeb8903), algumas informações foram removidas e outras acrescentadas baseadas na minha experiência ao realizar essa automação e tem como objetivo evitar algumas confusões e erros que tive durante a minha execução e deixar mais simples e claro o processo para você, mas sinta-se a vontade para ler o artigo base caso não entenda algo.*
