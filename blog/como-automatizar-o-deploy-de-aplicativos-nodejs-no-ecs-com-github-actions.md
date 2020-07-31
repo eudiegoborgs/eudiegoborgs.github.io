@@ -111,7 +111,7 @@ A última seção é desnecessária para o que vamos fazer, ela faria sentido se
 
 Com o Load Balancer criado partimos para criar um service no ECS.
 
-### Criando o Service no ECS 
+### Criando o Service no ECS
 
 Agora que nós já temos uma Task Definition, um Cluster de ECS e um Load Balancer a única coisa que falta no contexto do ECS é um Service.
 
@@ -126,3 +126,7 @@ No formulário de configuração do Service, selecione **"Fargate"** no campo La
 O seu formulário deverá estar bem parecido com o da imagem abaixo, se estiver tudo ok clique em **"Next step"**.
 
 ![Formulário de configuração do Service](assets/8.png "Formulário de configuração do Service")
+
+
+
+*Este artigo foi traduzido e adaptado com base no artigo* *["Deploy your Node app to AWS Container Service via GitHub Actions & build a pipeline"](https://medium.com/javascript-in-plain-english/deploy-your-node-app-to-aws-container-service-via-github-actions-build-a-pipeline-c114adeb8903), algumas informações foram removidas e outras acrescentadas baseadas na minha experiência ao realizar essa automação e tem como objetivo deixar mais simples e claro o processo para você.*
