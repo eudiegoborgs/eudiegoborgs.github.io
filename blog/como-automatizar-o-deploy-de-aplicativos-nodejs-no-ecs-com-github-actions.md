@@ -127,6 +127,8 @@ O seu formulário deverá estar bem parecido com o da imagem abaixo, se estiver 
 
 ![Formulário de configuração do Service](assets/8.png "Formulário de configuração do Service")
 
+Na próxima página, selecione a VPC e as sub-redes (é necessário que você escolha exatamente as mesmas que escolheu na criação Load Balancer).
 
+![Formulario de selecao de VPC e subnets na criacao de Services](assets/9.png "Formulario de selecao de VPC e subnets na criacao de Services")
 
 *Este artigo foi traduzido e adaptado com base no artigo* *["Deploy your Node app to AWS Container Service via GitHub Actions & build a pipeline"](https://medium.com/javascript-in-plain-english/deploy-your-node-app-to-aws-container-service-via-github-actions-build-a-pipeline-c114adeb8903), algumas informações foram removidas e outras acrescentadas baseadas na minha experiência ao realizar essa automação e tem como objetivo deixar mais simples e claro o processo para você, mas sinta-se a vontade para ler o artigo base caso não entenda algo.*
