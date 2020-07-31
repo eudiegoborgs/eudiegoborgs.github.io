@@ -120,3 +120,9 @@ Os Services são responsáveis por executar as Task dentro do Cluster.
 Para criar um entro em seu console da AWS e vá até *ECS -> Cluster*, então selecione o Cluster previamente criado e na aba Services clique em **"Create"**.
 
 ![Tela de Clusters](assets/7.png "Tela de Clusters")
+
+No formulário de configuração do Service, selecione **"Fargate"** no campo Launch type, depois selecione a Taks Definition que criamos, insira 1 em Number of tasks e na seção deployments deixe **“Rolling update”** marcado. 
+
+O seu formulário deverá estar bem parecido com o da imagem abaixo, se estiver tudo ok clique em **"Next step"**.
+
+![](assets/8.png)
