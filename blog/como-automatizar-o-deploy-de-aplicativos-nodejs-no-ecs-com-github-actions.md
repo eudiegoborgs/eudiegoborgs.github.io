@@ -107,6 +107,6 @@ Na seção **"Configure routing"** você vai criar um Target Group para receber 
 
 A última seção é desnecessária para o que vamos fazer, ela faria sentido se você fosse apontar para alguma instância de EC2. Então só clique em **"Preview"** e depois em **"Create Load Balancer"**.
 
-Com o Load Balancer criado partimos para o último passo na AWS que é criar um service no ECS.
+Com o Load Balancer criado partimos para criar um service no ECS.
 
 ### Criando o Service no ECS
