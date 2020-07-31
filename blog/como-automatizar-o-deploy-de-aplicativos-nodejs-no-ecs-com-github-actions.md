@@ -100,3 +100,13 @@ No formulário de criação você vai preencher os campos com estes dados:
 Em VPC's coloque as VPC's e subnets desejadas e depois clique **"Next Configure Security Settings"**.
 
 Se você for usar o HTTPS a seção **"Security Settings"** serve para que você vincule um certificado de SSL a sua aplicação, se não for usar, pode pular esta seção.
+
+O próximo passo é configurar os security groups que com as regras de exposição que fazem mais sentido para a sua aplicação.
+
+Na seção **"Configure routing"** você vai criar um Target Group para receber as requisições que chegarem no ELB, neste ponto você irá criar um Target Group falso que será trocado no futuro, mas é muito importante já configurar uma rota de health check real do seu projeto (Uma URL para checar se tá tudo bem com o seu projeto). Isso irá facilitar a troca depois e é a partir desta rota que o ELB vai conferir se está tudo bem com o seu serviço e se não estiver, vai pedir ao ECS que recrie ele.
+
+A última seção é desnecessária para o que vamos fazer, ela faria sentido se você fosse apontar para alguma instância de EC2. Então só clique em **"Preview"** e depois em **"Create Load Balancer"**.
+
+Com o Load Balancer criado partimos para o último passo na AWS que é criar um service no ECS.
+
+### Criando o Service no ECS
