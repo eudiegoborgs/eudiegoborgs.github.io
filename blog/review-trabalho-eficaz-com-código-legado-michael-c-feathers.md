@@ -9,4 +9,4 @@ O ano era 2018 e em meio aos estudos e leituras que estava fazendo para montar u
 
 Naquele exato momento esse livro entrou para a minha lista de *"livros para ler"*, mas foi sua leitura foi adiada e substituída por diversos outros livros técnicos ou não de acordo com o que me interessava mais no momento. 
 
-Porém, toda vez que eu apresentava aquela palestra e chegava na parte em que eu citava essa frase, o sentimento de débito com quem me ouvia me consumia e eu lembrava precisar saber mais do que só uma frase desse livro. Agora em 2021, finalmente, terminei essa leitura e gostaria de compartilhar com vocês o que eu encontrei de mais importante no conteúdo desta obra.
+Porém, toda vez que eu apresentava aquela palestra e chegava na parte em que eu citava essa frase, o sentimento de débito com quem me ouvia me consumia e eu lembrava precisar saber mais do que só uma frase desse livro. Eu precisava ler o livro todo e não só confiar nos resumos que eu li na internet. Agora em 2021, finalmente, terminei essa leitura e gostaria de compartilhar com vocês o que eu encontrei de mais importante no conteúdo desta obra.
