@@ -3,7 +3,7 @@ path: trabalho-eficaz-com-codigo-legado
 date: 2021-02-09T16:52:50.512Z
 title: "[Review] Trabalho Eficaz com Código Legado - Michael C. Feathers"
 ---
-O ano era 2018 e em meio aos estudos e leituras que estava fazendo para montar uma palestra sobre[ a importância da cultura de testes](https://diegoborgs.com.br/blog/a-import%C3%A2ncia-da-cultura-de-tdd-na-vida-dos-desenvolvedores-e-dos-n%C3%A3o-desenvolvedores%E2%80%8B) eu me deparei com a seguinte frase:
+O ano era 2018 e em meio aos estudos e leituras que estava fazendo para montar uma palestra sobre[ a importância da cultura de testes](https://diegoborgs.com.br/blog/a-import%C3%A2ncia-da-cultura-de-tdd-na-vida-dos-desenvolvedores-e-dos-n%C3%A3o-desenvolvedores%E2%80%8B) (tem um link para um artigo que fiz baseado no conteúdo dessa palestra) eu me deparei com a seguinte frase:
 
 > Código sem testes é código ruim. Não importa o quão bem escrito, nem se ele é bonito, orientado a objetos ou se foi bem encapsulado. Com testes, podemos alterar o comportamento de nosso código de maneira rápida e verificável. Sem eles, não temos como saber se nosso código está melhorando ou piorando. - Michael Feathers (Working Effectively with Legacy Code \[2004]).
 
