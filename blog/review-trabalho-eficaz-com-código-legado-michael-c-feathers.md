@@ -11,7 +11,7 @@ Naquele exato momento esse livro entrou para a minha lista de *"livros para ler"
 
 Porém, toda vez que eu apresentava aquela palestra e chegava na parte em que eu citava essa frase, o sentimento de débito com quem me ouvia me consumia e eu lembrava precisar saber mais do que só uma frase desse livro. Eu precisava ler o livro todo e não só confiar nos resumos que eu li na internet. Agora em 2021, finalmente, terminei essa leitura e gostaria de compartilhar com vocês o que eu encontrei de mais importante no conteúdo desta obra.
 
-Segundo o autor para lidarmos com códigos complexos precisamos entender mais sobre a mecânica das alterações e para ele existem ***4 razões para alterarmos um software:***
+Segundo o autor para lidarmos com códigos complexos precisamos entender mais sobre a mecânica das alterações e para ele, existem ***4 razões para alterarmos um software:***
 
 1. Inclusão de uma funcionalidade;
 2. Correção de um bug;
