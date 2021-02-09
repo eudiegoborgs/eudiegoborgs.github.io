@@ -20,6 +20,6 @@ Segundo o autor para lidarmos com códigos complexos precisamos entender mais so
 
 Apesar de parecer coisas diferentes, todas elas têm o mesmo proposito. Em todos os casos queremos alterar uma parte do software sem interferir no comportamento de várias outras. Nós queremos preservar o comportamento de tudo aquilo que não está no escopo da alteração *(mesmo que haja desejo de mudar outras partes no futuro)* e o maior problema é que quase sempre não sabemos o quanto deste comportamento está correndo risco quando fazemos nossas alterações. 
 
-Por esse motivo muitas equipes acabam criando uma cultura de medo de mudanças, se tornando restritiva a alterações no software tendo como esperança evitar problemas, mas infelizmente os problemas sempre aparecem.
+Por esse motivo muitas equipes acabam criando uma cultura de medo de mudanças, se tornando restritiva a alterações no software e tendo como esperança que esse comportamento os ajude a evitar problemas, mas infelizmente os problemas sempre aparecem.
 
 !["Eu sou inevitavel" - Fala de Thanos em Os Vingadores Ultimato](assets/thanos.gif)
