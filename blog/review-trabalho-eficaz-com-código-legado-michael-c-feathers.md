@@ -23,3 +23,5 @@ Apesar de parecer coisas diferentes, todas elas têm o mesmo proposito. Em todos
 Por esse motivo muitas equipes acabam criando uma cultura de medo de mudanças, se tornando restritiva a alterações no software e tendo como esperança que esse comportamento os ajude a evitar problemas, mas infelizmente os problemas sempre aparecem.
 
 !["Eu sou inevitavel" - Fala de Thanos em Os Vingadores Ultimato](assets/thanos.gif)
+
+Evitar alterações não é uma boa decisão, mas quais são as alternativas? Uma delas é nos esforçarmos mais para fazer modificações no código de maneira correta.
