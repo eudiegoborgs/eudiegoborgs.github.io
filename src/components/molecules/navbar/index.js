@@ -3,15 +3,14 @@ import React from "react"
 import { css } from 'emotion';
 import MobileMenu from '../../atoms/mobile-menu'
 import SocialMenu from '../../molecules/social-menu'
+import LightButton from "../../molecules/light-button";
 
 const style = css `
-  .menu.active {
-    -webkit-transition-property: all, -webkit-transform; 
-    transition-property: all, transform;
-    -webkit-transition-duration: 0.5s; 
-    transition-duration: 0.5s;
-    -webkit-transition-delay: 0.5s, 0s; 
-    transition-delay: 0.5s, 0s;
+  display: flex;
+  align-items: center;
+  .menu {
+    top: 45px;
+    transition: display 0.5s linear;
   }
   .menu {
     .social-menu {
@@ -25,13 +24,17 @@ const style = css `
     }
   }
   .menu-item {
-    padding: 0 10px;
-    color: white !important;
+    padding: 2px 10px;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     @media(max-width: 780px) {
       padding: 0 5px;
+    }
+    &:hover {
+      background: #fff;
+      color: #000;
     }
   }
   @media(max-width: 780px) {
@@ -70,12 +73,12 @@ const Navbar = () => {
   const [Open, setOpen] = React.useState(false);
   return (
     <div className={style}>
-      <div className="mobile-menu">
-        <MobileMenu onClick={setOpen}/>
-      </div>
       <div className={`menu ${Open && 'active'}`}>
+        <Link className="menu-item">
+          Início
+        </Link>
         <Link to="curriculo" className="menu-item">
-          Curriculo
+          Currículo
         </Link>
         <Link to="blog" className="menu-item">
           Blog
@@ -86,6 +89,10 @@ const Navbar = () => {
         <div className="social-menu">
           <SocialMenu />
         </div>
+      </div>
+      <LightButton />
+      <div className="mobile-menu">
+        <MobileMenu onClick={setOpen}/>
       </div>
     </div>
   )

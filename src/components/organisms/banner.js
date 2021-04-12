@@ -10,15 +10,15 @@ const style = css`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 50vh;
+  height: 60vh;
   color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   overflow: hidden;
 
   .caption {
-    padding: 20vh 20px;
-    height: 50vh;
+    padding: 25vh 40px;
+    height: 60vh;
     background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
   }
 

@@ -8,6 +8,7 @@ import BrandName from '../atoms/brand-name';
 const style = css`
   background: #212121;
   position: fixed;
+  top: 0;
   width: 100vw;
 
   .container {
@@ -37,10 +38,7 @@ const Header = () => (
       <div className="left">
         <BrandName />
       </div>
-      <div className="right">
-        <LightButton />
-        <Navbar />
-      </div>
+      <Navbar />
     </div>
   </header>
 )

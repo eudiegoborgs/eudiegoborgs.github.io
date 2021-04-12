@@ -6,6 +6,9 @@ import Content from "../components/organisms/content"
 
 const style = css`
   text-align: left;
+  @media(max-width: 780px) {
+    padding-top: 30px;;
+  }
   input, textarea {
     display: block;
     width: 100%;
@@ -41,7 +44,7 @@ const NotFoundPage = () => (
         <p>
           Você pode me mandar uma mensagem por aqui mesmo.
         </p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"  className={style}>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className={style}>
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <p>

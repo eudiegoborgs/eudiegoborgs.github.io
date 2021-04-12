@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { css } from 'emotion';
+import ReadTime from '../atoms/read-time';
 
 const style = css`
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.1),0 6px 20px 0 rgba(0,0,0,0.1);
