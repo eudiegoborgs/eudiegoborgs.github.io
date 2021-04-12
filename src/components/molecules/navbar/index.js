@@ -74,16 +74,16 @@ const Navbar = () => {
   return (
     <div className={style}>
       <div className={`menu ${Open && 'active'}`}>
-        <Link className="menu-item">
+        <Link to="/" className="menu-item">
           Início
         </Link>
-        <Link to="curriculo" className="menu-item">
+        <Link to="/curriculo" className="menu-item">
           Currículo
         </Link>
-        <Link to="blog" className="menu-item">
+        <Link to="/blog" className="menu-item">
           Blog
         </Link>
-        <Link to="contato" className="menu-item">
+        <Link to="/contato" className="menu-item">
           Contato
         </Link>
         <div className="social-menu">
