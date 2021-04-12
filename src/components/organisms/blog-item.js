@@ -21,7 +21,7 @@ const BlogItem = ({ content }) => {
   return (
     <React.Fragment>
       <div className={ style }>
-        <Link to={content.fields.slug} className="blog-link">
+        <Link to={`/${content.fields.slug}`} className="blog-link">
           <h3 className>{ frontmatter.title }</h3>
           <small>{ frontmatter.date }</small>
         </Link>

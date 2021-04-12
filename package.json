@@ -36,7 +36,8 @@
     "react-dom": "^16.10.0",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
-    "reactstrap": "^8.0.1"
+    "reactstrap": "^8.0.1",
+    "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.4",

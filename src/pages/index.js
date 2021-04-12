@@ -21,7 +21,7 @@ const IndexPage = () => (
         </p>
       </main>
       <BlogResume />
-      <Link to="blog">
+      <Link to="/blog">
         Ver mais posts
       </Link>
     </Content>

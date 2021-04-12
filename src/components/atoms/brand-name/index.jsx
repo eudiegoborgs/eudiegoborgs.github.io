@@ -27,7 +27,7 @@ const BrandName = () => {
         }
       `}
       render={data => (
-        <Link className={style}>
+        <Link to="/" className={style}>
           {data.site.siteMetadata.title}
         </Link>
       )}

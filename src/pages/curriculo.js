@@ -14,7 +14,7 @@ const CurriculoPage = () => (
         <img src={curriculo} alt="Meu curriculo" />
       </main>
       <BlogResume />
-      <Link to="blog">
+      <Link to="/blog">
         Ver mais posts
       </Link>
     </Content>
