@@ -8,7 +8,7 @@ import BlogItem from './blog-item'
 const blogListQuery = graphql`
   query {
     allMarkdownRemark(
-      limit: 2
+      limit: 3
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       edges {
