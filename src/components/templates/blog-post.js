@@ -7,9 +7,10 @@ import SEO from '../organisms/seo'
 import Content from '../organisms/content'
 import ReadTime from '../atoms/read-time';
 
-const style = `
+const style = css`
   text-decoration: none;
   h1 {
+    display: inline;
     margin: 0;
   }
   header {
@@ -30,6 +31,10 @@ const style = `
   img {
     width: 100%;
   }
+  .time-icon {
+    color: #11C76F;
+    font-weight: bold;
+  }
 `;
 
 const BlogPost = (props) => {
@@ -47,10 +52,12 @@ const BlogPost = (props) => {
     <Layout>
       <SEO title={`Blog - ${post.frontmatter.title}`} />
       <Content>
-        <main className={ css`${style}` }>
+        <main className={ style }>
           <header>
-            <h1>{ post.frontmatter.title }</h1>
-            <small><ReadTime time={post.fields.readingTime.minutes} /> - { post.frontmatter.date }</small>
+            <div>
+              <h1>{ post.frontmatter.title }</h1>
+            </div>
+            <small><ReadTime time={post.fields.readingTime.minutes} className="time-icon"/> - { post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
           <Disqus config={disqusConfig} />

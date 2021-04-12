@@ -52,6 +52,10 @@ a {
 a.blog-link {
   color: #212121;
 }
+
+.blog-box {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
 .nightmode {
   background: #212121;
   color: white;
@@ -63,7 +67,7 @@ a.blog-link {
   transition: 0.5s ease all;
 }
 .nightmode a.blog-link {
-  color: white;
+  color: #212121;
   transition: 0.5s ease all;
 }
 a:active,

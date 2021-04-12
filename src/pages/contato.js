@@ -16,6 +16,7 @@ const style = css`
     border-radius: 5px;
     border: solid 1px rgba(0,0,0,0.2);
     padding: 5px 10px;
+    background-color: #11C76F;
   }
   .submit {
     text-align: center;
@@ -23,12 +24,15 @@ const style = css`
       text-transform: uppercase;
       padding: 10px 30px;
       cursor: pointer;
-      border: solid 1px rgba(0,0,0,0.5);
+      border: solid 1px #11C76F;
+      background-color: #11C76F;
       border-radius: 5px;
       transition: 0.5s ease all;
+      font-weight: bold;
+      color: #212121;
       &:hover {
-        background: black;
-        color: white;
+        background: #212121;
+        color: #11C76F;
       }
     }
   }

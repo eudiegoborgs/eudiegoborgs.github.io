@@ -17,13 +17,10 @@ const IndexPage = () => (
           Me chamo <strong>Diego Borges</strong>, sou graduando em Sistemas de Informação pela PUC Minas, tenho mais de { new Date().getFullYear() - 2011 } anos de experiência em desenvolvimento. Apaixonado pelo estudo de música, programação e automação.
         </p>
         <p>
-          Atualmente trabalho como Engenheiro de Software no Picpay, faço parte da organização do PHPMG no Vale e escrevo sobre desenvolvimento e carreira para blogs de tecnologia.
+          Atualmente trabalho como Engenheiro de Software no <a href="https://www.picpay.com" target="_blank">Picpay</a>, faço parte da organização do PHPMG no Vale e escrevo sobre desenvolvimento e carreira para blogs de tecnologia.
         </p>
       </main>
       <BlogResume />
-      <Link to="/blog">
-        Ver mais posts
-      </Link>
     </Content>
   </Layout>
 )

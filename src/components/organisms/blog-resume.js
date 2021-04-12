@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import { useStaticQuery, graphql } from 'gatsby'
 import { css } from 'emotion'
 import BlogItem from './blog-item'
@@ -33,6 +34,9 @@ const BlogResume = () => {
     <div className={ css`margin-top: 5rem` }>
       <h2>Posts recentes</h2>
       {list.map(item => <BlogItem content={item.node}/>)}
+      <Link to="/blog">
+        Ver mais posts...
+      </Link>
     </div>
   )
 }

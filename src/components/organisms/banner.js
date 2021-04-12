@@ -24,6 +24,9 @@ const style = css`
 
   a {
     color: white !important;
+    :hover {
+      color: #11C76F !important;
+    }
   }
 `
 

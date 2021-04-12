@@ -1,7 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
 import { css } from 'emotion';
-import LightButton from "../molecules/light-button";
 import Navbar from "../molecules/navbar";
 import BrandName from '../atoms/brand-name';
 
