@@ -32,9 +32,9 @@ const style = css `
     @media(max-width: 780px) {
       padding: 0 5px;
     }
-    &:hover {
-      background: #fff;
-      color: #000;
+    &:hover, &[aria-current="page"] {
+      background: #11C76F;
+      color: #212121;
     }
   }
   @media(max-width: 780px) {
@@ -53,16 +53,17 @@ const style = css `
       padding: 1rem 1.0875rem;
       .menu-item {
         display: block;
-        margin: 30px auto;
+        margin: 20px auto;
         font-size: 2rem;
         text-align: right;
+        padding: 10px 10px;
       }
       .social-menu {
         display: block;
       }
 
       .social-menu a {
-        color: white!important;
+        color: #11C76F !important;
         float: right;
       }
     }

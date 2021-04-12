@@ -40,7 +40,7 @@ const TypeWritter = () => {
     />
   );
   return (
-    <h1 className={style}>Writing <span style={{color: '#fff'}}>{'code'}</span> with <span style={{color: '#ff8a80'}}>{items}</span></h1>
+    <h1 className={style}>Writing <span style={{color: '#fff'}}>{'code'}</span> with <span style={{color: '#11C76F'}}>{items}</span></h1>
   )
 }
 

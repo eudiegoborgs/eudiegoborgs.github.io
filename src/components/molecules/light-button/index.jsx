@@ -11,9 +11,14 @@ const style = css`
   border: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.5s linear;
 
   :focus {
     outline: 0;
+  }
+  :hover {
+    color: #11C76F;
   }
 `;
 

@@ -45,7 +45,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: #d50000;
+  color: #11C76F;
+  font-weight: bold;
   text-decoration: none;
 }
 a.blog-link {
@@ -58,7 +59,7 @@ a.blog-link {
 }
 
 .nightmode a {
-  color: #ff8a80; 
+  color: #11C76F;
   transition: 0.5s ease all;
 }
 .nightmode a.blog-link {
