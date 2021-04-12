@@ -49,9 +49,9 @@ const LightButton = () => {
       <Helmet>
         <body className={darkMode && "nightmode"} />
       </Helmet>
-      <Icon className="hide-on-mobile" source="moon-o" small={1} disabled={!darkMode} />
+      <Icon source="moon-o" small={1} disabled={!darkMode} />
       <SwitchInput on={!darkMode ? 1 : 0} bigger={1} />
-      <Icon className="hide-on-mobile" source="sun-o" small={1} disabled={darkMode} />
+      <Icon source="sun-o" small={1} disabled={darkMode} />
     </button>
   )
 }

@@ -2,10 +2,13 @@ import { Link } from "gatsby"
 import React from "react"
 import { css } from 'emotion';
 import LightButton from "../molecules/light-button";
+import Navbar from "../molecules/navbar";
 import BrandName from '../atoms/brand-name';
 
 const style = css`
   background: #212121;
+  position: fixed;
+  width: 100vw;
 
   .container {
     margin: 0 auto;
@@ -13,16 +16,6 @@ const style = css`
     padding: 1rem 1.0875rem;
     display: flex;
     justify-content: space-between;
-  }
-
-  .menu-item {
-    color: white !important;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    @media (max-width: 780px) {
-      font-size: 0.7rem;
-    }
   }
 
   .right, .left {
@@ -46,12 +39,7 @@ const Header = () => (
       </div>
       <div className="right">
         <LightButton />
-        <Link to="curriculo" className="menu-item">
-          Curriculo
-        </Link>
-        <Link to="blog" className="menu-item">
-          Blog
-        </Link>
+        <Navbar />
       </div>
     </div>
   </header>
