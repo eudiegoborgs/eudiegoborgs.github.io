@@ -35,7 +35,7 @@ const TypeWritter = () => {
           'quality',
           'simplicity',
           'love',
-          '❤'
+          '💚'
         ];
         words.map((word, index) => {
           typewriter.typeString(`<span class="item ${word}">${word}</span>`)
