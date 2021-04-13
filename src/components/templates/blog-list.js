@@ -38,9 +38,13 @@ export const BlogListQuery = graphql`
         node {
           fields {
             slug
+            readingTime {
+              text
+              minutes
+            }
           }
           frontmatter {
-            date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             title
           }
         }

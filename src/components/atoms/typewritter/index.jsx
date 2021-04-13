@@ -9,38 +9,47 @@ const style = css`
       display: none;
     }
   }
+  .item {
+    color: #11C76F;
+    &.php {
+      color: #8892BF;
+    }
+    &.js {
+      color: #ffff00;
+    }
+    &.ts {
+      color: #3178c6;
+    }
+  }
 `;
 
 const TypeWritter = () => {
   const items = (
     <Typewriter
       onInit={(typewriter)=> {
-        typewriter 
-        .typeString("PHP.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("JS.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("TS.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("TDD.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("quality.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("simplicity.")
-        .pauseFor(500)
-        .deleteAll()
-        .typeString("love.")
-        .start();
+        const words = [
+          'php',
+          'js',
+          'ts',
+          'tdd',
+          'quality',
+          'simplicity',
+          'love',
+          '❤'
+        ];
+        words.map((word, index) => {
+          typewriter.typeString(`<span class="item ${word}">${word}</span>`)
+          if (words.length > index + 1) {
+            typewriter.pauseFor(500).deleteAll()
+          } else {
+            typewriter.start();
+          }
+        });
       }}
     />
   );
   return (
-    <h1 className={style}>Writing <span style={{color: '#fff'}}>{'code'}</span> with <span style={{color: '#11C76F'}}>{items}</span></h1>
+    <h1 className={style}>Writing code with {items}</h1>
   )
 }
 

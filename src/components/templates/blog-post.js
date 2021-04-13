@@ -6,6 +6,7 @@ import Layout from '../themes/layout'
 import SEO from '../organisms/seo'
 import Content from '../organisms/content'
 import ReadTime from '../atoms/read-time';
+import BlogItem from '../organisms/blog-item'
 
 const style = css`
   text-decoration: none;
@@ -35,6 +36,24 @@ const style = css`
     color: #11C76F;
     font-weight: bold;
   }
+  .pagination {
+    display: flex;
+    .previous, .next {
+      width: 50%;
+    }
+    .previous {
+      padding-right: 10px;
+    }
+    .next {
+      padding-left: 10px;
+    }
+    .blog-box {
+      padding: 10px 15px;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const BlogPost = (props) => {
@@ -60,6 +79,20 @@ const BlogPost = (props) => {
             <small><ReadTime time={post.fields.readingTime.minutes} className="time-icon"/> - { post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className="pagination">
+            {previous && (
+              <div className="previous">
+                Post anterior:
+                <BlogItem content={previous} />
+              </div>
+            )}
+            {next && (
+              <div className = "next" >
+                Proxímo post:
+                <BlogItem content={next}/>
+              </div>
+            )}
+          </div>
           <Disqus config={disqusConfig} />
         </main>
       </Content>

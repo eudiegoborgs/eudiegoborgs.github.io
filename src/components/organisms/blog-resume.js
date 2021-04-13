@@ -15,9 +15,13 @@ const blogListQuery = graphql`
         node {
           fields {
             slug
+            readingTime {
+              text
+              minutes
+            }
           }
           frontmatter {
-            date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             title
           },
         }
@@ -33,7 +37,7 @@ const BlogResume = () => {
   return (
     <div className={ css`margin-top: 5rem` }>
       <h2>Posts recentes</h2>
-      {list.map(item => <BlogItem content={item.node}/>)}
+      {list.map(item => <BlogItem key={item.slug} content={item.node}/>)}
       <Link to="/blog">
         Ver mais posts...
       </Link>
