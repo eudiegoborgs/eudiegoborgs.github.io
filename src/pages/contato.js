@@ -14,9 +14,10 @@ const style = css`
     width: 100%;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    border: solid 1px rgba(0,0,0,0.2);
+    border: solid 1px #11C76F;
     padding: 5px 10px;
-    background-color: #11C76F;
+    background-color: #212121;
+    color: white;
   }
   .submit {
     text-align: center;
@@ -52,12 +53,8 @@ const NotFoundPage = () => (
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <p>
-            <label>Nome: <input type="text" name="name" /></label>   
-          </p>
-          <p>
+            <label>Nome: <input type="text" name="name" /></label>
             <label>E-mail: <input type="email" name="email" /></label>
-          </p>
-          <p>
             <label>Mensagem: <textarea name="message"></textarea></label>
           </p>
           <p className="submit">
