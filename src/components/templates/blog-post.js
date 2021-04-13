@@ -39,13 +39,8 @@ const style = css`
   .pagination {
     display: flex;
     .previous, .next {
-      width: 50%;
-    }
-    .previous {
-      padding-right: 10px;
-    }
-    .next {
-      padding-left: 10px;
+      min-width: 50%;
+      padding: 0 5px;
     }
     .blog-box {
       padding: 10px 15px;
