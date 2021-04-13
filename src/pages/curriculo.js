@@ -97,7 +97,6 @@ const CurriculoPage = () => (
           language={'javascript'}
           style={dracula}
           showLineNumbers={true}
-          wrapLongLines={true}
         >
          {data}
         </SyntaxHighlighter>
