@@ -5,7 +5,7 @@ title: "[Mastering Swoole PHP] Parte I e II - Introdução e Background"
 ---
 Olá mundo! 
 
-Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou por indicação do @SwooLeoCavalcante. Como é um livro em inglês, estou tendo alguma dificuldade em assimilar os conteúdos que foram apresentados ali, por esse motivo resolvi escrever com minhas palavras um resumo de cada parte.
+Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou por indicação do [@SwooLeoCavalcante](https://twitter.com/leocavalcante). Como é um livro em inglês, estou tendo alguma dificuldade em assimilar os conteúdos que foram apresentados ali, por esse motivo resolvi escrever com minhas palavras um resumo de cada parte.
 
 A ideia principal dessa série de artigos não é fazer uma tradução do livro ou reescrever com detalhes o que já está escrito lá, mas mostrar os pontos abordados em cada parte através da minha ótica. Recomendo a vocês a leitura deste livro para terem suas próprias ideias e opiniões.
 
@@ -51,13 +51,13 @@ Somente movendo parte da aplicação para um modelo stateful, o [Swoole](https:/
 
 #### Problema de concorrência
 
-Na atualidade a maior parte das aplicações web fazem várias operações de I/O (chamar bancode de dados, HTTP API's, escrever em um tópico, etc). Você raramente vai conseguir controlar o tempo gasto esperando a resposta do I/O, e os processos seguintes vão aguardar essa resposta mesmo se depender dela.
+Na atualidade a maior parte das aplicações web fazem várias operações de I/O (chamar banco de dados, HTTP API's, escrever em um tópico, etc). Você raramente vai conseguir controlar o tempo gasto esperando a resposta do I/O, e os processos seguintes vão aguardar essa resposta mesmo se depender dela.
 
 A maior magia do [Swoole](https://www.swoole.co.uk/) está na resolução deste problema, tornando o processo assíncrono você passa a realizar outras tarefas de modo concorrente, enquanto espera o retorno de respostas de dependências externas, diminuindo a latência do seu sistema. 
 
-Antes do Swoole outras libs de PHP tentavam solucionar esse problema usando filas para execução do processo em outra requisição, mas o ponto fraco dessa estratégia é a falta de controle sobre a sua execução e resposta.
+Antes do [Swoole](https://www.swoole.co.uk/) outras libs de PHP tentavam solucionar esse problema usando filas para execução do processo em outra requisição, mas o ponto fraco dessa estratégia é a falta de controle sobre a sua execução e resposta.
 
-O Swoole usa de corrotinas para resolver esse problema, mantendo o controle no processo principal e compartilhando os estados entre cada uma delas.
+O [Swoole](https://www.swoole.co.uk/) usa de corrotinas para resolver esse problema, mantendo o controle no processo principal e compartilhando os estados entre cada uma delas.
 
 
 
