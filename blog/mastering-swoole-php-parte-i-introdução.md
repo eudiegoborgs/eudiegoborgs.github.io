@@ -37,4 +37,4 @@ Já o [Swoole](https://www.swoole.co.uk/) PHP executa seus processos de modo sta
 
 O PHP bloqueia o I/O por padrão, ele aguarda o fim de cada comando para avançar para a próxima linha.
 
-![]()
+![blocking io](assets/fireshot-capture-004-kindle-cloud-reader-ler.amazon.com.br.png)
