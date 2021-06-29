@@ -41,8 +41,24 @@ Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um
 
 ![non blocking i/o](assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
 
-#### Problema de performance
+#### Problema de desempenho
 
 A performance é um problema que vai sempre existir em nossas aplicações, fazer com que respondam o mais rápido possível é o trabalho principal da maioria dos desenvolvedores. Um problema da arquitetura stateless é o fato de recriar todo o contexto do zero em cada requisição ao servidor sem reaproveitar aquilo que é compartilhável e já foi criado anteriormente. Isso com certeza pode prejudicar a performance, afinal de contas, não existe otimização melhor que deixar de se esforçar para fazer algo. 
 
-Somente movendo parte da aplicaçao para um modelo stateful, o [Swoole](https://www.swoole.co.uk/) promete aumentar a performance de 2x a 5x, algumas pessoas conseguiram reduzir em até 100x o uso de recursos de um servidor usando abordagens mais especificas apresentadas no livro.
+Se o seu sistema em PHP depende apenas da CPU, você provavelmente não vai ter muitos problemas com concorrência usando o PHP-FPM, mas se você precisa estabelecer conexões com bancos de dados, para cada nova requisição será criada uma conexão com o banco de dados e se você escala isso para um número grande, você poderá ter dificuldades para encontrar conexões disponíveis.
+
+Somente movendo parte da aplicação para um modelo stateful, o [Swoole](https://www.swoole.co.uk/) promete aumentar o desempenho de 2x a 5x, algumas pessoas conseguiram reduzir em até 100x o uso de recursos de um servidor usando abordagens mais específicas apresentadas no livro. O compartilhamento dos estados pode causar grandes melhorias de performance no seu sistema, mas ainda assim não é o maior problema que o [Swoole](https://www.swoole.co.uk/) resolve.
+
+#### Problema de concorrência
+
+Na atualidade a maior parte das aplicações web fazem várias operações de I/O (chamar bancode de dados, HTTP API's, escrever em um tópico, etc). Você raramente vai conseguir controlar o tempo gasto esperando a resposta do I/O, e os processos seguintes vão aguardar essa resposta mesmo se depender dela.
+
+A maior magia do [Swoole](https://www.swoole.co.uk/) está na resolução deste problema, tornando o processo assíncrono você passa a realizar outras tarefas de modo concorrente, enquanto espera o retorno de respostas de dependências externas, diminuindo a latência do seu sistema. 
+
+Antes do Swoole outras libs de PHP tentavam solucionar esse problema usando filas para execução do processo em outra requisição, mas o ponto fraco dessa estratégia é a falta de controle sobre a sua execução e resposta.
+
+O Swoole usa de corrotinas para resolver esse problema, mantendo o controle no processo principal e compartilhando os estados entre cada uma delas.
+
+
+
+*Continua nos próximos capitulos...*
