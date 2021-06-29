@@ -35,11 +35,11 @@ Já o [Swoole](https://www.swoole.co.uk/) PHP executa seus processos de modo sta
 
 O PHP bloqueia o I/O por padrão, deixando os recursos reservados até que o processo termine e impedindo que outros processos assumam aqueles recursos.
 
-![blocking i/o](assets/fireshot-capture-004-kindle-cloud-reader-ler.amazon.com.br.png)
+![blocking i/o](/assets/fireshot-capture-004-kindle-cloud-reader-ler.amazon.com.br.png)
 
 Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um processo estiver aguardando algo, outro processo pode iniciar a sua execução.
 
-![non blocking i/o](assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
+![non blocking i/o](/assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
 
 #### Problema de desempenho
 
@@ -61,4 +61,4 @@ O [Swoole](https://www.swoole.co.uk/) usa de corrotinas para resolver esse probl
 
 
 
-*Continua nos próximos capitulos...*
+*Continua nos próximos capítulos...*
