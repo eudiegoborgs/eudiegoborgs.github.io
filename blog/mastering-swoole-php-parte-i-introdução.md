@@ -21,8 +21,6 @@ Para aqueles que não sabem, o [Swoole](https://www.swoole.co.uk/) é uma extens
 
 A proposta do [Swoole](https://www.swoole.co.uk/) é permitir que você consiga ter paralelismo que existe em outras linguagens como o GO ou Node.js com a mesma sintaxe de PHP que você já está acostumado. Ele permite que seu código processe muitas requisições ou execute várias tarefas de maneira concorrente e independente. Todo o I/O da aplicação é automaticamente gerenciado por um Event Loop, isso é similar ao que acontece no Node.js ou Python. Apenas o código sem bloqueio deve ser adicionado ao loop de eventos, por esse motivo algumas bibliotecas comuns (MySQL PDO, Redis CURL, etc) tiveram que ser adaptadas para se tornarem mais amigáveis ao [Swoole](https://www.swoole.co.uk/). No entanto, o [Swoole](https://www.swoole.co.uk/) também fornece um loop de eventos para diferentes casos de uso, como o servidor HTTP ou o servidor WebSocket.
 
-
-
 ### Porque o Swoole foi criado?
 
 #### Stateless x Stateful
@@ -44,3 +42,7 @@ Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um
 ![non blocking i/o](assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
 
 #### Problema de performance
+
+A performance é um problema que vai sempre existir em nossas aplicações, fazer com que respondam o mais rápido possível é o trabalho principal da maioria dos desenvolvedores. Um problema da arquitetura stateless é o fato de recriar todo o contexto do zero em cada requisição ao servidor sem reaproveitar aquilo que é compartilhável e já foi criado anteriormente. Isso com certeza pode prejudicar a performance, afinal de contas, não existe otimização melhor que deixar de se esforçar para fazer algo. 
+
+Somente movendo parte da aplicaçao para um modelo stateful, o Swoole promete aumentar a performance de 2x a 5x, algumas pessoas conseguiram reduzir em até 100x o uso de recursos de um servidor usando abordagens mais especificas apresentadas no livro.
