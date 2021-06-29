@@ -25,4 +25,6 @@ A proposta do [Swoole](https://www.swoole.co.uk/) é permitir que você consiga 
 
 ### Porque o Swoole foi criado?
 
-Antes do PHP-FPM existia o Apache httpd com o mod_php, ambos são executados com recursos  stateless. A arquitetura stateless foi amplamente utilizada na web nos ultimos 10 anos, se tornando muito popular. No stateless, nenhum estado da aplicação é armazenado ou persistido e toda transação é iniciada do zero. As pessoas preferem usar o stateless, porque
+#### Stateless x Stateful
+
+Antes do PHP-FPM existia o Apache httpd com o mod_php, ambos são executados do modo stateless. A arquitetura stateless foi amplamente utilizada na web nos ultimos 10 anos, se tornando muito popular. No stateless, nenhum estado da aplicação é armazenado ou persistido e toda transação é iniciada do zero. As pessoas preferem usar o stateless, porque não precisam se preocupar com o gerenciamento do estado de uma transação. Mas como todas as soluções ele não resolve tudo e tem alguns efeitos colaterais que devem ser avaliados.
