@@ -35,11 +35,11 @@ Já o [Swoole](https://www.swoole.co.uk/) PHP executa seus processos de modo sta
 
 O PHP bloqueia o I/O por padrão, deixando os recursos reservados até que o processo termine e impedindo que outros processos assumam aqueles recursos.
 
-![blocking i/o](/assets/fireshot-capture-004-kindle-cloud-reader-ler.amazon.com.br.png)
+![blocking i/o](assets/fireshot-capture-004-kindle-cloud-reader-ler.amazon.com.br.png)
 
 Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um processo estiver aguardando algo, outro processo pode iniciar a sua execução.
 
-![non blocking i/o](/assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
+![non blocking i/o](assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
 
 #### Problema de desempenho
 
@@ -53,12 +53,10 @@ Somente movendo parte da aplicação para um modelo stateful, o [Swoole](https:/
 
 Na atualidade a maior parte das aplicações web fazem várias operações de I/O (chamar banco de dados, HTTP API's, escrever em um tópico, etc). Você raramente vai conseguir controlar o tempo gasto esperando a resposta do I/O, e os processos seguintes vão aguardar essa resposta mesmo se depender dela.
 
-A maior magia do [Swoole](https://www.swoole.co.uk/) está na resolução deste problema, tornando o processo assíncrono você passa a realizar outras tarefas de modo concorrente, enquanto espera o retorno de respostas de dependências externas, diminuindo a latência do seu sistema. 
+A maior magia do [Swoole](https://www.swoole.co.uk/) está na resolução deste problema, tornando o processo assíncrono você passa a realizar outras tarefas de modo concorrente, enquanto espera o retorno de respostas de dependências externas, diminuindo a latência do seu sistema. Ele faz isso através do event loop que basicamente adiciona um listener nos arquivos modificados pelo I/O que escuta quando eles estão prontos e aciona a aplicação.
 
 Antes do [Swoole](https://www.swoole.co.uk/) outras libs de PHP tentavam solucionar esse problema usando filas para execução do processo em outra requisição, mas o ponto fraco dessa estratégia é a falta de controle sobre a sua execução e resposta.
 
 O [Swoole](https://www.swoole.co.uk/) usa de corrotinas para resolver esse problema, mantendo o controle no processo principal e compartilhando os estados entre cada uma delas.
 
-
-
-*Continua nos próximos capítulos...*
+*Continua nos próximos capitulos...*
