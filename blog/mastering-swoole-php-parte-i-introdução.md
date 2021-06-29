@@ -5,7 +5,7 @@ title: "[Mastering Swoole PHP] Parte I e II - Introdução e Background"
 ---
 Olá mundo! 
 
-Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou por indicação do [@SwooLeoCavalcante](https://twitter.com/leocavalcante). Como é um livro em inglês, estou tendo alguma dificuldade em assimilar os conteúdos que foram apresentados ali, por esse motivo resolvi escrever com minhas palavras um resumo de cada parte.
+Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou por indicação do @SwooLeoCavalcante. Como é um livro em inglês, estou tendo alguma dificuldade em assimilar os conteúdos que foram apresentados ali, por esse motivo resolvi escrever com minhas palavras um resumo de cada parte.
 
 A ideia principal dessa série de artigos não é fazer uma tradução do livro ou reescrever com detalhes o que já está escrito lá, mas mostrar os pontos abordados em cada parte através da minha ótica. Recomendo a vocês a leitura deste livro para terem suas próprias ideias e opiniões.
 
@@ -45,4 +45,4 @@ Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um
 
 A performance é um problema que vai sempre existir em nossas aplicações, fazer com que respondam o mais rápido possível é o trabalho principal da maioria dos desenvolvedores. Um problema da arquitetura stateless é o fato de recriar todo o contexto do zero em cada requisição ao servidor sem reaproveitar aquilo que é compartilhável e já foi criado anteriormente. Isso com certeza pode prejudicar a performance, afinal de contas, não existe otimização melhor que deixar de se esforçar para fazer algo. 
 
-Somente movendo parte da aplicaçao para um modelo stateful, o Swoole promete aumentar a performance de 2x a 5x, algumas pessoas conseguiram reduzir em até 100x o uso de recursos de um servidor usando abordagens mais especificas apresentadas no livro.
+Somente movendo parte da aplicaçao para um modelo stateful, o [Swoole](https://www.swoole.co.uk/) promete aumentar a performance de 2x a 5x, algumas pessoas conseguiram reduzir em até 100x o uso de recursos de um servidor usando abordagens mais especificas apresentadas no livro.
