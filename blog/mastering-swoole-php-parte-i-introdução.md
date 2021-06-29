@@ -1,11 +1,11 @@
 ---
 path: whats-is-swoole
 date: 2021-06-29T01:06:12.826Z
-title: "[Mastering Swoole PHP] Parte I - Introdução"
+title: "[Mastering Swoole PHP] Parte I e II - Introdução e Background"
 ---
 Olá mundo! 
 
-Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou e resolvi dividir um pouco do que estou aprendendo com vocês. 
+Estou lendo o livro [Matering Swoole PHP](https://www.amazon.com.br/Mastering-Swoole-PHP-performance-concurrent-ebook/dp/B0881B227S#:~:text=This%20book%20is%20for%20the,Swoole%20PHP%20system%20with%20confidence.) do Bruce Dou e resolvi dividir um pouco do que estou aprendendo com vocês. Como é um livro em inglês, estou tendo alguma dificuldade em similar os conteúdos que foram apresentados ali, por esse motivo resolvi escrever com minhas palavras um resumo de cada parte.
 
 A ideia principal dessa série de artigos não é fazer uma tradução do livro ou reescrever com detalhes o que já está escrito lá, mas mostrar os pontos abordados em cada parte através da minha ótica. Recomendo a vocês a leitura deste livro para terem suas próprias ideias e opiniões.
 
