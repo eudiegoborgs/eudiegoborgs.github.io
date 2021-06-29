@@ -20,3 +20,9 @@ O livro apresenta para nós um novo modelo de construção de aplicações em PH
 Para aqueles que não sabem, o [Swoole](https://www.swoole.co.uk/) é uma extensão para o core do PHP **Open Source** que traz funcionalidades para o desenvolvimento de aplicações com concorrência e assim aumentar a performance através do uso de corrotinas e I/O assíncrono.
 
 A proposta do [Swoole](https://www.swoole.co.uk/) é permitir que você consiga ter paralelismo que existe em outras linguagens como o GO ou Node.js com a mesma sintaxe de PHP que você já está acostumado. Ele permite que seu código processe muitas requisições ou execute várias tarefas de maneira concorrente e independente. Todo o I/O da aplicação é automaticamente gerenciado por um Event Loop, isso é similar ao que acontece no Node.js ou Python. Apenas o código sem bloqueio deve ser adicionado ao loop de eventos, por esse motivo algumas bibliotecas comuns (MySQL PDO, Redis CURL, etc) tiveram que ser adaptadas para se tornarem mais amigaveis ao [Swoole](https://www.swoole.co.uk/). No entanto, o [Swoole](https://www.swoole.co.uk/) também fornece um loop de eventos para diferentes casos de uso, como o servidor HTTP ou o servidor WebSocket.
+
+
+
+### Porque o Swoole foi criado?
+
+Antes do PHP-FPM existia o Apache httpd com o mod_php, ambos são executados com recursos  stateless. A arquitetura stateless foi amplamente utilizada na web nos ultimos 10 anos, se tornando muito popular. No stateless, nenhum estado da aplicação é armazenado ou persistido e toda transação é iniciada do zero. As pessoas preferem usar o stateless, porque
