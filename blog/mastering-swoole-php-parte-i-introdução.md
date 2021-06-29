@@ -42,3 +42,5 @@ O PHP bloqueia o I/O por padrão, deixando os recursos reservados até que o pro
 Podemos melhorar a performance de um sistema usando I/O não blocante. Quando um processo estiver aguardando algo, outro processo pode iniciar a sua execução.
 
 ![non blocking i/o](assets/fireshot-capture-005-kindle-cloud-reader-ler.amazon.com.br.png)
+
+#### Problema de performance
