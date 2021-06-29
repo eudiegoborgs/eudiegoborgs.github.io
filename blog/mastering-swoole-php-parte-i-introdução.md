@@ -32,3 +32,9 @@ Antes do PHP-FPM existia o Apache httpd com o mod_php, ambos executam seus proce
 As pessoas preferem usar o stateless, porque não precisam se preocupar com o gerenciamento do estado de uma transação e podem escalar o serviço horizontalmente, aumentando a quantidade de servidores conforme o aumento de uso da aplicação. O stateless não resolve tudo e tem alguns efeitos colaterais que devem ser avaliados. 
 
 Já o [Swoole](https://www.swoole.co.uk/) PHP executa seus processos de modo stateful, dessa maneira consegue armazenar o estado na aplicação e compartilhar ele entre transações e requisições economizando o uso e dependência de recursos externos (ex: conexões com o banco de dados).
+
+#### Blocking I/O
+
+O PHP bloqueia o I/O por padrão, ele aguarda o fim de cada comando para avançar para a próxima linha.
+
+![]()
