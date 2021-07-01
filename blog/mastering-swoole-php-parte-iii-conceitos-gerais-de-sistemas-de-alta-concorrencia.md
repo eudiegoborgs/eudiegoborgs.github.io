@@ -2,7 +2,7 @@
 path: general-concepts-on-high-concurrency-systems
 date: 2021-07-01T12:32:10.334Z
 title: "[Mastering Swoole PHP] Parte III - Conceitos gerais de sistemas de alta
-  concorrencia"
+  concorrência"
 ---
 Olá mundo!
 
