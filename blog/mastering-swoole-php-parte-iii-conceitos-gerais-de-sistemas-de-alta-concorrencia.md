@@ -11,3 +11,31 @@ Nesse artigo vou dar continuidade a série do Mastering Swoole, se você ainda n
 Agora estamos entrando na parte mais conceitual do livro, por isso esse artigo talvez fique um pouco longo. A ideia é introduzir os conceitos vinculados a aplicações de alta performance e concorrência. Os conceitos que foram apresentados no livro são agnósticos e podem ser usados em qualquer linguagem, ferramenta ou framework.
 
 ### Executor e a execução em containers
+
+### Gerenciamento de ciclo de vida
+
+### Desacoplamento e camadas
+
+### Queue, buffers, buffering and batching
+
+### Pipe and channel
+
+### Context, stack and context switch
+
+### Singleplex vs Multiplexing
+
+### Asynchronous
+
+### State, stateless, stateful and pooling
+
+### File descriptor, I/O stream
+
+### Excessões e timeouts
+
+### Protocolos
+
+### Concorrência e modelo I/O
+
+### Eventos e callbacks
+
+### Custos e limitações
