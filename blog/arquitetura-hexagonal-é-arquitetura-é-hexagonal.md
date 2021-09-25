@@ -14,7 +14,7 @@ Nas últimas semanas estou vendo algumas discussões relacionadas a confirmaçã
 
 Só para contextualizar, a arquitetura hexagonal consiste em dividir a aplicação em camadas separando o código em categorias diferentes (são geralmente usadas as camadas de infraestrutura, aplicação e domínio). Ela é baseada no famoso desenho da arquitetura de cebola ou arquitetura em camadas muito usado para representar a Clean Architecture" ou no bom português "Arquitetura Limpa", mas é chamada arquitetura hexagonal por causa dos primeiros desenhos usados para representa-la.
 
-![Arquitetura Hexagonal](assets/slide_37.jpeg "Arquitetura Hexagonal")
+![Arquitetura Hexagonal](/assets/slide_37.jpeg "Arquitetura Hexagonal")
 
 Hoje em dia você pode encontrar apresentações onde você verá octágonos e até decágonos, apesar do nome a forma e a quantidade de lados não é o ponto principal dessa "arquitetura". Ela também é conhecida como *Ports & Adapters"*, um nome que define um pouco melhor, mas não soa tão bonitinho quanto o outro. 
 
