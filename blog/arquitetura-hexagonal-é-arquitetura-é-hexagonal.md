@@ -12,8 +12,6 @@ Nas últimas semanas estou vendo algumas discussões relacionadas a confirmaçã
 
 Só para contextualizar, a arquitetura hexagonal consiste em dividir a aplicação em camadas separando o código em categorias diferentes (são geralmente usadas as camadas de infraestrutura, aplicação e domínio). Ela é baseada no famoso desenho da arquitetura de cebola ou arquitetura em camadas muito usado para representar a Clean Architecture" ou no bom português "Arquitetura Limpa", mas é chamada arquitetura hexagonal por causa dos primeiros desenhos usados em sua representação.
 
-
-
 ![Arquitetura Hexagonal](/assets/slide_37.jpeg "Arquitetura Hexagonal")
 
 Hoje em dia você pode encontrar apresentações onde você verá octágonos e até decágonos, apesar do nome a forma e a quantidade de lados não é o ponto principal dessa "arquitetura". Ela também é conhecida como *Ports & Adapters"*, um nome que define um pouco melhor, mas não soa tão bonitinho quanto o outro. 
@@ -42,6 +40,6 @@ Ela tem a proposta de fazer os componentes se comunicarem de uma maneira linear 
 
 Vou tentar exemplificar isso... Suponhamos que temos uma feature em nossa API para criação de um novo usuário, o fluxo de comunicação do serviço ficaria assim:
 
-![Desenho representando o fluxo de comunicação de um serviço.](/assets/hex-arch-2x.png "Desenho representando o fluxo de comunicação de um serviço.")
+![Desenho representando o fluxo de comunicação de um serviço.](/assets/hex-arch-2x-1-.png "Desenho representando o fluxo de comunicação de um serviço.")
 
 Como um bom desenvolvedor sênior, vou te dizer que depende *(não resisti a brincadeira).* Mas de fato, para dizer se é ou não é uma arquitetura depende do ponto de onde estamos observando. Se olharmos para um sistema distribuído na totalidade, a arquitetura hexagonal não é uma arquitetura, na verdade, é apenas parte da arquitetura, mas se olharmos para um serviço desse sistema, então teremos sim uma arquitetura.
