@@ -42,4 +42,12 @@ Vou tentar exemplificar isso... Suponhamos que temos uma feature em nossa API pa
 
 ![Desenho representando o fluxo de comunicação de um serviço.](/assets/hex-arch-2x-1-.png "Desenho representando o fluxo de comunicação de um serviço.")
 
-Como um bom desenvolvedor sênior, vou te dizer que depende *(não resisti a brincadeira).* Mas de fato, para dizer se é ou não é uma arquitetura depende do ponto de onde estamos observando. Se olharmos para um sistema distribuído na totalidade, a arquitetura hexagonal não é uma arquitetura, na verdade, é apenas parte da arquitetura, mas se olharmos para um serviço desse sistema, então teremos sim uma arquitetura.
+Se vocês repararam bem, as setas estão sempre apontadas do azul para o verde e depois para o vermelho *(Exceto as que representam a implementação real da interface).*
+
+Agora veja um desenho de arquitetura de um exemplo de sistema distribuído:
+
+![Desenho representando o fluxo de comunicação de um sistema distribuido.](assets/gamefik-architecture-2x.png "Desenho representando o fluxo de comunicação de um sistema distribuido.")
+
+Ambos os desenhos falam de como eles se comunicam.
+
+Para concluir... Como um bom desenvolvedor sênior, vou te dizer que depende *(não resisti a brincadeira).* Mas de fato, para dizer se é ou não é uma arquitetura depende do ponto de onde estamos observando. Se olharmos para um sistema distribuído na totalidade, a arquitetura hexagonal não é uma arquitetura, na verdade, é apenas parte da arquitetura, mas se olharmos para um serviço desse sistema, então teremos sim uma arquitetura.
