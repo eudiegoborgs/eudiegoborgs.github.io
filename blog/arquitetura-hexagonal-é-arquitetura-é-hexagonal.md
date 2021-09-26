@@ -48,6 +48,6 @@ Agora veja um desenho de arquitetura de um exemplo de sistema distribuído:
 
 ![Desenho representando o fluxo de comunicação de um sistema distribuido.](assets/gamefik-architecture-2x.png "Desenho representando o fluxo de comunicação de um sistema distribuido.")
 
-Ambos os desenhos falam de como eles se comunicam.
+Ambos os desenhos falam de como eles se comunicam e não sobre o local onde seus componentes estão salvos. Eu percebo que as pessoas desenvolvedoras tem se confundido com a distribuição de pastas e estão começando a acreditar que para ter uma arquitetura diferente (DDD, Hex, Clean) é só criar as pastas e não é bem assim.
 
 Para concluir... Como um bom desenvolvedor sênior, vou te dizer que depende *(não resisti a brincadeira).* Mas de fato, para dizer se é ou não é uma arquitetura depende do ponto de onde estamos observando. Se olharmos para um sistema distribuído na totalidade, a arquitetura hexagonal não é uma arquitetura, na verdade, é apenas parte da arquitetura, mas se olharmos para um serviço desse sistema, então teremos sim uma arquitetura.
