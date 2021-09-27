@@ -28,7 +28,7 @@ Confesso que da primeira vez que vi a "Arquitetura Hexgonal" eu fiquei bem incr�
 
 Para que separar as coisas dessa forma? Para finalmente alcançar um código que tenha aquelas quatro palavrinhas que cansamos de ouvir na faculdade *baixo acoplamento e alta coesão*. Nossa... Mas eu vou fazer tudo isso só pra agradar professor? Não! A ideia de um código com baixo acoplamento e alta coesão é aumentar a reversibilidade e facilitar a manutenção e evolução no futuro.
 
-Eu não vou me aprofundar na arquitetura hexagonal porque não é a ideia desse post, mas pretendo responder às perguntas do título.
+Eu não vou me aprofundar na arquitetura hexagonal porque não é a ideia desse post, mas pretendo responder às perguntas do título. Mas se você quer se aprofundar no estudo conceitual dela, sugiro a leitura do [artigo](https://alistair.cockburn.us/hexagonal-architecture/) em que seu criador a descreve.
 
 ### E aí? É ou não é hexagonal?
 
