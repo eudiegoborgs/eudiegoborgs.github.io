@@ -1,6 +1,6 @@
 ---
 path: hex-arch-is-arch
-date: 2021-09-25T09:54:46.396Z
+date: 2021-09-27T12:54:46.396Z
 title: "Arquitetura Hexagonal... É arquitetura? É hexagonal? "
 ---
 Fala galera! 
@@ -22,6 +22,8 @@ A ideia principal dessa arquitetura é separar códigos em camadas definidas por
 * **Aplicação**: Camada responsável por controlar e transformar os dados para se adaptarem aos modelos que as regras de negócio precisam para resolver aquilo que deve ser resolvido.
 * **Domínio ou Core:** Camada que contém as regras de negócio da sua aplicação.
 
+Na verdade, essa separação nem é uma ideia ou obrigatória na Arquitetura Hexagonal, mas tem sido amplamente adotada numa espécie de mistura com DDD e Clean Archtecture. Particularmente, eu gosto muito dessa separação, mas a ideia principal da Arquitetura Hexagonal é a isolar o código de valor do restante através de Portas e Adaptadores, daí o nome. 
+
 Confesso que da primeira vez que vi a "Arquitetura Hexgonal" eu fiquei bem incrédulo quantos aos resultados que alcançaria com essa nova proposta, eu já me sentia muito seguro com o MVC do Laravel e essa mudança me tirou da minha zona de conforto.
 
 Para que separar as coisas dessa forma? Para finalmente alcançar um código que tenha aquelas quatro palavrinhas que cansamos de ouvir na faculdade *baixo acoplamento e alta coesão*. Nossa... Mas eu vou fazer tudo isso só pra agradar professor? Não! A ideia de um código com baixo acoplamento e alta coesão é aumentar a reversibilidade e facilitar a manutenção e evolução no futuro.
@@ -41,6 +43,8 @@ Ela tem a proposta de fazer os componentes se comunicarem de uma maneira linear 
 Vou tentar exemplificar isso... Suponhamos que temos uma feature em nossa API para criação de um novo usuário, o fluxo de comunicação do serviço ficaria assim:
 
 ![Desenho representando o fluxo de comunicação de um serviço.](/assets/hex-arch-2x-1-.png "Desenho representando o fluxo de comunicação de um serviço.")
+
+<a href="/assets/hex-arch-2x-1-.png" target="_blank">Clique aqui para ver a imagem expandida.</a>
 
 Se vocês repararam bem, as setas estão sempre apontadas do azul para o verde e depois para o vermelho *(Exceto as que representam a implementação real da interface).*
 
