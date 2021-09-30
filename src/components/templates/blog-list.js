@@ -44,7 +44,7 @@ export const BlogListQuery = graphql`
             }
           }
           frontmatter {
-            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YY")
+            date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
             title
           }
         }
