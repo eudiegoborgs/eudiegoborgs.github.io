@@ -33,7 +33,7 @@ const style = css`
     width: 100%;
   }
   .time-icon {
-    color: #11C76F;
+    color: var(--primary);
     font-weight: bold;
   }
   .pagination {

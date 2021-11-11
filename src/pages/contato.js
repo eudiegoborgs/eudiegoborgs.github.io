@@ -14,10 +14,10 @@ const style = css`
     width: 100%;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
-    border: solid 1px #11C76F;
+    border: solid 1px var(--primary);
     padding: 5px 10px;
-    background-color: #212121;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
   }
   .submit {
     text-align: center;
@@ -25,15 +25,15 @@ const style = css`
       text-transform: uppercase;
       padding: 10px 30px;
       cursor: pointer;
-      border: solid 1px #11C76F;
-      background-color: #11C76F;
+      border: solid 1px var(--primary);
+      background-color: var(--primary);
       border-radius: 5px;
       transition: 0.5s ease all;
       font-weight: bold;
-      color: #212121;
+      color: var(--black);
       &:hover {
-        background: #212121;
-        color: #11C76F;
+        background: var(--black);
+        color: var(--primary);
       }
     }
   }

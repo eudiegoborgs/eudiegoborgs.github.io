@@ -4,7 +4,7 @@ import Navbar from "../molecules/navbar";
 import BrandName from '../atoms/brand-name';
 
 const style = css`
-  background: #212121;
+  background: var(--black);
   position: fixed;
   top: 0;
   width: 100vw;

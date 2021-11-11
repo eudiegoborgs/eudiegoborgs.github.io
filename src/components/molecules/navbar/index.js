@@ -25,7 +25,7 @@ const style = css `
   }
   .menu-item {
     padding: 2px 10px;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -33,8 +33,8 @@ const style = css `
       padding: 0 5px;
     }
     &:hover, &[aria-current="page"] {
-      background: #11C76F;
-      color: #212121;
+      background: var(--primary);
+      color: var(--black);
     }
   }
   @media(max-width: 780px) {
@@ -49,7 +49,7 @@ const style = css `
       position: absolute;
       left: 0;
       width: 100vw;
-      background: #212121;
+      background: var(--black);
       padding: 1rem 1.0875rem;
       .menu-item {
         display: block;
@@ -63,7 +63,7 @@ const style = css `
       }
 
       .social-menu a {
-        color: #11C76F !important;
+        color: var(--primary) !important;
         float: right;
       }
     }

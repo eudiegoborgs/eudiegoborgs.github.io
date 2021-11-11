@@ -6,7 +6,7 @@ import { StaticQuery, graphql, Link } from "gatsby"
 const style = css`
   line-height: 1;
   font-size: 1.3rem;
-  color: white !important;
+  color: var(--white) !important;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;

@@ -7,7 +7,7 @@ import Icon from '../../atoms/icon'
 
 const style = css`
   background: transparent;
-  color: white;
+  color: var(--white);
   border: none;
   display: flex;
   align-items: center;
@@ -18,7 +18,7 @@ const style = css`
     outline: 0;
   }
   :hover {
-    color: #11C76F;
+    color: var(--primary);
   }
 `;
 

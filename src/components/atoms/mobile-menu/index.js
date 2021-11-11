@@ -51,7 +51,7 @@ const style = css `
     transform: rotate(45deg);
     -webkit-transition-delay: 0s, 0.2s;
     transition-delay: 0s, 0.2s;
-    background-color: #11C76F;
+    background-color: var(--primary);
   }
   span.active:after {
     margin-top: 0;
@@ -59,7 +59,7 @@ const style = css `
     transform: rotate(-45deg);
     -webkit-transition-delay: 0s, 0.2s;
     transition-delay: 0s, 0.2s;
-    background-color: #11C76F;
+    background-color: var(--primary);
   }
 `;
 

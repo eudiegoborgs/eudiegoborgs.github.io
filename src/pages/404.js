@@ -12,7 +12,7 @@ const style = css `
     line-height: 7rem;
     font-weight: bold;
     padding: 5px 20px;
-    background: #11C76F;
+    background: var(--primary);
   }
   h1 {
     text-transform: uppercase;

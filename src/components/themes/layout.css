@@ -5,10 +5,23 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  --black: #212121;
+  --white: white;
+  --primary: #11C76F;
+  --primary-light: #66ffb5;
+  --php-color: #8892BF;
+  --js-color: #ffff00;
+  --ts-color: #3178c6;
+  --mq-xxl: 1080px;
+  --mq-xl: 960px;
+  --mq-lg: 780px;
+  --mq-md: 560px;
+  --mq-sm: 480px;
+  --gradientDegree: 135deg;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #212121;
+  color: var(--black);
   transition: 0.5s ease all;
 }
 article,
@@ -45,29 +58,29 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: #11C76F;
+  color: var(--primary);
   font-weight: bold;
   text-decoration: none;
 }
 a.blog-link {
-  color: #212121;
+  color: var(--black);
 }
 
 .blog-box {
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .nightmode {
-  background: #212121;
-  color: white;
+  background: var(--black);
+  color: var(--white);
   transition: 0.5s ease all;
 }
 
 .nightmode a {
-  color: #11C76F;
+  color: var(--primary);
   transition: 0.5s ease all;
 }
 .nightmode a.blog-link {
-  color: #212121;
+  color: var(--black);
   transition: 0.5s ease all;
 }
 a:active,
@@ -238,7 +251,7 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 header a {
-  color: white;
+  color: var(--white);
 }
 img {
   max-width: 100%;
@@ -652,7 +665,7 @@ footer {
   padding: 20px;
 }
 footer a {
-  color: #212121;
+  color: var(--black);
 }
 @media only screen and (max-width: 780px) {
   .hide-on-mobile {
@@ -663,4 +676,23 @@ footer a {
   html {
     font-size: 100%;
   }
+}
+
+.gradient__text {
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  background-image: linear-gradient(var(--gradientDegree), var(--primary), var(--primary-light));
+}
+
+.gradient {
+  background-image: linear-gradient(var(--gradientDegree), var(--primary), var(--primary-light));
+}
+
+.gradient__light {
+  background-image: linear-gradient(var(--gradientDegree), var(--white), var(--primary-light));
 }

@@ -4,7 +4,6 @@ import { css } from 'emotion';
 import ReadTime from '../atoms/read-time';
 
 const style = css`
-  background-color: #11C76F;
   border-radius: 5px;
   padding: 20px 30px;
   margin-bottom: 35px;
@@ -14,14 +13,14 @@ const style = css`
   a {
     text-decoration: none;
   }
-  color: #212121;
+  color: var(--black);
 `
 
 const BlogItem = ({ content }) => {
   const { frontmatter, fields } = content;
   return (
     <React.Fragment>
-      <div className={ `${style} blog-box` }>
+      <div className={ `${style} blog-box gradient` }>
         <Link to={`/${content.fields.slug}`} className="blog-link">
           <h3 className>{ frontmatter.title }</h3>
         </Link>

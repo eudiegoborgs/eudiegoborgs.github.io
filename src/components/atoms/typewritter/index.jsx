@@ -10,15 +10,15 @@ const style = css`
     }
   }
   .item {
-    color: #11C76F;
+    color: var(--primary);
     &.php {
-      color: #8892BF;
+      color: var(--php-color);
     }
     &.js {
-      color: #ffff00;
+      color: var(--js-color);
     }
     &.ts {
-      color: #3178c6;
+      color: var(--ts-color);
     }
   }
 `;

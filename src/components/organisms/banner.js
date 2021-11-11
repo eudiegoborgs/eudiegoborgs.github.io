@@ -5,13 +5,13 @@ import SocialMenu from '../molecules/social-menu';
 import TypeWritter from '../atoms/typewritter';
 
 const style = css`
-  background-color: #212121;
+  background-color: var(--black);
   background-image: url(${banner});
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 60vh;
-  color: #ffffff;
+  color: var(--white);
   text-align: center;
   text-transform: uppercase;
   overflow: hidden;
@@ -23,9 +23,9 @@ const style = css`
   }
 
   a {
-    color: white !important;
+    color: var(--white) !important;
     :hover {
-      color: #11C76F !important;
+      color: var(--primary) !important;
     }
   }
 `

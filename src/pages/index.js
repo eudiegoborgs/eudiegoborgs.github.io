@@ -12,7 +12,7 @@ const IndexPage = () => (
     <Banner />
     <Content>
       <main style={{textAlign: 'center'}}>
-        <h1>Olá mundo!</h1>
+        <h1 className="gradient__text">Olá mundo!</h1>
         <p>
           Me chamo <strong>Diego Borges</strong>, sou graduando em Sistemas de Informação pela PUC Minas, tenho mais de { new Date().getFullYear() - 2011 } anos de experiência em desenvolvimento. Apaixonado pelo estudo de música, programação e automação.
         </p>
