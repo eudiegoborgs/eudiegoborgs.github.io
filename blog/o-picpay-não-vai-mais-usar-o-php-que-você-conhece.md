@@ -171,17 +171,29 @@ A abordagem monolítica, trás algumas vantagens como menor latência para obten
 
 Já a abordagem com microsserviços, apesar de aumentar a latência para obtenção de dados e também perder não oferecer um ciclo de vida completo de um comportamento, tem menor vulnerabilidade, fazendo com que o mal funcionamento de uma parte não afete o sistema como um todo, cada parte poderá ser escalada de maneira independente economizando recursos, e cada parte poderá operar com a tecnologia mais adequada para a solução do seu problema.
 
-Martin Fowler, sugere em um artigo que apesar das vantagens, a arquitetura baseada em microsserviços não é recomendada para softwares em fase inicial por tornar as coisas mais complexas que o necessário para essa fase, a maioria dos casos de sucesso com micresserviços acontece, quando um monolito maduro é quebrado em serviços menores no momento correto e com a maturidade correta.
+Martin Fowler, sugere em um artigo que apesar das vantagens, a arquitetura baseada em microsserviços não é recomendada para softwares em fase inicial por tornar as coisas mais complexas que o necessário para essa fase, a maioria dos casos de sucesso com micresserviços acontece, quando um monolíto maduro é quebrado em serviços menores no momento correto e com a maturidade correta.
 
 ## Modelagem de dados
 
+Grande parte dos problemas em softwares legados é a maneira como um dados está construído, o acoplamento de informações diferentes e distribuição incorreta de informações pertencentes ao mesmo contexto acabam por dificultar a vida de nós desenvolvedores e na maioria das vezes isso acontece por falta de atenção e planejamento. Adicionamos novas colunas a tabelas existentes, mesmo que fora do contexto só pra facilitar a conclusão da nossa tarefa atual e depois nos tornamos reféns dos efeitos colaterais disso.
+
+Uma boa modelagem de dados exigem analise e organização, cada modelo é aplicável para um cenário e o nosso maior erro é querer criar apenas um modelo de dados para a resolução de todos os problemas em torno do nosso software, não é prático. Existem modelos práticos para a analise e modelos práticos para alimentar serviços.
+
 ## Protocolos de comunicação
+
+Todos os serviços dependem de um protocolo para se comunicar, nos últimos anos criando aplicações monolíticas com nossos frameworks, deixamos de dar atenção a estes protocolos, afinal de contas o nosso front e back eram unificados e entendiam bem um ao outro, porém, com o advento dos smartphones, aplicativos e IoT. Nossas aplicações precisaram se separar e se adaptar para interfaces diferentes e ai voltamos a falar sobre eles.
 
 ### HTTP: RESTful não é só usar um framework
 
-### RPC e gRPC
+O principal protocolo usado na internet é o HTTP, além dele usamos o REST, um modelo arquitetural que especifica um contrato de boas práticas para as comunicações entre serviços usando o HTTP e RESTful é a adoção completa das regras do REST.
+
+Dentro desse protocolo temos a divisão de responsabilidades entre cliente e servidor e a comunicação entre eles é baseada em mensagens enviadas pelo cliente usando caminhos e métodos específicos e o recebimento de respostas com mensagens e códigos de status. O contrato diz qual o método deve ser utilizado para cada tipo de mensagem, como deverá ser o caminho, onde deverá estar a mensagem, qual o melhor código para a resposta e como deverá ser a mensagem de resposta.
 
 ### AMQP: Quando usar filas e mensageirias?
+
+Outro meio comum de comunicação entre serviços é o protocolo AMQP, mais conhecido como barramento, filas, mensageiria ou pub/sub. Nesse protocolo, mensagens são disparadas para uma fila que são consumidas por algum outro serviço que escuta essas mensagens.
+
+Esse protocolo é muito utilizado para comunicação assíncrona entre serviços onde você não depende da resposta para continuar seu processo. 
 
 ## DevOps
 
