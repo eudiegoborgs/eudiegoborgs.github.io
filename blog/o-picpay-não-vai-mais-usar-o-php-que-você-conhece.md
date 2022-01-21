@@ -191,7 +191,7 @@ Dentro desse protocolo temos a divisão de responsabilidades entre cliente e ser
 
 ### AMQP: Quando usar filas e mensageirias?
 
-Outro meio comum de comunicação entre serviços é o protocolo AMQP, mais conhecido como barramento, filas, mensageiria ou pub/sub. Nesse protocolo, mensagens são disparadas para uma fila que são consumidas por algum outro serviço que escuta essas mensagens.
+Outro meio comum de comunicação entre serviços é o protocolo AMQP, mais conhecido como barramento, filas, mensageiria ou pub/sub. Nesse protocolo, mensagens são disparadas para uma fila que são consumidas por algum outro serviço que escuta essas mensagens, isso não acontece de maneira sincrona e é capaz de diluir requisições de acordo com a capacidade do consumidor.
 
 Esse protocolo é muito utilizado para comunicação assíncrona entre serviços onde você não depende da resposta para continuar seu processo. 
 
