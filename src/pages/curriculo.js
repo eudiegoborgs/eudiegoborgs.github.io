@@ -56,9 +56,14 @@ const data = `{
   ],
   "experiences": [
     {
+      "name": "Blackbook",
+      "from": "02/2022",
+      "to": undefined,
+    },
+    {
       "name": "Picpay",
       "from": "05/2021",
-      "to": undefined,
+      "to": "02/2022",
     },
     {
       "name": "Sympla",
