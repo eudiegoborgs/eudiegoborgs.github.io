@@ -25,6 +25,7 @@ const data = `{
       "TypeScript",
       "Node.js",
       "PHP",
+      "Swoole",
       "Python",
       "SQL DB (MySQL, Postgre & Maria DB)",
       "NoSQL DB (Mongo, Firebase & Redis)",
@@ -56,9 +57,14 @@ const data = `{
   ],
   "experiences": [
     {
+      "name": "Picpay",
+      "from": "12/2022",
+      "to": undefined,
+    },
+    {
       "name": "Blackbook",
       "from": "02/2022",
-      "to": undefined,
+      "to": "12/2022",
     },
     {
       "name": "Picpay",
