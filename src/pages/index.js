@@ -17,7 +17,7 @@ const IndexPage = () => (
           Me chamo <strong>Diego Borges</strong>, sou graduando em Sistemas de Informação pela PUC Minas, tenho mais de { new Date().getFullYear() - 2011 } anos de experiência em desenvolvimento. Apaixonado pelo estudo de música, programação e automação.
         </p>
         <p>
-          Atualmente trabalho como Arquiteto de Software na <a href="https://www.blackbook.com.br" target="_blank">Blackbook</a>, faço parte da organização do PHPMG no Vale e escrevo sobre desenvolvimento e carreira para blogs de tecnologia.
+          Atualmente trabalho como Engenheiro de Software na <a href="https://picpay.com.br" target="_blank">PicPay</a>, faço parte da organização do PHPMG e escrevo sobre desenvolvimento e carreira para este blog de tecnologia.
         </p>
       </main>
       <BlogResume />
