@@ -13096,10 +13096,10 @@ netlify-identity-widget@^1.9.1:
   resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.9.2.tgz#4339c9155fc4c2570ae3ddd61825d952b574b02e"
   integrity sha512-IbS1JHhs7BflCCvp3C9f6tmNSZqbyBhZ4Gs5+Qxt4IlPybTOVv0PqJ4TAsA7uxh1R+oXOAmk0OOMAkEaPYeCtA==
 
-netlify-plugin-gatsby-cache@^0.2.1:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/netlify-plugin-gatsby-cache/-/netlify-plugin-gatsby-cache-0.2.2.tgz#9dc84cb8cc811cdcc25fb5245f69bcc58c3f644f"
-  integrity sha512-kgvL5nrawuXz+UaJuUta7Ovwp67Euc2kaiLcNxHIJE/MxYmqCEUvQ+N6NjeKn+eJpeWD7gW9A3Z6HmVKR2Yxfg==
+netlify-plugin-gatsby-cache@^0.3.0:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/netlify-plugin-gatsby-cache/-/netlify-plugin-gatsby-cache-0.3.2.tgz#f2b89c220ef7a525ce4eaac46f828507cc8f8eff"
+  integrity sha512-Ssj2af0DliY70u8MmkDN25cpDk2/jW1aVZxPdljdm17oNwAIQcB17BF86RlW0ikdQ94KGHfaJymjVUZM7K3hPA==
 
 next-tick@1, next-tick@^1.1.0:
   version "1.1.0"
