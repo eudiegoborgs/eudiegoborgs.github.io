@@ -10,6 +10,8 @@ const style = css`
     font-weight: bold;
     font-size: 1.2rem;
     transition: all 0.3s ease-in-out;
+    display: inline-block;
+    margin: 10px 0;
     &:hover {
         background-color: var(--primary-light);
         color: var(--white) !important;

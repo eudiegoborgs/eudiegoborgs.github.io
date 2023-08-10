@@ -18,7 +18,7 @@ const style = css`
   overflow: hidden;
 
   .caption {
-    padding: 25vh 40px;
+    padding: 15vh 40px;
     height: 60vh;
   }
 

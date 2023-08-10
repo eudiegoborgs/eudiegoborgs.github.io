@@ -30,6 +30,14 @@ const style = css`
       color: var(--ts-color);
     }
   }
+
+  .info {
+    font-weight: light;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    color: var(--workshop-secondary);
+    margin: 5px 0;
+  }
 `;
 
 const TypeWritter = () => {
@@ -54,6 +62,8 @@ const TypeWritter = () => {
     <div className={style}>
       <h1>HyperF </h1>
       <p>{items}</p>
+      <p className='info'>16 de setembro de 2023 - 9:00 as 18:00</p>
+      <p className='info'>Quartel Design - Alameda das Princesas 756, Belo Horizonte, MG</p>
     </div>
   )
 }
