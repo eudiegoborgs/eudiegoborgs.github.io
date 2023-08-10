@@ -12,6 +12,9 @@ body {
   --php-color: #8892BF;
   --js-color: #ffff00;
   --ts-color: #3178c6;
+  --workshop-primary: #FE5854;
+  --workshop-bg: #FEBC59;
+  --workshop-secondary: #0E2F53;
   --mq-xxl: 1080px;
   --mq-xl: 960px;
   --mq-lg: 780px;
@@ -695,4 +698,21 @@ footer a {
 
 .gradient__light {
   background-image: linear-gradient(var(--gradientDegree), var(--white), var(--primary-light));
+}
+
+.color__workshop-primary {
+  color: var(--workshop-primary);
+}
+
+.color__workshop-secondary {
+  color: var(--workshop-secondary);
+}
+
+.color__workshop-bg {
+  color: var(--workshop-bg);
+}
+
+.left-list li {
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
