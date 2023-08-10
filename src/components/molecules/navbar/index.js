@@ -84,6 +84,9 @@ const Navbar = () => {
         <Link to="/blog" className="menu-item">
           Blog
         </Link>
+        <Link to="/workshop-hyperf" className="menu-item">
+          Workshop
+        </Link>
         <Link to="/contato" className="menu-item">
           Contato
         </Link>
