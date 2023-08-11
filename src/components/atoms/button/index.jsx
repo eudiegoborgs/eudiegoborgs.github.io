@@ -3,7 +3,7 @@ import { css } from 'emotion';
 
 const style = css`
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -19,6 +19,7 @@ const style = css`
     &.workshop {
         background-color: var(--workshop-primary);
     }
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
 `;
 
 const Button = props => {

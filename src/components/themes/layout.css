@@ -15,6 +15,7 @@ body {
   --workshop-primary: #FE5854;
   --workshop-bg: #FEBC59;
   --workshop-secondary: #0E2F53;
+  --workshop-secondary-light: #0098FE;
   --mq-xxl: 1080px;
   --mq-xl: 960px;
   --mq-lg: 780px;
@@ -709,6 +710,18 @@ footer a {
 }
 
 .color__workshop-bg {
+  color: var(--workshop-bg);
+}
+
+.nightmode .color__workshop-primary {
+  color: var(--workshop-primary);
+}
+
+.nightmode .color__workshop-secondary {
+  color: var(--workshop-secondary-light);
+}
+
+.nightmode .color__workshop-bg {
   color: var(--workshop-bg);
 }
 

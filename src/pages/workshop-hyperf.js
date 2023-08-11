@@ -9,7 +9,7 @@ import { css } from 'emotion';
 const style = css`
     text-align: center;
     h2, h3 {
-      margin-bottom: 0;
+      margin-bottom: 1rem;
       margin-top: 2rem;
     }
     .button {

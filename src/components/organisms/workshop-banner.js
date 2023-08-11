@@ -11,15 +11,16 @@ const style = css`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 60vh;
+  min-height: 60vh;
   color: var(--white);
   text-align: left;
   text-transform: uppercase;
   overflow: hidden;
 
   .caption {
-    padding: 15vh 40px;
-    height: 60vh;
+    padding: 0 40px;
+    padding-top: 15vh;
+    min-height: 60vh;
   }
 
   a {
