@@ -67,7 +67,7 @@ const style = css`
     color: var(--workshop-secondary);
   }
 
-  .text-info {
+  p.text-info {
     margin: 5px 0;
   }
 `
@@ -79,7 +79,7 @@ const Banner = () => (
           <div className='title'>
             <h1>Hyperf </h1>
             <p><TypeWritter words={['desenvolvendo aplicações de alta performance com PHP e Swoole']} /></p>
-            <div>
+            <div className='text-info'>
               <p className='text-info'><Icon source="clock-o"/> 16 de setembro de 2023 - 9:00 as 18:00</p>
               <p className='text-info'><Icon source="map-marker"/> Quartel Design - Alameda das Princesas 756, Belo Horizonte, MG</p>
             </div>
