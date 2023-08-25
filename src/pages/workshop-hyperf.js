@@ -23,7 +23,9 @@ const style = css`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO 
+      title="Workshop Hyperf" 
+      description="desenvolvendo aplicações de alta performance com PHP e Swoole" />
     <Banner />
     <main className={style}>
       <Content>

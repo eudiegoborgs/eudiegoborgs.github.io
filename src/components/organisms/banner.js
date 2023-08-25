@@ -28,12 +28,42 @@ const style = css`
       color: var(--primary) !important;
     }
   }
+
+  .item {
+    color: var(--primary);
+    &.php {
+      color: var(--php-color);
+    }
+    &.swoole {
+      color: var(--php-color);
+    }
+    &.hyperf {
+      color: var(--php-color);
+    }
+    &.js {
+      color: var(--js-color);
+    }
+    &.ts {
+      color: var(--ts-color);
+    }
+  }
 `
 
 const Banner = () => (
   <div className={style}>
     <div className="caption">
-      <TypeWritter />
+      <h1>Writing code with  <TypeWritter words={[
+          'php',
+          'hyperf',
+          'swoole',
+          'js',
+          'ts',
+          'tdd',
+          'quality',
+          'simplicity',
+          'love',
+          '💚'
+      ]} /></h1>
       <SocialMenu />
     </div>
   </div>

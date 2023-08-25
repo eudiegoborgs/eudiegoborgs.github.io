@@ -60,7 +60,7 @@ const TypeWritter = () => {
   );
   return (
     <div className={style}>
-      <h1>HyperF </h1>
+      <h1>Hyperf </h1>
       <p>{items}</p>
       <p className='text-info'>16 de setembro de 2023 - 9:00 as 18:00</p>
       <p className='text-info'>Quartel Design - Alameda das Princesas 756, Belo Horizonte, MG</p>

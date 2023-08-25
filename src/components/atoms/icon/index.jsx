@@ -3,6 +3,8 @@ import { css } from 'emotion'
 
 const style = css`
   padding: 0 3px;
+  min-width: 1.2em;
+  text-align: center;
   &.small {
     font-size: 0.85em;
     font-weight: normal;

@@ -62,7 +62,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: '@eudiegoborgs',
         },
         {
           name: `twitter:title`,
@@ -71,6 +71,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:site`,
+          content: '@eudiegoborgs',
         },
       ].concat(meta)}
     />

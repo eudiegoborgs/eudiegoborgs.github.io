@@ -9,48 +9,26 @@ const style = css`
       display: none;
     }
   }
-  .item {
-    color: var(--primary);
-    &.php {
-      color: var(--php-color);
-    }
-    &.js {
-      color: var(--js-color);
-    }
-    &.ts {
-      color: var(--ts-color);
-    }
-  }
 `;
 
-const TypeWritter = () => {
-  const items = (
-    <Typewriter
-      onInit={(typewriter)=> {
-        const words = [
-          'php',
-          'js',
-          'ts',
-          'tdd',
-          'quality',
-          'simplicity',
-          'love',
-          '💚'
-        ];
-        words.map((word, index) => {
-          typewriter.typeString(`<span class="item ${word}">${word}</span>`)
-          if (words.length > index + 1) {
-            typewriter.pauseFor(500).deleteAll()
-          } else {
-            typewriter.start();
-          }
-        });
-      }}
-    />
-  );
+const TypeWritter = ({words, className}) => {
   return (
-    <h1 className={style}>Writing code with {items}</h1>
-  )
+    <span className={`${style} ${className}`}>
+      <Typewriter
+        onInit={(typewriter)=> {
+          words.map((word, index) => {
+            typewriter.typeString(`<span class="item ${word}">${word}</span>`)
+            if (words.length > index + 1) {
+              typewriter.pauseFor(500).deleteAll()
+            } else {
+              typewriter.start();
+            }
+            return;
+          });
+        }}
+      />
+    </span>
+  );
 }
 
 export default TypeWritter;
