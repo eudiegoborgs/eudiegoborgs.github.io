@@ -15,4 +15,12 @@ O problema da ausência de testes, é que seu projeto cresce todos os dias e por
 
 Softwares crescem exponencialmente e quanto mais linhas de código criadas, mais dificil se torna manter a integridade funcional de tudo, isso sem falar que na maioria das vezes o software vai ser escrito por uma equipe e outros membros escreverão códigos, muitas vezes sem seguir um mesmo padrão.
 
+A verdade é que qualidade não tem preço, o custo de marca + custo de reparo + prejuízo de um bug encontrado em produção é muito alto.
+
 O trabalho com testes pode parecer perda de tempo no inicio, mas é bem possivel que no futuro você se agradeça por ter escrito testes para cadá trecho de código escrito previamente.
+
+## Gestão de débitos técnicos
+
+## Escolha de stack madura
+
+## Desacoplamento 
