@@ -56,6 +56,7 @@ Suponha que você esteja construindo um sistema de pagamento com várias opçõe
 
 ```php
 <?php
+// Design Pattern Strategy [https://refactoring.guru/pt-br/design-patterns/strategy]
 // Interface para processadores de pagamento
 interface PaymentProcessor {
     public function processPayment($amount);
