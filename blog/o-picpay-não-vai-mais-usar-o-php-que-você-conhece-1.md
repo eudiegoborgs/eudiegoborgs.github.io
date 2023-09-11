@@ -37,7 +37,7 @@ Já ouvi dizer que o SOLID é um design pattern, suei frio na hora, mas contive 
 
 Dos códigos abaixo, para você qual é o mais simples de manter e evoluir?
 
-```
+```php
 <?php
   namespace App\NotSolid;
 
