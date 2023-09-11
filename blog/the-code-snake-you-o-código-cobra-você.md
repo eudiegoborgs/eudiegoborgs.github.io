@@ -44,7 +44,7 @@ Ao implementar essas técnicas, as organizações podem gerenciar de forma mais 
 
 A﻿ escolha de uma stack sem plena maturidade pode surtir o efeito contrário ao desejado. Quando escolhemos uma nova ferramenta, geralmente queremos trazer inovação e modernidade, mas a escolhe por uma stack não madura pode resultar em tantas dificuldades que por fim acabe criando resistência cultural a novidades.
 
-## Aesacoplamento
+## Acoplamento
 
 O acoplamento de software é um conceito fundamental na engenharia de software que se refere à medida que as partes de um sistema estão interconectadas ou dependentes umas das outras. Um baixo acoplamento indica que os módulos ou componentes do software têm poucas dependências entre si, o que geralmente é desejável. Isso significa que as mudanças em um componente têm menos probabilidade de afetar outros, tornando o sistema mais flexível e fácil de manter. Por outro lado, um alto acoplamento implica que os componentes estão fortemente interligados, o que pode tornar o software mais difícil de modificar e testar, além de aumentar o risco de impactos indesejados em outras partes do sistema.
 
@@ -78,6 +78,7 @@ class PaymentProcessorB implements PaymentProcessor {
 }
 
 // Cliente
+// Usando injeção de dependencias [https://en.wikipedia.org/wiki/Dependency_injection]
 function checkout(PaymentProcessor $processor, $amount) {
     $processor->processPayment($amount);
 }
