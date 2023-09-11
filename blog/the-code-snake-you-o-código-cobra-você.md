@@ -5,7 +5,7 @@ title: The code snake you (O código cobra você)
 ---
 Bem pessoal, não sei em que momento do futuro vocês estão lendo isso, mas no momento temporal que estou escrevendo essa brincadeira (The code snake you) ainda tem graça (ou só eu que acho engraçado mesmo).
 
-Hoje eu quero falar com vocês sobre algumas decisões, se tratando de codificação, que podem parecer assertivas no inicio, mas que podem cobrar de vocês no futuro.
+Hoje eu quero falar com vocês sobre algumas decisões, se tratando de codificação, que podem parecer assertivas no início, mas que podem cobrar de vocês no futuro.
 
 ## Ausência de testes
 
@@ -42,11 +42,11 @@ Ao implementar essas técnicas, as organizações podem gerenciar de forma mais 
 
 É﻿ bem comum no dia a dia de um desenvolvedor que novas formas de fazer algo ou ferramentas surjam e acredito que um bom desenvolvedor deve buscar maneiras efetivas de testar novidades e se manter atualizado. Porém, não se testa novas formações em uma final de campeonato, da mesma forma, não se usa uma nova ferramenta em grandes projetos. O ideal é usar side projects, POC's ou projetos menores para testar alguma stack nova de forma que seu uso não atrapalhe os objetivos de sua organização.
 
-A﻿ escolha de uma stack sem plena maturidade pode surtir o efeito contrário ao desejado. Quando escolhemos uma nova ferramenta, geralmente queremos trazer inovação e modernidade, mas a escolhe por uma stack não madura pode resultar em tantas dificuldades que por fim acabe criando resistencia cultural a novidades.
+A﻿ escolha de uma stack sem plena maturidade pode surtir o efeito contrário ao desejado. Quando escolhemos uma nova ferramenta, geralmente queremos trazer inovação e modernidade, mas a escolhe por uma stack não madura pode resultar em tantas dificuldades que por fim acabe criando resistência cultural a novidades.
 
-## Desacoplamento
+## Aesacoplamento
 
-O acoplamento de software é um conceito fundamental na engenharia de software que se refere à medida em que as partes de um sistema estão interconectadas ou dependentes umas das outras. Um baixo acoplamento indica que os módulos ou componentes do software têm poucas dependências entre si, o que geralmente é desejável. Isso significa que as mudanças em um componente têm menos probabilidade de afetar outros, tornando o sistema mais flexível e fácil de manter. Por outro lado, um alto acoplamento implica que os componentes estão fortemente interligados, o que pode tornar o software mais difícil de modificar e testar, além de aumentar o risco de impactos indesejados em outras partes do sistema.
+O acoplamento de software é um conceito fundamental na engenharia de software que se refere à medida que as partes de um sistema estão interconectadas ou dependentes umas das outras. Um baixo acoplamento indica que os módulos ou componentes do software têm poucas dependências entre si, o que geralmente é desejável. Isso significa que as mudanças em um componente têm menos probabilidade de afetar outros, tornando o sistema mais flexível e fácil de manter. Por outro lado, um alto acoplamento implica que os componentes estão fortemente interligados, o que pode tornar o software mais difícil de modificar e testar, além de aumentar o risco de impactos indesejados em outras partes do sistema.
 
 Para alcançar um acoplamento adequado, os princípios de design como a coesão, que indica o grau em que as responsabilidades de um módulo estão relacionadas, e a modularização, que envolve a divisão de um sistema em módulos independentes e reutilizáveis, são fundamentais. Um projeto de software bem-sucedido busca minimizar o acoplamento entre módulos, promovendo a independência e a reutilização de componentes, o que não só facilita o desenvolvimento e a manutenção, mas também contribui para sistemas mais robustos e escaláveis.
 
