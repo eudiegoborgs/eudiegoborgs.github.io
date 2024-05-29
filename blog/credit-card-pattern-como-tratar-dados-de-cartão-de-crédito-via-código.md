@@ -17,13 +17,13 @@ Como não existe operação matemática, dados como bin (primeiros 6 dígitos), 
 
 ### CVV, last four, bin ou número do cartão com zero no início
 
-![](assets/example-1.png)
+![](/assets/example-1.png)
 
 Criar esses dados como inteiros vai te forçar a tratar casos onde o número de caracteres é menor que o esperado, forçando a inferir que existem zeros no início. Em computação, inferir nunca é bom.
 
 ### O terrível dia 29 para o valid thru
 
-![](assets/example-2.png)
+![](/assets/example-2.png)
 
 O tratamento correto desses dados facilita a manutenção e evita bugs em produção.
 
