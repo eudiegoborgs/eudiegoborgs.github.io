@@ -50,7 +50,7 @@ Existem vários tipos de documentação que precisam ser abordados em um projeto
 * **Decisões Técnicas**: Documenta as escolhas tecnológicas e as razões por trás delas.
 * **Decisões de Negócio e Produto**: Explica as funcionalidades, prioridades e como as decisões de negócios impactam o desenvolvimento.
 * **Como Contribuir**: Guia para onboard de novos membros ou contribuições de terceiros.
-* **Como Rolar Local**: Instruções para configurar o ambiente local de desenvolvimento.
+* **Como Rodar Local**: Instruções para configurar o ambiente local de desenvolvimento.
 * **Como se Integrar (Get Started)**: Guia de integração para times externos ou parceiros.
 * **Swagger Não é Documentação**: Ferramentas como Swagger automatizam a geração de documentação técnica, mas é importante complementá-las com explicações detalhadas e orientadas a humanos.
 
