@@ -6,12 +6,6 @@ import Content from '../organisms/content'
 import BlogItem from '../organisms/blog-item'
 
 const BlogList = (props) => {
-  const { currentPage, numPages } = props.pageContext
-  const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
-  const prevPage = currentPage - 1 === 1 ? '/blog/' : `/blog/page/${currentPage - 1}`
-  const nextPage = `/blog/page/${currentPage + 1}`
-
   const list = props.data.allMarkdownRemark.edges
 
   return (
@@ -19,7 +13,7 @@ const BlogList = (props) => {
       <SEO title="Blog" />
       <Content>
         <main>
-          <h2>Blog</h2>
+          <h1 style={{marginTop: '3rem'}}>Blog</h1>
           {list.map(item => <BlogItem content={item.node}/>)}
         </main>
       </Content>

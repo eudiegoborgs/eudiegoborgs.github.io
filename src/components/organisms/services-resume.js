@@ -5,6 +5,7 @@ import Icon from '../atoms/icon';
 
 const styles = css`
   margin-top: 2rem;
+  color: var(--white);
 
   .service-list {
     display: grid;

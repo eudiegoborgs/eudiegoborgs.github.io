@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import Layout from "../components/themes/layout"
 import SEO from "../components/organisms/seo"
-import Content from "../components/organisms/content"
+import Content, { ContentMax } from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
 
 const data = `{
@@ -102,18 +102,23 @@ const data = `{
 const CurriculoPage = () => (
   <Layout>
     <SEO title="Curriculo" />
-    <Content>
-      <main style={{textAlign: 'center'}}>
-        <SyntaxHighlighter 
-          language={'javascript'}
-          style={dracula}
-          showLineNumbers={true}
-        >
-         {data}
-        </SyntaxHighlighter>
-      </main>
+    <div>
+      <Content>
+        <main style={{textAlign: 'center'}}>
+          <h1 style={{marginTop: '6rem'}}>Currículo</h1>
+          <SyntaxHighlighter 
+            language={'javascript'}
+            style={dracula}
+            showLineNumbers={true}
+          >
+          {data}
+          </SyntaxHighlighter>
+        </main>
+      </Content>
+    </div>
+    <ContentMax>
       <BlogResume />
-    </Content>
+    </ContentMax>
   </Layout>
 )
 
