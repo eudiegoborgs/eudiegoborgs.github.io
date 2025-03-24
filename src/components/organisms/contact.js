@@ -52,9 +52,9 @@ const Contact = () => (
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="contact" />
       <p>
-        <label>Nome: <input type="text" name="name" /></label>
-        <label>E-mail: <input type="email" name="email" /></label>
-        <label>Mensagem: <textarea name="message"></textarea></label>
+        <label>Nome: <input type="text" name="name" required /></label>
+        <label>E-mail: <input type="email" name="email" required /></label>
+        <label>Mensagem: <textarea name="message" required></textarea></label>
       </p>
       <p className="submit">
         <button type="submit">Enviar</button>

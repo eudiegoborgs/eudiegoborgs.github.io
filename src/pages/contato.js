@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import Layout from "../components/themes/layout"
 import SEO from "../components/organisms/seo"
 import Content from "../components/organisms/content"
+import Contact from "../components/organisms/contact";
 
 const style = css`
   text-align: left;
@@ -40,30 +41,13 @@ const style = css`
 `;
 
 
-const Contact = () => (
+const Contato = () => (
   <Layout>
     <SEO title="Contato" />
     <Content>
-      <main style={{textAlign: 'center'}}>
-        <h1>Contato</h1>
-        <p>
-          Você pode me mandar uma mensagem por aqui mesmo.
-        </p>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className={style}>
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-          <p>
-            <label>Nome: <input type="text" name="name" /></label>
-            <label>E-mail: <input type="email" name="email" /></label>
-            <label>Mensagem: <textarea name="message"></textarea></label>
-          </p>
-          <p className="submit">
-            <button type="submit">Enviar</button>
-          </p>
-        </form>
-      </main>
+      <Contact />
     </Content>
   </Layout>
 )
 
-export default Contact
+export default Contato
