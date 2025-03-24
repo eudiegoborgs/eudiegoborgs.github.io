@@ -3,6 +3,7 @@ import banner from '../../images/banner/banner.jpg';
 import { css } from 'emotion';
 import SocialMenu from '../molecules/social-menu';
 import TypeWritter from '../atoms/typewritter';
+import { Button } from 'reactstrap';
 
 const style = css`
   background-color: var(--black);
@@ -27,6 +28,17 @@ const style = css`
     :hover {
       color: var(--primary) !important;
     }
+  }
+
+  a.button {
+    color: var(--black) !important;
+    :hover {
+      color: var(--black) !important;
+    }
+  }
+
+  .action {
+    padding: 20px;
   }
 
   .item {
@@ -64,7 +76,13 @@ const Banner = () => (
           'love',
           '💚'
       ]} /></h1>
+      <h3 className="thin">Soluções profissionais para desenvolvimento de software</h3>
       <SocialMenu />
+      {/* <div className='action'>
+        <Button href="#contato" className="button gradient">
+          Fale comigo
+        </Button>
+      </div> */}
     </div>
   </div>
 )

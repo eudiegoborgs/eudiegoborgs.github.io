@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { css } from 'emotion';
 import ReadTime from '../atoms/read-time';
+import Icon from '../atoms/icon';
 
 const style = css`
   border-radius: 5px;
@@ -24,7 +25,12 @@ const BlogItem = ({ content }) => {
         <Link to={`/${content.fields.slug}`} className="blog-link">
           <h3 className>{ frontmatter.title }</h3>
         </Link>
-        {fields.readingTime && (<small><ReadTime time={fields.readingTime.minutes} className="time-icon"/> - { frontmatter.date }</small>)}
+        {fields.readingTime && (<small><ReadTime time={fields.readingTime.minutes} className="time-icon"/> • { frontmatter.date }</small>)}
+        <div style={{paddingTop: '10px'}}>
+          <Link to={`/${content.fields.slug}`} className="blog-link">
+            Ler artigo <Icon source="arrow-right" />
+          </Link>
+        </div>
       </div>
     </React.Fragment>
   )

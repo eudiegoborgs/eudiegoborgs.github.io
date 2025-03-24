@@ -40,7 +40,7 @@ const style = css`
 `;
 
 
-const NotFoundPage = () => (
+const Contact = () => (
   <Layout>
     <SEO title="Contato" />
     <Content>
@@ -66,4 +66,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default Contact

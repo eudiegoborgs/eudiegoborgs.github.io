@@ -30,17 +30,43 @@ const blogListQuery = graphql`
   }
 `
 
+const styles = css`
+  margin-top: 2rem;
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 16px; 
+    justify-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr; /* Apenas 1 coluna no mobile */
+    }
+  }
+
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary);
+    padding-bottom: 20px;
+  }
+`
+
 const BlogResume = () => {
   const allBlogList = useStaticQuery(blogListQuery)
   const list = allBlogList.allMarkdownRemark.edges
 
   return (
-    <div className={ css`margin-top: 5rem` }>
-      <h2>Posts recentes</h2>
-      {list.map(item => <BlogItem key={item.slug} content={item.node}/>)}
-      <Link to="/blog">
-        Ver mais posts...
-      </Link>
+    <div className={ styles }>
+      <div className="post-header">
+        <h2>Posts recentes</h2>
+        <Link to="/blog">
+          Ver mais posts...
+        </Link>
+      </div>
+      <div className="post-list">
+        {list.map(item => <BlogItem key={item.slug} content={item.node}/>)}
+      </div>
     </div>
   )
 }

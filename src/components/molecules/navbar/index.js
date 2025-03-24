@@ -35,6 +35,7 @@ const style = css `
     &:hover, &[aria-current="page"] {
       background: var(--primary);
       color: var(--black);
+      border-radius: 3px;
     }
   }
   @media(max-width: 780px) {
@@ -70,26 +71,31 @@ const style = css `
   }
 `;
 
+const menu_options = [
+  {
+    name: 'Início',
+    link: '/'
+  },
+  {
+    name: 'Currículo',
+    link: '/curriculo'
+  },
+  {
+    name: 'Blog',
+    link: '/blog'
+  }
+]
+
 const Navbar = () => {
   const [Open, setOpen] = React.useState(false);
   return (
     <div className={style}>
       <div className={`menu ${Open && 'active'}`}>
-        <Link to="/" className="menu-item">
-          Início
-        </Link>
-        <Link to="/curriculo" className="menu-item">
-          Currículo
-        </Link>
-        <Link to="/blog" className="menu-item">
-          Blog
-        </Link>
-        <Link to="/workshop-hyperf" className="menu-item">
-          Workshop
-        </Link>
-        <Link to="/contato" className="menu-item">
-          Contato
-        </Link>
+        {menu_options.map((item, index) => (
+          <Link key={index} to={item.link} className="menu-item">
+            {item.name}
+          </Link>
+        ))}
         <div className="social-menu">
           <SocialMenu />
         </div>
