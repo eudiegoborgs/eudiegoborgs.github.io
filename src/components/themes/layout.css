@@ -8,7 +8,7 @@ body {
   --black: #000000;
   --super-black: #111;
   --white: white;
-  --primary: #11C76F;
+  --primary: #094E2C;
   --primary-light: #66ffb5;
   --php-color: #8892BF;
   --js-color: #ffff00;
@@ -80,11 +80,12 @@ a.blog-link {
   transition: 0.5s ease all;
 }
 
-.nightmode a {
-  color: var(--primary);
+.nightmode a, .bg-super-black a, .bg-black a {
+  color: var(--primary-light);
   transition: 0.5s ease all;
 }
-.nightmode a.blog-link {
+
+.nightmode a.blog-link, .bg-super-black a.blog-link, .bg-black a.blog-link {
   color: var(--black);
   transition: 0.5s ease all;
 }
@@ -503,11 +504,11 @@ footer a {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
-  background-image: linear-gradient(var(--gradientDegree), var(--primary), var(--primary-light));
+  background-image: linear-gradient(var(--gradientDegree), var(--primary-light), var(--primary-light));
 }
 
 .gradient {
-  background-image: linear-gradient(var(--gradientDegree), var(--primary), var(--primary-light));
+  background-image: linear-gradient(var(--gradientDegree), var(--primary-light), var(--primary-light));
 }
 
 .gradient__light {

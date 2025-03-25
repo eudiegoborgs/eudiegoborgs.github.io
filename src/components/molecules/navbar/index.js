@@ -33,7 +33,7 @@ const style = css `
       padding: 0 5px;
     }
     &:hover, &[aria-current="page"] {
-      background: var(--primary);
+      background: var(--primary-light);
       color: var(--black);
       border-radius: 3px;
     }
@@ -64,7 +64,7 @@ const style = css `
       }
 
       .social-menu a {
-        color: var(--primary) !important;
+        color: var(--primary-light) !important;
         float: right;
       }
     }

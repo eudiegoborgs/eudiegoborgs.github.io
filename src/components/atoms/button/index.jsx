@@ -5,7 +5,7 @@ const style = css`
   margin: 10px 0;
   display: inline-block;
   a {
-    background-color: var(--primary);
+    background-color: var(--primary-light);
     color: var(--white) !important;
     padding: 10px 20px;
     border-radius: 5px;

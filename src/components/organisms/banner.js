@@ -42,7 +42,7 @@ const style = css`
   }
 
   .item {
-    color: var(--primary);
+    color: var(--primary-light);
     &.php {
       color: var(--php-color);
     }

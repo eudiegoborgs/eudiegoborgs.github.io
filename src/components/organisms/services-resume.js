@@ -29,7 +29,7 @@ const styles = css`
   .service-header {
     display: flex;
     justify-content: space-between;
-    color: var(--primary);
+    color: var(--primary-light);
     padding-bottom: 20px;
   }
 `

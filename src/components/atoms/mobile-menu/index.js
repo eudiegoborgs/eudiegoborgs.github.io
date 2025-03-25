@@ -53,7 +53,7 @@ const style = css `
     transform: rotate(45deg);
     -webkit-transition-delay: 0s, 0.2s;
     transition-delay: 0s, 0.2s;
-    background-color: var(--primary);
+    background-color: var(--primary-light);
   }
   span.active:after {
     margin-top: 0;
@@ -61,7 +61,7 @@ const style = css `
     transform: rotate(-45deg);
     -webkit-transition-delay: 0s, 0.2s;
     transition-delay: 0s, 0.2s;
-    background-color: var(--primary);
+    background-color: var(--primary-light);
   }
 `;
 
@@ -73,7 +73,7 @@ const MobileMenu = props => {
     props.onClick(newOpen);
   }
   return (
-    <button className={style} onClick={change}>
+    <button className={style} onClick={change} aria-label="Menu" alt="Menu">
       <span className={Open && 'active'}/>
     </button>
   )

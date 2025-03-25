@@ -15,7 +15,7 @@ const style = css`
       width: 100%;
       box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
       border-radius: 5px;
-      border: solid 1px var(--primary);
+      border: solid 1px var(--primary-light);
       padding: 5px 10px;
       background-color: var(--black);
       color: var(--white);
@@ -26,15 +26,15 @@ const style = css`
         text-transform: uppercase;
         padding: 10px 30px;
         cursor: pointer;
-        border: solid 1px var(--primary);
-        background-color: var(--primary);
+        border: solid 1px var(--primary-light);
+        background-color: var(--primary-light);
         border-radius: 5px;
         transition: 0.5s ease all;
         font-weight: bold;
         color: var(--black);
         &:hover {
           background: var(--black);
-          color: var(--primary);
+          color: var(--primary-light);
         }
       }
     }

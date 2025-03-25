@@ -19,7 +19,7 @@ const style = css`
     outline: 0;
   }
   :hover {
-    color: var(--primary);
+    color: var(--primary-light);
   }
 `;
 

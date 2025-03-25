@@ -47,7 +47,7 @@ const styles = css`
   .post-header {
     display: flex;
     justify-content: space-between;
-    color: var(--primary);
+    color: var(--primary-light);
     padding-bottom: 20px;
   }
 `
