@@ -3,7 +3,6 @@ import banner from '../../images/banner/banner.jpg';
 import { css } from 'emotion';
 import SocialMenu from '../molecules/social-menu';
 import TypeWritter from '../atoms/typewritter';
-import { Button } from 'reactstrap';
 
 const style = css`
   background-color: var(--black);
@@ -76,7 +75,7 @@ const Banner = () => (
           'love',
           '💚'
       ]} /></h1>
-      <h3 className="thin">Soluções profissionais para desenvolvimento de software</h3>
+      <h2 className="thin h3">Soluções profissionais para desenvolvimento de software</h2>
       <SocialMenu />
       {/* <div className='action'>
         <Button href="#contato" className="button gradient">

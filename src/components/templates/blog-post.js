@@ -7,6 +7,7 @@ import SEO from '../organisms/seo'
 import Content from '../organisms/content'
 import ReadTime from '../atoms/read-time';
 import BlogItem from '../organisms/blog-item'
+import { Helmet } from 'react-helmet'
 
 const style = css`
   text-decoration: none;
@@ -91,6 +92,25 @@ const BlogPost = (props) => {
           <Disqus config={disqusConfig} />
         </main>
       </Content>
+      <Helmet>
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Blog",
+            "item": "https://diegoborgs.com.br/blog"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": post.title,
+            "item": `https://diegoborgs.com.br/${post.fields.slug}`
+          }]
+        })}
+        </script>
+      </Helmet>
     </Layout>
   )
 }
