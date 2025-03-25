@@ -105,7 +105,7 @@ const CurriculoPage = () => (
     <div>
       <Content>
         <main style={{textAlign: 'center'}}>
-          <h1 style={{marginTop: '6rem'}}>Currículo</h1>
+          <h1 style={{marginTop: '3rem'}}>Currículo</h1>
           <SyntaxHighlighter 
             language={'javascript'}
             style={dracula}

@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../images/banner/bg.jpg';
+import banner from '../../images/banner/bg.webp';
 import { css } from 'emotion';
 import TypeWritter from '../atoms/typewritter';
 import Content from "../organisms/content"

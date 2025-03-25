@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { lazy, Suspense } from "react"
 import { Disqus } from 'gatsby-plugin-disqus'
 import { graphql } from 'gatsby'
 import { css } from 'emotion'
@@ -7,7 +7,8 @@ import SEO from '../organisms/seo'
 import Content from '../organisms/content'
 import ReadTime from '../atoms/read-time';
 import BlogItem from '../organisms/blog-item'
-import { Helmet } from 'react-helmet'
+
+const Helmet = lazy(() => import('react-helmet'))
 
 const style = css`
   text-decoration: none;
@@ -70,7 +71,7 @@ const BlogPost = (props) => {
         <main className={ style }>
           <header>
             <div>
-              <h1>{ post.frontmatter.title }</h1>
+              <h1 style={{marginTop: '3rem'}}>{ post.frontmatter.title }</h1>
             </div>
             <small><ReadTime time={post.fields.readingTime.minutes} className="time-icon"/> - { post.frontmatter.date }</small>
           </header>
@@ -92,25 +93,27 @@ const BlogPost = (props) => {
           <Disqus config={disqusConfig} />
         </main>
       </Content>
-      <Helmet>
-        <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Blog",
-            "item": "https://diegoborgs.com.br/blog"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": post.title,
-            "item": `https://diegoborgs.com.br/${post.fields.slug}`
-          }]
-        })}
-        </script>
-      </Helmet>
+      <Suspense fallback={<div/>}>
+        <Helmet>
+          <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Blog",
+              "item": "https://diegoborgs.com.br/blog"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": post.title,
+              "item": `https://diegoborgs.com.br/${post.fields.slug}`
+            }]
+          })}
+          </script>
+        </Helmet>
+      </Suspense>
     </Layout>
   )
 }

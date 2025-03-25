@@ -1,8 +1,9 @@
-import React from 'react';
-import banner from '../../images/banner/banner.jpg';
+import React, { lazy, Suspense } from "react";
+import banner from '../../images/banner/banner.webp';
 import { css } from 'emotion';
 import SocialMenu from '../molecules/social-menu';
-import TypeWritter from '../atoms/typewritter';
+
+const TypeWritter = lazy(() => import("../atoms/typewritter"));
 
 const style = css`
   background-color: var(--black);
@@ -63,7 +64,12 @@ const style = css`
 const Banner = () => (
   <div className={style}>
     <div className="caption">
-      <h1>Writing code with  <TypeWritter words={[
+      <Suspense fallback={
+        <h1>
+          Writing code with 💚
+        </h1>
+      }>
+        <h1>Writing code with  <TypeWritter words={[
           'php',
           'hyperf',
           'swoole',
@@ -74,7 +80,8 @@ const Banner = () => (
           'simplicity',
           'love',
           '💚'
-      ]} /></h1>
+        ]} /></h1>
+      </Suspense>
       <h2 className="thin h3">Soluções profissionais para desenvolvimento de software</h2>
       <SocialMenu />
       {/* <div className='action'>

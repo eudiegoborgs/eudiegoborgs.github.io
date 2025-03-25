@@ -7,6 +7,14 @@ const styles = css`
   margin-top: 2rem;
   color: var(--white);
 
+  .service-item {
+    max-width: 300px;
+
+    .header {
+      width: 80%;
+    }
+  }
+
   .service-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 

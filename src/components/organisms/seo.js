@@ -5,11 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { lazy, Suspense } from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import AnalyticsService from '../../services/analitycs'
+
+const Helmet = lazy(() => import('react-helmet'))
 
 if (typeof window !== `undefined`) {
   AnalyticsService.pageview(window.location.pathname + window.location.search);
@@ -33,55 +34,59 @@ function SEO({ description, lang, meta, title }) {
   const metaDescription = description || site.siteMetadata.description
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: '@eudiegoborgs',
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:site`,
-          content: '@eudiegoborgs',
-        },
-        {
-          name: "google-site-verification",
-          content: "vOw5gaivEchhPIz03l5MWNJQfJOyQjYTt1l82tD6M84"
-        }
-      ].concat(meta)}
-    />
+    <Suspense
+      fallback={<div></div>}
+    >
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={title}
+        titleTemplate={`%s | ${site.siteMetadata.title}`}
+        meta={[
+          {
+            name: `description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:creator`,
+            content: '@eudiegoborgs',
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+          {
+            name: `twitter:site`,
+            content: '@eudiegoborgs',
+          },
+          {
+            name: "google-site-verification",
+            content: "vOw5gaivEchhPIz03l5MWNJQfJOyQjYTt1l82tD6M84"
+          }
+        ].concat(meta)}
+      />
+    </Suspense>
   )
 }
 
