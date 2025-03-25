@@ -2,6 +2,8 @@ import React from "react"
 import { css } from 'emotion';
 
 const style = css `
+  background: transparent;
+  border: none;
   span {
     margin: 0 auto;
     -webkit-transition-duration: 0s;
@@ -71,9 +73,9 @@ const MobileMenu = props => {
     props.onClick(newOpen);
   }
   return (
-    <a className={style} onClick={change}>
+    <button className={style} onClick={change}>
       <span className={Open && 'active'}/>
-    </a>
+    </button>
   )
 }
 
