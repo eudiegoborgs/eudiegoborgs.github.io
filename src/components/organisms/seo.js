@@ -76,13 +76,17 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:site`,
           content: '@eudiegoborgs',
         },
+        {
+          name: "google-site-verification",
+          content: "vOw5gaivEchhPIz03l5MWNJQfJOyQjYTt1l82tD6M84"
+        }
       ].concat(meta)}
     />
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pt-Br`,
   meta: [],
   description: ``,
 }
