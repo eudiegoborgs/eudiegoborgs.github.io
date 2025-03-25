@@ -1,10 +1,9 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { css } from 'emotion'
 import AnalyticsService from '../../../services/analitycs';
 import SwitchInput from '../../atoms/switch-input'
 import Icon from '../../atoms/icon'
-
-const Helmet = lazy(() => import('react-helmet'))
+import { Helmet } from 'react-helmet';
 
 const style = css`
   background: transparent;
@@ -52,13 +51,9 @@ const LightButton = () => {
 
   return (
     <button className={style} onClick={change} alt={title} title={title}>
-      <Suspense
-        fallback={<div />}
-      >
-        <Helmet>
-          <body className={darkMode && "nightmode"} />
-        </Helmet>
-      </Suspense>
+      <Helmet>
+        <body className={darkMode && "nightmode"} />
+      </Helmet>
       <Icon source="moon-o" small={1} disabled={!darkMode} />
       <SwitchInput on={!darkMode ? 1 : 0} bigger={1} />
       <Icon source="sun-o" small={1} disabled={darkMode} />

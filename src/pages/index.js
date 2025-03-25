@@ -1,6 +1,5 @@
 import React, {lazy, Suspense} from "react"
 import Layout from "../components/themes/layout"
-import SEO from "../components/organisms/seo"
 import Banner from "../components/organisms/banner"
 import Content, { ContentMax } from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
@@ -8,10 +7,10 @@ import Contact from "../components/organisms/contact"
 import ServicesResume from "../components/organisms/services-resume"
 
 const Helmet = lazy(() => import('react-helmet'))
+const SEO = lazy(() => import('../components/organisms/seo'))
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
     <Banner />
     <ContentMax className="bg-super-black">
       <ServicesResume />
@@ -40,6 +39,7 @@ const IndexPage = () => (
       <Contact />
     </Content>
     <Suspense fallback={<div/>}>
+      <SEO title="Home" />
       <Helmet>
         <script type="application/ld+json">
         {JSON.stringify({
