@@ -1,13 +1,12 @@
-import React, {lazy, Suspense} from "react"
+import React from "react"
 import Layout from "../components/themes/layout"
 import Banner from "../components/organisms/banner"
 import Content, { ContentMax } from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
 import Contact from "../components/organisms/contact"
 import ServicesResume from "../components/organisms/services-resume"
-
-const Helmet = lazy(() => import('react-helmet'))
-const SEO = lazy(() => import('../components/organisms/seo'))
+import SEO from "../components/organisms/seo"
+import { Helmet } from "react-helmet"
 
 const IndexPage = () => (
   <Layout>
@@ -38,27 +37,25 @@ const IndexPage = () => (
     <Content>
       <Contact />
     </Content>
-    <Suspense fallback={<div/>}>
-      <SEO title="Home" />
-      <Helmet>
-        <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfilePage",
-          "dateCreated": "2025-03-25T00:34:00-05:00",
-          "dateModified": "2025-03-25T00:34:00-05:00",
-          "mainEntity": {
-            "@type": "Person",
-            "name": "Diego Borges",
-            "alternateName": "eudiegoborgs",
-            "identifier": "1",
-            "description": "Soluções profissionais para desenvolvimento de software",
-            "image": "https://avatars.githubusercontent.com/u/8547922?v=4"
-          }
-        })}
-        </script>
-      </Helmet>
-    </Suspense>
+    <SEO title="Home" />
+    <Helmet>
+      <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "dateCreated": "2025-03-25T00:34:00-05:00",
+        "dateModified": "2025-03-25T00:34:00-05:00",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Diego Borges",
+          "alternateName": "eudiegoborgs",
+          "identifier": "1",
+          "description": "Soluções profissionais para desenvolvimento de software",
+          "image": "https://avatars.githubusercontent.com/u/8547922?v=4"
+        }
+      })}
+      </script>
+    </Helmet>
   </Layout>
 )
 
