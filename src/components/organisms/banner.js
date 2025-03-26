@@ -16,6 +16,10 @@ const style = css`
   text-transform: uppercase;
   overflow: hidden;
 
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+
   .caption {
     position: absolute;
     top: 0;
