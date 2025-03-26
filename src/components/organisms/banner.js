@@ -3,10 +3,11 @@ import banner from '../../images/banner/banner.webp';
 import SocialList from '../atoms/social-list';
 import TypeWritter from "../atoms/typewritter";
 import { css } from "@emotion/react";
+import { StaticImage } from "gatsby-plugin-image";
 
 const style = css`
+  position: relative;
   background-color: var(--black);
-  background-image: url(${banner});
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -17,9 +18,14 @@ const style = css`
   overflow: hidden;
 
   .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     padding: 25vh 40px;
     height: 540px;
     background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
+    z-index: 1;
   }
 
   a {
@@ -62,6 +68,7 @@ const style = css`
 
 const Banner = () => (
   <div css={style}>
+    <StaticImage src="../../images/banner/banner.webp" alt="Banner" placeholder="blurred" layout="fullWidth" />
     <div className="caption">
       <h1>Writing code with  <TypeWritter words={[
         'php',

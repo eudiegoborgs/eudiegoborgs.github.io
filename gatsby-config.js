@@ -34,6 +34,7 @@ module.exports = {
       },
     }, 
     "gatsby-plugin-image", 
+    "gatsby-plugin-preload-fonts", 
     "gatsby-plugin-sitemap", 
     "gatsby-plugin-webpack-bundle-analyser-v2",
     {
