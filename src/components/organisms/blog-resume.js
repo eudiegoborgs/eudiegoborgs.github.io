@@ -40,7 +40,7 @@ const styles = css`
     justify-items: center;
 
     @media (max-width: 900px) {
-      grid-template-columns: 1fr; /* Apenas 1 coluna no mobile */
+      grid-template-columns: 1fr;
     }
   }
 

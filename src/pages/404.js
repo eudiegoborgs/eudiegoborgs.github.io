@@ -23,7 +23,7 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Content>
-      <main className={style}>
+      <main css={style}>
         <span className="code">:/</span>
         <h1>404 - Conteúdo não encontrado</h1>
         <p>

@@ -5,11 +5,26 @@ module.exports = {
   siteMetadata: {
     title: `<DiegoBorgs />`,
     description: `I am a Information Systems Students in the Catholic University of Minas Gerais (PUC Minas), with complementary expertise in Programming, Graphic Design and Music. Software Engineer at PicPay and love to know new things.`,
-    author: `@eudiegoborgs`
+    author: `@eudiegoborgs`,
+    siteUrl: `https://diegoborgs.com`,
+    social: {
+      twitter: `eudiegoborgs`,
+      github: `eudiegoborgs`,
+      linkedin: `eudiegoborgs`,
+    },
   },
   plugins: [
     "gatsby-plugin-netlify-cms", 
-    "gatsby-plugin-emotion", 
+    {
+      resolve: "gatsby-plugin-emotion",
+      options: {
+        sourceMap: true,
+        autoLabel: "dev-only",
+        labelFormat: "[local]",
+        cssPropOptimization: true,
+      },
+    },
+    "gatsby-plugin-postcss", 
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
