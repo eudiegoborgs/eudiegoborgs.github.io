@@ -14,9 +14,7 @@ module.exports = {
     },
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-    }, 
+    "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-plugin-emotion",
       options: {
