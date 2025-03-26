@@ -24,7 +24,6 @@ module.exports = {
         cssPropOptimization: true,
       },
     },
-    "gatsby-plugin-postcss", 
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
