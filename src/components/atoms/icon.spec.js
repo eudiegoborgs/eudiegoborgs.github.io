@@ -1,6 +1,6 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react"
-import Icon from "./index"
+import Icon from "./switch-input"
 describe("Icon", () => {
   it("renders correctly", () => {
     const { container, rerender } = render(<Icon source="plus"/>)

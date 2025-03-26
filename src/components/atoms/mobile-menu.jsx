@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from 'emotion';
+import { css } from '@emotion/react';
 
 const style = css `
   background: transparent;
@@ -73,7 +73,7 @@ const MobileMenu = props => {
     props.onClick(newOpen);
   }
   return (
-    <button className={style} onClick={change} aria-label="Menu" alt="Menu">
+    <button css={style} onClick={change} aria-label="Menu" alt="Menu">
       <span className={Open && 'active'}/>
     </button>
   )

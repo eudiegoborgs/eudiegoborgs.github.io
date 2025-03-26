@@ -1,4 +1,3 @@
-// Import Font Awesome Icons Set
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -504,6 +503,10 @@ footer a {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
+  background-image: linear-gradient(var(--gradientDegree), var(--primary), var(--primary));
+}
+
+.nightmode .gradient__text {
   background-image: linear-gradient(var(--gradientDegree), var(--primary-light), var(--primary-light));
 }
 

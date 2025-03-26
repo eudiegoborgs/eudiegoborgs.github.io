@@ -2,9 +2,9 @@ import React from "react"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import Layout from "../components/themes/layout"
-import SEO from "../components/organisms/seo"
-import Content, { ContentMax } from "../components/organisms/content"
 import BlogResume from "../components/organisms/blog-resume"
+import Content, { ContentMax } from "../components/atoms/content";
+import SEO from "../components/organisms/seo";
 
 const data = `{
   "name": "Diego Borges Ferreira",
@@ -116,7 +116,7 @@ const CurriculoPage = () => (
         </main>
       </Content>
     </div>
-    <ContentMax>
+    <ContentMax className="bg-super-black">
       <BlogResume />
     </ContentMax>
   </Layout>

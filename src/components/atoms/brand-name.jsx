@@ -1,7 +1,6 @@
 import React from 'react'
-import { css } from 'emotion'
-import Typewriter from "typewriter-effect"
 import { StaticQuery, graphql, Link } from "gatsby"
+import { css } from '@emotion/react';
 
 const style = css`
   line-height: 1;
@@ -11,7 +10,7 @@ const style = css`
   text-transform: uppercase;
   font-weight: bold;
   @media (max-width: 780px) {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -28,7 +27,7 @@ const BrandName = () => {
         }
       `}
       render={data => (
-        <Link to="/" className={style}>
+        <Link to="/" css={style}>
           {data.site.siteMetadata.title}
         </Link>
       )}

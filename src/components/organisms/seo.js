@@ -8,12 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import AnalyticsService from '../../services/analitycs'
 import { Helmet } from "react-helmet";
-
-if (typeof window !== `undefined`) {
-  AnalyticsService.pageview(window.location.pathname + window.location.search);
-}
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(

@@ -1,5 +1,5 @@
+import { css } from "@emotion/react";
 import React from "react"
-import { css } from 'emotion';
 
 const style = css`
   padding-top: 50px;
@@ -43,7 +43,7 @@ const style = css`
 
 
 const Contact = () => (
-  <div className={style}>
+  <div css={style}>
     <h1>Contato</h1>
     <p>
       Você pode me mandar uma mensagem por aqui mesmo.

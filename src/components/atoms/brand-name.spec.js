@@ -1,6 +1,6 @@
 import React from "react"
-import { render, fireEvent } from "@testing-library/react"
-import BrandName from "./index"
+import { render } from "@testing-library/react"
+import BrandName from "./brand-name"
 import { StaticQuery } from "gatsby" // mocked
 
 beforeEach(() => {

@@ -1,11 +1,11 @@
 import React from "react"
-import { css } from 'emotion'
-import Layout from "../components/themes/layout"
-import SEO from "../components/organisms/seo"
-import Content from "../components/organisms/content"
-import BlogResume from "../components/organisms/blog-resume"
+import Layout from "../components/themes/layout";
+import SEO from "../components/organisms/seo";
+import Content from "../components/atoms/content";
+import BlogResume from "../components/organisms/blog-resume";
+import { css } from "@emotion/react";
 
-const style = css `
+const style = css`
   text-align: center;
   .code {
     font-size: 4rem;
@@ -23,7 +23,7 @@ const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Content>
-      <main className={style}>
+      <main css={style}>
         <span className="code">:/</span>
         <h1>404 - Conteúdo não encontrado</h1>
         <p>

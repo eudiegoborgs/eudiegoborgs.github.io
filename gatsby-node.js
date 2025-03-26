@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach(({ node, next, previous }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/components/templates/blog-post.js`),
+        component: path.resolve(`./src/templates/blog-post.js`),
         context: {
           slug: node.fields.slug,
           previous: next,
@@ -66,7 +66,7 @@ exports.createPages = ({ graphql, actions }) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/blog/` : `/blog/page/${i + 1}`,
-        component: path.resolve('./src/components/templates/blog-list.js'),
+        component: path.resolve('./src/templates/blog-list.js'),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
