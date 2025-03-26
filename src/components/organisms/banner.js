@@ -1,8 +1,8 @@
 import React from "react";
 import banner from '../../images/banner/banner.webp';
-import { css } from 'emotion';
-import SocialMenu from '../molecules/social-menu';
+import SocialList from '../atoms/social-list';
 import TypeWritter from "../atoms/typewritter";
+import { css } from "@emotion/react";
 
 const style = css`
   background-color: var(--black);
@@ -61,7 +61,7 @@ const style = css`
 `
 
 const Banner = () => (
-  <div className={style}>
+  <div css={style}>
     <div className="caption">
       <h1>Writing code with  <TypeWritter words={[
         'php',
@@ -76,7 +76,7 @@ const Banner = () => (
         '💚'
       ]} /></h1>
       <h2 className="thin h3">Soluções profissionais para desenvolvimento de software</h2>
-      <SocialMenu />
+      <SocialList />
       {/* <div className='action'>
         <Button href="#contato" className="button gradient">
           Fale comigo

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Disqus } from 'gatsby-plugin-disqus'
 import { graphql } from 'gatsby'
-import { css } from 'emotion'
-import Layout from '../themes/layout'
-import SEO from '../organisms/seo'
-import Content from '../organisms/content'
-import ReadTime from '../atoms/read-time';
-import BlogItem from '../organisms/blog-item'
+import { css } from '@emotion/react'
+import Content from '../components/atoms/content';
+import ReadTime from '../components/atoms/read-time';
+import BlogItem from '../components/organisms/blog-item';
+import Layout from '../components/themes/layout';
+import SEO from '../components/organisms/seo';
 
 const style = css`
   text-decoration: none;
+  margin-top: 3rem;
   h1 {
     display: inline;
-    margin: 0;
   }
   header {
     margin-bottom: 30px;
@@ -62,16 +62,15 @@ const BlogPost = (props) => {
   }
 
   return (
-    
     <Layout>
       <SEO title={`Blog - ${post.frontmatter.title}`} />
       <Content>
-        <main className={ style }>
+        <main css={ style }>
           <header>
             <div>
               <h1>{ post.frontmatter.title }</h1>
             </div>
-            <small><ReadTime time={post.fields.readingTime.minutes} className="time-icon"/> - { post.frontmatter.date }</small>
+            <small><ReadTime time={post.fields.readingTime.minutes} className="time-icon"/> • { post.frontmatter.date }</small>
           </header>
           <article dangerouslySetInnerHTML={{ __html: post.html }} />
           <div className="pagination">

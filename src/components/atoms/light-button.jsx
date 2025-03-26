@@ -1,8 +1,8 @@
 import React from 'react';
-import { css } from 'emotion'
-import AnalyticsService from '../../../services/analitycs';
-import SwitchInput from '../../atoms/switch-input'
-import Icon from '../../atoms/icon'
+import { css } from '@emotion/react';
+import SwitchInput from './switch-input'
+import Icon from './icon'
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
 
 const style = css`
@@ -41,22 +41,17 @@ const LightButton = () => {
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('theme', newTheme);
     }
-    AnalyticsService.event({
-      category: 'User',
-      action: `click`,
-      label: `Change site theme to ${newTheme}`
-    });
     setTheme(newTheme)
   }
 
   return (
-    <button className={style} onClick={change} alt={title} title={title}>
+    <button css={style} onClick={() => change()} alt={title} title={title}>
       <Helmet>
         <body className={darkMode && "nightmode"} />
       </Helmet>
-      <Icon source="moon-o" small={1} disabled={!darkMode} />
+      <Icon source={faMoon} small={1} disabled={!darkMode} />
       <SwitchInput on={!darkMode ? 1 : 0} bigger={1} />
-      <Icon source="sun-o" small={1} disabled={darkMode} />
+      <Icon source={faSun} small={1} disabled={darkMode} />
     </button>
   )
 }

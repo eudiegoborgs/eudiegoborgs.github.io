@@ -1,6 +1,7 @@
 import React from 'react'
-import { css } from 'emotion'
 import Icon from '../atoms/icon';
+import { css } from '@emotion/react';
+import { faCode, faCodeBranch, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 
 const styles = css`
@@ -39,22 +40,22 @@ const ServicesResume = () => {
     {
       title: "Consultoria em Desenvolvimento",
       description: "Análise e otimização de código, arquitetura de software, melhores práticas e padrões de projeto para elevar a qualidade do seu produto.",
-      icon: "code"
+      icon: faCode
     },
     {
       title: "Processos de desenvolvimento",
       description: "Implementação e melhoria de processos ágeis, DevOps, integração contínua e entrega contínua para aumentar a eficiência da sua equipe.",
-      icon: "group"
+      icon: faCodeBranch
     },
     {
       title: "Treinamento para equipes",
       description: "Capacitação técnica personalizada para equipes de desenvolvimento em tecnologias modernas, metodologias ágeis e boas práticas.",
-      icon: "graduation-cap"
+      icon: faGraduationCap
     }
   ];
 
   return (
-    <div className={ styles }>
+    <div css={ styles }>
       <div className="service-header">
         <h2>Serviços</h2>
       </div>
@@ -62,7 +63,7 @@ const ServicesResume = () => {
         {list.map(item => (
           <div key={item.title} className="service-item">
             <div className="header">
-              <h3><Icon source={item.icon}></Icon> {item.title}</h3>
+              <h3><Icon source={item.icon} /> {item.title}</h3>
             </div>
             <p>{item.description}</p>
           </div>

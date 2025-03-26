@@ -1,6 +1,6 @@
+import { css } from '@emotion/react';
 import React from 'react';
-import Typewriter from "typewriter-effect";
-import { css } from 'emotion';
+import TypewriterComponent from 'typewriter-effect';
 
 const style = css`
   .Typewriter {
@@ -13,8 +13,8 @@ const style = css`
 
 const TypeWritter = ({words, className}) => {
   return (
-    <span className={`${style} ${className}`}>
-      <Typewriter
+    <span css={style} className={className}>
+      <TypewriterComponent
         onInit={(typewriter)=> {
           words.map((word, index) => {
             typewriter.typeString(`<span class="item ${word}">${word}</span>`)

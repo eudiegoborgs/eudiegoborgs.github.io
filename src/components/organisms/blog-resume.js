@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from 'gatsby'
-import { css } from 'emotion'
 import BlogItem from './blog-item'
+import { css } from '@emotion/react'
 
 
 const blogListQuery = graphql`
@@ -57,7 +57,7 @@ const BlogResume = () => {
   const list = allBlogList.allMarkdownRemark.edges
 
   return (
-    <div className={ styles }>
+    <div css={ styles }>
       <div className="post-header">
         <h2>Posts recentes</h2>
         <Link to="/blog">

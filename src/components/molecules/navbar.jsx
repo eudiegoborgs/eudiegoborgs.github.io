@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
-import { css } from 'emotion';
-import MobileMenu from '../../atoms/mobile-menu'
-import SocialMenu from '../../molecules/social-menu'
-import LightButton from "../../molecules/light-button";
+import { css } from '@emotion/react'
+import MobileMenu from '../atoms/mobile-menu'
+import SocialList from '../atoms/social-list'
+import LightButton from "../atoms/light-button"
 
 const style = css `
   display: flex;
@@ -89,7 +89,7 @@ const menu_options = [
 const Navbar = () => {
   const [Open, setOpen] = React.useState(false);
   return (
-    <div className={style}>
+    <div css={style}>
       <div className={`menu ${Open && 'active'}`}>
         {menu_options.map((item, index) => (
           <Link key={index} to={item.link} className="menu-item">
@@ -97,7 +97,7 @@ const Navbar = () => {
           </Link>
         ))}
         <div className="social-menu">
-          <SocialMenu />
+          <SocialList />
         </div>
       </div>
       <LightButton />

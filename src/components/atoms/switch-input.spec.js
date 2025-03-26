@@ -1,6 +1,6 @@
 import React from "react"
-import { render, fireEvent } from "@testing-library/react"
-import SwitchInput from "./index"
+import { render } from "@testing-library/react"
+import SwitchInput from "./switch-input"
 describe("SwitchInput", () => {
   it("renders correctly", () => {
     const { container, rerender } = render(<SwitchInput />)

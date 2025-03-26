@@ -1,5 +1,5 @@
 import React from "react"
-import { css } from 'emotion';
+import { css } from '@emotion/react';
 import Navbar from "../molecules/navbar";
 import BrandName from '../atoms/brand-name';
 
@@ -31,7 +31,7 @@ const style = css`
 `;
 
 const Header = () => (
-  <header className={style}>
+  <header css={style}>
     <div className="container">
       <div className="left">
         <BrandName />

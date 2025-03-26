@@ -1,11 +1,11 @@
 import React from "react"
-import { css } from 'emotion'
-import Layout from "../components/themes/layout"
-import SEO from "../components/organisms/seo"
-import Content from "../components/organisms/content"
-import BlogResume from "../components/organisms/blog-resume"
+import Layout from "../components/themes/layout";
+import SEO from "../components/organisms/seo";
+import Content from "../components/atoms/content";
+import BlogResume from "../components/organisms/blog-resume";
+import { css } from "@emotion/react";
 
-const style = css `
+const style = css`
   text-align: center;
   .code {
     font-size: 4rem;

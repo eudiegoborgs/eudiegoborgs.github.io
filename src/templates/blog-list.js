@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../themes/layout'
-import SEO from '../organisms/seo'
-import Content from '../organisms/content'
-import BlogItem from '../organisms/blog-item'
+import Layout from '../components/themes/layout'
+import Content from '../components/atoms/content'
+import BlogItem from '../components/organisms/blog-item'
+import SEO from '../components/organisms/seo'
 
 const BlogList = (props) => {
   const list = props.data.allMarkdownRemark.edges

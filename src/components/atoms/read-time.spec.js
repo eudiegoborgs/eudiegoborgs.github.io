@@ -1,6 +1,6 @@
 import React from "react"
-import { render, fireEvent } from "@testing-library/react"
-import ReadTime from "./index"
+import { render } from "@testing-library/react"
+import ReadTime from "./read-time"
 describe("ReadTime", () => {
   it("renders correctly 1 minute", () => {
     const { getByRole } = render(<ReadTime time="1"/>)

@@ -1,5 +1,6 @@
 import React from 'react'
-import { css } from 'emotion'
+import { css } from '@emotion/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const style = css`
   padding: 0 3px;
@@ -22,12 +23,7 @@ const style = css`
 const Icon = (props) => {
   const {className, source, small, bigger, disabled} = props;
   return (
-    <i 
-      {...props}
-      className={
-        `${className} ${style} fa fa-${source} ${small ? 'small' : ''} ${bigger ? 'bigger' : ''} ${disabled ? 'disabled' : ''}`
-      }
-    />
+    <FontAwesomeIcon icon={source} css={style} className={`${className} ${small ? 'small' : ''} ${bigger ? 'bigger' : ''} ${disabled ? 'disabled' : ''}`} />
   )
 }
 

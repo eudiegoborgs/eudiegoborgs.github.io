@@ -1,14 +1,39 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
     title: `<DiegoBorgs />`,
     description: `I am a Information Systems Students in the Catholic University of Minas Gerais (PUC Minas), with complementary expertise in Programming, Graphic Design and Music. Software Engineer at PicPay and love to know new things.`,
-    author: `@eudiegoborgs`,
-    wakatimeToken: `PkWSK58BpeU6GHyuaTMJChHj`,
-    wakatimeSecret: `sec_tXCtNKXp0qizbz2XPyBzHGOA1J2Ku1gdbYgpcBDZEy0qKgVDqNr0l35etEwjI2tvYCkcx2QXDnbm7frH`
+    author: `@eudiegoborgs`
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-netlify-cms", 
+    "gatsby-plugin-emotion", 
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ['UA-149356099-1'], // Substitua pelo seu ID do Google Analytics
+        pluginConfig: {
+          head: true, // Define se o script será carregado no <head> da página
+        },
+      },
+    }, 
+    "gatsby-plugin-image", 
+    "gatsby-plugin-sitemap", 
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `DiegoBorgs`,
+        start_url: `/`,
+        background_color: `#212121`,
+        theme_color: `#212121`,
+        display: `minimal-ui`,
+        icon: `src/images/db-icon.png`,
+      }
+    }, 
+    "gatsby-plugin-mdx", 
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -17,66 +42,30 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-sharp", 
+    "gatsby-transformer-sharp", 
     {
-      resolve: `gatsby-plugin-disqus`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        shortname: `eudiegoborgs`
-      }
-    },
+        "name": "images",
+        "path": "./src/images/"
+      },
+      __key: "images"
+    }, 
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: "blog",
+        path: "./blog",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
+        "name": "pages",
+        "path": "./src/pages/"
       },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [{
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-          {
-            resolve: `gatsby-remark-highlight-code`
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `DiegoBorgs`,
-        start_url: `/`,
-        background_color: `#212121`,
-        theme_color: `#212121`,
-        display: `minimal-ui`,
-        icon: `src/images/db-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
-}
+      __key: "pages"
+    }
+  ]
+};
