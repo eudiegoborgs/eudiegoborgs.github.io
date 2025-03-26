@@ -10,7 +10,7 @@ const style = css`
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 60vh;
+  height: 540px;
   color: var(--white);
   text-align: center;
   text-transform: uppercase;
@@ -18,7 +18,7 @@ const style = css`
 
   .caption {
     padding: 25vh 40px;
-    height: 60vh;
+    height: 540px;
     background-image: linear-gradient(#212121, rgba(33,33,33, 0.8));
   }
 
