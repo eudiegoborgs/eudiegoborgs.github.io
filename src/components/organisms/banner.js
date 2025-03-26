@@ -1,5 +1,4 @@
 import React from "react";
-import banner from '../../images/banner/banner.webp';
 import SocialList from '../atoms/social-list';
 import TypeWritter from "../atoms/typewritter";
 import { css } from "@emotion/react";

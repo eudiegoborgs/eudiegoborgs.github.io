@@ -16,7 +16,7 @@ const TypeWritter = ({words, className}) => {
     <span css={style} className={className}>
       <TypewriterComponent
         onInit={(typewriter)=> {
-          words.map((word, index) => {
+          words?.length > 0 && words?.map((word, index) => {
             typewriter.typeString(`<span class="item ${word}">${word}</span>`)
             if (words.length > index + 1) {
               typewriter.pauseFor(500).deleteAll()

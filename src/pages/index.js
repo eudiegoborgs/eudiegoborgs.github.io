@@ -20,7 +20,7 @@ const IndexPage = () => (
           Me chamo <strong>Diego Borges</strong>, sou graduando em Sistemas de Informação pela PUC Minas, tenho mais de { new Date().getFullYear() - 2011 } anos de experiência em desenvolvimento. Apaixonado pelo estudo de música, programação e automação.
         </p>
         <p>
-          Atualmente trabalho como Coordenador de Engenharia de Software na <a href="https://picpay.com.br" target="_blank">PicPay</a>, faço parte da organização do PHPMG e escrevo sobre desenvolvimento e carreira para este blog de tecnologia.
+          Atualmente trabalho como Coordenador de Engenharia de Software na <a href="https://picpay.com.br" target="_blank" rel="noreferrer">PicPay</a>, faço parte da organização do PHPMG e escrevo sobre desenvolvimento e carreira para este blog de tecnologia.
         </p>
         <p>
           Com base na minha <strong>experiência de mais de 14 anos no mercado de tecnologia</strong>, ofereço serviços especializados para empresas e startups que buscam excelência em desenvolvimento de software.

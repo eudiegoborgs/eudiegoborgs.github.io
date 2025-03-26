@@ -7,10 +7,7 @@ import { css } from '@emotion/react'
 
 const blogListQuery = graphql`
   query {
-    allMarkdownRemark(
-      limit: 3
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
+    allMarkdownRemark(limit: 3, sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           fields {
@@ -23,7 +20,7 @@ const blogListQuery = graphql`
           frontmatter {
             date(locale: "pt-br", formatString: "DD [de] MMMM")
             title
-          },
+          }
         }
       }
     }
