@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react"
+import { Button } from "../atoms/button";
 
 const style = css`
   padding-top: 50px;
@@ -22,21 +23,6 @@ const style = css`
     }
     .submit {
       text-align: center;
-      button {
-        text-transform: uppercase;
-        padding: 10px 30px;
-        cursor: pointer;
-        border: solid 1px var(--primary-light);
-        background-color: var(--primary-light);
-        border-radius: 5px;
-        transition: 0.5s ease all;
-        font-weight: bold;
-        color: var(--black);
-        &:hover {
-          background: var(--black);
-          color: var(--primary-light);
-        }
-      }
     }
   }
 `;
@@ -57,7 +43,7 @@ const Contact = () => (
         <label>Mensagem: <textarea name="message" required></textarea></label>
       </p>
       <p className="submit">
-        <button type="submit">Enviar</button>
+        <Button type="submit">Enviar</Button>
       </p>
     </form>
   </div>

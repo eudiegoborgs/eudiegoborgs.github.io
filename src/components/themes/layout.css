@@ -561,3 +561,7 @@ footer a {
 .bg-super-black {
   background: var(--super-black);
 }
+
+.center {
+  text-align: center;
+}

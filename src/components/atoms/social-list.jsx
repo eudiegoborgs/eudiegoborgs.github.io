@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './icon';
-import { faGithub, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const socialList = [
   {
@@ -18,6 +18,10 @@ const socialList = [
   {
     icon: faGithub,
     link: 'https://github.com/eudiegoborgs'
+  },
+  {
+    icon: faWhatsapp,
+    link: 'https://wa.me/5531986883889'
   }
 ]
 

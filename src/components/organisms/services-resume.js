@@ -2,14 +2,18 @@ import React from 'react'
 import Icon from '../atoms/icon';
 import { css } from '@emotion/react';
 import { faCode, faCodeBranch, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { Button } from '../atoms/button';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 const styles = css`
   margin-top: 2rem;
   color: var(--white);
+  margin-bottom: 30px;
 
   .service-item {
     max-width: 300px;
+    margin-bottom: 30px;
 
     .header {
       width: 80%;
@@ -68,6 +72,11 @@ const ServicesResume = () => {
             <p>{item.description}</p>
           </div>
         ))}
+      </div>
+      <div className='center'>
+        <Button component="a" href="#contato" className="outline" href="https://wa.me/5531986883889" target="_blank" rel="noopener noreferrer">
+          <Icon source={faWhatsapp}/>Solicitar orçamento
+        </Button>
       </div>
     </div>
   )
