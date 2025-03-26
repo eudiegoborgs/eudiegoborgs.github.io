@@ -27,9 +27,14 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
-        trackingIds: ['UA-149356099-1'], // Substitua pelo seu ID do Google Analytics
+        trackingIds: ['UA-149356099-1'],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
         pluginConfig: {
-          head: true, // Define se o script será carregado no <head> da página
+          head: false, // Move o script para o fim do body
+          respectDNT: true, // Respeita "Não Rastrear" e evita carregar desnecessariamente
+          delayOnRouteUpdate: true, // Adia o carregamento ao navegar entre páginas
         },
       },
     }, 
