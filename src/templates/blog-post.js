@@ -37,7 +37,8 @@ const style = css`
     font-weight: bold;
   }
   .pagination {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     .previous, .next {
       min-width: 50%;
       padding: 0 5px;
@@ -87,7 +88,9 @@ const BlogPost = (props) => {
               </div>
             )}
           </div>
-          <Disqus config={disqusConfig} />
+          <div>
+            <Disqus config={disqusConfig} />
+          </div>
         </main>
       </Content>
     </Layout>
