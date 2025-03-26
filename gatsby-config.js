@@ -38,9 +38,9 @@ module.exports = {
           anonymize_ip: true,
         },
         pluginConfig: {
-          head: false, // Move o script para o fim do body
-          respectDNT: true, // Respeita "Não Rastrear" e evita carregar desnecessariamente
-          delayOnRouteUpdate: true, // Adia o carregamento ao navegar entre páginas
+          head: false,
+          respectDNT: true,
+          delayOnRouteUpdate: 0,
         },
       },
     }, 
