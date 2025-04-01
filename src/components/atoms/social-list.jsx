@@ -44,7 +44,7 @@ const socialList = [
 const SocialList = () => (
   <React.Fragment>
     { socialList.map(item => (
-      <a href={item.link} alt={item.title} target="_blank" rel="noopener noreferrer" title={item.icon} style={{ margin: '15px 10px' }} >
+      <a href={item.link} alt={item.title} target="_blank" rel="noopener noreferrer" title={item.title} style={{ margin: '15px 10px' }} >
         <Icon source={item.icon} />
       </a>
     ))}
