@@ -83,7 +83,11 @@ const menu_options = [
   {
     name: 'Blog',
     link: '/blog'
-  }
+  },
+  {
+    name: 'Newsletter',
+    link: 'https://eudiegoborgs.substack.com/'
+  },
 ]
 
 const Navbar = () => {
