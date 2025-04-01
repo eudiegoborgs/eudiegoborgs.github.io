@@ -86,4 +86,4 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: `blog/${slug.replace('/', '').replace('/', '')}`
     })
   }
-}
+};
