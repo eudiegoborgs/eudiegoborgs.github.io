@@ -11,7 +11,7 @@ Cansou de Flutter? React Native parece complicado demais? Kotlin não tem "alma"
 
 * Porque PHP roda em qualquer lugar e qualquer sobrinho pode fazer.
 * Porque Swoole é rápido. Tipo... MUITO rápido.
-* Porque construir UI com `echo` é subestimado.
+* Porque construir UI com echo é subestimado.
 * Porque sim.
 
 - - -
@@ -22,7 +22,7 @@ Cansou de Flutter? React Native parece complicado demais? Kotlin não tem "alma"
 composer create-project hyperapp/hyperapp
 ```
 
-Isso vai gerar a estrutura básica do seu app mobile com suporte a hot reload via `php -S`, e integração nativa com o seu simulador de Nokia 1100.
+Isso vai gerar a estrutura básica do seu app mobile com suporte a hot reload via php -S, e integração nativa com o seu simulador de Nokia 1100.
 
 - - -
 
@@ -92,7 +92,7 @@ Quem precisa de CSS quando se tem `Style::add()`?
 php hyperapp:build --platform=android
 ```
 
-Isso gera um APK 100% funcional com FFI embutido, Swoole otimizado e suporte a `var_dump` em tempo real.
+Isso gera um APK 100% funcional com FFI embutido, Swoole otimizado e suporte a var_dump em tempo real.
 
 - - -
 
