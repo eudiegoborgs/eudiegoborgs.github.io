@@ -29,6 +29,8 @@ Isso vai gerar a estrutura básica do seu app mobile com suporte a hot reload vi
 ## Criando um componente
 
 ```phtml
+<?php
+
 class Button extends HyperComponent {
     public function render() {
         return <<<HTML
@@ -47,6 +49,8 @@ Simples, direto e puramente declarativo. Literalmente.
 ## Estado global estilo Redux (mas em PHP!)
 
 ```php
+<?php
+
 use HyperApp\State;
 
 State::set('counter', 0);
@@ -63,6 +67,8 @@ Gerenciado 100% via array global. O que pode dar errado?
 ## Ciclo de Vida do App
 
 ```php
+<?php
+
 class App extends HyperApp {
     public function boot() {
         Log::info("🔥 Aplicativo iniciado com HyperApp");
@@ -75,6 +81,8 @@ class App extends HyperApp {
 ## Estilização moderna com arrays associativos
 
 ```php
+<?php
+
 Style::add('button', [
     'background' => 'linear-gradient(to right, #8e2de2, #4a00e0)',
     'color' => '#fff',
