@@ -332,7 +332,6 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -461,7 +460,7 @@ code {
 pre code {
   font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
   background: #1e1e1e; /* fundo escuro estilo VSCode */
-  color: #d4d4d4;
+  color: #fff !important;
   padding: 1em;
   border-radius: 8px;
   font-size: 14px;
