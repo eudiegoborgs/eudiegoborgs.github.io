@@ -286,7 +286,7 @@ Function comments should generally begin with a comment of the following form:
 // returning the merged result as a string.
 ````
 
-# Observe que iniciar um comentário de função com um verbo declarativo introduz consistência em todo o arquivo de cabeçalho.  
+Observe que iniciar um comentário de função com um verbo declarativo introduz consistência em todo o arquivo de cabeçalho.  
 Um buscador pode rapidamente percorrer uma API e ler apenas o verbo para ter uma ideia se a função é apropriada: “Une, Deleta, Cria”, e assim por diante.
 
 Alguns estilos de documentação (e alguns geradores de documentação) exigem várias formas de boilerplate em comentários de função, como "Retorna:", "Lança:", etc., mas no Google não consideramos isso necessário.  
