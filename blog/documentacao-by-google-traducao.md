@@ -5,9 +5,7 @@ title: Documentação no Google (Tradução)
 ---
 
 Escrito por Tom Manshreck
-
 Editado por Riona MacNamara
-
 Traduzido por Diego Borges
 
 Entre as principais reclamações que engenheiros têm sobre escrever, usar e manter código, uma das mais comuns é a falta de documentação de qualidade.
