@@ -105,19 +105,19 @@ A documentação costuma estar tão fortemente ligada ao código que, sempre que
 Quanto mais os engenheiros tratarem a documentação como parte essencial do desenvolvimento de software, menos resistência terão aos custos iniciais de escrevê-la — e mais colherão seus benefícios no longo prazo. Além disso, quanto mais simples for o processo de documentar, menores serão esses custos iniciais.
 
 > ### Estudo de Caso: O Wiki do Google
-
+>
 > Quando o Google era muito menor e mais enxuto, havia poucos redatores técnicos. A maneira mais fácil de compartilhar informações era por meio de nosso próprio wiki interno (GooWiki). No início, isso parecia uma abordagem razoável; todos os engenheiros compartilhavam um único conjunto de documentações e podiam atualizá-las conforme necessário.
-
+>
 > Mas, à medida que o Google crescia, os problemas de uma abordagem baseada em wiki tornaram-se evidentes. Como não havia verdadeiros responsáveis pelos documentos, muitos se tornaram obsoletos.³ Como não existia um processo estabelecido para adicionar novos documentos, começaram a surgir duplicações de documentos e de conjuntos inteiros. O GooWiki possuía um espaço de nomes plano, e as pessoas não eram boas em aplicar hierarquia aos conjuntos de documentação. Em determinado momento, havia entre 7 e 10 documentos (dependendo de como se contava) sobre a configuração do Borg, nosso ambiente de computação em produção — apenas alguns eram realmente mantidos, e a maioria era específica de certas equipes com permissões e suposições próprias.
-
+>
 > Outro problema com o GooWiki ficou evidente com o tempo: as pessoas que podiam corrigir os documentos não eram as mesmas que os utilizavam. Novos usuários que encontravam documentos ruins não conseguiam confirmar se eles estavam errados ou não tinham uma forma fácil de relatar erros. Eles sabiam que algo estava errado (porque o documento não funcionava), mas não podiam “corrigi-lo”. Por outro lado, aqueles mais aptos a corrigir os documentos geralmente não precisavam mais consultá-los após escrevê-los. A documentação ficou tão deficiente conforme o Google crescia que a qualidade da documentação se tornou a principal reclamação dos desenvolvedores nas pesquisas anuais internas.
-
+>
 > A maneira de melhorar essa situação foi mover as documentações importantes para o mesmo tipo de controle de versão usado para rastrear mudanças no código. Os documentos passaram a ter responsáveis próprios, locais canônicos dentro da árvore de código-fonte e processos para identificar e corrigir erros — e a documentação começou a melhorar significativamente. Além disso, a forma como a documentação era escrita e mantida passou a se parecer muito com a forma como o código era desenvolvido. Erros nos documentos podiam ser relatados no nosso sistema de bug tracking. Alterações nos documentos podiam ser tratadas pelo processo existente de revisão de código. Com o tempo, os próprios engenheiros começaram a corrigir os documentos ou enviar alterações aos redatores técnicos (que muitas vezes eram os responsáveis).
-
+>
 > A migração da documentação para o controle de versão foi inicialmente recebida com muita controvérsia. Muitos engenheiros acreditavam que eliminar o GooWiki — aquele bastião da liberdade de informação — resultaria em queda na qualidade, já que a nova forma exigia revisões, responsáveis e outros requisitos. Mas não foi o que aconteceu. Os documentos ficaram melhores.
-
+>
 > A introdução do Markdown como uma linguagem comum de formatação de documentação também ajudou, pois facilitou para os engenheiros a edição dos documentos sem precisar de conhecimento especializado em HTML ou CSS. O Google acabou criando seu próprio framework para incorporar documentação dentro do código: o g3doc. Com esse framework, a documentação melhorou ainda mais, pois passou a existir lado a lado com o código-fonte dentro do ambiente de desenvolvimento do engenheiro. Agora, os engenheiros podiam atualizar o código e a documentação associada na mesma alteração (uma prática que ainda está em processo de ampla adoção).
-
+>
 > A principal diferença foi que manter documentação passou a ser uma experiência semelhante a manter código: engenheiros registravam bugs, faziam alterações em changelists, enviavam revisões para especialistas e assim por diante. Aproveitar os fluxos de trabalho já existentes dos desenvolvedores, em vez de criar novos, foi o grande benefício.
 
 ## Conheça seu público
