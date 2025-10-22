@@ -343,14 +343,14 @@ table {
   width: 100%;
 }
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  color: #444;
+  background: #f9f9f9;
+  border-left: 4px solid var(--primary-light);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  line-height: 1.6;
 }
 hr {
   margin-left: 0;
@@ -382,9 +382,11 @@ li {
 }
 ol li {
   padding-left: 0;
+  margin-left: 30px;
 }
 ul li {
   padding-left: 0;
+  margin-left: 30px;
 }
 li > ol {
   margin-left: 1.45rem;
@@ -476,7 +478,6 @@ pre {
 }
 
 code {
-  display: block;
   white-space: pre;
 }
 code:before,
