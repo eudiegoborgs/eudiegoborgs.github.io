@@ -447,7 +447,7 @@ O que a equipe precisa saber frequentemente difere do que um cliente da sua API 
 
 ---
 
-### Documentation Reviews
+### Doc Review
 
 No Google, todo código precisa ser revisado, e nosso processo de revisão de código é bem entendido e aceito.  
 Em geral, a documentação também precisa de revisão (embora isso seja menos universalmente aceito).  
@@ -503,44 +503,44 @@ A maioria dos documentos no Google agora passa implicitamente por uma revisão d
 > Nosso Guia do Desenvolvedor C++ foi estabelecido em “go/cpp”, por exemplo.  
 > Com melhor busca interna, links go/ e integração de múltiplos documentos em um conjunto comum de documentação, tais conjuntos de documentação canônicos se tornaram mais autoritativos e robustos ao longo do tempo.
 
-### Documentation Philosophy
+### Principios de Documentação
 
 Aviso: a seção a seguir é mais um tratado sobre melhores práticas de escrita técnica (e opinião pessoal) do que “como o Google faz”.  
 Considere-a opcional para que engenheiros de software compreendam totalmente, embora entender esses conceitos provavelmente permita escrever informações técnicas com mais facilidade.
 
-#### WHO, WHAT, WHEN, WHERE, and WHY
+#### QUEM, O QUE, QUANDO, ONDE, e PORQUE
 
 A maior parte da documentação técnica responde à pergunta “HOW”.  
 Como isso funciona? Como programar para esta API? Como configurar este servidor?  
-Como resultado, há uma tendência de os engenheiros de software pularem direto para o “HOW” em qualquer documento e ignorarem as outras questões associadas: WHO, WHAT, WHEN, WHERE e WHY.  
+Como resultado, há uma tendência de os engenheiros de software pularem direto para o “HOW” em qualquer documento e ignorarem as outras questões associadas: QUEM, O QUE, QUANDO, ONDE, e PORQUE.  
 
 É verdade que nenhuma dessas perguntas é geralmente tão importante quanto o HOW — um documento de design é exceção porque um aspecto equivalente é frequentemente o WHY — mas sem uma estrutura adequada, a documentação acaba confusa.  
 Tente abordar as outras perguntas nos dois primeiros parágrafos de qualquer documento:
 
-- **WHO** já foi discutido anteriormente: é o público-alvo. Mas às vezes também é necessário explicitar e direcionar o público em um documento.  
+- **QUEM** já foi discutido anteriormente: é o público-alvo. Mas às vezes também é necessário explicitar e direcionar o público em um documento.  
 Exemplo: “Este documento é para novos engenheiros no projeto Secret Wizard.”
 
-- **WHAT** identifica o propósito do documento: “Este documento é um tutorial para iniciar um servidor Frobber em um ambiente de teste.”  
-Às vezes, apenas escrever o WHAT ajuda a estruturar o documento corretamente.  
+- **O QUE** identifica o propósito do documento: “Este documento é um tutorial para iniciar um servidor Frobber em um ambiente de teste.”  
+Às vezes, apenas escrever O QUE ajuda a estruturar o documento corretamente.  
 Se você começar a adicionar informações que não se aplicam ao WHAT, talvez queira mover essas informações para outro documento.
 
-- **WHEN** identifica quando o documento foi criado, revisado ou atualizado.  
+- **QUANDO** identifica quando o documento foi criado, revisado ou atualizado.  
 Documentos no código-fonte têm essa data registrada implicitamente, e alguns outros esquemas de publicação automatizam isso.  
 Caso contrário, certifique-se de anotar a data em que o documento foi escrito (ou revisado) no próprio documento.
 
-- **WHERE** é frequentemente implícito, mas decida onde o documento deve residir.  
+- **ONDE** é frequentemente implícito, mas decida onde o documento deve residir.  
 Normalmente, a preferência deve ser algum tipo de controle de versão, idealmente com o código-fonte que ele documenta.  
 Outros formatos funcionam para diferentes propósitos também.  
 No Google, frequentemente usamos Google Docs para colaboração fácil, particularmente em questões de design.  
 Em algum momento, qualquer documento compartilhado se torna menos uma discussão e mais um registro histórico estável.  
 Nesse ponto, mova-o para um local mais permanente, com propriedade clara, controle de versão e responsabilidade.
 
-- **WHY** estabelece o propósito do documento.  
+- **PORQUE** estabelece o propósito do documento.  
 Resuma o que você espera que alguém absorva após lê-lo.  
-Uma boa regra prática é estabelecer o WHY na introdução do documento.  
+Uma boa regra prática é estabelecer o PORQUE na introdução do documento.  
 Ao escrever o resumo, verifique se você atingiu suas expectativas originais (e revise conforme necessário).
 
-#### The Beginning, Middle, and End
+#### O começo, meio, e fim
 
 Todos os documentos — de fato, todas as partes dos documentos — têm começo, meio e fim.  
 Embora pareça óbvio, a maioria dos documentos deve ter, no mínimo, essas três seções.  
@@ -560,7 +560,7 @@ Por outro lado, colocar esse ponto em um local mais proeminente cedo pode fazer 
 Geralmente, a solução é introduzir e resumir o ponto em um parágrafo introdutório, e então usar o restante da seção para detalhar melhor.  
 Nesse caso, a redundância ajuda o leitor a compreender a importância do que está sendo declarado.
 
-#### The Parameters of Good Documentation
+#### Os parametros de uma boa documentação
 
 Normalmente, existem três aspectos de uma boa documentação: **completude, precisão e clareza**.  
 Raramente se obtém os três em um mesmo documento; ao tentar tornar um documento mais “completo”, por exemplo, a clareza pode sofrer.  
@@ -583,7 +583,7 @@ Assim como você deveria separar idealmente a interface da implementação em um
 Os usuários não precisam dessa informação.  
 Coloque essas decisões em um documento especializado para esse propósito (geralmente um design doc).
 
-#### Deprecating Documents
+#### Depreciando Documentos
 
 Assim como código antigo pode causar problemas, documentos antigos também.  
 Com o tempo, documentos ficam obsoletos, desatualizados ou (frequentemente) abandonados.  
