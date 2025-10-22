@@ -105,20 +105,13 @@ A documentação costuma estar tão fortemente ligada ao código que, sempre que
 Quanto mais os engenheiros tratarem a documentação como parte essencial do desenvolvimento de software, menos resistência terão aos custos iniciais de escrevê-la — e mais colherão seus benefícios no longo prazo. Além disso, quanto mais simples for o processo de documentar, menores serão esses custos iniciais.
 
 > ### Estudo de Caso: O Wiki do Google
-> 
-> Quando o Google era muito menor e mais enxuto, havia poucos redatores técnicos. A maneira mais fácil de compartilhar informações era por meio de nosso próprio wiki interno (GooWiki). No início, isso parecia uma abordagem razoável; todos os engenheiros compartilhavam um único conjunto de documentações e podiam atualizá-las conforme necessário.
-> 
-> Mas, à medida que o Google crescia, os problemas de uma abordagem baseada em wiki tornaram-se evidentes. Como não havia verdadeiros responsáveis pelos documentos, muitos se tornaram obsoletos.³ Como não existia um processo estabelecido para adicionar novos documentos, começaram a surgir duplicações de documentos e de conjuntos inteiros. O GooWiki possuía um espaço de nomes plano, e as pessoas não eram boas em aplicar hierarquia aos conjuntos de documentação. Em determinado momento, havia entre 7 e 10 documentos (dependendo de como se contava) sobre a configuração do Borg, nosso ambiente de computação em produção — apenas alguns eram realmente mantidos, e a maioria era específica de certas equipes com permissões e suposições próprias.
-> 
-> Outro problema com o GooWiki ficou evidente com o tempo: as pessoas que podiam corrigir os documentos não eram as mesmas que os utilizavam. Novos usuários que encontravam documentos ruins não conseguiam confirmar se eles estavam errados ou não tinham uma forma fácil de relatar erros. Eles sabiam que algo estava errado (porque o documento não funcionava), mas não podiam “corrigi-lo”. Por outro lado, aqueles mais aptos a corrigir os documentos geralmente não precisavam mais consultá-los após escrevê-los. A documentação ficou tão deficiente conforme o Google crescia que a qualidade da documentação se tornou a principal reclamação dos desenvolvedores nas pesquisas anuais internas.
-> 
-> A maneira de melhorar essa situação foi mover as documentações importantes para o mesmo tipo de controle de versão usado para rastrear mudanças no código. Os documentos passaram a ter responsáveis próprios, locais canônicos dentro da árvore de código-fonte e processos para identificar e corrigir erros — e a documentação começou a melhorar significativamente. Além disso, a forma como a documentação era escrita e mantida passou a se parecer muito com a forma como o código era desenvolvido. Erros nos documentos podiam ser relatados no nosso sistema de bug tracking. Alterações nos documentos podiam ser tratadas pelo processo existente de revisão de código. Com o tempo, os próprios engenheiros começaram a corrigir os documentos ou enviar alterações aos redatores técnicos (que muitas vezes eram os responsáveis).
-> 
-> A migração da documentação para o controle de versão foi inicialmente recebida com muita controvérsia. Muitos engenheiros acreditavam que eliminar o GooWiki — aquele bastião da liberdade de informação — resultaria em queda na qualidade, já que a nova forma exigia revisões, responsáveis e outros requisitos. Mas não foi o que aconteceu. Os documentos ficaram melhores.
-> 
-> A introdução do Markdown como uma linguagem comum de formatação de documentação também ajudou, pois facilitou para os engenheiros a edição dos documentos sem precisar de conhecimento especializado em HTML ou CSS. O Google acabou criando seu próprio framework para incorporar documentação dentro do código: o g3doc. Com esse framework, a documentação melhorou ainda mais, pois passou a existir lado a lado com o código-fonte dentro do ambiente de desenvolvimento do engenheiro. Agora, os engenheiros podiam atualizar o código e a documentação associada na mesma alteração (uma prática que ainda está em processo de ampla adoção).
-> 
-> A principal diferença foi que manter documentação passou a ser uma experiência semelhante a manter código: engenheiros registravam bugs, faziam alterações em changelists, enviavam revisões para especialistas e assim por diante. Aproveitar os fluxos de trabalho já existentes dos desenvolvedores, em vez de criar novos, foi o grande benefício.
+>> Quando o Google era muito menor e mais enxuto, havia poucos redatores técnicos. A maneira mais fácil de compartilhar informações era por meio de nosso próprio wiki interno (GooWiki). No início, isso parecia uma abordagem razoável; todos os engenheiros compartilhavam um único conjunto de documentações e podiam atualizá-las conforme necessário.
+>> Mas, à medida que o Google crescia, os problemas de uma abordagem baseada em wiki tornaram-se evidentes. Como não havia verdadeiros responsáveis pelos documentos, muitos se tornaram obsoletos.³ Como não existia um processo estabelecido para adicionar novos documentos, começaram a surgir duplicações de documentos e de conjuntos inteiros. O GooWiki possuía um espaço de nomes plano, e as pessoas não eram boas em aplicar hierarquia aos conjuntos de documentação. Em determinado momento, havia entre 7 e 10 documentos (dependendo de como se contava) sobre a configuração do Borg, nosso ambiente de computação em produção — apenas alguns eram realmente mantidos, e a maioria era específica de certas equipes com permissões e suposições próprias.
+>> Outro problema com o GooWiki ficou evidente com o tempo: as pessoas que podiam corrigir os documentos não eram as mesmas que os utilizavam. Novos usuários que encontravam documentos ruins não conseguiam confirmar se eles estavam errados ou não tinham uma forma fácil de relatar erros. Eles sabiam que algo estava errado (porque o documento não funcionava), mas não podiam “corrigi-lo”. Por outro lado, aqueles mais aptos a corrigir os documentos geralmente não precisavam mais consultá-los após escrevê-los. A documentação ficou tão deficiente conforme o Google crescia que a qualidade da documentação se tornou a principal reclamação dos desenvolvedores nas pesquisas anuais internas.
+>> A maneira de melhorar essa situação foi mover as documentações importantes para o mesmo tipo de controle de versão usado para rastrear mudanças no código. Os documentos passaram a ter responsáveis próprios, locais canônicos dentro da árvore de código-fonte e processos para identificar e corrigir erros — e a documentação começou a melhorar significativamente. Além disso, a forma como a documentação era escrita e mantida passou a se parecer muito com a forma como o código era desenvolvido. Erros nos documentos podiam ser relatados no nosso sistema de bug tracking. Alterações nos documentos podiam ser tratadas pelo processo existente de revisão de código. Com o tempo, os próprios engenheiros começaram a corrigir os documentos ou enviar alterações aos redatores técnicos (que muitas vezes eram os responsáveis).
+>> A migração da documentação para o controle de versão foi inicialmente recebida com muita controvérsia. Muitos engenheiros acreditavam que eliminar o GooWiki — aquele bastião da liberdade de informação — resultaria em queda na qualidade, já que a nova forma exigia revisões, responsáveis e outros requisitos. Mas não foi o que aconteceu. Os documentos ficaram melhores.
+>> A introdução do Markdown como uma linguagem comum de formatação de documentação também ajudou, pois facilitou para os engenheiros a edição dos documentos sem precisar de conhecimento especializado em HTML ou CSS. O Google acabou criando seu próprio framework para incorporar documentação dentro do código: o g3doc. Com esse framework, a documentação melhorou ainda mais, pois passou a existir lado a lado com o código-fonte dentro do ambiente de desenvolvimento do engenheiro. Agora, os engenheiros podiam atualizar o código e a documentação associada na mesma alteração (uma prática que ainda está em processo de ampla adoção).
+>> A principal diferença foi que manter documentação passou a ser uma experiência semelhante a manter código: engenheiros registravam bugs, faziam alterações em changelists, enviavam revisões para especialistas e assim por diante. Aproveitar os fluxos de trabalho já existentes dos desenvolvedores, em vez de criar novos, foi o grande benefício.
 
 ## Conheça seu público
 
@@ -178,54 +171,38 @@ Essas explicações pertencem a documentos específicos (como documentos de desi
 
 ## Tipos de Documentação
 
-Engenheiros escrevem vários tipos diferentes de documentação como parte de seu trabalho: documentos de design, comentários de código, guias de instruções (how-to), páginas de projeto e mais. Todos esses contam como “documentação”. Mas é importante conhecer os diferentes tipos — e não misturá-los.  
-
+Engenheiros escrevem vários tipos diferentes de documentação como parte de seu trabalho: documentos de design, comentários de código, guias de instruções (how-to), páginas de projeto e mais. Todos esses contam como “documentação”. Mas é importante conhecer os diferentes tipos — e não misturá-los. 
 Um documento deve ter, em geral, um propósito único e mantê-lo. Assim como uma API deve fazer uma única coisa e fazê-la bem, evite tentar realizar várias funções em um único documento. Em vez disso, divida essas partes de forma mais lógica.
 
 Há vários tipos principais de documentos que engenheiros de software frequentemente precisam escrever:
 
-- Documentação de referência, incluindo comentários de código  
-- Documentos de design  
-- Tutoriais  
-- Documentação conceitual  
-- Páginas de entrada (landing pages)  
-
-Nos primeiros dias do Google, era comum que as equipes tivessem páginas wiki monolíticas com vários links (muitos quebrados ou obsoletos), algumas informações conceituais sobre como o sistema funcionava, uma referência de API e assim por diante — tudo misturado.  
-
-Esses documentos falham porque não servem a um único propósito (e também acabam ficando tão longos que ninguém os lê; algumas páginas notórias rolavam por várias dezenas de telas).  
-
+- Documentação de referência, incluindo comentários de código - Documentos de design - Tutoriais - Documentação conceitual - Páginas de entrada (landing pages) 
+Nos primeiros dias do Google, era comum que as equipes tivessem páginas wiki monolíticas com vários links (muitos quebrados ou obsoletos), algumas informações conceituais sobre como o sistema funcionava, uma referência de API e assim por diante — tudo misturado. 
+Esses documentos falham porque não servem a um único propósito (e também acabam ficando tão longos que ninguém os lê; algumas páginas notórias rolavam por várias dezenas de telas). 
 Em vez disso, certifique-se de que seu documento tenha um propósito único e, se adicionar algo a essa página não fizer sentido, provavelmente é melhor encontrar — ou até criar — outro documento para esse propósito.
 
 ### Documentação de Referência
 
-A documentação de referência é o tipo mais comum que engenheiros precisam escrever; de fato, eles frequentemente precisam criar algum tipo de documento de referência todos os dias. Por documentação de referência, entendemos qualquer coisa que documente o uso de código dentro da base de código.  
-
-Comentários de código são a forma mais comum de documentação de referência que um engenheiro deve manter. Esses comentários podem ser divididos em dois grupos básicos: **comentários de API** e **comentários de implementação**.  
-
+A documentação de referência é o tipo mais comum que engenheiros precisam escrever; de fato, eles frequentemente precisam criar algum tipo de documento de referência todos os dias. Por documentação de referência, entendemos qualquer coisa que documente o uso de código dentro da base de código. 
+Comentários de código são a forma mais comum de documentação de referência que um engenheiro deve manter. Esses comentários podem ser divididos em dois grupos básicos: **comentários de API** e **comentários de implementação**. 
 Lembre-se da diferença de público entre esses dois: comentários de API não precisam discutir detalhes de implementação ou decisões de design e não podem presumir que o usuário conheça a API tão bem quanto o autor. Comentários de implementação, por outro lado, podem assumir muito mais conhecimento de domínio por parte do leitor — embora seja importante não assumir demais: pessoas deixam projetos, e às vezes é mais seguro ser metódico quanto ao motivo de o código ter sido escrito de determinada maneira.
 
-A maior parte da documentação de referência, mesmo quando fornecida separadamente do código, é gerada a partir dos comentários dentro da própria base de código (como deve ser; a documentação de referência deve ter **fonte única** sempre que possível).  
-
+A maior parte da documentação de referência, mesmo quando fornecida separadamente do código, é gerada a partir dos comentários dentro da própria base de código (como deve ser; a documentação de referência deve ter **fonte única** sempre que possível). 
 Algumas linguagens, como Java ou Python, possuem frameworks específicos de comentários (Javadoc, PyDoc, GoDoc) projetados para facilitar a geração dessa documentação de referência. Outras linguagens, como C++, não possuem uma implementação padrão de “documentação de referência”, mas, como o C++ separa a interface da implementação (em arquivos `.h` e `.cc`), os arquivos de cabeçalho costumam ser o local natural para documentar uma API em C++.
 
-O Google adota essa abordagem: uma API em C++ deve ter sua documentação de referência localizada dentro do arquivo de cabeçalho. Outras documentações de referência também são incorporadas diretamente ao código-fonte em Java, Python e Go.  
-
+O Google adota essa abordagem: uma API em C++ deve ter sua documentação de referência localizada dentro do arquivo de cabeçalho. Outras documentações de referência também são incorporadas diretamente ao código-fonte em Java, Python e Go. 
 Como o **Code Search** do Google é tão robusto, descobrimos que há pouco benefício em fornecer documentação de referência gerada separadamente. Usuários do Code Search não apenas encontram código facilmente, mas normalmente veem a definição original como o principal resultado. Ter a documentação ao lado das definições do código também facilita sua descoberta e manutenção.
 
-Todos sabemos que comentários de código são essenciais para uma API bem documentada. Mas o que exatamente é um “bom” comentário?  
-
-Mais cedo neste capítulo, identificamos dois públicos principais para a documentação de referência: **buscadores** e **exploradores**. Buscadores sabem o que querem; exploradores não.  
-
-O benefício principal para os buscadores é uma base de código com comentários consistentes, permitindo que eles analisem rapidamente uma API e encontrem o que procuram. Já para os exploradores, o benefício é identificar claramente o propósito de uma API, muitas vezes no topo do arquivo de cabeçalho.  
-
+Todos sabemos que comentários de código são essenciais para uma API bem documentada. Mas o que exatamente é um “bom” comentário? 
+Mais cedo neste capítulo, identificamos dois públicos principais para a documentação de referência: **buscadores** e **exploradores**. Buscadores sabem o que querem; exploradores não. 
+O benefício principal para os buscadores é uma base de código com comentários consistentes, permitindo que eles analisem rapidamente uma API e encontrem o que procuram. Já para os exploradores, o benefício é identificar claramente o propósito de uma API, muitas vezes no topo do arquivo de cabeçalho. 
 A seguir, veremos alguns exemplos de comentários de código. As diretrizes de comentários que seguem se aplicam a C++, mas regras semelhantes existem no Google para outras linguagens.
 
 ---
 
 #### Comentários de Arquivo
 
-Quase todos os arquivos de código no Google devem conter um comentário de arquivo. (Alguns arquivos de cabeçalho que contêm apenas uma função utilitária, por exemplo, podem fugir desse padrão.)  
-
+Quase todos os arquivos de código no Google devem conter um comentário de arquivo. (Alguns arquivos de cabeçalho que contêm apenas uma função utilitária, por exemplo, podem fugir desse padrão.) 
 Os comentários de arquivo devem começar com um cabeçalho no seguinte formato:
 
 ```cpp
@@ -240,24 +217,16 @@ Os comentários de arquivo devem começar com um cabeçalho no seguinte formato:
 // eficientemente a conversão para strings e evita cópias nas operações acima.
 ```
 
-De modo geral, um comentário de arquivo deve começar com um esboço do que está contido no código que você está lendo.  
-Ele deve identificar os principais casos de uso e o público-alvo do código (no exemplo anterior, desenvolvedores que desejam concatenar strings).  
-
-Qualquer API que não possa ser descrita de forma concisa no primeiro ou segundo parágrafo geralmente é um sinal de que a API não foi bem planejada.  
-Nesses casos, considere dividir a API em componentes separados.
+De modo geral, um comentário de arquivo deve começar com um esboço do que está contido no código que você está lendo. Ele deve identificar os principais casos de uso e o público-alvo do código (no exemplo anterior, desenvolvedores que desejam concatenar strings). 
+Qualquer API que não possa ser descrita de forma concisa no primeiro ou segundo parágrafo geralmente é um sinal de que a API não foi bem planejada. Nesses casos, considere dividir a API em componentes separados.
 
 ---
 
 #### Comentários de Classe
 
-A maioria das linguagens modernas de programação é orientada a objetos.  
-Por isso, os **comentários de classe** são importantes para definir os “objetos” de API em uso dentro de uma base de código.  
-
-Todas as classes públicas (e structs) no Google devem conter um comentário descrevendo a classe/struct, os métodos importantes dessa classe e o propósito da classe.  
-
-De modo geral, os comentários de classe devem ser escritos com foco em substantivos, enfatizando o aspecto de objeto.  
-Ou seja, algo como:  
-> “A classe Foo contém x, y, z, permite que você faça Bar e possui os seguintes aspectos Baz.”
+A maioria das linguagens modernas de programação é orientada a objetos. Por isso, os **comentários de classe** são importantes para definir os “objetos” de API em uso dentro de uma base de código. 
+Todas as classes públicas (e structs) no Google devem conter um comentário descrevendo a classe/struct, os métodos importantes dessa classe e o propósito da classe. 
+De modo geral, os comentários de classe devem ser escritos com foco em substantivos, enfatizando o aspecto de objeto. Ou seja, algo como: > “A classe Foo contém x, y, z, permite que você faça Bar e possui os seguintes aspectos Baz.”
 
 Os comentários de classe devem geralmente começar com um comentário no seguinte formato:
 
@@ -284,11 +253,9 @@ Function comments should generally begin with a comment of the following form:
 // returning the merged result as a string.
 ````
 
-Observe que iniciar um comentário de função com um verbo declarativo introduz consistência em todo o arquivo de cabeçalho.  
-Um buscador pode rapidamente percorrer uma API e ler apenas o verbo para ter uma ideia se a função é apropriada: “Une, Deleta, Cria”, e assim por diante.
+Observe que iniciar um comentário de função com um verbo declarativo introduz consistência em todo o arquivo de cabeçalho. Um buscador pode rapidamente percorrer uma API e ler apenas o verbo para ter uma ideia se a função é apropriada: “Une, Deleta, Cria”, e assim por diante.
 
-Alguns estilos de documentação (e alguns geradores de documentação) exigem várias formas de boilerplate em comentários de função, como "Retorna:", "Lança:", etc., mas no Google não consideramos isso necessário.  
-Frequentemente, é mais claro apresentar essas informações em um único comentário em prosa, sem seções artificiais:
+Alguns estilos de documentação (e alguns geradores de documentação) exigem várias formas de boilerplate em comentários de função, como "Retorna:", "Lança:", etc., mas no Google não consideramos isso necessário. Frequentemente, é mais claro apresentar essas informações em um único comentário em prosa, sem seções artificiais:
 
 ```cpp
 // Cria um novo registro para um cliente com o nome e endereço fornecidos,
@@ -303,62 +270,33 @@ Observe como a pós-condição, os parâmetros, o valor de retorno e os casos ex
 
 ### Design Docs
 
-A maioria das equipes no Google exige um **documento de design aprovado** antes de iniciar qualquer projeto importante.  
-Um engenheiro de software geralmente escreve o documento de design proposto usando um **modelo de design doc** específico aprovado pela equipe.  
+A maioria das equipes no Google exige um **documento de design aprovado** antes de iniciar qualquer projeto importante. Um engenheiro de software geralmente escreve o documento de design proposto usando um **modelo de design doc** específico aprovado pela equipe. 
+Esses documentos são projetados para serem colaborativos, portanto, frequentemente são compartilhados no Google Docs, que possui boas ferramentas de colaboração. Algumas equipes exigem que esses documentos de design sejam discutidos e debatidos em reuniões específicas, onde os detalhes do design podem ser analisados ou criticados por especialistas. Sob certos aspectos, essas discussões de design atuam como uma forma de revisão de código antes que qualquer código seja escrito.
 
-Esses documentos são projetados para serem colaborativos, portanto, frequentemente são compartilhados no Google Docs, que possui boas ferramentas de colaboração.  
-Algumas equipes exigem que esses documentos de design sejam discutidos e debatidos em reuniões específicas, onde os detalhes do design podem ser analisados ou criticados por especialistas.  
-Sob certos aspectos, essas discussões de design atuam como uma forma de revisão de código antes que qualquer código seja escrito.
+Como o desenvolvimento de um documento de design é um dos primeiros processos que um engenheiro realiza antes de implantar um novo sistema, ele também é um local conveniente para garantir que várias preocupações sejam abordadas. Os **modelos de design doc canônicos** no Google exigem que os engenheiros considerem aspectos do design, como implicações de segurança, internacionalização, requisitos de armazenamento e preocupações de privacidade, entre outros. Na maioria dos casos, essas partes do design doc são revisadas por especialistas nesses domínios.
 
-Como o desenvolvimento de um documento de design é um dos primeiros processos que um engenheiro realiza antes de implantar um novo sistema, ele também é um local conveniente para garantir que várias preocupações sejam abordadas.  
-Os **modelos de design doc canônicos** no Google exigem que os engenheiros considerem aspectos do design, como implicações de segurança, internacionalização, requisitos de armazenamento e preocupações de privacidade, entre outros.  
-Na maioria dos casos, essas partes do design doc são revisadas por especialistas nesses domínios.
+Um bom documento de design deve cobrir os objetivos do design, a estratégia de implementação e propor decisões-chave de design com ênfase em seus trade-offs individuais. Os melhores documentos de design sugerem objetivos de design e apresentam designs alternativos, destacando seus pontos fortes e fracos.
 
-Um bom documento de design deve cobrir os objetivos do design, a estratégia de implementação e propor decisões-chave de design com ênfase em seus trade-offs individuais.  
-Os melhores documentos de design sugerem objetivos de design e apresentam designs alternativos, destacando seus pontos fortes e fracos.
-
-Um bom documento de design, uma vez aprovado, atua não apenas como registro histórico, mas também como medida de sucesso do projeto em atingir seus objetivos.  
-A maioria das equipes arquiva seus documentos de design em local apropriado dentro dos documentos da equipe para revisão futura.  
-Frequentemente, é útil revisar um documento de design antes do lançamento de um produto para garantir que os objetivos declarados quando o documento foi escrito ainda correspondam aos objetivos no lançamento (e, se não corresponderem, ajustar o documento ou o produto conforme necessário).
+Um bom documento de design, uma vez aprovado, atua não apenas como registro histórico, mas também como medida de sucesso do projeto em atingir seus objetivos. A maioria das equipes arquiva seus documentos de design em local apropriado dentro dos documentos da equipe para revisão futura. Frequentemente, é útil revisar um documento de design antes do lançamento de um produto para garantir que os objetivos declarados quando o documento foi escrito ainda correspondam aos objetivos no lançamento (e, se não corresponderem, ajustar o documento ou o produto conforme necessário).
 
 ---
 
 ### Tutorials
 
-Todo engenheiro de software, ao ingressar em uma nova equipe, quer se atualizar o mais rápido possível.  
-Ter um **tutorial** que guie alguém na configuração de um novo projeto é inestimável; o “Hello World” se estabeleceu como uma das melhores formas de garantir que todos os membros da equipe comecem bem.  
-Isso se aplica tanto a documentos quanto a código. A maioria dos projetos merece um documento “Hello World” que não presume nada e faz o engenheiro criar algo “real”.
+Todo engenheiro de software, ao ingressar em uma nova equipe, quer se atualizar o mais rápido possível. Ter um **tutorial** que guie alguém na configuração de um novo projeto é inestimável; o “Hello World” se estabeleceu como uma das melhores formas de garantir que todos os membros da equipe comecem bem. Isso se aplica tanto a documentos quanto a código. A maioria dos projetos merece um documento “Hello World” que não presume nada e faz o engenheiro criar algo “real”.
 
-Frequentemente, o melhor momento para escrever um tutorial, caso ainda não exista, é quando você entra em uma equipe.  
-(E também é o melhor momento para encontrar bugs em qualquer tutorial existente que você esteja seguindo.)  
-Pegue um bloco de notas ou outro meio para anotações e escreva tudo o que precisa ser feito ao longo do caminho, assumindo nenhum conhecimento prévio ou restrições especiais de configuração; depois de terminar, você provavelmente saberá quais erros cometeu durante o processo — e por quê — e poderá editar os passos para criar um tutorial mais enxuto.  
+Frequentemente, o melhor momento para escrever um tutorial, caso ainda não exista, é quando você entra em uma equipe. (E também é o melhor momento para encontrar bugs em qualquer tutorial existente que você esteja seguindo.) Pegue um bloco de notas ou outro meio para anotações e escreva tudo o que precisa ser feito ao longo do caminho, assumindo nenhum conhecimento prévio ou restrições especiais de configuração; depois de terminar, você provavelmente saberá quais erros cometeu durante o processo — e por quê — e poderá editar os passos para criar um tutorial mais enxuto. 
+É importante: escreva tudo o que precisa ser feito ao longo do caminho; tente não assumir nenhuma configuração, permissão ou conhecimento do domínio específico. Se for necessário assumir alguma configuração, declare isso claramente no início do tutorial como pré-requisito.
 
-É importante: escreva tudo o que precisa ser feito ao longo do caminho; tente não assumir nenhuma configuração, permissão ou conhecimento do domínio específico.  
-Se for necessário assumir alguma configuração, declare isso claramente no início do tutorial como pré-requisito.
-
-A maioria dos tutoriais exige a execução de vários passos em ordem.  
-Nesses casos, numere os passos explicitamente.  
-Se o foco do tutorial for o usuário (por exemplo, documentação para desenvolvedores externos), numere cada ação que o usuário precisa realizar.  
-Não numere ações que o sistema possa executar em resposta às ações do usuário.  
-É **crítico e importante** numerar explicitamente cada passo ao fazer isso.  
-Nada é mais frustrante do que um erro no passo 4 porque você esqueceu de instruir alguém a autorizar corretamente seu nome de usuário, por exemplo.
+A maioria dos tutoriais exige a execução de vários passos em ordem. Nesses casos, numere os passos explicitamente. Se o foco do tutorial for o usuário (por exemplo, documentação para desenvolvedores externos), numere cada ação que o usuário precisa realizar. Não numere ações que o sistema possa executar em resposta às ações do usuário. É **crítico e importante** numerar explicitamente cada passo ao fazer isso. Nada é mais frustrante do que um erro no passo 4 porque você esqueceu de instruir alguém a autorizar corretamente seu nome de usuário, por exemplo.
 
 ---
 
 #### Exemplo: Um tutorial ruim
 
-1. Baixe o pacote do nosso servidor em <http://example.com>  
-2. Copie o script shell para seu diretório home  
-3. Execute o script shell  
-4. O sistema foobar comunicará com o sistema de autenticação  
-5. Uma vez autenticado, o foobar iniciará um novo banco de dados chamado “baz”  
-6. Teste “baz” executando um comando SQL no terminal  
-7. Digite: CREATE DATABASE my_foobar_db;
+1. Baixe o pacote do nosso servidor em <http://example.com> 2. Copie o script shell para seu diretório home 3. Execute o script shell 4. O sistema foobar comunicará com o sistema de autenticação 5. Uma vez autenticado, o foobar iniciará um novo banco de dados chamado “baz” 6. Teste “baz” executando um comando SQL no terminal 7. Digite: CREATE DATABASE my_foobar_db;
 
-Nos passos acima, 4 e 5 acontecem no servidor. Não está claro se o usuário precisa fazer algo, mas ele não precisa, então esses efeitos podem ser mencionados como parte do passo 3.  
-Além disso, não está claro se o passo 6 e 7 são diferentes. (Não são.)  
-Combine todas as operações atômicas do usuário em passos únicos para que o usuário saiba que precisa agir em cada passo.  
-Além disso, se o tutorial tiver entrada ou saída visível para o usuário, denote isso em linhas separadas (geralmente usando fonte monoespaçada em negrito).
+Nos passos acima, 4 e 5 acontecem no servidor. Não está claro se o usuário precisa fazer algo, mas ele não precisa, então esses efeitos podem ser mencionados como parte do passo 3. Além disso, não está claro se o passo 6 e 7 são diferentes. (Não são.) Combine todas as operações atômicas do usuário em passos únicos para que o usuário saiba que precisa agir em cada passo. Além disso, se o tutorial tiver entrada ou saída visível para o usuário, denote isso em linhas separadas (geralmente usando fonte monoespaçada em negrito).
 
 ---
 
@@ -396,203 +334,99 @@ Se, em vez disso, o tutorial tivesse foco em outro aspecto (por exemplo, um docu
 
 ### Documentação conceitual
 
-Algum código requer explicações ou insights mais profundos do que podem ser obtidos apenas lendo a documentação de referência.  
-Nesses casos, precisamos de **documentação conceitual** para fornecer visões gerais das APIs ou sistemas.  
-Alguns exemplos de documentação conceitual podem ser uma visão geral de uma biblioteca para uma API popular, um documento descrevendo o ciclo de vida de dados dentro de um servidor, e assim por diante.  
+Algum código requer explicações ou insights mais profundos do que podem ser obtidos apenas lendo a documentação de referência. Nesses casos, precisamos de **documentação conceitual** para fornecer visões gerais das APIs ou sistemas. Alguns exemplos de documentação conceitual podem ser uma visão geral de uma biblioteca para uma API popular, um documento descrevendo o ciclo de vida de dados dentro de um servidor, e assim por diante. 
+Em quase todos os casos, um documento conceitual serve para **complementar**, não substituir, um conjunto de documentação de referência. Frequentemente, isso leva à duplicação de algumas informações, mas com um propósito: promover clareza. Nesses casos, não é necessário que um documento conceitual cubra todos os casos extremos (embora uma referência deva cobrir esses casos religiosamente). Neste caso, sacrificar um pouco de precisão é aceitável para garantir clareza. O objetivo principal de um documento conceitual é transmitir compreensão.
 
-Em quase todos os casos, um documento conceitual serve para **complementar**, não substituir, um conjunto de documentação de referência.  
-Frequentemente, isso leva à duplicação de algumas informações, mas com um propósito: promover clareza.  
-Nesses casos, não é necessário que um documento conceitual cubra todos os casos extremos (embora uma referência deva cobrir esses casos religiosamente).  
-Neste caso, sacrificar um pouco de precisão é aceitável para garantir clareza. O objetivo principal de um documento conceitual é transmitir compreensão.
+Documentos de “conceito” são as formas mais difíceis de documentação para escrever. Como resultado, eles frequentemente são os tipos mais negligenciados dentro da caixa de ferramentas de um engenheiro de software. 
+Um problema que os engenheiros enfrentam ao escrever documentação conceitual é que ela muitas vezes não pode ser incorporada diretamente no código-fonte porque não existe um local canônico para colocá-la. Algumas APIs têm uma superfície de API relativamente ampla, nesse caso, um **comentário de arquivo** pode ser um lugar apropriado para uma explicação “conceitual” da API. Mas frequentemente, uma API funciona em conjunto com outras APIs e/ou módulos. O único local lógico para documentar tal comportamento complexo é por meio de um documento conceitual separado. Se comentários são os testes unitários da documentação, os documentos conceituais são os testes de integração.
 
-Documentos de “conceito” são as formas mais difíceis de documentação para escrever.  
-Como resultado, eles frequentemente são os tipos mais negligenciados dentro da caixa de ferramentas de um engenheiro de software.  
+Mesmo quando uma API é adequadamente delimitada, muitas vezes faz sentido fornecer um documento conceitual separado. Por exemplo, a biblioteca StrFormat da Abseil cobre uma variedade de conceitos que usuários experientes da API devem compreender. Nesses casos, tanto interna quanto externamente, fornecemos um documento de conceitos de formatação.
 
-Um problema que os engenheiros enfrentam ao escrever documentação conceitual é que ela muitas vezes não pode ser incorporada diretamente no código-fonte porque não existe um local canônico para colocá-la.  
-Algumas APIs têm uma superfície de API relativamente ampla, nesse caso, um **comentário de arquivo** pode ser um lugar apropriado para uma explicação “conceitual” da API.  
-Mas frequentemente, uma API funciona em conjunto com outras APIs e/ou módulos.  
-O único local lógico para documentar tal comportamento complexo é por meio de um documento conceitual separado.  
-Se comentários são os testes unitários da documentação, os documentos conceituais são os testes de integração.
-
-Mesmo quando uma API é adequadamente delimitada, muitas vezes faz sentido fornecer um documento conceitual separado.  
-Por exemplo, a biblioteca StrFormat da Abseil cobre uma variedade de conceitos que usuários experientes da API devem compreender.  
-Nesses casos, tanto interna quanto externamente, fornecemos um documento de conceitos de formatação.
-
-Um documento conceitual precisa ser útil para um público amplo: tanto especialistas quanto iniciantes.  
-Além disso, precisa enfatizar clareza, portanto, frequentemente precisa sacrificar **completude** (algo melhor reservado para referência) e (às vezes) precisão estrita.  
-Isso não significa que um documento conceitual deve ser intencionalmente impreciso; apenas que deve focar no uso comum e deixar usos raros ou efeitos colaterais para a documentação de referência.
+Um documento conceitual precisa ser útil para um público amplo: tanto especialistas quanto iniciantes. Além disso, precisa enfatizar clareza, portanto, frequentemente precisa sacrificar **completude** (algo melhor reservado para referência) e (às vezes) precisão estrita. Isso não significa que um documento conceitual deve ser intencionalmente impreciso; apenas que deve focar no uso comum e deixar usos raros ou efeitos colaterais para a documentação de referência.
 
 ---
 
 ### Landing Pages
 
-A maioria dos engenheiros faz parte de uma equipe, e a maioria das equipes possui uma **“página da equipe”** em algum lugar da intranet da empresa.  
-Frequentemente, esses sites são um pouco desorganizados: uma página de entrada típica pode conter links interessantes, às vezes vários documentos intitulados “leia isto primeiro!”, e algumas informações tanto para a equipe quanto para seus clientes.  
-
+A maioria dos engenheiros faz parte de uma equipe, e a maioria das equipes possui uma **“página da equipe”** em algum lugar da intranet da empresa. Frequentemente, esses sites são um pouco desorganizados: uma página de entrada típica pode conter links interessantes, às vezes vários documentos intitulados “leia isto primeiro!”, e algumas informações tanto para a equipe quanto para seus clientes. 
 Esses documentos começam úteis, mas rapidamente se tornam desastres; como se tornam difíceis de manter, eventualmente se tornam tão obsoletos que só serão atualizados pelos corajosos ou desesperados.
 
-Felizmente, tais documentos parecem intimidantes, mas na verdade são simples de corrigir: **garanta que a página de entrada identifique claramente seu propósito** e inclua apenas links para outras páginas com mais informações.  
-Se algo em uma landing page estiver fazendo mais do que direcionar o tráfego, não está cumprindo sua função.  
-Se você tiver um documento de configuração separado, linke para ele a partir da landing page como um documento separado.  
-Se houver links demais na página de entrada (sua página não deve rolar por várias telas), considere dividir as páginas por taxonomia, em diferentes seções.
+Felizmente, tais documentos parecem intimidantes, mas na verdade são simples de corrigir: **garanta que a página de entrada identifique claramente seu propósito** e inclua apenas links para outras páginas com mais informações. Se algo em uma landing page estiver fazendo mais do que direcionar o tráfego, não está cumprindo sua função. Se você tiver um documento de configuração separado, linke para ele a partir da landing page como um documento separado. Se houver links demais na página de entrada (sua página não deve rolar por várias telas), considere dividir as páginas por taxonomia, em diferentes seções.
 
-A maioria das landing pages mal configuradas serve a dois propósitos diferentes:  
-
-1. São a página “goto” para alguém que é usuário do seu produto ou API.  
-2. São a página inicial de uma equipe.  
-
-Não faça a página servir a ambos os propósitos — ficará confusa.  
-Crie uma página de equipe separada como uma página interna, distinta da landing page principal.  
-O que a equipe precisa saber frequentemente difere do que um cliente da sua API precisa saber.
+A maioria das landing pages mal configuradas serve a dois propósitos diferentes: 
+1. São a página “goto” para alguém que é usuário do seu produto ou API. 2. São a página inicial de uma equipe. 
+Não faça a página servir a ambos os propósitos — ficará confusa. Crie uma página de equipe separada como uma página interna, distinta da landing page principal. O que a equipe precisa saber frequentemente difere do que um cliente da sua API precisa saber.
 
 ---
 
 ### Doc Review
 
-No Google, todo código precisa ser revisado, e nosso processo de revisão de código é bem entendido e aceito.  
-Em geral, a documentação também precisa de revisão (embora isso seja menos universalmente aceito).  
-Se você quiser “testar” se sua documentação funciona, deve geralmente ter outra pessoa para revisá-la.
+No Google, todo código precisa ser revisado, e nosso processo de revisão de código é bem entendido e aceito. Em geral, a documentação também precisa de revisão (embora isso seja menos universalmente aceito). Se você quiser “testar” se sua documentação funciona, deve geralmente ter outra pessoa para revisá-la.
 
 Um documento técnico se beneficia de três tipos diferentes de revisão, cada um enfatizando aspectos diferentes:
 
-1. **Revisão técnica**, para precisão.  
-   Normalmente feita por um especialista no assunto, muitas vezes outro membro da equipe.  
-   Frequentemente, isso é parte da própria revisão de código.
+1. **Revisão técnica**, para precisão.    Normalmente feita por um especialista no assunto, muitas vezes outro membro da equipe.    Frequentemente, isso é parte da própria revisão de código.
 
-2. **Revisão de audiência**, para clareza.  
-   Geralmente feita por alguém não familiarizado com o domínio.  
-   Pode ser alguém novo na equipe ou um cliente da API.
+2. **Revisão de audiência**, para clareza.    Geralmente feita por alguém não familiarizado com o domínio.    Pode ser alguém novo na equipe ou um cliente da API.
 
-3. **Revisão de escrita**, para consistência.  
-   Geralmente feita por um redator técnico ou voluntário.
+3. **Revisão de escrita**, para consistência.    Geralmente feita por um redator técnico ou voluntário.
 
-Claro, algumas dessas linhas às vezes se confundem, mas se o seu documento for de alto perfil ou possa ser publicado externamente, você provavelmente quer garantir que ele receba mais tipos de revisão.  
-Qualquer documento tende a se beneficiar das revisões mencionadas, mesmo que algumas delas sejam ad hoc.  
-Dito isso, mesmo conseguir que apenas um revisor revise seu texto é preferível a não ter ninguém revisando.
+Claro, algumas dessas linhas às vezes se confundem, mas se o seu documento for de alto perfil ou possa ser publicado externamente, você provavelmente quer garantir que ele receba mais tipos de revisão. Qualquer documento tende a se beneficiar das revisões mencionadas, mesmo que algumas delas sejam ad hoc. Dito isso, mesmo conseguir que apenas um revisor revise seu texto é preferível a não ter ninguém revisando.
 
-Importante: se a documentação estiver integrada ao fluxo de trabalho de engenharia, frequentemente melhorará ao longo do tempo.  
-A maioria dos documentos no Google agora passa implicitamente por uma revisão de audiência porque, em algum momento, seu público os usará e, esperamos, informará quando não estiverem funcionando (via bugs ou outras formas de feedback).
+Importante: se a documentação estiver integrada ao fluxo de trabalho de engenharia, frequentemente melhorará ao longo do tempo. A maioria dos documentos no Google agora passa implicitamente por uma revisão de audiência porque, em algum momento, seu público os usará e, esperamos, informará quando não estiverem funcionando (via bugs ou outras formas de feedback).
 
 > ### Case Study: The Developer Guide Library
 >
-> Como mencionado anteriormente, havia problemas associados a ter a maior parte (quase toda) da documentação de engenharia contida em um wiki compartilhado: pouca propriedade da documentação importante, documentação concorrente, informações obsoletas e dificuldade em registrar bugs ou problemas na documentação.  
-> Mas esse problema não era observado em alguns documentos: o guia de estilo C++ do Google era mantido por um grupo seleto de engenheiros seniores (árbitros de estilo) que o gerenciavam.  
-> O documento era mantido em bom estado porque certas pessoas se importavam com ele. Elas implicitamente possuíam aquele documento.  
-> O documento também era canônico: havia apenas um guia de estilo C++.
+> Como mencionado anteriormente, havia problemas associados a ter a maior parte (quase toda) da documentação de engenharia contida em um wiki compartilhado: pouca propriedade da documentação importante, documentação concorrente, informações obsoletas e dificuldade em registrar bugs ou problemas na documentação. > Mas esse problema não era observado em alguns documentos: o guia de estilo C++ do Google era mantido por um grupo seleto de engenheiros seniores (árbitros de estilo) que o gerenciavam. > O documento era mantido em bom estado porque certas pessoas se importavam com ele. Elas implicitamente possuíam aquele documento. > O documento também era canônico: havia apenas um guia de estilo C++.
 >
-> Como mencionado anteriormente, a documentação que fica diretamente no código-fonte é uma forma de promover o estabelecimento de documentos canônicos; se a documentação estiver ao lado do código-fonte, geralmente deve ser a mais aplicável (esperançosamente).  
-> No Google, cada API geralmente possui um diretório g3doc separado onde esses documentos residem (escritos como arquivos Markdown e legíveis em nosso navegador Code Search).  
-> Ter a documentação junto ao código-fonte não apenas estabelece propriedade de fato, mas faz com que a documentação pareça mais “parte” do código.
+> Como mencionado anteriormente, a documentação que fica diretamente no código-fonte é uma forma de promover o estabelecimento de documentos canônicos; se a documentação estiver ao lado do código-fonte, geralmente deve ser a mais aplicável (esperançosamente). > No Google, cada API geralmente possui um diretório g3doc separado onde esses documentos residem (escritos como arquivos Markdown e legíveis em nosso navegador Code Search). > Ter a documentação junto ao código-fonte não apenas estabelece propriedade de fato, mas faz com que a documentação pareça mais “parte” do código.
 >
-> Alguns conjuntos de documentação, no entanto, não podem existir de forma lógica dentro do código-fonte.  
-> Um “guia do desenvolvedor C++” para Googlers, por exemplo, não possui um local óbvio no código-fonte.  
-> Não há um diretório mestre “C++” onde as pessoas procurariam essas informações.  
-> Nesse caso (e em outros que cruzam limites de API), tornou-se útil criar conjuntos de documentação independentes em seu próprio depósito.  
-> Muitos desses conjuntos reuniam documentos existentes associados em um conjunto comum, com navegação e aparência unificadas.  
-> Tais documentos eram identificados como “Developer Guides” e, como o código no repositório, estavam sob controle de versão em um depósito de documentação específico, organizado por tópico em vez de API.  
-> Frequentemente, redatores técnicos gerenciavam esses guias de desenvolvedores, pois eram melhores em explicar tópicos que cruzavam limites de API.
+> Alguns conjuntos de documentação, no entanto, não podem existir de forma lógica dentro do código-fonte. > Um “guia do desenvolvedor C++” para Googlers, por exemplo, não possui um local óbvio no código-fonte. > Não há um diretório mestre “C++” onde as pessoas procurariam essas informações. > Nesse caso (e em outros que cruzam limites de API), tornou-se útil criar conjuntos de documentação independentes em seu próprio depósito. > Muitos desses conjuntos reuniam documentos existentes associados em um conjunto comum, com navegação e aparência unificadas. > Tais documentos eram identificados como “Developer Guides” e, como o código no repositório, estavam sob controle de versão em um depósito de documentação específico, organizado por tópico em vez de API. > Frequentemente, redatores técnicos gerenciavam esses guias de desenvolvedores, pois eram melhores em explicar tópicos que cruzavam limites de API.
 >
-> Com o tempo, esses guias de desenvolvedores se tornaram canônicos.  
-> Usuários que escreviam documentos concorrentes ou suplementares passaram a aceitar adicionar seus documentos ao conjunto canônico após ele ser estabelecido, e então descontinuar seus documentos concorrentes.  
-> Eventualmente, o guia de estilo C++ tornou-se parte de um “Guia do Desenvolvedor C++” maior.  
-> À medida que o conjunto de documentação se tornava mais abrangente e autoritativo, sua qualidade também melhorava.  
-> Engenheiros começaram a registrar bugs porque sabiam que alguém estava mantendo esses documentos.  
-> Como os documentos estavam bloqueados sob controle de versão, com proprietários adequados, os engenheiros também começaram a enviar changelists diretamente para os redatores técnicos.
+> Com o tempo, esses guias de desenvolvedores se tornaram canônicos. > Usuários que escreviam documentos concorrentes ou suplementares passaram a aceitar adicionar seus documentos ao conjunto canônico após ele ser estabelecido, e então descontinuar seus documentos concorrentes. > Eventualmente, o guia de estilo C++ tornou-se parte de um “Guia do Desenvolvedor C++” maior. > À medida que o conjunto de documentação se tornava mais abrangente e autoritativo, sua qualidade também melhorava. > Engenheiros começaram a registrar bugs porque sabiam que alguém estava mantendo esses documentos. > Como os documentos estavam bloqueados sob controle de versão, com proprietários adequados, os engenheiros também começaram a enviar changelists diretamente para os redatores técnicos.
 >
-> A introdução de links go/ (ver Knowledge Sharing) permitiu que a maioria dos documentos, de fato, se estabelecesse mais facilmente como canônicos sobre qualquer tópico.  
-> Nosso Guia do Desenvolvedor C++ foi estabelecido em “go/cpp”, por exemplo.  
-> Com melhor busca interna, links go/ e integração de múltiplos documentos em um conjunto comum de documentação, tais conjuntos de documentação canônicos se tornaram mais autoritativos e robustos ao longo do tempo.
+> A introdução de links go/ (ver Knowledge Sharing) permitiu que a maioria dos documentos, de fato, se estabelecesse mais facilmente como canônicos sobre qualquer tópico. > Nosso Guia do Desenvolvedor C++ foi estabelecido em “go/cpp”, por exemplo. > Com melhor busca interna, links go/ e integração de múltiplos documentos em um conjunto comum de documentação, tais conjuntos de documentação canônicos se tornaram mais autoritativos e robustos ao longo do tempo.
 
 ### Principios de Documentação
 
-Aviso: a seção a seguir é mais um tratado sobre melhores práticas de escrita técnica (e opinião pessoal) do que “como o Google faz”.  
-Considere-a opcional para que engenheiros de software compreendam totalmente, embora entender esses conceitos provavelmente permita escrever informações técnicas com mais facilidade.
+Aviso: a seção a seguir é mais um tratado sobre melhores práticas de escrita técnica (e opinião pessoal) do que “como o Google faz”. Considere-a opcional para que engenheiros de software compreendam totalmente, embora entender esses conceitos provavelmente permita escrever informações técnicas com mais facilidade.
 
 #### QUEM, O QUE, QUANDO, ONDE, e PORQUE
 
-A maior parte da documentação técnica responde à pergunta “HOW”.  
-Como isso funciona? Como programar para esta API? Como configurar este servidor?  
-Como resultado, há uma tendência de os engenheiros de software pularem direto para o “HOW” em qualquer documento e ignorarem as outras questões associadas: QUEM, O QUE, QUANDO, ONDE, e PORQUE.  
+A maior parte da documentação técnica responde à pergunta “HOW”. Como isso funciona? Como programar para esta API? Como configurar este servidor? Como resultado, há uma tendência de os engenheiros de software pularem direto para o “HOW” em qualquer documento e ignorarem as outras questões associadas: QUEM, O QUE, QUANDO, ONDE, e PORQUE. 
+É verdade que nenhuma dessas perguntas é geralmente tão importante quanto o HOW — um documento de design é exceção porque um aspecto equivalente é frequentemente o WHY — mas sem uma estrutura adequada, a documentação acaba confusa. Tente abordar as outras perguntas nos dois primeiros parágrafos de qualquer documento:
 
-É verdade que nenhuma dessas perguntas é geralmente tão importante quanto o HOW — um documento de design é exceção porque um aspecto equivalente é frequentemente o WHY — mas sem uma estrutura adequada, a documentação acaba confusa.  
-Tente abordar as outras perguntas nos dois primeiros parágrafos de qualquer documento:
+- **QUEM** já foi discutido anteriormente: é o público-alvo. Mas às vezes também é necessário explicitar e direcionar o público em um documento. Exemplo: “Este documento é para novos engenheiros no projeto Secret Wizard.”
 
-- **QUEM** já foi discutido anteriormente: é o público-alvo. Mas às vezes também é necessário explicitar e direcionar o público em um documento.  
-Exemplo: “Este documento é para novos engenheiros no projeto Secret Wizard.”
+- **O QUE** identifica o propósito do documento: “Este documento é um tutorial para iniciar um servidor Frobber em um ambiente de teste.” Às vezes, apenas escrever O QUE ajuda a estruturar o documento corretamente. Se você começar a adicionar informações que não se aplicam ao WHAT, talvez queira mover essas informações para outro documento.
 
-- **O QUE** identifica o propósito do documento: “Este documento é um tutorial para iniciar um servidor Frobber em um ambiente de teste.”  
-Às vezes, apenas escrever O QUE ajuda a estruturar o documento corretamente.  
-Se você começar a adicionar informações que não se aplicam ao WHAT, talvez queira mover essas informações para outro documento.
+- **QUANDO** identifica quando o documento foi criado, revisado ou atualizado. Documentos no código-fonte têm essa data registrada implicitamente, e alguns outros esquemas de publicação automatizam isso. Caso contrário, certifique-se de anotar a data em que o documento foi escrito (ou revisado) no próprio documento.
 
-- **QUANDO** identifica quando o documento foi criado, revisado ou atualizado.  
-Documentos no código-fonte têm essa data registrada implicitamente, e alguns outros esquemas de publicação automatizam isso.  
-Caso contrário, certifique-se de anotar a data em que o documento foi escrito (ou revisado) no próprio documento.
+- **ONDE** é frequentemente implícito, mas decida onde o documento deve residir. Normalmente, a preferência deve ser algum tipo de controle de versão, idealmente com o código-fonte que ele documenta.  Outros formatos funcionam para diferentes propósitos também. No Google, frequentemente usamos Google Docs para colaboração fácil, particularmente em questões de design. Em algum momento, qualquer documento compartilhado se torna menos uma discussão e mais um registro histórico estável. Nesse ponto, mova-o para um local mais permanente, com propriedade clara, controle de versão e responsabilidade.
 
-- **ONDE** é frequentemente implícito, mas decida onde o documento deve residir.  
-Normalmente, a preferência deve ser algum tipo de controle de versão, idealmente com o código-fonte que ele documenta.  
-Outros formatos funcionam para diferentes propósitos também.  
-No Google, frequentemente usamos Google Docs para colaboração fácil, particularmente em questões de design.  
-Em algum momento, qualquer documento compartilhado se torna menos uma discussão e mais um registro histórico estável.  
-Nesse ponto, mova-o para um local mais permanente, com propriedade clara, controle de versão e responsabilidade.
-
-- **PORQUE** estabelece o propósito do documento.  
-Resuma o que você espera que alguém absorva após lê-lo.  
-Uma boa regra prática é estabelecer o PORQUE na introdução do documento.  
-Ao escrever o resumo, verifique se você atingiu suas expectativas originais (e revise conforme necessário).
+- **PORQUE** estabelece o propósito do documento. Resuma o que você espera que alguém absorva após lê-lo. Uma boa regra prática é estabelecer o PORQUE na introdução do documento. Ao escrever o resumo, verifique se você atingiu suas expectativas originais (e revise conforme necessário).
 
 #### O começo, meio, e fim
 
-Todos os documentos — de fato, todas as partes dos documentos — têm começo, meio e fim.  
-Embora pareça óbvio, a maioria dos documentos deve ter, no mínimo, essas três seções.  
-Um documento com apenas uma seção tem apenas uma coisa a dizer, e muito poucos documentos têm apenas uma coisa a dizer.  
-Não tenha medo de adicionar seções ao seu documento; elas dividem o fluxo em partes lógicas e fornecem ao leitor um roteiro do que o documento cobre.
+Todos os documentos — de fato, todas as partes dos documentos — têm começo, meio e fim. Embora pareça óbvio, a maioria dos documentos deve ter, no mínimo, essas três seções. Um documento com apenas uma seção tem apenas uma coisa a dizer, e muito poucos documentos têm apenas uma coisa a dizer. Não tenha medo de adicionar seções ao seu documento; elas dividem o fluxo em partes lógicas e fornecem ao leitor um roteiro do que o documento cobre.
 
-Mesmo o documento mais simples geralmente tem mais de uma coisa a dizer.  
-Nossos populares “C++ Tips of the Week” tradicionalmente eram muito curtos, focando em um pequeno conselho.  
-Mesmo assim, ter seções ajuda.  
-Tradicionalmente, a primeira seção descreve o problema, a seção do meio aborda as soluções recomendadas e a conclusão resume os pontos principais.  
-Se o documento tivesse apenas uma seção, alguns leitores teriam dificuldade em extrair os pontos importantes.
+Mesmo o documento mais simples geralmente tem mais de uma coisa a dizer. Nossos populares “C++ Tips of the Week” tradicionalmente eram muito curtos, focando em um pequeno conselho. Mesmo assim, ter seções ajuda. Tradicionalmente, a primeira seção descreve o problema, a seção do meio aborda as soluções recomendadas e a conclusão resume os pontos principais. Se o documento tivesse apenas uma seção, alguns leitores teriam dificuldade em extrair os pontos importantes.
 
-A maioria dos engenheiros detesta redundância, e com razão.  
-Mas na documentação, a redundância é frequentemente útil.  
-Um ponto importante escondido em um bloco de texto pode ser difícil de lembrar ou identificar.  
-Por outro lado, colocar esse ponto em um local mais proeminente cedo pode fazer perder o contexto fornecido depois.  
-Geralmente, a solução é introduzir e resumir o ponto em um parágrafo introdutório, e então usar o restante da seção para detalhar melhor.  
-Nesse caso, a redundância ajuda o leitor a compreender a importância do que está sendo declarado.
+A maioria dos engenheiros detesta redundância, e com razão. Mas na documentação, a redundância é frequentemente útil. Um ponto importante escondido em um bloco de texto pode ser difícil de lembrar ou identificar. Por outro lado, colocar esse ponto em um local mais proeminente cedo pode fazer perder o contexto fornecido depois. Geralmente, a solução é introduzir e resumir o ponto em um parágrafo introdutório, e então usar o restante da seção para detalhar melhor. Nesse caso, a redundância ajuda o leitor a compreender a importância do que está sendo declarado.
 
 #### Os parametros de uma boa documentação
 
-Normalmente, existem três aspectos de uma boa documentação: **completude, precisão e clareza**.  
-Raramente se obtém os três em um mesmo documento; ao tentar tornar um documento mais “completo”, por exemplo, a clareza pode sofrer.  
-Se você tentar documentar todos os possíveis casos de uso de uma API, pode acabar com um conteúdo incompreensível.  
-Para linguagens de programação, ser totalmente preciso em todos os casos (e documentar todos os possíveis efeitos colaterais) também pode afetar a clareza.  
-Para outros documentos, tentar ser claro sobre um tópico complicado pode afetar sutilmente a precisão; você pode decidir ignorar alguns efeitos colaterais raros em um documento conceitual, por exemplo, porque o objetivo é familiarizar alguém com o uso da API, não fornecer uma visão dogmática de todo comportamento previsto.
+Normalmente, existem três aspectos de uma boa documentação: **completude, precisão e clareza**. Raramente se obtém os três em um mesmo documento; ao tentar tornar um documento mais “completo”, por exemplo, a clareza pode sofrer. Se você tentar documentar todos os possíveis casos de uso de uma API, pode acabar com um conteúdo incompreensível. Para linguagens de programação, ser totalmente preciso em todos os casos (e documentar todos os possíveis efeitos colaterais) também pode afetar a clareza. Para outros documentos, tentar ser claro sobre um tópico complicado pode afetar sutilmente a precisão; você pode decidir ignorar alguns efeitos colaterais raros em um documento conceitual, por exemplo, porque o objetivo é familiarizar alguém com o uso da API, não fornecer uma visão dogmática de todo comportamento previsto.
 
-Em cada caso, um “bom documento” é definido como aquele que está cumprindo seu propósito.  
-Portanto, raramente você quer que um documento desempenhe mais de uma função.  
-Para cada documento (e tipo de documento), defina seu foco e ajuste a escrita adequadamente.  
-Escrevendo um documento conceitual? Provavelmente não precisa cobrir toda a API.  
-Escrevendo uma referência? Provavelmente deseja ser completo, mas talvez precise sacrificar alguma clareza.  
-Escrevendo uma landing page? Foque na organização e mantenha a discussão mínima.  
-Tudo isso contribui para a **qualidade**, que é notoriamente difícil de medir com precisão.
+Em cada caso, um “bom documento” é definido como aquele que está cumprindo seu propósito. Portanto, raramente você quer que um documento desempenhe mais de uma função. Para cada documento (e tipo de documento), defina seu foco e ajuste a escrita adequadamente. Escrevendo um documento conceitual? Provavelmente não precisa cobrir toda a API. Escrevendo uma referência? Provavelmente deseja ser completo, mas talvez precise sacrificar alguma clareza. Escrevendo uma landing page? Foque na organização e mantenha a discussão mínima. Tudo isso contribui para a **qualidade**, que é notoriamente difícil de medir com precisão.
 
-Como melhorar rapidamente a qualidade de um documento?  
-Foque nas necessidades do público. Frequentemente, menos é mais.  
-Por exemplo, um erro comum é adicionar decisões de design ou detalhes de implementação a um documento de API.  
-Assim como você deveria separar idealmente a interface da implementação em uma API bem projetada, evite discutir decisões de design em um documento de API.  
-Os usuários não precisam dessa informação.  
-Coloque essas decisões em um documento especializado para esse propósito (geralmente um design doc).
+Como melhorar rapidamente a qualidade de um documento? Foque nas necessidades do público. Frequentemente, menos é mais. Por exemplo, um erro comum é adicionar decisões de design ou detalhes de implementação a um documento de API. Assim como você deveria separar idealmente a interface da implementação em uma API bem projetada, evite discutir decisões de design em um documento de API. Os usuários não precisam dessa informação. Coloque essas decisões em um documento especializado para esse propósito (geralmente um design doc).
 
 #### Depreciando Documentos
 
-Assim como código antigo pode causar problemas, documentos antigos também.  
-Com o tempo, documentos ficam obsoletos, desatualizados ou (frequentemente) abandonados.  
-Evite ao máximo documentos abandonados, mas quando um documento não tiver mais utilidade, remova-o ou identifique-o como obsoleto (e, se possível, indique onde encontrar novas informações).  
-Mesmo para documentos sem proprietário, adicionar uma nota como “Isso não funciona mais!” é mais útil do que não dizer nada e deixar algo que parece autoritativo, mas não funciona mais.
+Assim como código antigo pode causar problemas, documentos antigos também. Com o tempo, documentos ficam obsoletos, desatualizados ou (frequentemente) abandonados. Evite ao máximo documentos abandonados, mas quando um documento não tiver mais utilidade, remova-o ou identifique-o como obsoleto (e, se possível, indique onde encontrar novas informações). Mesmo para documentos sem proprietário, adicionar uma nota como “Isso não funciona mais!” é mais útil do que não dizer nada e deixar algo que parece autoritativo, mas não funciona mais.
 
-No Google, frequentemente anexamos “datas de atualização” à documentação.  
-Esses documentos registram a última vez que foram revisados, e os metadados do conjunto de documentação enviam lembretes por e-mail quando o documento não é tocado, por exemplo, em três meses.  
-Tais datas de atualização — e o acompanhamento dos documentos como bugs — ajudam a tornar o conjunto de documentação mais fácil de manter ao longo do tempo, que é a principal preocupação de um documento:
+No Google, frequentemente anexamos “datas de atualização” à documentação. Esses documentos registram a última vez que foram revisados, e os metadados do conjunto de documentação enviam lembretes por e-mail quando o documento não é tocado, por exemplo, em três meses. Tais datas de atualização — e o acompanhamento dos documentos como bugs — ajudam a tornar o conjunto de documentação mais fácil de manter ao longo do tempo, que é a principal preocupação de um documento:
 ```html
 <!--*
 # Document freshness: For more information, see go/fresh-source.
@@ -600,58 +434,27 @@ freshness: { owner: `username` reviewed: '2019-02-27' }
 *-->
 ```
 
-Usuários que possuem tal documento têm um incentivo para manter a data de atualização em dia (e, se o documento estiver sob controle de versão, isso exige uma revisão de código).  
-Como resultado, é um meio de baixo custo para garantir que um documento seja revisado de tempos em tempos.  
-No Google, descobrimos que incluir o proprietário de um documento nessa data de atualização dentro do próprio documento, com uma linha “Última revisão por...”, aumentava também a adoção.
+Usuários que possuem tal documento têm um incentivo para manter a data de atualização em dia (e, se o documento estiver sob controle de versão, isso exige uma revisão de código). Como resultado, é um meio de baixo custo para garantir que um documento seja revisado de tempos em tempos. No Google, descobrimos que incluir o proprietário de um documento nessa data de atualização dentro do próprio documento, com uma linha “Última revisão por...”, aumentava também a adoção.
 
 ### Quando você precisa de redatores técnicos?
 
-Quando o Google era jovem e estava em crescimento, não havia redatores técnicos suficientes na engenharia de software. (Isso ainda é verdade.)  
-Projetos considerados importantes tendiam a receber um redator técnico, independentemente de a equipe realmente precisar de um.  
-A ideia era que o redator pudesse aliviar a equipe do fardo de escrever e manter documentos e (teoricamente) permitir que o projeto importante atingisse maior velocidade.  
-Isso se mostrou uma suposição equivocada.
+Quando o Google era jovem e estava em crescimento, não havia redatores técnicos suficientes na engenharia de software. (Isso ainda é verdade.) Projetos considerados importantes tendiam a receber um redator técnico, independentemente de a equipe realmente precisar de um. A ideia era que o redator pudesse aliviar a equipe do fardo de escrever e manter documentos e (teoricamente) permitir que o projeto importante atingisse maior velocidade. Isso se mostrou uma suposição equivocada.
 
-Aprendemos que a maioria das equipes de engenharia pode escrever documentação para si mesmas (sua própria equipe) perfeitamente; é apenas quando escrevem para outro público que tendem a precisar de ajuda, porque é difícil escrever para outro público.  
-O ciclo de feedback dentro da sua equipe sobre documentos é mais imediato, o conhecimento do domínio e as suposições são mais claros, e as necessidades percebidas são mais óbvias.  
-Claro, um redator técnico pode muitas vezes fazer um trabalho melhor com gramática e organização, mas apoiar uma única equipe não é o melhor uso de um recurso limitado e especializado; isso não escala.  
-Isso introduziu um incentivo perverso: torne-se um projeto importante e seus engenheiros de software não precisarão escrever documentos.  
-Desencorajar engenheiros a escrever documentos é o oposto do que se deseja.
+Aprendemos que a maioria das equipes de engenharia pode escrever documentação para si mesmas (sua própria equipe) perfeitamente; é apenas quando escrevem para outro público que tendem a precisar de ajuda, porque é difícil escrever para outro público. O ciclo de feedback dentro da sua equipe sobre documentos é mais imediato, o conhecimento do domínio e as suposições são mais claros, e as necessidades percebidas são mais óbvias. Claro, um redator técnico pode muitas vezes fazer um trabalho melhor com gramática e organização, mas apoiar uma única equipe não é o melhor uso de um recurso limitado e especializado; isso não escala. Isso introduziu um incentivo perverso: torne-se um projeto importante e seus engenheiros de software não precisarão escrever documentos. Desencorajar engenheiros a escrever documentos é o oposto do que se deseja.
 
-Como são um recurso limitado, os redatores técnicos devem geralmente focar em tarefas que os engenheiros de software não precisam fazer como parte de suas funções normais.  
-Normalmente, isso envolve escrever documentos que cruzem fronteiras de API.  
-O Projeto Foo pode saber claramente qual documentação o Projeto Foo precisa, mas provavelmente tem uma ideia menos clara do que o Projeto Bar precisa.  
-Um redator técnico é mais capaz de se colocar como alguém não familiarizado com o domínio.  
-De fato, esse é um dos papéis críticos: desafiar as suposições que sua equipe faz sobre a utilidade do projeto.  
-Essa é uma das razões pelas quais muitos, senão a maioria, dos redatores técnicos em engenharia de software tendem a focar nesse tipo específico de documentação de API.
+Como são um recurso limitado, os redatores técnicos devem geralmente focar em tarefas que os engenheiros de software não precisam fazer como parte de suas funções normais. Normalmente, isso envolve escrever documentos que cruzem fronteiras de API. O Projeto Foo pode saber claramente qual documentação o Projeto Foo precisa, mas provavelmente tem uma ideia menos clara do que o Projeto Bar precisa. Um redator técnico é mais capaz de se colocar como alguém não familiarizado com o domínio. De fato, esse é um dos papéis críticos: desafiar as suposições que sua equipe faz sobre a utilidade do projeto. Essa é uma das razões pelas quais muitos, senão a maioria, dos redatores técnicos em engenharia de software tendem a focar nesse tipo específico de documentação de API.
 
 ### Conclusão
 
-O Google avançou significativamente na qualidade da documentação na última década, mas, para ser franco, a documentação no Google ainda não é tratada como um cidadão de primeira classe.  
-Para comparação, os engenheiros gradualmente aceitaram que testes são necessários para qualquer mudança de código, não importa o quão pequena.  
-Além disso, as ferramentas de teste são robustas, variadas e integradas ao fluxo de trabalho de engenharia em vários pontos.  
-A documentação não está enraizada no mesmo nível.
+O Google avançou significativamente na qualidade da documentação na última década, mas, para ser franco, a documentação no Google ainda não é tratada como um cidadão de primeira classe. Para comparação, os engenheiros gradualmente aceitaram que testes são necessários para qualquer mudança de código, não importa o quão pequena. Além disso, as ferramentas de teste são robustas, variadas e integradas ao fluxo de trabalho de engenharia em vários pontos. A documentação não está enraizada no mesmo nível.
 
-Para ser justo, não há necessariamente a mesma necessidade de abordar documentação como nos testes.  
-Os testes podem ser atômicos (testes unitários) e seguir forma e função prescritas.  
-Os documentos, em sua maior parte, não podem.  
-Os testes podem ser automatizados, e esquemas para automatizar documentação geralmente são escassos.  
-Os documentos são necessariamente subjetivos; a qualidade é medida não pelo escritor, mas pelo leitor, muitas vezes de forma assíncrona.  
-Dito isso, há reconhecimento de que a documentação é importante, e os processos em torno do desenvolvimento de documentos estão melhorando.  
-Na opinião deste autor, a qualidade da documentação no Google é melhor do que na maioria das empresas de engenharia de software.
+Para ser justo, não há necessariamente a mesma necessidade de abordar documentação como nos testes. Os testes podem ser atômicos (testes unitários) e seguir forma e função prescritas. Os documentos, em sua maior parte, não podem. Os testes podem ser automatizados, e esquemas para automatizar documentação geralmente são escassos. Os documentos são necessariamente subjetivos; a qualidade é medida não pelo escritor, mas pelo leitor, muitas vezes de forma assíncrona. Dito isso, há reconhecimento de que a documentação é importante, e os processos em torno do desenvolvimento de documentos estão melhorando. Na opinião deste autor, a qualidade da documentação no Google é melhor do que na maioria das empresas de engenharia de software.
 
-Para mudar a qualidade da documentação de engenharia, os engenheiros — e toda a organização de engenharia — precisam aceitar que são tanto o problema quanto a solução.  
-Em vez de se desesperarem com o estado da documentação, precisam perceber que produzir documentação de qualidade faz parte do trabalho e economiza tempo e esforço a longo prazo.  
-Para qualquer código que se espera que viva mais de alguns meses, os ciclos extras investidos em documentar esse código não apenas ajudarão outros, mas também ajudarão você a mantê-lo.
+Para mudar a qualidade da documentação de engenharia, os engenheiros — e toda a organização de engenharia — precisam aceitar que são tanto o problema quanto a solução. Em vez de se desesperarem com o estado da documentação, precisam perceber que produzir documentação de qualidade faz parte do trabalho e economiza tempo e esforço a longo prazo. Para qualquer código que se espera que viva mais de alguns meses, os ciclos extras investidos em documentar esse código não apenas ajudarão outros, mas também ajudarão você a mantê-lo.
 
 ### TL;DRs
 
-- A documentação é extremamente importante ao longo do tempo e da escala.  
-- Alterações na documentação devem aproveitar o fluxo de trabalho existente do desenvolvedor.  
-- Mantenha os documentos focados em um único propósito.  
-- Escreva para seu público, não para você.  
----
-1. Você precisará mantê-lo e revisá-lo ocasionalmente.  
-2. O inglês ainda é a língua principal para a maioria dos programadores, e a maior parte da documentação técnica para programadores depende do entendimento do inglês.  
-3. Quando descontinuamos o GooWiki, descobrimos que cerca de 90% dos documentos não tinham visualizações ou atualizações nos últimos meses.
+- A documentação é extremamente importante ao longo do tempo e da escala. - Alterações na documentação devem aproveitar o fluxo de trabalho existente do desenvolvedor. - Mantenha os documentos focados em um único propósito. - Escreva para seu público, não para você. ---
+1. Você precisará mantê-lo e revisá-lo ocasionalmente. 2. O inglês ainda é a língua principal para a maioria dos programadores, e a maior parte da documentação técnica para programadores depende do entendimento do inglês. 3. Quando descontinuamos o GooWiki, descobrimos que cerca de 90% dos documentos não tinham visualizações ou atualizações nos últimos meses.
 
 Artigo original em: https://abseil.io/resources/swe-book/html/ch10.html
