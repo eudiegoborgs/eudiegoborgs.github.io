@@ -1,7 +1,7 @@
 ---
 path: dynamo-aws-race-conditions
 date: 2025-10-23T18:45:44.059Z
-title: Quando o sistema corre mais rápido que a lógica: entendendo e prevenindo **Race Conditions**
+title: Quando o sistema corre mais rápido que a lógica! entendendo e prevenindo Race Conditions
 ---
 
 Em outubro de 2025, a AWS divulgou um incidente que afetou o **Amazon DynamoDB** na região **US-EAST-1**.  
