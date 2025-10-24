@@ -6,7 +6,7 @@ title: Quando o sistema corre mais rápido que a lógica! entendendo e prevenind
 
 Em outubro de 2025, a AWS divulgou um incidente que afetou o **Amazon DynamoDB** na região **US-EAST-1**.  
 
-A causa raiz? Uma **condição de corrida (*race condition*)** no sistema de gerenciamento de DNS do DynamoDB, que gerou **um registro DNS vazio incorreto** para o endpoint regional (`dynamodb.us-east-1.amazonaws.com`). Por causa dessa falha foram mais de 15 horas de instabilidade, afetando sistemas no mundo inteiro.
+A causa raiz? Uma **condição de corrida (*race condition*)** no sistema de gerenciamento de DNS do DynamoDB, que gerou **um registro DNS vazio incorreto** para o endpoint regional (`dynamodb.us-east-1.amazonaws.com`). Por causa dessa falha foram quase 15 horas de instabilidade, afetando sistemas no mundo inteiro.
 
 [📄 Leia o comunicado oficial da AWS](https://aws.amazon.com/pt/message/101925/)
 
