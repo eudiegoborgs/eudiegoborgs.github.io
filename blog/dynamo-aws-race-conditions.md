@@ -5,7 +5,9 @@ title: Quando o sistema corre mais rápido que a lógica! entendendo e prevenind
 ---
 
 Em outubro de 2025, a AWS divulgou um incidente que afetou o **Amazon DynamoDB** na região **US-EAST-1**.  
+
 A causa raiz? Uma **condição de corrida (*race condition*)** no sistema de gerenciamento de DNS do DynamoDB, que gerou **um registro DNS vazio incorreto** para o endpoint regional (`dynamodb.us-east-1.amazonaws.com`). Por causa dessa falha foram mais de 15 horas de instabilidade, afetando sistemas no mundo inteiro.
+
 [📄 Leia o comunicado oficial da AWS](https://aws.amazon.com/pt/message/101925/)
 
 Esse caso mostra que **mesmo empresas com a melhor infraestrutura e práticas do mundo estão sujeitas a falhas concorrenciais** — especialmente quando múltiplos sistemas tentam atualizar recursos compartilhados ao mesmo tempo.
@@ -41,16 +43,21 @@ Resultado: saldo negativo e dados inconsistentes.
 
 ### Onde isso acontece na prática
 
-- Sistemas de pagamento (duas cobranças simultâneas)
-- Aplicações de reserva (dois usuários reservando o mesmo quarto)
-- Controle de estoque em e-commerce
-- Atualizações concorrentes em cache ou banco de dados
+Race conditions são mais comuns do que parecem — especialmente em ambientes distribuídos, de alta escala ou sistemas orientados a eventos.
 
-Esses cenários são clássicos para o surgimento de race conditions.
+Alguns exemplos clássicos:
+
+- Sistemas de pagamento: duas cobranças simultâneas no mesmo cartão ou conta.
+- Sistemas de reserva: dois usuários reservando o mesmo ingresso, quarto ou assento.
+- E-commerces: múltiplas compras afetando o mesmo item em estoque.
+- Atualizações de cache ou banco: processos paralelos sobrescrevendo dados.
+- Sistemas distribuídos: replicações assíncronas e inconsistências entre regiões.
 
 ## Como evitar Race Conditions
 
-Existem diferentes estratégias, dependendo do contexto da aplicação e do nível de concorrência esperado.
+A escolha da estratégia depende do contexto: volume de concorrência, arquitetura, tolerância a latência e custo de sincronização.
+
+A seguir, três abordagens práticas que ajudam a prevenir esse tipo de problema em aplicações PHP.
 
 ### 1. Transações com bloqueio no banco de dados
 
@@ -92,12 +99,17 @@ if ($redis->set($lockKey, 1, ['nx', 'ex' => 5])) {
 }
 ```
 
-O parâmetro NX garante que o lock só será criado se ainda não existir, e EX define o tempo de expiração automática.
+- NX: cria o lock apenas se ele ainda não existir.
+- EX: define o tempo de expiração, garantindo que o lock não fique “preso” se o processo falhar.
+
+Esse modelo é amplamente usado em microserviços e operações críticas de API.
 
 
 ### 3. Filas de processamento (Message Queue)
 
-Outra abordagem é eliminar a concorrência direta, enviando as operações para uma fila (RabbitMQ, SQS, Kafka, etc.) para serem processadas em sequência.
+Outra abordagem é eliminar a concorrência direta.
+
+Em vez de processar requisições simultâneas, você pode enfileirá-las — garantindo ordem e isolamento lógico. Você pode fazer isso enviando as operações para uma fila (RabbitMQ, SQS, Kafka, etc.) para serem processadas em sequência.
 
 ```php
 dispatchToQueue([
@@ -108,6 +120,14 @@ dispatchToQueue([
 ```
 
 Dessa forma, as requisições são processadas uma por vez, mantendo a consistência lógica e a ordem das operações.
+
+Boas práticas de arquitetura
+
+- Identifique recursos compartilhados e pontos de concorrência desde o design.
+- Evite operações dependentes de estado em sistemas distribuídos.
+- Use idempotência em endpoints críticos (repetir a requisição deve gerar o mesmo resultado).
+- Acompanhe métricas de concorrência e tempo de bloqueio.
+- Simule condições de corrida em testes.
 
 
 ## Conclusão
