@@ -8,6 +8,8 @@ Em outubro de 2025, a AWS divulgou um incidente que afetou o **Amazon DynamoDB**
 
 A causa raiz? Uma **condição de corrida (*race condition*)** no sistema de gerenciamento de DNS do DynamoDB, que gerou **um registro DNS vazio incorreto** para o endpoint regional (`dynamodb.us-east-1.amazonaws.com`). Por causa dessa falha foram quase 15 horas de instabilidade, afetando sistemas no mundo inteiro.
 
+No caso do incidente do DynamoDB, isso aconteceu entre duas instâncias do componente DNS Enactor, responsáveis por aplicar planos de atualizações de DNS. Enquanto um Enactor aplicava um plano antigo com atraso, outro já havia finalizado a aplicação e iniciado a limpeza dos planos antigos. Por causa desse desencontro de tempo, o plano novo foi apagado e substituido por um antigo — e logo em seguida, o próprio sistema apagou esse plano, removendo todos os registros DNS do endpoint regional e deixando o serviço em um estado inconsistente. Esse é um exemplo clássico de como falhas sutis de sincronização podem gerar impactos críticos em sistemas distribuídos.
+
 [📄 Leia o comunicado oficial da AWS](https://aws.amazon.com/pt/message/101925/)
 
 Esse caso mostra que **mesmo empresas com a melhor infraestrutura e práticas do mundo estão sujeitas a falhas concorrenciais** — especialmente quando múltiplos sistemas tentam atualizar recursos compartilhados ao mesmo tempo.
