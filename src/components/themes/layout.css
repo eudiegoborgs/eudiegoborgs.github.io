@@ -28,7 +28,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--black);
-  transition: 0.5s ease all;
+  background-color: white;
+  /* Transição mais rápida para reduzir o efeito de flash */
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 article,
 aside,
@@ -76,19 +78,20 @@ a.blog-link {
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .nightmode {
-  background: var(--black);
+  background-color: var(--black) !important;
   color: var(--white);
-  transition: 0.5s ease all;
+  /* Transição mais rápida para reduzir o efeito de flash */
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nightmode a, .bg-super-black a, .bg-black a {
   color: var(--primary-light);
-  transition: 0.5s ease all;
+  transition: color 0.2s ease;
 }
 
 .nightmode a.blog-link, .bg-super-black a.blog-link, .bg-black a.blog-link {
   color: var(--black);
-  transition: 0.5s ease all;
+  transition: color 0.2s ease;
 }
 a:active,
 a:hover {
@@ -604,4 +607,28 @@ footer a {
 
 .copy-button:hover {
   opacity: 1;
+}
+
+/* Prevenção de flash de conteúdo não estilizado (FOUC) */
+body:not(.nightmode) {
+  background-color: white;
+  color: var(--black);
+}
+
+/* Garantir que elementos críticos tenham cores adequadas desde o início */
+body:not(.nightmode) a {
+  color: var(--primary);
+}
+
+body.nightmode a {
+  color: var(--primary-light);
+}
+
+/* Otimização para carregamento mais suave */
+.nightmode * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body:not(.nightmode) * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
