@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .vpc { fill: none; stroke: #4CAF50; stroke-width: 3; stroke-dasharray: 8,4; }
+      .az { fill: none; stroke: #2196F3; stroke-width: 2; stroke-dasharray: 4,2; }
+      .subnet-public { fill: #E8F5E8; stroke: #4CAF50; stroke-width: 1.5; opacity: 0.3; }
+      .subnet-private { fill: #FFF3E0; stroke: #FF9800; stroke-width: 1.5; opacity: 0.3; }
+      .security-group { fill: #FFEBEE; stroke: #F44336; stroke-width: 1; stroke-dasharray: 2,1; }
+      .text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; fill: #232F3E; }
+      .text-bold { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: bold; fill: #232F3E; }
+      .title { font-family: 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #232F3E; }
+      .connection { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .connection-auth { stroke: #FF6B35; stroke-width: 2; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 3,2; }
+      .connection-data { stroke: #4CAF50; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    
+    <!-- AWS Service Icons -->
+    <g id="cloudfront">
+      <circle cx="25" cy="25" r="23" fill="#FF9900" stroke="#232F3E" stroke-width="2"/>
+      <path d="M12 20 L38 20 L33 30 L17 30 Z" fill="white"/>
+      <circle cx="25" cy="25" r="4" fill="white"/>
+      <path d="M15 15 L35 15 M15 35 L35 35" stroke="white" stroke-width="2"/>
+    </g>
+    
+    <g id="s3">
+      <rect x="2" y="8" width="46" height="34" rx="6" fill="#569A31" stroke="#232F3E" stroke-width="2"/>
+      <path d="M10 18 L40 18 M10 24 L40 24 M10 30 L40 30 M10 36 L40 36" stroke="white" stroke-width="2"/>
+      <text x="25" y="16" text-anchor="middle" fill="white" font-size="8" font-weight="bold">S3</text>
+    </g>
+    
+    <g id="cognito">
+      <circle cx="25" cy="25" r="23" fill="#FF9900" stroke="#232F3E" stroke-width="2"/>
+      <circle cx="25" cy="18" r="6" fill="white"/>
+      <path d="M12 35 Q25 30 38 35" fill="white"/>
+      <path d="M15 40 Q25 35 35 40" fill="white"/>
+    </g>
+    
+    <g id="apigateway">
+      <rect x="2" y="2" width="46" height="46" rx="6" fill="#FF4B4B" stroke="#232F3E" stroke-width="2"/>
+      <path d="M12 18 L25 12 L38 18 L25 24 Z" fill="white"/>
+      <path d="M12 30 L25 24 L38 30 L25 36 Z" fill="white"/>
+      <text x="25" y="44" text-anchor="middle" fill="white" font-size="6" font-weight="bold">API</text>
+    </g>
+    
+    <g id="lambda">
+      <rect x="2" y="2" width="46" height="46" rx="6" fill="#FF9900" stroke="#232F3E" stroke-width="2"/>
+      <path d="M15 40 L21 12 L27 12 L33 40 L28 40 L25 22 L22 40 Z" fill="white"/>
+      <text x="25" y="44" text-anchor="middle" fill="white" font-size="6" font-weight="bold">λ</text>
+    </g>
+    
+    <g id="dynamodb">
+      <rect x="2" y="2" width="46" height="46" rx="6" fill="#3F48CC" stroke="#232F3E" stroke-width="2"/>
+      <ellipse cx="25" cy="15" rx="15" ry="5" fill="white"/>
+      <ellipse cx="25" cy="25" rx="15" ry="5" fill="white"/>
+      <ellipse cx="25" cy="35" rx="15" ry="5" fill="white"/>
+      <text x="25" y="44" text-anchor="middle" fill="white" font-size="6" font-weight="bold">DDB</text>
+    </g>
+    
+    <g id="igw">
+      <rect x="2" y="8" width="46" height="34" rx="6" fill="#4CAF50" stroke="#232F3E" stroke-width="2"/>
+      <path d="M15 20 L35 20 M20 15 L30 15 M20 25 L30 25" stroke="white" stroke-width="2"/>
+      <text x="25" y="38" text-anchor="middle" fill="white" font-size="8" font-weight="bold">IGW</text>
+    </g>
+    
+    <g id="natgw">
+      <rect x="2" y="8" width="46" height="34" rx="6" fill="#FF9800" stroke="#232F3E" stroke-width="2"/>
+      <circle cx="25" cy="25" r="8" fill="white"/>
+      <path d="M20 25 L30 25 M25 20 L25 30" stroke="#FF9800" stroke-width="2"/>
+      <text x="25" y="38" text-anchor="middle" fill="white" font-size="8" font-weight="bold">NAT</text>
+    </g>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="800" fill="#F8F9FA"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="title">Serverless Application Architecture - AWS us-east-1</text>
+  
+  <!-- Internet -->
+  <rect x="450" y="60" width="100" height="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" rx="5"/>
+  <text x="500" y="80" text-anchor="middle" class="text-bold">Internet</text>
+  
+  <!-- CloudFront -->
+  <use href="#cloudfront" x="450" y="110"/>
+  <text x="500" y="175" text-anchor="middle" class="text-bold">CloudFront Distribution</text>
+  
+  <!-- Cognito (outside VPC) -->
+  <use href="#cognito" x="50" y="200"/>
+  <text x="100" y="265" text-anchor="middle" class="text-bold">Cognito User Pool</text>
+  
+  <!-- S3 (outside VPC) -->
+  <use href="#s3" x="800" y="200"/>
+  <text x="850" y="265" text-anchor="middle" class="text-bold">S3 Static Website</text>
+  
+  <!-- VPC -->
+  <rect x="150" y="300" width="700" height="450" class="vpc" rx="15"/>
+  <text x="170" y="325" class="text-bold">VPC (10.0.0.0/16) - us-east-1</text>
+  
+  <!-- Internet Gateway -->
+  <use href="#igw" x="450" y="320"/>
+  <text x="500" y="385" text-anchor="middle" class="text-bold">Internet Gateway</text>
+  
+  <!-- Availability Zone 1a -->
+  <rect x="180" y="400" width="320" height="320" class="az" rx="8"/>
+  <text x="190" y="425" class="text-bold">Availability Zone us-east-1a</text>
+  
+  <!-- Availability Zone 1b -->
+  <rect x="520" y="400" width="320" height="320" class="az" rx="8"/>
+  <text x="530" y="425" class="text-bold">Availability Zone us-east-1b</text>
+  
+  <!-- Public Subnet 1a -->
+  <rect x="200" y="450" width="130" height="120" class="subnet-public" rx="5"/>
+  <text x="210" y="470" class="text-bold">Public Subnet</text>
+  <text x="210" y="485" class="text">10.0.1.0/24</text>
+  
+  <!-- Private Subnet 1a -->
+  <rect x="350" y="590" width="130" height="110" class="subnet-private" rx="5"/>
+  <text x="360" y="610" class="text-bold">Private Subnet</text>
+  <text x="360" y="625" class="text">10.0.3.0/24</text>
+  
+  <!-- Public Subnet 1b -->
+  <rect x="540" y="450" width="130" height="120" class="subnet-public" rx="5"/>
+  <text x="550" y="470" class="text-bold">Public Subnet</text>
+  <text x="550" y="485" class="text">10.0.2.0/24</text>
+  
+  <!-- Private Subnet 1b -->
+  <rect x="690" y="590" width="130" height="110" class="subnet-private" rx="5"/>
+  <text x="700" y="610" class="text-bold">Private Subnet</text>
+  <text x="700" y="625" class="text">10.0.4.0/24</text>
+  
+  <!-- NAT Gateway -->
+  <use href="#natgw" x="220" y="500"/>
+  <text x="270" y="565" text-anchor="middle" class="text">NAT Gateway</text>
+  
+  <!-- API Gateway -->
+  <use href="#apigateway" x="560" y="500"/>
+  <text x="610" y="565" text-anchor="middle" class="text">API Gateway</text>
+  
+  <!-- Lambda Functions -->
+  <use href="#lambda" x="370" y="640"/>
+  <text x="420" y="705" text-anchor="middle" class="text">Lambda Function</text>
+  
+  <use href="#lambda" x="710" y="640"/>
+  <text x="760" y="705" text-anchor="middle" class="text">Lambda Function</text>
+  
+  <!-- DynamoDB -->
+  <use href="#dynamodb" x="520" y="730"/>
+  <text x="570" y="795" text-anchor="middle" class="text-bold">DynamoDB Table</text>
+  
+  <!-- Security Groups -->
+  <rect x="540" y="480" width="150" height="20" class="security-group" rx="3"/>
+  <text x="545" y="495" class="text">API Gateway Security Group</text>
+  
+  <rect x="350" y="620" width="130" height="20" class="security-group" rx="3"/>
+  <text x="355" y="635" class="text">Lambda Security Group</text>
+  
+  <rect x="690" y="620" width="130" height="20" class="security-group" rx="3"/>
+  <text x="695" y="635" class="text">Lambda Security Group</text>
+  
+  <!-- NACLs -->
+  <rect x="200" y="430" width="130" height="15" class="security-group" rx="2"/>
+  <text x="205" y="442" class="text">Public NACL</text>
+  
+  <rect x="350" y="570" width="130" height="15" class="security-group" rx="2"/>
+  <text x="355" y="582" class="text">Private NACL</text>
+  
+  <rect x="540" y="430" width="130" height="15" class="security-group" rx="2"/>
+  <text x="545" y="442" class="text">Public NACL</text>
+  
+  <rect x="690" y="570" width="130" height="15" class="security-group" rx="2"/>
+  <text x="695" y="582" class="text">Private NACL</text>
+  
+  <!-- Connections -->
+  <!-- Internet to CloudFront -->
+  <line x1="500" y1="90" x2="500" y2="110" class="connection"/>
+  
+  <!-- CloudFront to S3 -->
+  <line x1="525" y1="135" x2="800" y2="225" class="connection"/>
+  <text x="650" y="175" class="text">Static Content Origin</text>
+  
+  <!-- CloudFront to API Gateway -->
+  <line x1="475" y1="160" x2="583" y2="500" class="connection"/>
+  <text x="520" y="320" class="text">API Requests</text>
+  
+  <!-- Cognito to API Gateway -->
+  <line x1="125" y1="225" x2="560" y2="523" class="connection-auth"/>
+  <text x="300" y="350" class="text">JWT Authentication</text>
+  
+  <!-- Internet Gateway to Subnets -->
+  <line x1="475" y1="370" x2="265" y2="450" class="connection"/>
+  <line x1="525" y1="370" x2="605" y2="450" class="connection"/>
+  
+  <!-- API Gateway to Lambda -->
+  <line x1="583" y1="546" x2="415" y2="640" class="connection"/>
+  <text x="480" y="590" class="text">Invoke</text>
+  
+  <line x1="583" y1="546" x2="733" y2="640" class="connection"/>
+  <text x="650" y="590" class="text">Invoke</text>
+  
+  <!-- Lambda to DynamoDB -->
+  <line x1="420" y1="686" x2="545" y2="730" class="connection-data"/>
+  <text x="470" y="710" class="text">Read/Write</text>
+  
+  <line x1="733" y1="686" x2="595" y2="730" class="connection-data"/>
+  <text x="650" y="710" class="text">Read/Write</text>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 750)">
+    <text x="0" y="0" class="text-bold">Legend:</text>
+    <rect x="0" y="10" width="20" height="10" class="subnet-public"/>
+    <text x="25" y="20" class="text">Public Subnet</text>
+    
+    <rect x="120" y="10" width="20" height="10" class="subnet-private"/>
+    <text x="145" y="20" class="text">Private Subnet</text>
+    
+    <rect x="240" y="10" width="20" height="10" class="security-group"/>
+    <text x="265" y="20" class="text">Security Group/NACL</text>
+    
+    <line x1="380" y1="15" x2="420" y2="15" class="connection"/>
+    <text x="425" y="20" class="text">Data Flow</text>
+    
+    <line x1="500" y1="15" x2="540" y2="15" class="connection-auth"/>
+    <text x="545" y="20" class="text">Authentication</text>
+  </g>
+  
+  <!-- Architecture Notes -->
+  <g transform="translate(750, 50)">
+    <text x="0" y="0" class="text-bold">Best Practices Applied:</text>
+    <text x="0" y="20" class="text">• Multi-AZ deployment</text>
+    <text x="0" y="35" class="text">• Lambda in private subnets</text>
+    <text x="0" y="50" class="text">• API Gateway in public subnets</text>
+    <text x="0" y="65" class="text">• Security Groups &amp; NACLs</text>
+    <text x="0" y="80" class="text">• CloudFront edge caching</text>
+    <text x="0" y="95" class="text">• Cognito JWT authentication</text>
+  </g>
+</svg>
