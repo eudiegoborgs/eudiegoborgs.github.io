@@ -24,7 +24,7 @@ macOS (recomendado)
 brew install --cask amazon-q
 
 Ou baixe diretamente o instalador .dmg em:
-👉 <https://desktop-release.q.us-east-1.amazonaws.com/latest/mac>
+👉 <https://aws.amazon.com/pt/developer/learning/q-developer-cli/>
 
 ### Passo 2 — Fazer login no Q
 
@@ -87,4 +87,4 @@ Diagrama gerado:
 
 🔗 Referências oficiais
 
-Amazon Q Developer CLI – Instalação: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html?utm_source=chatgpt.com
+Amazon Q Developer CLI – Instalação: <https://aws.amazon.com/pt/developer/learning/q-developer-cli/>
