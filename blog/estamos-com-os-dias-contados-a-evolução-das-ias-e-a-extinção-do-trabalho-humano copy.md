@@ -4,7 +4,7 @@ date: 2026-04-14T11:05:27.446Z
 title: "[Versão 2026] Estamos com os dias contados? A evolução das IA's e a extinção do trabalho humano"
 ---
 
-> **Este artigo é uma atualização.** Em março de 2025, escrevi a [primeira versão deste texto](/blog/estamos-com-os-dias-contados-a-evolucao-das-ias-e-a-extincao-do-trabalho-humano) logo após a explosão das ferramentas de *vibe coding* e a viralização das imagens no estilo Ghibli. Um ano depois, muita coisa mudou — e muita coisa que eu disse se confirmou. Essa é a versão 2026: com novos argumentos, novos exemplos e uma visão atualizada de quem passou o último ano construindo com IA todos os dias.
+> **Este artigo é uma atualização.** Em março de 2025, escrevi a [primeira versão deste texto](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) logo após a explosão das ferramentas de *vibe coding* e a viralização das imagens no estilo Ghibli. Um ano depois, muita coisa mudou — e muita coisa que eu disse se confirmou. Essa é a versão 2026: com novos argumentos, novos exemplos e uma visão atualizada de quem passou o último ano construindo com IA todos os dias.
 
 ---
 
@@ -24,23 +24,7 @@ Passei o último ano testando os limites do que conseguimos fazer com as IAs —
 
 ## A mudança é inevitável. Evolução, entretanto, é opcional
 
-*Frase de Tony Robbins em uma tradução livre.*
-
-Esse foi o ponto de partida da versão 2025 — e continua verdadeiro. Mas agora tenho mais evidências.
-
-**A necessidade por profissionais excelentes nunca desaparece.** O que mudou é que o limiar subiu. O que antes era "aceitável" passa a ser "substituível". E isso não é teoria: vi acontecer no último ano em times ao meu redor.
-
-A humanidade avança. Profissões deixam de existir, e outras nascem. Exemplos não faltam:
-
-* Com a **prensa de Gutenberg**, os copiadores de livros sumiram.
-* Com os **automóveis**, os cocheiros perderam espaço.
-* Com a **internet**, quantas locadoras de vídeo fecharam?
-
-E, mesmo assim, em todos esses contextos, **os melhores seguiram relevantes**:
-
-* Ainda existem especialistas em caligrafia — e cobram caro por isso.
-* Motoristas continuam existindo — e os melhores dirigem veículos que os cocheiros nem sonhavam.
-* Influencers de cinema são uma das categorias mais antigas da internet. As locadoras morreram, mas a paixão por curadoria de filmes se reinventou.
+Na [versão anterior](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) eu argumentei que a necessidade por profissionais excelentes nunca desaparece, usando exemplos de Gutenberg, automóveis e internet. Essa tese continua verdadeira — mas agora o limiar subiu. O que antes era "aceitável" passa a ser "substituível". E isso não é teoria: vi acontecer no último ano em times ao meu redor.
 
 O padrão é claro: a tecnologia não elimina a necessidade humana que estava por trás da profissão. Ela elimina o *meio ineficiente* de atender essa necessidade. Quem se apega ao meio, desaparece. Quem entende a necessidade, evolui.
 
@@ -48,25 +32,15 @@ O padrão é claro: a tecnologia não elimina a necessidade humana que estava po
 
 ## Não é o fim do trabalho — é o fim do repetitivo
 
-Na versão 2025, eu disse que tarefas repetitivas estavam desaparecendo. Em 2026, posso dizer que muitas já desapareceram.
-
-Na minha trajetória, conheci profissionais que passavam o dia inteiro transferindo dados de uma planilha para outra. Esse tipo de função não tem mais razão de existir. E, sendo honesto, nunca deveria ter existido — era um sintoma de ferramentas ruins, não de necessidade real.
+As tarefas repetitivas que eu [descrevi em 2025](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) como "desaparecendo"? Muitas já desapareceram.
 
 Se você só replica estilos de desenhos em fotos, faz CRUD sem pensar em UX, ou não pensa constantemente em formas de entregar um trabalho melhor — **sinto dizer: seus dias estão contados**.
-
-E isso não é ruim. O mercado está exigindo um nível mais alto de entrega — mais criativo, mais estratégico, **mais humano**.
 
 Tem uma ironia bonita aqui: a inteligência *artificial* está forçando o mercado a valorizar mais a inteligência *humana*. O pensamento crítico, a empatia no design, a capacidade de traduzir uma necessidade vaga em algo concreto — essas habilidades nunca foram tão valiosas.
 
 ---
 
 ## A IA ainda não tem alma (e talvez nunca tenha)
-
-Na versão 2025, citei o artista **@rafaelmarcal**:
-
-> "Olhando as imagens como arte e não só como produtos, percebemos que estanca o desenvolvimento da arte. Pasteuriza tudo e fica tudo igual. Se acaba os ilustradores reais, as máquinas vão se alimentar só do que já existe e só aí vão perceber que ela não cria nada."
-
-Um ano depois, o Rafa continua certo. A IA ainda não tem criatividade genuína — ela é uma excelente imitadora. Mas agora tenho um argumento mais afiado.
 
 Quantas músicas dá pra tocar com a sequência `G, D, Em, C`? Centenas. Milhares. Uma IA pode gerar uma delas em segundos. Mas será que ela consegue fazer o que Lenine fez em "Todas elas juntas num só ser" — costurando referências de Jacques Brel, Martinho da Vila, Chuck Berry, Paulinho da Viola e Caymmi num mesmo verso, com humor, afeto e uma malícia que só existe em quem *viveu* essas referências?
 
@@ -78,7 +52,7 @@ A IA opera por correlação estatística. Ela sabe que certas palavras aparecem 
 
 ## A questão dos royalties: de debate para guerra judicial
 
-Na versão 2025, mencionei brevemente que a questão dos royalties era "válida, mas sem resposta simples". Em 2026, a coisa escalou. Virou guerra judicial com bilhões em jogo.
+O que na [versão 2025](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) eu chamei de "discussão válida sem resposta simples" virou guerra judicial com bilhões em jogo.
 
 ### O campo de batalha
 
@@ -106,8 +80,6 @@ Se o trabalho de um artista alimenta um modelo que gera bilhões em receita, ess
 
 ## Afinal, agora não precisa mais saber desenvolver?
 
-**Essa seção não existia na versão 2025.** E é talvez a mais importante da atualização.
-
 Ferramentas de *vibe coding* — de v0 e Lovable em 2025 até o Codex agent e Claude Code em 2026 — geram código funcional a partir de prompts em linguagem natural. Agora, com agentes como o Codex da OpenAI e o Claude Cowork, nem precisa pedir passo a passo: você descreve o que quer e o agente planeja, implementa e testa sozinho. Muita gente olha pra isso e conclui: "não preciso mais aprender a programar".
 
 **Essa conclusão não poderia estar mais errada.**
@@ -132,7 +104,7 @@ O que mudou é o perfil do profissional. Menos digitador de código, mais **arqu
 
 ## O ecossistema técnico: ferramentas que estão moldando o futuro
 
-**Essa seção também é nova.** Se você trabalha com desenvolvimento e quer usar IA de forma séria — não como brinquedo, mas como ferramenta de produção — precisa conhecer esses conceitos.
+Se você trabalha com desenvolvimento e quer usar IA de forma séria — não como brinquedo, mas como ferramenta de produção — precisa conhecer esses conceitos.
 
 ### AGENTS.md: da promessa ao problema
 
@@ -190,8 +162,6 @@ Código gerado por IA é probabilístico. **Confiar cegamente no output é tão 
 
 ### Assistentes pessoais de IA: o agente que sai do IDE
 
-*Essa seção é nova — não existia na versão 2025.*
-
 Tudo que discutimos até aqui — agentes, MCP, skills, RAG — vive dentro do contexto de desenvolvimento. Mas em 2026, surgiu uma categoria que leva esses mesmos conceitos para a vida inteira: os **assistentes pessoais de IA**.
 
 O exemplo mais representativo é o **[OpenClaw](https://openclaw.ai/)** — um projeto open-source criado por Peter Steinberger ([@steipete](https://x.com/steipete)) que roda *localmente na sua máquina* e é acessível via WhatsApp, Telegram ou Discord. Não é um chatbot na nuvem. É um agente autônomo com acesso ao seu computador: arquivos, terminal, browser, APIs — tudo.
@@ -207,8 +177,6 @@ Um usuário descreveu assim: *"É um modelo inteligente com olhos e mãos, senta
 
 E aqui está o ponto crucial: o OpenClaw roda **localmente**. Seus dados, suas skills, sua memória — tudo na sua máquina. Num mundo onde toda big tech quer seus dados na nuvem, isso é uma declaração de princípio. É o equivalente a rodar Linux quando todo mundo usava Windows — você está no controle.
 
-O impacto vai além da produtividade individual. O OpenClaw materializa algo que discutimos no começo: **a IA não substitui o profissional — ela amplifica quem sabe o que pedir**. Quem entende o que precisa ser feito e sabe estruturar a instrução certa terá um assistente incansável. Quem não sabe, vai dar instruções vagas e colher resultados ruins — exatamente como acontece com agentes de coding.
-
 Projetos como o OpenClaw, o HubAI Nitro (que usamos internamente no PicPay) e outros assistentes corporativos mostram que o futuro não é um agente genérico na nuvem. É **um agente personalizado, com conhecimento do seu contexto, rodando no seu ambiente, sob seu controle**.
 
 **Por onde começar:** Instale o [OpenClaw](https://openclaw.ai/) numa máquina dedicada ou no seu Mac. Conecte ao Telegram. Comece pedindo coisas simples — lembretes, briefings matinais, consultas de calendário. Conforme confiança cresce, habilite mais integrações.
@@ -217,7 +185,7 @@ Projetos como o OpenClaw, o HubAI Nitro (que usamos internamente no PicPay) e ou
 
 ## Testando os limites: o que ainda não funciona
 
-Na versão 2025, testei IAs nos fins de semana e percebi que "só deu certo quando eu sabia exatamente o que queria fazer". Em 2026, testei no dia a dia profissional — de GPT-4o a Claude Opus 4.6, de Cursor a agentes autônomos — e **a conclusão é a mesma, com um agravante**.
+Testando IAs no dia a dia profissional — de GPT-4o a Claude Opus 4.6, de Cursor a agentes autônomos — a conclusão que eu havia chegado [em 2025](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) se mantém: **só dá certo quando você sabe exatamente o que quer**. Mas agora tenho um agravante.
 
 O exemplo que mais me marcou: eu estava desenvolvendo um aplicativo de gestão de pelada — e a IA simplesmente não conseguiu implementar a funcionalidade de troca de times usando as regras que qualquer brasileiro conhece. Porque falta **contexto cultural**.
 
@@ -263,8 +231,6 @@ E existe uma questão pública que ainda não recebe a atenção devida: a **ger
 
 ## Conclusão: use IA como alavanca, não como muleta
 
-Na versão 2025, encerrei dizendo que "estamos com os dias contados — os dias de fazer só o básico". Mantenho essa frase. Mas agora adiciono uma nova:
-
 A pergunta certa não é "a IA vai roubar meu emprego?" — é **"o que eu faço que uma IA não consegue?"**
 
 Se a resposta for "nada" ou "não sei", esse é o sinal de alerta. Não pra entrar em pânico, mas pra investir em si mesmo. Desenvolver pensamento crítico, criatividade, capacidade de resolver problemas ambíguos — as habilidades que nenhum modelo estatístico replica.
@@ -278,6 +244,6 @@ Sim — **os dias de fazer só o básico.**
 
 ---
 
-*Versão 2026 do artigo original publicado em março de 2025. Leia a [versão anterior](/blog/estamos-com-os-dias-contados-a-evolucao-das-ias-e-a-extincao-do-trabalho-humano) para acompanhar a evolução do meu ponto de vista.*
+*Versão 2026 do artigo original publicado em março de 2025. Leia a [versão anterior](https://diegoborgs.com.br/blog/estamos-com-os-dias-contados-a-evolu%C3%A7%C3%A3o-das-ias-e-a-extin%C3%A7%C3%A3o-do-trabalho-humano/) para acompanhar a evolução do meu ponto de vista.*
 
 *Diego Borges — [@eudiegoborgs](https://twitter.com/eudiegoborgs)*
