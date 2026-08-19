@@ -20,11 +20,11 @@ Neste artigo, quero compartilhar uma visão prática sobre como conectar os prin
 
 Antes de falarmos sobre IA, precisamos resgatar o que realmente significa *Arquitetura de Software*. 
 
-Muitas vezes, confundimos organização de arquivos com arquitetura. Mas, como nos lembra Uncle Bob (*Arquitetura Limpa*):
+Muitas vezes, confundimos organização de arquivos com arquitetura. Mas, como nos lembra Uncle Bob em seu clássico artigo sobre [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html):
 
 > *"A arquitetura está na estrutura do serviço e na sua interação com o ecossistema. É como a escada e a planta baixa de uma casa."*
 
-E, complementando com a clássica definição de Martin Fowler:
+E, complementando com a clássica definição de [Martin Fowler](https://martinfowler.com/architecture/):
 
 > *"Arquitetura é o conjunto de decisões importantes e difíceis de serem mudadas no futuro."*
 
@@ -43,7 +43,7 @@ Em vez disso, a agilidade nos ensinou a praticar o **Enough Upfront Design (EUFD
 
 > *"A mudança é inevitável, a evolução é opcional."* — Tony Robbins
 
-Se as mudanças de requisitos, mercado e tecnologia são inevitáveis, nosso software precisa ser construído para conviver com elas. Rebecca Parsons (*Building Evolutionary Architectures*) define:
+Se as mudanças de requisitos, mercado e tecnologia são inevitáveis, nosso software precisa ser construído para conviver com elas. Rebecca Parsons, coautora de [Building Evolutionary Architectures](https://evolutionaryarchitecture.com/), define:
 
 > *"Uma arquitetura evolutiva suporta mudanças contínuas e incrementais como um primeiro princípio."*
 
@@ -74,11 +74,11 @@ O problema de fundo nesses casos não foi a IA falhar. **Foi o escopo de execuç
 
 ## O Conceito de Harness e Spec-Driven Development (SDD)
 
-Para resolver esse dilema, precisamos mudar a forma como interagimos com os agentes. 
+Para resolver esse dilema, precisamos mudar a forma como interagimos com os agentes.
 
 ### O que é um Harness?
 
-O **Harness** (ou cabresto/armadura) é a estrutura que envolve o agente de IA com **regras de segurança e verificações executáveis fora da IA**.
+O **Harness** (ou armadura/cabresto) é a estrutura que envolve o agente de IA com **regras de segurança e verificações executáveis fora da IA**.
 
 ```
 +-------------------------------------------------------------+
@@ -116,33 +116,78 @@ Além da segurança, o SDD traz um benefício financeiro e de performance direto
 * **Fim do Context Drift**: DoR e DoD bem definidos impedem a IA de explorar caminhos irrelevantes.
 * **Economia de Custo**: Menos idas e vindas na conversa podem gerar **até 70% de redução no consumo de tokens**.
 
-> *"Nenhum framework substitui o entendimento do seu problema. O framework dá a estrutura; você define as premissas e os limites da solução."*
-
 ---
 
-## Guardiões da Arquitetura: Fitness Functions
+## Guardiões da Arquitetura: Fitness Functions na Prática
 
 Como garantimos objetivamente que a IA (ou o próprio time) não está violando a arquitetura? Através de **Fitness Functions** (Funções de Aptidão).
 
-Como define Rebecca Parsons (*Building Evolutionary Architectures*):
+Como define Rebecca Parsons em [Building Evolutionary Architectures](https://evolutionaryarchitecture.com/):
 
 > *"Fitness Function é qualquer mecanismo que fornece uma avaliação objetiva da integridade de uma característica arquitetural."*
 
-As Fitness Functions formam um **espectro de verificação automatizada**:
+As Fitness Functions formam um **espectro de verificação automatizada**. Para cada categoria, temos ferramentas consolidadas no mercado:
 
-1. **Análise Estática & Segurança**: Ferramentas como PHPStan, Psalm, SonarQube, SAST e Snyk garantindo zero *secrets* e zero vulnerabilidades conhecidas.
-2. **Testes de Unidade & Integração**: Garantia comportamental rápida no nível de métodos e serviços.
-3. **Testes de Mutação & Contratos**: Ferramentas como Infection PHP ("quem testa os testes?") e Pact (garantia de contratos entre microsserviços).
-4. **Regras Arquiteturais Executáveis**: Deptrac ou PHPArkitect garantindo, por exemplo, que a camada de *Domínio* nunca importe nada da camada de *Infraestrutura*.
+1. **Análise Estática & Segurança**: Ferramentas como [PHPStan](https://phpstan.org/), [Psalm](https://psalm.dev/), [SonarQube](https://www.sonarsource.com/products/sonarqube/) e [Snyk](https://snyk.io/) garantem tipagem estrita, prevenção de bugs e zero vulnerabilidades ou credenciais expostas.
+2. **Testes de Unidade & Integração**: Frameworks de teste como [PHPUnit](https://phpunit.de/) e [Pest PHP](https://pestphp.com/) fornecem garantia comportamental rápida no nível de métodos e serviços.
+3. **Testes de Mutação**: [Infection PHP](https://infection.github.io/) avalia a qualidade da sua suíte de testes inserindo mutações no código para checar se os testes realmente falham ("quem testa os testes?").
+4. **Testes de Contrato**: [Pact](https://docs.pact.io/) garante a integridade dos contratos de API HTTP/gRPC entre serviços sem precisar subir todo o ecossistema.
+5. **Regras Arquiteturais Executáveis**: Ferramentas como [Deptrac](https://qossmic.github.io/deptrac/), [PHPArkitect](https://phparkitect.github.io/arkitect/) e [ArchUnit](https://www.archunit.org/) impedem violações de camadas no CI/CD.
+
+### Exemplo Prático: Bloqueando Violações de Camada com Deptrac
+
+Imagine que você deseja garantir estritamente que a sua camada de **Domínio** nunca importe nada da camada de **Infraestrutura** ou de **Aplicação**.
+
+Com o [Deptrac](https://qossmic.github.io/deptrac/), você define esse contrato arquitetural em um arquivo `deptrac.yaml`:
+
+```yaml
+# deptrac.yaml
+deptrac:
+  paths:
+    - ./src
+  layers:
+    - name: Domain
+      collectors:
+        - type: directory
+          value: src/Domain/.*
+    - name: Application
+      collectors:
+        - type: directory
+          value: src/Application/.*
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          value: src/Infrastructure/.*
+  ruleset:
+    Domain: [] # Domínio NÃO PODE depender de nenhuma outra camada!
+    Application:
+      - Domain
+    Infrastructure:
+      - Domain
+      - Application
+```
+
+Se um agente de IA (ou um desenvolvedor) tentar importar um repositório do Doctrine ou um cliente HTTP dentro de uma entidade de domínio, a execução do `deptrac analyze` no CI falhará imediatamente:
+
+```bash
+$ vendor/bin/deptrac analyze
+
+Found 1 violations:
+src/Domain/User.php:12
+  Domain depends on Infrastructure (Infrastructure\Persistence\UserRepository)
+  Rule: Domain -> Infrastructure is forbidden
+```
+
+O Harness captura esse erro de saída e o devolve para o prompt da IA, que automaticamente entende a violação, cria uma interface na camada de Domínio e move a implementação concreta para a Infraestrutura.
 
 ### Fitness Functions Não Convencionais
 
 Podemos ir além dos testes tradicionais e criar Fitness Functions para acompanhar requisitos não-funcionais críticos no pipeline:
 
-* **Teto de Latência (P95)**: O CI falha se a latência P95 do endpoint ultrapassar 200ms em testes de carga automatizados.
-* **Limite de Queries por Request**: Deteção automática de problemas de N+1 queries no ORM durante a suíte de testes.
-* **Teto de Bundle Size**: Bloqueio no PR se novas dependências inflarem o tamanho final do artefato além do limite estipulado.
-* **Eficiência Energética**: Medição automatizada do consumo de CPU por transação.
+* **Teto de Latência (P95)**: Integrado com [Grafana k6](https://k6.io/docs/), falha o CI/CD se o tempo de resposta P95 de um endpoint ultrapassar 200ms sob carga.
+* **Limite de Queries por Request (N+1)**: Utilizando pacotes como [Laravel Query Detector](https://github.com/beyondcode/laravel-query-detector), detecta e bloqueia automaticamente consultas N+1 geradas por ORM em ambiente de testes.
+* **Teto de Bundle Size**: Utilizando [bundlesize](https://github.com/sinnerchr/bundlesize) ou [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), impede a mesclagem do PR se dependências inflarem o tamanho final do build.
+* **Eficiência Energética & CPU**: Ferramentas como [Hyperfine](https://github.com/sharkdp/hyperfine) ou [Kepler](https://kepler.sh/) (Kubernetes Efficient Power Level Exporter) medem o consumo de CPU e energia por transação.
 
 ---
 
@@ -165,54 +210,52 @@ Isso redefine radicalmente a **divisão de esforço no Code Review**:
 * **Máquina (Harness)**: Valida tipos, sintaxe, padrões arquiteturais, regras de linting, segurança e cobertura de testes.
 * **Humano**: Revisa a intenção da mudança, o alinhamento com os objetivos de negócio e o real valor entregue para o usuário.
 
-**Arquitetura verificável é a única forma de garantir escalabilidade em times acelerados por IA.**
-
 ---
 
 ## Decisões Reversíveis e Isolamento de Camadas
 
-Para que o código gerado por IA seja facilmente mantido ou substituído, precisamos aplicar a **Regra de Dependência em Camadas**:
+Para que o código gerado por IA seja facilmente mantido ou substituído, aplicamos a **Regra de Dependência em Camadas**:
 
 > *Camadas internas NUNCA dependem de camadas externas. O Domínio comunica-se com o mundo exterior exclusivamente através de interfaces e contratos.*
 
-Esse isolamento garante dois superpoderes:
+Esse isolamento garante dois grandes benefícios:
 
 1. **Testabilidade Isolada**: Possibilidade de testar toda a regra de negócio sem precisar subir banco de dados, servidor HTTP ou serviços de terceiros.
 2. **Reversibilidade Tecnológica**: Possibilidade de trocar de framework ou banco de dados sem alterar uma única linha da regra de negócio.
+
+### ⚠️ O Custo do Desacoplamento: Reversibilidade vs. Complexidade
+
+Aqui entra um ponto fundamental que muitos negligenciam: **desacoplamento aumenta a reversibilidade, mas também aumenta a complexidade acidental do sistema.**
+
+Ao introduzir interfaces, *ports & adapters*, camadas intermediárias, barramentos e filas, você adiciona indireção ao código. Se o sistema não precisa dessa flexibilidade agora, você estará pagando o preço da complexidade sem colher os benefícios da reversibilidade.
+
+Por isso, o desacoplamento **deve ser muito bem pensado e pesado**. Não isole o código por um purismo teórico cego. Isole apenas os pontos onde a mudança é provável ou onde o risco de acoplamento com terceiros é crítico.
 
 ### Two-Way Doors vs. One-Way Doors
 
 Inspirado no conceito de tomada de decisão de Jeff Bezos:
 
-* **Doors 🚪↔️ Two-Way (Decisões Reversíveis)**: Possuem baixo custo de mudança. Exemplos: uso de Feature Flags, camada BFF, abstração de serviços por interfaces e rollouts graduais.
-* **Doors 🚪➡️ One-Way (Decisões Irreversíveis)**: Possuem alto custo de mudança. Exemplos: escolha da linguagem principal, paradigma de persistência, modelo de banco de dados e provedor de nuvem.
+* **Two-Way Doors 🚪↔️ (Decisões Reversíveis)**: Possuem baixo custo de mudança. Exemplos: uso de Feature Flags, camada BFF, abstração de serviços por interfaces e rollouts graduais.
+* **One-Way Doors 🚪➡️ (Decisões Irreversíveis)**: Possuem alto custo de mudança. Exemplos: escolha da linguagem principal, paradigma de persistência, modelo de banco de dados e provedor de nuvem.
 
-O objetivo da arquitetura evolutiva é **tratar o máximo de decisões como reversíveis**, abstraindo dependências e mantendo as opções abertas pelo maior tempo possível.
+O objetivo da arquitetura evolutiva é **tratar o máximo de decisões como reversíveis**, abstraindo dependências críticas e mantendo as opções abertas pelo maior tempo possível.
 
-Além disso, busque o desacoplamento em duas dimensões:
+Além disso, busque avaliar o desacoplamento sob duas perspectivas:
 * **Espacial (Endereço)**: O consumidor não precisa conhecer o endereço exato do produtor (ex: via BFF ou Barramentos).
 * **Temporal (Momento)**: O produtor e o consumidor não precisam estar disponíveis no mesmo instante (ex: via Filas e Mensageria).
 
-**Quando a arquitetura é bem isolada, o código gerado por IA torna-se verdadeiramente modular, descartável e facilmente substituível.**
+**Quando a arquitetura é bem isolada nos pontos corretos, o código gerado por IA torna-se verdadeiramente modular, descartável e facilmente substituível.**
 
 ---
 
-## Shu-Ha-Ri na Era da IA: O Arquiteto como Guia
+## O Novo Papel do Engenheiro: De Ditador a Guardião
 
-O modelo conceitual de aprendizado artesanal japonês **Shu-Ha-Ri** aplica-se perfeitamente à nossa relação com a IA:
+Com a IA assumindo a execução mecânica de código, a atuação do profissional de engenharia se transforma:
 
-1. **守 (Shu) — Siga as Regras**: Usar o Harness e as Fitness Functions como um guia rígido de conformidade para o agente e para o time.
-2. **破 (Ha) — Adapte**: Entender os trade-offs e flexibilizar limites à medida que o contexto do produto amadurece.
-3. **離 (Ri) — Crie**: Evoluir a arquitetura do sistema e desenhar novos guardrails automatizados para a organização.
-
-### A Evolução do Papel do Engenheiro
-
-O papel do profissional de software mudou drasticamente:
-
-| Ontem | Hoje |
+| Visão Tradicional | O Engenheiro na Era da IA |
 | :--- | :--- |
 | Digitador de sintaxe e implementador manual de linhas de código. | Arquiteto de soluções, pensador crítico e definidor de limites. |
-| Ditador *Top-Down* que impõe regras arbitrárias e cria dependência no time. | **Guia e Guardião** que mostra o caminho, ensina os porquês e constrói as automações que protegem o time. |
+| Ditador *Top-Down* que impõe regras arbitrárias e gera dependência manual. | **Guia e Guardião** que mostra o caminho, ensina os porquês e constrói as automações que protegem o time. |
 
 ---
 
