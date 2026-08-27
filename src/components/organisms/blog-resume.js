@@ -7,7 +7,7 @@ import { css } from '@emotion/react'
 
 const blogListQuery = graphql`
   query {
-    allMarkdownRemark(limit: 10, sort: {frontmatter: {date: DESC}}) {
+    allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           excerpt(pruneLength: 160)
