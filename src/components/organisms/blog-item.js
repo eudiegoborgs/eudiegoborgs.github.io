@@ -12,24 +12,45 @@ const style = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
   h3 {
     margin: 0;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    min-height: 5.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   a {
     text-decoration: none;
+  }
+  .blog-excerpt {
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   color: var(--black);
 `
 
 const BlogItem = ({ content }) => {
-  const { frontmatter, fields } = content;
+  const { frontmatter, fields, excerpt } = content;
   return (
     <div css={style} className="blog-box gradient">
       <div>
         <Link to={`/${content.fields.slug}`} className="blog-link">
-          <h3 className>{ frontmatter.title }</h3>
+          <h3>{ frontmatter.title }</h3>
         </Link>
         {fields.readingTime && (<small><ReadTime time={fields.readingTime.minutes} className="time-icon"/> • { frontmatter.date }</small>)}
+        {excerpt && <p className="blog-excerpt">{ excerpt }</p>}
       </div>
       <div style={{paddingTop: '10px', textAlign: 'right'}}>
         <Link to={`/${content.fields.slug}`} className="blog-link">

@@ -14,7 +14,7 @@ const BlogList = (props) => {
       <Content>
         <main>
           <h1 style={{marginTop: '3rem'}}>Blog</h1>
-          {list.map(item => <BlogItem content={item.node}/>)}
+          {list.map(item => <BlogItem key={item.node.fields.slug} content={item.node}/>)}
         </main>
       </Content>
     </Layout>
@@ -26,6 +26,7 @@ export const BlogListQuery = graphql`
     allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: $limit, skip: $skip) {
       edges {
         node {
+          excerpt(pruneLength: 160)
           fields {
             slug
             readingTime {

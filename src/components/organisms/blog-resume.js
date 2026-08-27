@@ -10,6 +10,7 @@ const blogListQuery = graphql`
     allMarkdownRemark(limit: 3, sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
+          excerpt(pruneLength: 160)
           fields {
             slug
             readingTime {
@@ -62,7 +63,7 @@ const BlogResume = () => {
         </Link>
       </div>
       <div className="post-list">
-        {list.map(item => <BlogItem key={item.slug} content={item.node}/>)}
+        {list.map(item => <BlogItem key={item.node.fields.slug} content={item.node}/>)}
       </div>
     </div>
   )
