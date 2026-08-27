@@ -1,7 +1,7 @@
 ---
 path: debug-de-carreira-processos-seletivos-devs
 date: 2026-08-27T11:59:00.000Z
-title: "Debug de Carreira: Por que você continua falhando nos processos seletivos (e como virar o jogo)"
+title: "Debug de Carreira: Como se destacar em processos seletivos"
 ---
 
 Seus dias de enviar 500 currículos por semana no LinkedIn e receber 499 rejeições automáticas — acompanhadas de um silêncio sepulcral na única entrevista que conseguiu — não são fruto de "azar". Tampouco a culpa é exclusivamente do algoritmo da plataforma de vagas ou do "mercado desaquecido".
@@ -12,7 +12,7 @@ Vejo diariamente um enxame de desenvolvedores iniciantes e plenos frustrados, ac
 
 A conta não fecha. E não fecha porque existe um abismo imenso entre o que as pessoas acham que é ser um desenvolvedor e o que o mercado realmente exige para assinar uma carteira de trabalho ou fechar um contrato.
 
-Depois de mais de 15 anos no mercado de tecnologia, 10 anos escrevendo código e de ter liderado o recrutamento técnico no PicPay — onde avaliei centenas de candidatos —, resolvi abrir o jogo. Sem rodeios, sem jargões corporativos e sem falsas promessas: este é o meu **Debug de Carreira**.
+Depois de mais de 15 anos no mercado de tecnologia, 10 anos escrevendo código e tendo apoiado a construção do processo de recrutamento técnico no PicPay — além de atuar como Coordenador, onde parte do meu trabalho diário é escolher pessoas para trabalharem no meu time —, resolvi abrir o jogo. Sem rodeios, sem jargões corporativos e sem falsas promessas: este é o meu **Debug de Carreira**.
 
 ---
 
@@ -45,13 +45,13 @@ Quem procura atalhos no desenvolvimento de software geralmente é o primeiro a r
 
 ---
 
-## **O outro lado da mesa: Da primeira vaga sem snacks ao recrutamento técnico**
+## **O outro lado da mesa: Da primeira vaga sem snacks à seleção de devs**
 
 Eu sei exatamente como é estar no seu lugar. Quando comecei a trabalhar com TI em 2011, aos 16 anos, a realidade era brutal. Minha primeira vaga oficial de desenvolvedor veio aos 20 anos (em 2015).
 
 Não tinha *home office*, não tinha *cooler* de cerveja, não tinha mesa de sinuca, nem snacks liberados na copa. Era presencial, raiz, com cobrança pesada, ambiente nada acolhedor e uma coleção de traumas de carreira. Quando cheguei no mercado, *jQuery* era considerado o suprassumo da inovação tecnológica.
 
-Com o tempo, passei por empresas como **Maxmilhas**, **Sympla** e cheguei ao **PicPay**, onde assumi a responsabilidade direta pelo processo de recrutamento técnico de engenharia. E ali, do outro lado da mesa, conduzi mais de 100 entrevistas com devs de todos os níveis.
+Com o tempo, passei por empresas como **Maxmilhas**, **Sympla** e cheguei ao **PicPay**, onde apoiei a construção do processo de recrutamento técnico. Como Coordenador de engenharia, parte essencial do meu trabalho é escolher pessoas para montar e fortalecer o meu time. E ali, do outro lado da mesa, conduzi mais de 100 entrevistas com devs de todos os níveis.
 
 E sabe o que eu descobri?
 Vi desenvolvedores incrivelmente técnicos serem reprovados por não conseguirem articular duas frases com clareza sobre suas próprias escolhas de arquitetura. E vi profissionais com bagagem técnica modesta serem contratados porque sabiam **ouvir, fazer as perguntas certas e demonstrar um nível de maturidade raro.**
@@ -77,7 +77,7 @@ Não adianta você cobrar salário de *Dream Team* se o seu nível de entrega ai
 
 ---
 
-## **Desconstruindo o fetiche dos testes técnicos**
+## **Desconstruindo a mística dos testes técnicos**
 
 Como avaliador técnico, preciso ser honesto sobre a eficácia dos testes praticados no mercado:
 
@@ -103,25 +103,16 @@ Pare de esperar pela oportunidade mágica na startup da moda com stack dos sonho
 Saiba apresentar o seu histórico. Explicar suas transições de carreira, destacar projetos reais e contextualizar o porquê de cada escolha que você fez demonstra autoconsciência. Saiba vender a sua trajetória com clareza.
 
 ### 3. Não chegue de mão abanando nas entrevistas
-Eu me impressionava com a quantidade de candidatos que chegavam para entrevistas no PicPay sem sequer saber o que o app fazia.  
 **Estude a empresa.** Entenda o modelo de negócio, leia o blog técnico, use o produto. Chegar na conversa apontando possíveis melhorias ou fazendo perguntas conectadas à realidade da empresa te coloca a anos-luz dos concorrentes.
 
-### 4. Entrevista não é interrogatório
-Faça perguntas relevantes ao entrevistador: *Qual é o maior gargalo técnico que o time enfrenta hoje? Como é a cultura de deploys e testes? Como vocês lidam com débitos técnicos?* A entrevista é uma via de mão dupla.
+### 4. Perguntas em entrevistas são uma via de mão dupla
+Aproveite o momento de perguntas para investigar a empresa. Além de demonstrar interesse genuíno, fazer perguntas te ajuda a entender melhor como a equipe funciona no dia a dia e evita futuros desalinhamentos de expectativas. 
+
+Pergunte sobre pontos que demonstrem se aquele ambiente de trabalho realmente se alinha com o que você busca para a sua carreira. Por exemplo: *Como o time lida com débitos técnicos e pressão por prazos? Como é a cultura de deploys, testes e plantões? De que forma o time colabora quando um problema sério acontece em produção?*
 
 ### 5. Reputação: As pessoas te indicariam?
 Faça este teste de honestidade brutal com você mesmo: **as pessoas que estudam ou trabalham com você hoje te indicariam de olhos fechados para uma vaga?**  
 Se a resposta for "não" ou "talvez", esqueça o LinkedIn por um momento. O seu maior patrimônio no mercado é a sua reputação diária com seus pares.
-
----
-
-## **"Todo mundo quer água, mas ninguém quer encher a garrafa"**
-
-Essa é uma das frases que mais repito nas minhas palestras.
-
-Na área de tecnologia, vejo uma multidão de pessoas desejando os benefícios da profissão: o trabalho remoto, os salários atraentes, a flexibilidade. Mas quando chega a hora de "encher a garrafa" — sentar a bunda na cadeira, estudar fundamentos de ciência da computação, ler documentação oficial, entender arquitetura, tomar *feedback* duro e refatorar código —, a maioria desiste ou procura o caminho mais fácil.
-
-**Quer ser bem contratado? Esteja disposto a encher a garrafa.**
 
 ---
 
