@@ -3,6 +3,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+  const now = new Date()
 
   return graphql(
     `{
@@ -14,6 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             frontmatter {
               date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
+              rawDate: date
               title
             }
           }
@@ -24,6 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               title
               date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
+              rawDate: date
             }
           }
           previous {
@@ -33,6 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               title
               date(locale: "pt-br", formatString: "DD MMM[,] YYYY")
+              rawDate: date
             }
           }
         }
@@ -41,17 +45,22 @@ exports.createPages = ({ graphql, actions }) => {
   `).then(result => {
     if (result.errors) throw result.errors
 
-    // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    // Filter out posts with future dates
+    const allPosts = result.data.allMarkdownRemark.edges
+    const posts = allPosts.filter(({ node }) => new Date(node.frontmatter.rawDate) <= now)
 
-    posts.forEach(({ node, next, previous }) => {
+    // Create blog posts pages with re-linked next and previous
+    posts.forEach(({ node }, index) => {
+      const next = index === posts.length - 1 ? null : posts[index + 1].node
+      const previous = index === 0 ? null : posts[index - 1].node
+
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/blog-post.js`),
         context: {
           slug: node.fields.slug,
-          previous: next,
-          next: previous
+          previous,
+          next
         }
       })
     })
@@ -59,6 +68,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog post list pages
     const postsPerPage = 30
     const numPages = Math.ceil(posts.length / postsPerPage)
+    const currentDateIso = now.toISOString()
 
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
@@ -68,7 +78,8 @@ exports.createPages = ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: i * postsPerPage,
           numPages,
-          currentPage: i + 1
+          currentPage: i + 1,
+          currentDate: currentDateIso
         }
       })
     })

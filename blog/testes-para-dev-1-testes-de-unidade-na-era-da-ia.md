@@ -1,6 +1,6 @@
 ---
 path: testes-para-dev-1-testes-de-unidade
-date: 2026-08-27T09:00:00.000Z
+date: 2026-08-29T09:00:00.000Z
 title: "Testes para Dev #1: Introdução aos Testes de Unidade"
 ---
 

@@ -22,8 +22,13 @@ const BlogList = (props) => {
 }
 
 export const BlogListQuery = graphql`
-  query BlogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: $limit, skip: $skip) {
+  query BlogListQuery($skip: Int!, $limit: Int!, $currentDate: Date!) {
+    allMarkdownRemark(
+      filter: { frontmatter: { date: { lte: $currentDate } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt(pruneLength: 160)

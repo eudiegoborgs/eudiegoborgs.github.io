@@ -7,7 +7,7 @@ import { css } from '@emotion/react'
 
 const blogListQuery = graphql`
   query {
-    allMarkdownRemark(limit: 3, sort: {frontmatter: {date: DESC}}) {
+    allMarkdownRemark(limit: 10, sort: {frontmatter: {date: DESC}}) {
       edges {
         node {
           excerpt(pruneLength: 160)
@@ -20,6 +20,7 @@ const blogListQuery = graphql`
           }
           frontmatter {
             date(locale: "pt-br", formatString: "DD [de] MMMM")
+            rawDate: date
             title
           }
         }
@@ -52,7 +53,10 @@ const styles = css`
 
 const BlogResume = () => {
   const allBlogList = useStaticQuery(blogListQuery)
+  const now = new Date()
   const list = allBlogList.allMarkdownRemark.edges
+    .filter(item => new Date(item.node.frontmatter.rawDate) <= now)
+    .slice(0, 3)
 
   return (
     <div css={ styles }>
