@@ -4,39 +4,49 @@ date: 2026-08-27T09:00:00.000Z
 title: "Testes para Dev #1: Introdução aos Testes de Unidade"
 ---
 
-Boas-vindas ao primeiro capítulo da nova série **Testes para Dev**! 🚀
+Fala, dev! Beleza? 🚀
+
+Boas-vindas ao primeiro post da nossa nova série **Testes para Dev**! 
+
+Bora bater um papo direto ao ponto sobre o que realmente importa quando o assunto é testar código de verdade.
 
 ---
 
-## Por que uma série sobre testes agora?
+## Por que falar de testes justo agora?
 
-Estamos vivendo um momento de transformação acelerada no desenvolvimento de software. Com assistentes de código e agentes autônomos de IA gerando arquivos inteiros e refatorando sistemas em segundos, é natural surgir o questionamento: *qual é o real papel do desenvolvedor hoje?*
+Se você desenvolve software hoje, com certeza já tá usando (ou pelo menos vendo) IAs e assistentes gerando arquivos inteiros e refatorando código em segundos.
 
-Digitar mecanicamente sintaxe de código ou *boilerplates* repetitivos de testes tornou-se uma tarefa automatizável. **Porém, pensar o problema, compreender as regras do negócio e estruturar a estratégia de testes nunca foi tão valioso.** 😉
+Aí sempre vem aquela pergunta no café do time: *"Pô Diego, se a IA escreve código e teste na hora, pra que eu vou perder tempo digitando teste na mão?"*
 
-Na era do código gerado por IA, saber criar um *Harness* sólido — como discuti no artigo [Arquitetura Evolutiva com IA](https://diegoborgs.com.br/blog/arquitetura-evolutiva-com-ia) — é a garantia de que seu software continuará evoluindo rápido e de forma segura.
+E aqui tá o pulo do gato: **digitar boilerplate repetitivo de teste na mão virou perda de tempo mesmo**. A IA faz isso em 2 segundos.
 
-Ao longo desta série, vamos passar por todas as camadas de testes (Unidade, Integração, Mutação e End-to-End). E hoje, vamos começar pelo pilar fundamental: **Testes de Unidade**.
+**Mas pensar o problema, entender o domínio da sua aplicação e estruturar a estratégia de testes nunca foi tão valioso.** 😉
 
----
+Na era do código gerado por IA, saber montar um *Harness* de testes bem feito — como troquei uma ideia no post sobre [Arquitetura Evolutiva com IA](https://diegoborgs.com.br/blog/arquitetura-evolutiva-com-ia) — é o que garante que você pode acelerar sem ver a aplicação desmoronar em produção.
 
-## O que é um Teste de Unidade?
-
-Muitas pessoas confundem testes unitários com "rodar uma função para ver se ela lança exceção". Mas o conceito de unidade possui uma premissa clara:
-
-> **Teste de Unidade** é a fase do teste de software em que funções, métodos ou classes são validados de maneira **atômica** e **isolada**, garantindo que a menor fração de regra de negócio funcione estritamente conforme o especificado, sem qualquer interferência externa.
-
-O grande segredo do teste de unidade é o **isolamento**. E para conseguir isolar uma unidade, antecipamos um conceito essencial: o **Mock**. 
-
-Um *Mock* é um substituto controlado para uma dependência da sua aplicação, permitindo simular cenários de retorno e verificar se o seu código interagi com essa dependência da forma esperada.
-
-Se para testar um cálculo ou regra de negócio você precisa se conectar a um banco de dados real, disparar uma requisição de rede ou subir um serviço externo, **você não está fazendo um teste de unidade** (e sim um teste de integração).
+Nesta série, vamos passar por toda a jornada de testes: Unidade, Integração, Mutação e E2E. E pra começar com o pé direito, bora focar na base de tudo: **Testes de Unidade**.
 
 ---
 
-## O Desafio da Unidade: Isolando o Comportamento Puro
+## O que é (de verdade) um Teste de Unidade?
 
-Vamos analisar um exemplo clássico de função em TypeScript:
+Muita gente confunde teste unitário com "rodar uma função pra ver se não estoura um `try/catch`". Mas a ideia aqui é bem mais simples e direta:
+
+> **Teste de Unidade** é quando você pega uma função, método ou classe e testa a lógica interna dela de forma **atômica e isolada**, sem deixar nada de fora atrapalhar.
+
+O grande segredo do teste de unidade tem um nome: **isolamento**. 
+
+E pra conseguir isolar uma unidade de verdade, a gente usa um cara essencial: o **Mock**. 
+
+Um *Mock* nada mais é do que um "dublê" controlado que você coloca no lugar de uma dependência (como um banco de dados ou uma API externa), só pra simular respostas e ver se a sua função conversa com ela do jeito certo.
+
+Se pra testar uma continha ou regra de negócio você precisa subir o Postgres, bater na API da empresa do lado ou conectar no Redis, **você não tá fazendo teste de unidade** — tá fazendo teste de integração (que é o tema do próximo post!).
+
+---
+
+## O Desafio da Unidade: Isolando a Lógica Pura
+
+Dá uma olhada nessa função em TypeScript:
 
 ```typescript
 const addCharge = (value: number): number => {
@@ -47,24 +57,24 @@ const addCharge = (value: number): number => {
 };
 ```
 
-Nesta função:
-- O banco de dados é consultado (`repo.getDatabaseValue`).
-- Uma API externa é chamada (`client.getClientValue`).
-- A soma final é realizada e retornada.
+O que tá acontecendo aqui?
+- Ela busca um valor no banco (`repo.getDatabaseValue`).
+- Busca outro valor numa API externa (`client.getClientValue`).
+- Soma tudo e retorna.
 
-### O que a unidade deve validar?
-O objetivo do teste de unidade para `addCharge` não é checar se a rede caiu ou se o banco de dados falhou. O objetivo é garantir que, **dadas entradas previsíveis das dependências**, a lógica de composição e os parâmetros passados para os colaboradores funcionam exatamente como esperado.
+### O que o teste de unidade precisa testar de verdade?
+No teste de unidade dessa função, você **não quer saber se o banco tá fora do ar ou se a internet caiu**. O seu foco é: *se o banco me mandar X e a API me mandar Y, a minha função faz a conta certa e chama os métodos com os parâmetros corretos?*
 
 ---
 
-## Escrevendo um Teste de Unidade com Mocks no Jest
+## Mão na massa: Escrevendo o teste com Mocks no Jest
 
-Para testar essa função de forma isolada no **Jest**, substituímos as dependências por *Mocks*:
+Pra testar essa função de forma 100% isolada usando o **Jest**, a gente substitui o banco e a API por *Mocks*:
 
 ```typescript
 describe('addCharge', () => {
-  it('deve calcular o valor total e validar os argumentos das dependências', async () => {
-    // 1. ARRANGE: Mock das dependências externas
+  it('deve calcular o valor total e chamar as dependências certinho', async () => {
+    // 1. ARRANGE (Preparação): Criamos os mocks do banco e da API
     const getDatabaseValue = jest.fn().mockResolvedValue(10);
     const getClientValue = jest.fn().mockResolvedValue(5);
 
@@ -76,10 +86,10 @@ describe('addCharge', () => {
 
     const initialValue = 100;
 
-    // 2. ACT: Executa a unidade sob teste
+    // 2. ACT (Ação): Executamos a função sob teste
     const total = await context.addCharge(initialValue);
 
-    // 3. ASSERT: Valida os parâmetros de chamada e o resultado
+    // 3. ASSERT (Checagem): Garantimos os argumentos e a conta final
     expect(getDatabaseValue).toHaveBeenCalledWith({ value: initialValue });
     expect(getClientValue).toHaveBeenCalledWith(initialValue);
     expect(total).toBe(115); // 100 + 10 + 5
@@ -89,32 +99,33 @@ describe('addCharge', () => {
 
 ---
 
-## A Regra de Ouro: Não mocke o que você não é dono! 🛑
+## Regra de Ouro: Não mocke o que você não é dono! 🛑
 
-Existe uma diretriz clássica no TDD e no design de software (*"Don't mock what you don't own"*):
+Guarda esse conselho no seu coração de dev (*"Don't mock what you don't own"*):
 
 > **Nunca faça mock direto de código, SDKs ou bibliotecas de terceiros que você não possui.**
 
-### O que significa "possuir" um código?
-- **Código que você POSSUI**: Suas interfaces, seus serviços de domínio, seus módulos internos. Você controla a assinatura e o ciclo de vida.
-- **Código que você NÃO POSSUI**: SDK da AWS, Axios, Prisma, Stripe, pacotes do NPM. Você não controla o código-fonte nem como os mantenedores atualizarão a biblioteca.
+### Como assim "não sou dono"?
+- **Código seu**: Suas interfaces, suas classes de domínio, seus serviços internos. Você é o dono, você muda a hora que quiser.
+- **Código que NÃO é seu**: SDK da AWS, Axios, Prisma, SDK do Stripe, pacotes do NPM. Você não manda no código dos caras.
 
-### O risco de mockar bibliotecas de terceiros direto
-Quando você faz `jest.mock('axios')` ou mocka métodos internos de um SDK externo:
-1. **Falsos Positivos**: Se a biblioteca de terceiros atualizar e mudar um método, seu teste continuará passando (verde), mas a aplicação quebrará em produção.
-2. **Testes Frágeis**: Seu teste fica acoplado a detalhes de implementação de um pacote externo.
+### Por que mockar lib de terceiros é furada?
+Se você meter um `jest.mock('axios')` ou mockar um método interno da AWS direto na sua regra de negócio:
+1. **O teste vai mentir pra você**: Se a lib de terceiros atualizar e mudar uma resposta em produção, seu teste vai continuar passando verde no CI, mas a aplicação vai dar pau na mão do usuário.
+2. **Seu teste fica frágil**: Qualquer mudancinha boba na lib quebra seu teste de bobeira.
 
-### A Solução: Crie uma Abstração (Wrapper/Adapter)
-Em vez de mockar o SDK externo na sua regra de negócio, crie uma **interface sua** (que seu sistema possui) e mocke apenas a sua interface no teste unitário:
+### A Solução Prática: Crie a sua própria abstração!
+Em vez de usar a lib de terceiros direto na sua classe de negócio, crie uma **interface sua** e faça mock apenas da sua interface no teste unitário:
 
 ```typescript
-// ❌ ERRADO: Mockando SDK da AWS direto no teste unitário de negócio
+// ❌ FURADA: Mockando o SDK da AWS direto no teste de negócio
 const snsMock = jest.spyOn(SNSClient.prototype, 'send');
 
-// ✅ CERTO: Mockando a SUA interface no teste de unidade
+// ✅ MANDOU BEM: Mockando a SUA interface no teste de unidade
 interface NotificationService {
   sendWelcome(email: string): Promise<void>;
 }
+
 const notificationServiceMock: NotificationService = {
   sendWelcome: jest.fn().mockResolvedValue(undefined)
 };
@@ -122,34 +133,34 @@ const notificationServiceMock: NotificationService = {
 
 ---
 
-## O Princípio F.I.R.S.T: As 5 Regras de Ouro
+## O Princípio F.I.R.S.T: O Checklist do Teste Bom
 
-Para manter uma suíte de testes de unidade saudável e útil ao longo do tempo, siga o princípio **F.I.R.S.T**:
+Pra sua suíte de testes não virar um pesadelo lento e chato de manter, lembra sempre da sigla **F.I.R.S.T**:
 
-- **F - Fast (Rápidos)**: Devem rodar em milissegundos para fornecer feedback instantâneo.
-- **I - Independent (Independentes)**: Um teste nunca deve depender do resultado de outro teste anterior.
-- **R - Repeatable (Repetíveis)**: Devem produzir exatamente o mesmo resultado em qualquer ambiente (local, Docker ou CI).
-- **S - Self-validating (Auto-validáveis)**: O resultado deve ser claramente `Pass` ou `Fail`, sem exigir interpretação manual de logs.
-- **T - Timely (Oportunos)**: Devem ser escritos junto ou antes do desenvolvimento do código (TDD / oportunos).
+- **F - Fast (Rápido)**: Rodou, passou. Tem que ser em milissegundos.
+- **I - Independent (Independente)**: Um teste não pode depender de outro rodar antes. Zero estado compartilhado!
+- **R - Repeatable (Repetível)**: Tem que dar o mesmo resultado no seu Mac, no Windows do colega ou no CI da empresa.
+- **S - Self-validating (Auto-validável)**: É verde ou vermelho. Ninguém merece ter que ler `console.log` pra saber se o teste passou.
+- **T - Timely (Oportuno)**: Escreva o teste junto ou antes de criar o código de verdade (alô TDD!).
 
 ---
 
 ## Não Se Pode Simplesmente Refatorar Sem Testes 🛡️
 
-Existe uma frase clássica na engenharia de software que precisa estar no radar de todo time:
+Sabe aquele ditado clássico que todo dev já ouviu numa segunda-feira de manhã?
 
 > **"Não se pode simplesmente refatorar sem testes."**
 
-Seja ao reescrever um trecho complexo manualmente ou ao solicitar uma refatoração assistida por IA, **ter uma suíte de testes de unidade confiável é o único caminho para garantir que o comportamento do sistema não foi alterado.**
+Seja refatorando na mão ou pedindo pra IA dar um tapa naquele código legado medonho, **ter testes de unidade cobrindo os cantos da sua regra é a única garantia de que você não vai quebrar nada sem querer.**
 
 ---
 
-## O que vem por aí: E como testar a integração real com terceiros? 🪝
+## E como testar a integração real com terceiros? 🪝
 
-Se no teste de unidade não devemos mockar bibliotecas de terceiros e precisamos criar abstrações... **como e onde testamos se o SDK da AWS ou a consulta ao banco de dados funcionam de verdade?**
+Se no teste unitário a gente não deve mockar libs de terceiros e precisa criar abstrações... **onde a gente testa se o banco de dados de verdade ou a API do fornecedor tão funcionando redondinho?**
 
-Esse é o gancho perfeito para o nosso próximo artigo!
+Aí é que entra o próximo papo!
 
-No **Capítulo #2 da série Testes para Dev**, daremos o próximo passo e exploraremos os **Testes de Integração**: como testar os *Adapters* reais, o aprofundamento sobre os tipos de *Test Doubles* (Mock vs Stub vs Spy), a regra do SUT (*System Under Test*) e como garantir 100% de confiança na integração do seu sistema.
+No **Capítulo #2 da série Testes para Dev**, vamos subir um degrau na pirâmide e falar de **Testes de Integração**: como testar suas implementações reais, entender a diferença entre Mock, Stub e Spy sem nó na cabeça, a regra do SUT (*System Under Test*) e como ter 100% de confiança na integração do seu sistema.
 
-Deixe seus comentários e nos vemos no próximo artigo! 🚀
+Fechou? Deixa sua opinião nos comentários e bora trocar essa ideia. Até o próximo post! 🚀
