@@ -1,6 +1,6 @@
 import React from "react"
 import { render } from "@testing-library/react"
-import TypeWritter from "./index"
+import TypeWritter from "./typewritter"
 describe("TypeWritter", () => {
   it("renders correctly", () => {
     const { getByRole } = render(<TypeWritter words={['Writing code with love']} />)
