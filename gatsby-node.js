@@ -98,3 +98,34 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 };
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+    Query: {
+      recentPublishedPosts: {
+        type: ['MarkdownRemark'],
+        resolve: async (source, args, context) => {
+          const now = new Date()
+          const { entries } = await context.nodeModel.findAll({
+            type: 'MarkdownRemark',
+            query: {
+              sort: {
+                fields: ['frontmatter.date'],
+                order: ['DESC']
+              }
+            }
+          })
+          const filtered = []
+          for (const node of entries) {
+            const nodeDate = new Date(node.frontmatter.date)
+            if (nodeDate <= now) {
+              filtered.push(node)
+              if (filtered.length === 3) break
+            }
+          }
+          return filtered
+        }
+      }
+    }
+  })
+}
