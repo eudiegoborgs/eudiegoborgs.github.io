@@ -26,9 +26,11 @@ Muitas pessoas confundem testes unitários com "rodar uma função para ver se e
 
 > **Teste de Unidade** é a fase do teste de software em que funções, métodos ou classes são validados de maneira **atômica** e **isolada**, garantindo que a menor fração de regra de negócio funcione estritamente conforme o especificado, sem qualquer interferência externa.
 
-O grande segredo do teste de unidade é o **isolamento**. 
+O grande segredo do teste de unidade é o **isolamento**. E para conseguir isolar uma unidade, antecipamos um conceito essencial: o **Mock**. 
 
-Se para testar um cálculo ou regra de negócio você precisa se conectar a um banco de dados, disparar uma requisição de rede ou subir um serviço externo, **você não está fazendo um teste de unidade** (e sim um teste de integração).
+Um *Mock* é um substituto controlado para uma dependência da sua aplicação, permitindo simular cenários de retorno e verificar se o seu código interagi com essa dependência da forma esperada.
+
+Se para testar um cálculo ou regra de negócio você precisa se conectar a um banco de dados real, disparar uma requisição de rede ou subir um serviço externo, **você não está fazendo um teste de unidade** (e sim um teste de integração).
 
 ---
 
@@ -51,13 +53,13 @@ Nesta função:
 - A soma final é realizada e retornada.
 
 ### O que a unidade deve validar?
-O objetivo do teste de unidade para `addCharge` não é checar se o banco respondeu ou se a rede caiu. O objetivo é garantir que, **dadas entradas previsíveis das dependências**, a lógica de composição e os parâmetros passados para os colaboradores funcionam exatamente como esperado.
+O objetivo do teste de unidade para `addCharge` não é checar se a rede caiu ou se o banco de dados falhou. O objetivo é garantir que, **dadas entradas previsíveis das dependências**, a lógica de composição e os parâmetros passados para os colaboradores funcionam exatamente como esperado.
 
 ---
 
 ## Escrevendo um Teste de Unidade com Mocks no Jest
 
-Para testar essa função de forma isolada no **Jest**, substituímos as dependências reais por *Mocks*:
+Para testar essa função de forma isolada no **Jest**, substituímos as dependências por *Mocks*:
 
 ```typescript
 describe('addCharge', () => {
@@ -87,6 +89,39 @@ describe('addCharge', () => {
 
 ---
 
+## A Regra de Ouro: Não mocke o que você não é dono! 🛑
+
+Existe uma diretriz clássica no TDD e no design de software (*"Don't mock what you don't own"*):
+
+> **Nunca faça mock direto de código, SDKs ou bibliotecas de terceiros que você não possui.**
+
+### O que significa "possuir" um código?
+- **Código que você POSSUI**: Suas interfaces, seus serviços de domínio, seus módulos internos. Você controla a assinatura e o ciclo de vida.
+- **Código que você NÃO POSSUI**: SDK da AWS, Axios, Prisma, Stripe, pacotes do NPM. Você não controla o código-fonte nem como os mantenedores atualizarão a biblioteca.
+
+### O risco de mockar bibliotecas de terceiros direto
+Quando você faz `jest.mock('axios')` ou mocka métodos internos de um SDK externo:
+1. **Falsos Positivos**: Se a biblioteca de terceiros atualizar e mudar um método, seu teste continuará passando (verde), mas a aplicação quebrará em produção.
+2. **Testes Frágeis**: Seu teste fica acoplado a detalhes de implementação de um pacote externo.
+
+### A Solução: Crie uma Abstração (Wrapper/Adapter)
+Em vez de mockar o SDK externo na sua regra de negócio, crie uma **interface sua** (que seu sistema possui) e mocke apenas a sua interface no teste unitário:
+
+```typescript
+// ❌ ERRADO: Mockando SDK da AWS direto no teste unitário de negócio
+const snsMock = jest.spyOn(SNSClient.prototype, 'send');
+
+// ✅ CERTO: Mockando a SUA interface no teste de unidade
+interface NotificationService {
+  sendWelcome(email: string): Promise<void>;
+}
+const notificationServiceMock: NotificationService = {
+  sendWelcome: jest.fn().mockResolvedValue(undefined)
+};
+```
+
+---
+
 ## O Princípio F.I.R.S.T: As 5 Regras de Ouro
 
 Para manter uma suíte de testes de unidade saudável e útil ao longo do tempo, siga o princípio **F.I.R.S.T**:
@@ -109,10 +144,12 @@ Seja ao reescrever um trecho complexo manualmente ou ao solicitar uma refatoraç
 
 ---
 
-## O que vem por aí na série "Testes para Dev"?
+## O que vem por aí: E como testar a integração real com terceiros? 🪝
 
-Neste primeiro capítulo estabelecemos a base dos testes atômicos e isolados. 
+Se no teste de unidade não devemos mockar bibliotecas de terceiros e precisamos criar abstrações... **como e onde testamos se o SDK da AWS ou a consulta ao banco de dados funcionam de verdade?**
 
-No capítulo **#2**, daremos o próximo passo e exploraremos os **Testes de Integração**: como testar múltiplos módulos trabalhando juntos, quando usar *Test Doubles* (Spy vs Mock vs Stub), a regra do SUT (*System Under Test*) e por que você nunca deve fazer mock do que não é seu!
+Esse é o gancho perfeito para o nosso próximo artigo!
+
+No **Capítulo #2 da série Testes para Dev**, daremos o próximo passo e exploraremos os **Testes de Integração**: como testar os *Adapters* reais, o aprofundamento sobre os tipos de *Test Doubles* (Mock vs Stub vs Spy), a regra do SUT (*System Under Test*) e como garantir 100% de confiança na integração do seu sistema.
 
 Deixe seus comentários e nos vemos no próximo artigo! 🚀
