@@ -7,22 +7,18 @@ import { css } from '@emotion/react'
 
 const blogListQuery = graphql`
   query {
-    allMarkdownRemark(limit: 3, sort: {frontmatter: {date: DESC}}) {
-      edges {
-        node {
-          excerpt(pruneLength: 160)
-          fields {
-            slug
-            readingTime {
-              text
-              minutes
-            }
-          }
-          frontmatter {
-            date(locale: "pt-br", formatString: "DD [de] MMMM")
-            title
-          }
+    recentPublishedPosts {
+      excerpt(pruneLength: 160)
+      fields {
+        slug
+        readingTime {
+          text
+          minutes
         }
+      }
+      frontmatter {
+        date(locale: "pt-br", formatString: "DD [de] MMMM")
+        title
       }
     }
   }
@@ -51,8 +47,8 @@ const styles = css`
 `
 
 const BlogResume = () => {
-  const allBlogList = useStaticQuery(blogListQuery)
-  const list = allBlogList.allMarkdownRemark.edges
+  const data = useStaticQuery(blogListQuery)
+  const list = data.recentPublishedPosts || []
 
   return (
     <div css={ styles }>
@@ -63,7 +59,7 @@ const BlogResume = () => {
         </Link>
       </div>
       <div className="post-list">
-        {list.map(item => <BlogItem key={item.node.fields.slug} content={item.node}/>)}
+        {list.map(item => <BlogItem key={item.fields.slug} content={item}/>)}
       </div>
     </div>
   )
