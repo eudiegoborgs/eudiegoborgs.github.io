@@ -6,7 +6,7 @@ title: Estamos com os dias contados? A evolução das IA's e a extinção do
 ---
 Todas às vezes que um avanço nos resultados de produção de conteúdo por Inteligência Artificial (IA) é divulgado, a mesma discussão volta à tona: *nossos empregos estão com os dias contados?*
 
-Nas últimas semanas, vi um crescimento significativo das discussões em torno de plataformas como **v0**, **Cursor** e **Loveless**. Do outro lado, um verdadeiro enxame de publicações de artistas reagindo à viralização de imagens no estilo **Ghibli**, geradas pelo ChatGPT.
+Nas últimas semanas, vi um crescimento significativo das discussões em torno de plataformas como **v0**, **Cursor** e **Lovable**. Do outro lado, um verdadeiro enxame de publicações de artistas reagindo à viralização de imagens no estilo **Ghibli**, geradas pelo ChatGPT.
 
 A dúvida é legítima. Mas será mesmo que a tecnologia vai extinguir nossas profissões?
 
