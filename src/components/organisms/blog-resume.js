@@ -6,6 +6,7 @@ import { css } from '@emotion/react'
 
 
 const blogListQuery = graphql`
+  # Query atualizada para forçar reavaliação de posts publicados no build
   query {
     recentPublishedPosts {
       excerpt(pruneLength: 160)
