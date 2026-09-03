@@ -60,7 +60,42 @@ npm install --save-dev @pact-foundation/pact jest ts-jest @types/jest
 
 ---
 
-## Passo 2: Configurando os Scripts no `package.json`
+## Passo 2: Configurando o Jest para TypeScript (`jest.config.js`)
+
+Se você rodar o Jest diretamente em um arquivo `.ts` contendo sintaxe de ESM (`import/export`), o Node lançará o erro: *"Must use import to load ES Module... The file contains ESM syntax that could not be executed as CommonJS"*.
+
+Para dizer ao Jest que ele deve usar o `ts-jest` para transformar arquivos TypeScript antes de executar, execute no terminal:
+
+```bash
+npx ts-jest config:init
+```
+
+Ou crie manualmente o arquivo `jest.config.js` na raiz do seu projeto:
+
+```javascript
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+};
+```
+
+E no seu `tsconfig.json`, certifique-se de que o suporte a módulos e os tipos do Jest estão ativos:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["jest", "node"]
+  }
+}
+```
+
+---
+
+## Passo 3: Configurando os Scripts no `package.json`
 
 Abra o arquivo `package.json` do seu projeto e adicione um script dedicado para rodar os testes de contrato:
 
@@ -82,7 +117,7 @@ Abra o arquivo `package.json` do seu projeto e adicione um script dedicado para 
 
 ---
 
-## Passo 3: Escrevendo o Teste do Consumidor (`consumer.contract.spec.ts`)
+## Passo 4: Escrevendo o Teste do Consumidor (`consumer.contract.spec.ts`)
 
 Crie o arquivo `src/consumer.contract.spec.ts`. Vamos colocar o código completo primeiro e depois dissecar linha por linha:
 
@@ -149,9 +184,9 @@ describe('Contrato com a API de Usuários', () => {
 
 ---
 
-## Passo 4: Executando o Teste de Contrato
+## Passo 5: Executando o Teste de Contrato
 
-No seu terminal, execute o script que configuramos no Passo 2:
+No seu terminal, execute o script que configuramos no Passo 3:
 
 ```bash
 npm run test:contract
@@ -212,7 +247,7 @@ Exemplo de log de erro no terminal:
 
 ---
 
-## Passo 5: Validando o Contrato no Backend (Provedor)
+## Passo 6: Validando o Contrato no Backend (Provedor)
 
 No repositório do Backend (`UserService`), instalamos o Pact e o Jest e criamos o arquivo de teste `provider.contract.spec.ts`:
 
