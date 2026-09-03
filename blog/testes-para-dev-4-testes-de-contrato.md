@@ -16,7 +16,7 @@ Agora, imagine o seguinte cenário no mundo real:
 
 Para resolver esse pesadelo sem precisar montar ambientes integrados ultra lentos e caros, surgem os **Testes de Contrato**.
 
-Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados (sucesso e falhas) de um teste de contrato com **Pact**, além de ver um exemplo real completo entre **React** e **Express.js**.
+Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados (sucesso e falhas) de um teste de contrato com **Pact**, tanto do lado do **Consumidor (Frontend)** quanto do **Provedor (Backend)**.
 
 ---
 
@@ -24,8 +24,8 @@ Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, es
 
 Em termos simples: **é um acordo formal em arquivo JSON entre dois sistemas**.
 
-* **Consumidor (Consumer)**: A aplicação que faz a chamada (ex: Frontend, App Mobile).
-* **Provedor (Provider)**: A aplicação que responde com os dados (ex: Backend API).
+* **Consumidor (Consumer)**: A aplicação que faz a chamada (ex: Frontend React, App Mobile).
+* **Provedor (Provider)**: A aplicação que responde com os dados (ex: Backend API Express/Java).
 
 No modelo **Consumer-Driven Contracts (CDC)**, o Consumidor diz exatamente o que precisa consumir e gera o contrato. O Provedor pega esse contrato e valida se sua API responde de acordo.
 
@@ -60,33 +60,19 @@ Você também poderia usar o Vitest ou Mocha no lugar do Jest, mas neste tutoria
 
 ---
 
-## Passo 1: Instalação das Dependências via NPM
+## PARTE 1: O Lado do Consumidor (Frontend React) ⚛️
 
-No terminal do seu projeto Consumidor (ex: seu frontend ou cliente TypeScript), instale o **Pact**, o **Jest** e o suporte a TypeScript como dependências de desenvolvimento:
+### Passo 1: Instalação das Dependências no Frontend via NPM
+
+No terminal do seu projeto Frontend/Consumidor, instale as dependências de desenvolvimento:
 
 ```bash
 npm install --save-dev @pact-foundation/pact jest ts-jest @types/jest
 ```
 
-### Entendendo o que estamos instalando:
-* `@pact-foundation/pact`: A biblioteca oficial do Pact para definir os contratos e subir o servidor mock.
-* `jest`: O nosso executor de testes (test runner).
-* `ts-jest` e `@types/jest`: Permitem que o Jest entenda e execute arquivos TypeScript (`.ts`) diretamente, além de fornecer o auto-complete dos tipos.
-* `--save-dev`: Garante que essas ferramentas fiquem apenas no ambiente de desenvolvimento/teste e não vão para a build final de produção.
+### Passo 2: Configurando o Jest para TypeScript (`jest.config.js`)
 
----
-
-## Passo 2: Configurando o Jest para TypeScript (`jest.config.js`)
-
-Se você rodar o Jest diretamente em um arquivo `.ts` contendo sintaxe de ESM (`import/export`), o Node lançará o erro: *"Must use import to load ES Module... The file contains ESM syntax that could not be executed as CommonJS"*.
-
-Para dizer ao Jest que ele deve usar o `ts-jest` para transformar arquivos TypeScript antes de executar, execute no terminal:
-
-```bash
-npx ts-jest config:init
-```
-
-Ou crie manualmente o arquivo `jest.config.js` na raiz do seu projeto:
+Se você rodar o Jest diretamente em um arquivo `.ts` contendo sintaxe de ESM (`import/export`), o Node lançará erro. Crie o arquivo `jest.config.js` na raiz:
 
 ```javascript
 module.exports = {
@@ -95,7 +81,7 @@ module.exports = {
 };
 ```
 
-E no seu `tsconfig.json`, certifique-se de que o suporte a módulos e os tipos do Jest estão ativos:
+E no seu `tsconfig.json`:
 
 ```json
 {
@@ -111,13 +97,13 @@ E no seu `tsconfig.json`, certifique-se de que o suporte a módulos e os tipos d
 
 ---
 
-## Passo 3: Configurando os Scripts no `package.json`
+### Passo 3: Configurando os Scripts no `package.json`
 
-Abra o arquivo `package.json` do seu projeto e adicione um script dedicado para rodar os testes de contrato:
+Adicione o script no `package.json`:
 
 ```json
 {
-  "name": "meu-frontend-app",
+  "name": "meu-frontend-react",
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
@@ -126,150 +112,11 @@ Abra o arquivo `package.json` do seu projeto e adicione um script dedicado para 
 }
 ```
 
-### Entendendo a linha do script:
-* `"test:contract"`: O nome do comando que você vai digitar no terminal (`npm run test:contract`).
-* `"jest"`: Chamamos o executor de testes que instalamos no Passo 1.
-* `--testMatch='**/*.contract.spec.ts'`: Diz ao Jest para executar **apenas** os arquivos de teste que terminem com `.contract.spec.ts`, evitando rodar testes unitários comuns por engano.
-
 ---
 
-## Passo 4: Escrevendo o Teste do Consumidor (`consumer.contract.spec.ts`)
+### Passo 4: Escrevendo o Teste do Consumidor (`userApi.contract.spec.ts`)
 
-Crie o arquivo `src/consumer.contract.spec.ts`. Vamos colocar o código completo primeiro e depois dissecar linha por linha:
-
-```typescript
-import { PactV3, MatchersV3 } from '@pact-foundation/pact';
-
-// 1. Instanciamos o Pact definindo quem é o Consumidor e quem é o Provedor
-const provider = new PactV3({
-  consumer: 'FrontendApp',
-  provider: 'UserService',
-  dir: './pacts'
-});
-
-describe('Contrato com a API de Usuários', () => {
-  it('deve retornar os dados do usuário 123 com sucesso', async () => {
-    // 2. Definimos a expectativa do contrato (Interação)
-    provider
-      .given('Usuário 123 existe na base')
-      .uponReceiving('Uma requisição GET para buscar o usuário 123')
-      .withRequest({
-        method: 'GET',
-        path: '/users/123'
-      })
-      .willRespondWith({
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-        body: {
-          id: MatchersV3.like('123'),
-          name: MatchersV3.like('Diego Borges')
-        }
-      });
-
-    // 3. Executamos o teste usando o servidor mock fornecido pelo Pact
-    await provider.executeTest(async (mockServer) => {
-      const response = await fetch(`${mockServer.url}/users/123`);
-      const data = await response.json();
-
-      expect(response.status).toBe(200);
-      expect(data.name).toBe('Diego Borges');
-    });
-  });
-});
-```
-
----
-
-### Dissecando cada linha do código:
-
-* **Linha 1 (`import { PactV3, MatchersV3 }...`)**: Importamos o `PactV3` (versão mais recente e simplificada da API do Pact) e o `MatchersV3` (auxiliar para definir tipos flexíveis).
-* **Linhas 4-8 (`new PactV3(...)`)**: 
-  * `consumer: 'FrontendApp'`: O nome da nossa aplicação cliente.
-  * `provider: 'UserService'`: O nome do serviço backend com o qual conversamos.
-  * `dir: './pacts'`: A pasta onde o Pact salvará o arquivo `.json` do contrato gerado.
-* **Linha 11 (`describe(...)`) e Linha 12 (`it(...)`)**: Blocos do **Jest** que definem o agrupamento e o caso de teste.
-* **Linha 14 (`provider.given(...)`)**: O *Provider State* (Estado do Provedor). Informa ao backend qual cenário de dados ele deve preparar para o teste (ex: garantir que o usuário 123 exista).
-* **Linha 15 (`uponReceiving(...)`)**: Descrição amigável da requisição para documentação no relatório.
-* **Linhas 16-19 (`withRequest(...)`)**: Especifica exatamente qual método (`GET`, `POST`, etc.) e caminho (`/users/123`) o cliente vai disparar.
-* **Linhas 20-27 (`willRespondWith(...)`)**: Define o que o backend **DEVE** retornar para satisfazer o contrato:
-  * `status: 200`: Código HTTP esperado.
-  * `headers`: Cabeçalhos obrigatórios.
-  * `MatchersV3.like('123')`: **Regra importante!** Em vez de travar no valor exato "123", o `like` diz: *"Espero uma string nesse campo"*. Isso evita testes frágeis!
-* **Linha 30 (`await provider.executeTest(...)`)**: O Pact sobe um servidor HTTP temporário na sua máquina (`mockServer.url`), dispara a chamada do seu cliente contra ele, valida a estrutura e **gera o arquivo do contrato em `.json`**.
-* **Linhas 34-35 (`expect(...)`)**: As asserções do **Jest** que confirmam o sucesso do teste no terminal.
-
----
-
-## Passo 5: Executando o Teste de Contrato
-
-No seu terminal, execute o script que configuramos no Passo 3:
-
-```bash
-npm run test:contract
-```
-
----
-
-### Resultado Esperado quando dá SUCESSO 🟢
-
-Se a chamada feita dentro de `executeTest` for exatamente igual ao que foi configurado no `willRespondWith`, você verá a saída do Jest no terminal:
-
-```bash
- PASS  src/consumer.contract.spec.ts
-  Contrato com a API de Usuários
-    ✓ deve retornar os dados do usuário 123 com sucesso (180 ms)
-
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Snapshots:   0 total
-Time:        1.45 s
-
-[Pact] Pact file written to /meu-projeto/pacts/FrontendApp-UserService.json
-```
-
-🎉 **O que aconteceu aqui?**  
-O Jest executou o arquivo, o Pact validou a chamada e gerou o arquivo `pacts/FrontendApp-UserService.json`! Esse arquivo JSON é o contrato oficial que será enviado para o backend validar.
-
----
-
-### Como Ler e Diagnosticar FALHAS 🔴
-
-Agora vamos ver o que acontece quando algo dá errado. Suponha que no código do seu teste você tentou acessar um endpoint ou campo diferente do que registrou no contrato.
-
-Exemplo de log de erro no terminal:
-
-```bash
- FAIL  src/consumer.contract.spec.ts
-  Contrato com a API de Usuários
-    ✕ deve retornar os dados do usuário 123 com sucesso (215 ms)
-
-  ● Contrato com a API de Usuários › deve retornar os dados do usuário 123 com sucesso
-
-    Pact Mismatch Error:
-    
-    1) Actual request path '/users/999' did not match expected path '/users/123'
-    
-    2) Body mismatch:
-       Expected key 'name' (type: String) but received undefined.
-
-      31 |     await provider.executeTest(async (mockServer) => {
-      32 |       const response = await fetch(`${mockServer.url}/users/999`);
-    > 33 |       const data = await response.json();
-```
-
-### Como ler esse diagnóstico sem pânico:
-1. **`Actual request path '/users/999' did not match expected path '/users/123'`**: O Pact avisa claramente que a chamada disparada (`/users/999`) não coincide com o caminho registrado na expectativa (`/users/123`).
-2. **`Expected key 'name' but received undefined`**: Significa que o código consumiu um objeto onde o campo `name` não veio na resposta do mock.
-
----
-
-## Exemplo Real: Frontend (React) + Backend (Express.js) ⚛️ 🟢
-
-Para fixar o aprendizado, vamos ver como fica a arquitetura de um projeto real conectando um app em **React** com um servidor **Express.js**.
-
-### 1. No Frontend em React (`src/services/userApi.ts`)
-
-Criamos o módulo de serviço que busca os dados do usuário:
+No Frontend, temos a função que chama a API (`src/services/userApi.ts`):
 
 ```typescript
 export interface UserProfile {
@@ -287,12 +134,13 @@ export async function getUserProfile(baseUrl: string, id: string): Promise<UserP
 }
 ```
 
-Em seguida, o teste de contrato do cliente React (`src/services/userApi.contract.spec.ts`):
+Agora escrevemos o teste de contrato (`src/services/userApi.contract.spec.ts`):
 
 ```typescript
 import { PactV3, MatchersV3 } from '@pact-foundation/pact';
 import { getUserProfile } from './userApi';
 
+// 1. Instanciamos o Pact definindo quem é o Consumidor e quem é o Provedor
 const provider = new PactV3({
   consumer: 'ReactFrontendApp',
   provider: 'ExpressBackendAPI',
@@ -301,6 +149,7 @@ const provider = new PactV3({
 
 describe('Contrato: React App -> Express API', () => {
   it('deve retornar o perfil do usuário no formato esperado pelo React', async () => {
+    // 2. Definimos a expectativa do contrato
     provider
       .given('Usuário diego-123 cadastrado')
       .uponReceiving('Requisição de busca de perfil GET /api/users/diego-123')
@@ -318,6 +167,7 @@ describe('Contrato: React App -> Express API', () => {
         }
       });
 
+    // 3. Executamos a chamada contra o servidor mock temporário do Pact
     await provider.executeTest(async (mockServer) => {
       const user = await getUserProfile(mockServer.url, 'diego-123');
       expect(user.name).toBe('Diego Borges');
@@ -329,9 +179,50 @@ describe('Contrato: React App -> Express API', () => {
 
 ---
 
-### 2. No Backend em Express.js (`src/server.js` e `src/provider.contract.spec.ts`)
+### Passo 5: Executando o Teste do Consumidor e Gerando o Contrato
 
-O arquivo da API Express (`src/server.js`):
+No terminal do Frontend, execute:
+
+```bash
+npm run test:contract
+```
+
+#### Resultado de Sucesso no Frontend 🟢:
+
+```bash
+ PASS  src/services/userApi.contract.spec.ts
+  Contrato: React App -> Express API
+    ✓ deve retornar o perfil do usuário no formato esperado pelo React (180 ms)
+
+[Pact] Pact file written to ./pacts/ReactFrontendApp-ExpressBackendAPI.json
+```
+
+🎉 **O contrato JSON foi gerado em `./pacts/ReactFrontendApp-ExpressBackendAPI.json`!**
+
+---
+
+## PARTE 2: O Lado do Backend (Provedor Express.js) 🟢
+
+Agora vamos ver **passo a passo como construir e rodar o teste de contrato no repositório do Backend**.
+
+### O papel do Backend no Teste de Contrato:
+> **O Backend não escreve as expectativas do contrato nem gera o JSON.** O papel do Backend é usar a ferramenta `Verifier` do Pact para abrir o contrato gerado pelo Frontend e disparar requisições reais contra a sua API Express para confirmar se a API real responde exatamente o que o Frontend precisa.
+
+---
+
+### Passo 1: Instalação no Repositório do Backend
+
+No terminal do seu projeto Backend (ex: sua API em Node/Express), instale as ferramentas de teste:
+
+```bash
+npm install --save-dev @pact-foundation/pact jest ts-jest @types/jest
+```
+
+---
+
+### Passo 2: A API Express (`src/server.js`)
+
+Imagine que a sua API Express tem a rota de busca de usuários:
 
 ```javascript
 const express = require('express');
@@ -348,34 +239,133 @@ app.get('/api/users/:id', (req, res) => {
 module.exports = app;
 ```
 
-E o teste de verificação no Backend (`src/provider.contract.spec.ts`):
+---
+
+### Passo 3: Escrevendo o Teste de Verificação do Provedor (`src/provider.contract.spec.ts`)
+
+Crie o arquivo de verificação no projeto Backend:
 
 ```typescript
 import { Verifier } from '@pact-foundation/pact';
 import app from './server';
 import http from 'http';
 
-describe('Validação do Provedor Express', () => {
+describe('Validação do Provedor Express contra os Contratos dos Consumidores', () => {
   let server: http.Server;
 
+  // 1. Antes dos testes, subimos o servidor Express real numa porta local de teste (ex: 3001)
   beforeAll((done) => {
-    // Sobe o servidor Express numa porta de teste
     server = app.listen(3001, () => done());
   });
 
+  // 2. Após os testes, encerramos o servidor
   afterAll((done) => {
-    // Encerra o servidor ao finalizar os testes
     server.close(() => done());
   });
 
-  it('deve ser compatível com os contratos emitidos pelo ReactFrontendApp', () => {
-    return new Verifier({
+  it('deve garantir conformidade com o contrato do ReactFrontendApp', async () => {
+    // 3. O Verifier lê o contrato JSON e dispara requisições HTTP reais contra localhost:3001
+    const output = await new Verifier({
+      provider: 'ExpressBackendAPI',
       providerBaseUrl: 'http://localhost:3001',
+      // Apontamos para o arquivo gerado pelo Frontend (ou URL do Pact Broker)
       pactUrls: ['./pacts/ReactFrontendApp-ExpressBackendAPI.json']
     }).verifyProvider();
+
+    console.log('Resultado da verificação do contrato:', output);
   });
 });
 ```
+
+---
+
+### Dissecando o teste do Backend linha por linha:
+
+* **`import { Verifier } from '@pact-foundation/pact'`**: O `Verifier` é a classe do Pact responsável por ler o arquivo `.json` de contrato e efetuar chamadas HTTP de teste.
+* **`beforeAll` / `afterAll`**: Iniciam e encerram a aplicação Express na porta `3001` apenas durante a execução dos testes.
+* **`providerBaseUrl: 'http://localhost:3001'`**: Informa ao Pact onde a sua API real está rodando para que ele envie as requisições.
+* **`pactUrls`**: Indica onde está o arquivo `.json` do contrato. Em ambientes corporativos de CI/CD, em vez de um arquivo local, você passa a URL do **Pact Broker** (o servidor central de contratos).
+* **`verifyProvider()`**: O Pact pega cada chamada registrada no JSON (ex: `GET /api/users/diego-123`), faz a requisição HTTP real contra `http://localhost:3001/api/users/diego-123` e valida se os campos `id`, `name` e `email` estão presentes e com os tipos corretos na resposta.
+
+---
+
+### Passo 4: Executando a Verificação no Backend
+
+Adicione o script no `package.json` do Backend:
+
+```json
+{
+  "scripts": {
+    "test:contract:provider": "jest --testMatch='**/*.provider.contract.spec.ts'"
+  }
+}
+```
+
+No terminal do Backend, rode:
+
+```bash
+npm run test:contract:provider
+```
+
+---
+
+### Resultado Esperado no Backend quando a API está CORRETA 🟢
+
+```bash
+ PASS  src/provider.contract.spec.ts
+  Validação do Provedor Express contra os Contratos dos Consumidores
+    ✓ deve garantir conformidade com o contrato do ReactFrontendApp (450 ms)
+
+  Verifying a pact between ReactFrontendApp and ExpressBackendAPI
+    Given Usuário diego-123 cadastrado
+      GET /api/users/diego-123
+        returns a response which
+          has status code 200 (OK)
+          includes headers "Content-Type" with value "application/json"
+          has a matching body (OK)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Time:        2.10 s
+```
+
+🎉 **O Backend passou 100%!** A API atende todas as exigências do Frontend sem quebrar nada.
+
+---
+
+### Exemplo de FALHA no Backend (Quando uma Breaking Change acontece) 🔴
+
+Suponha que um desenvolvedor backend refatorou o Express alterando a propriedade `name` para `fullName`:
+
+```javascript
+// Alteração indevida no Express:
+app.get('/api/users/:id', (req, res) => {
+  res.json({
+    id: req.params.id,
+    fullName: 'Diego Borges', // ❌ Renomeou 'name' para 'fullName'!
+    email: 'diego@email.com'
+  });
+});
+```
+
+Ao rodar `npm run test:contract:provider` no Backend, **o teste falha no CI na hora**:
+
+```bash
+ FAIL  src/provider.contract.spec.ts
+  ● Validação do Provedor Express › deve garantir conformidade com o contrato
+
+    Pact Verification Error:
+    
+    1) Verifying a pact between ReactFrontendApp and ExpressBackendAPI - GET /api/users/diego-123
+       Body Mismatch:
+       -$: String key 'name' is missing from response body
+       +$: Extra key 'fullName' found in response body
+
+      Expected key 'name' with type String, but got undefined.
+```
+
+### Por que isso é incrível? 🚀
+O backend descobriu a quebra de contrato no ambiente dele **antes mesmo de fazer o merge da Pull Request ou subir para staging/produção**, sem precisar que o time de Frontend testasse manualmente ou reclamasse que a tela quebrou!
 
 ---
 
