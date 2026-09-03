@@ -31,16 +31,32 @@ No modelo **Consumer-Driven Contracts (CDC)**, o Consumidor diz exatamente o que
 
 ---
 
-## Passo 1: Instalação das Dependências
+## Ponto fundamental: Pact vs Jest (Quem faz o quê?) 🤝
 
-No projeto do seu Consumidor (ex: seu projeto Frontend ou cliente TypeScript), abra o terminal e instale a biblioteca do **Pact**:
+Antes de instalar as bibliotecas, precisamos deixar uma coisa muito clara:
+
+> **O Pact NÃO é um executor de testes (test runner). Ele precisa do Jest para rodar!**
+
+* **O Jest (Test Runner)**: É o motor do teste. Ele organiza os blocos de código (`describe`, `it`), executa as validações (`expect`) e avisa o terminal/CI se o teste passou ou falhou.
+* **O Pact (Contract Framework)**: É a ferramenta que sobe um servidor HTTP mock temporário, intercepta as chamadas do cliente, valida a estrutura do JSON e **gera o arquivo do contrato `.json`** no disco.
+
+Você também poderia usar o Vitest ou Mocha no lugar do Jest, mas neste tutorial usaremos a combinação mais popular do mercado: **Jest + Pact**.
+
+---
+
+## Passo 1: Instalação das Dependências via NPM
+
+No terminal do seu projeto Consumidor (ex: seu frontend ou cliente TypeScript), instale o **Pact**, o **Jest** e o suporte a TypeScript como dependências de desenvolvimento:
 
 ```bash
-npm install --save-dev @pact-foundation/pact
+npm install --save-dev @pact-foundation/pact jest ts-jest @types/jest
 ```
 
-> **Por que `--save-dev`?**  
-> O Pact é uma ferramenta de teste e verificação de contratos. Ele não precisa ir para o pacote final de produção do seu app.
+### Entendendo o que estamos instalando:
+* `@pact-foundation/pact`: A biblioteca oficial do Pact para definir os contratos e subir o servidor mock.
+* `jest`: O nosso executor de testes (test runner).
+* `ts-jest` e `@types/jest`: Permitem que o Jest entenda e execute arquivos TypeScript (`.ts`) diretamente, além de fornecer o auto-complete dos tipos.
+* `--save-dev`: Garante que essas ferramentas fiquem apenas no ambiente de desenvolvimento/teste e não vão para a build final de produção.
 
 ---
 
@@ -61,8 +77,8 @@ Abra o arquivo `package.json` do seu projeto e adicione um script dedicado para 
 
 ### Entendendo a linha do script:
 * `"test:contract"`: O nome do comando que você vai digitar no terminal (`npm run test:contract`).
-* `"jest"`: O executor de testes que estamos utilizando.
-* `--testMatch='**/*.contract.spec.ts'`: Diz ao Jest para executar **apenas** os arquivos de teste que terminem com `.contract.spec.ts`, separando os testes de contrato dos testes unitários comuns.
+* `"jest"`: Chamamos o executor de testes que instalamos no Passo 1.
+* `--testMatch='**/*.contract.spec.ts'`: Diz ao Jest para executar **apenas** os arquivos de teste que terminem com `.contract.spec.ts`, evitando rodar testes unitários comuns por engano.
 
 ---
 
@@ -120,6 +136,7 @@ describe('Contrato com a API de Usuários', () => {
   * `consumer: 'FrontendApp'`: O nome da nossa aplicação cliente.
   * `provider: 'UserService'`: O nome do serviço backend com o qual conversamos.
   * `dir: './pacts'`: A pasta onde o Pact salvará o arquivo `.json` do contrato gerado.
+* **Linha 11 (`describe(...)`) e Linha 12 (`it(...)`)**: Blocos do **Jest** que definem o agrupamento e o caso de teste.
 * **Linha 14 (`provider.given(...)`)**: O *Provider State* (Estado do Provedor). Informa ao backend qual cenário de dados ele deve preparar para o teste (ex: garantir que o usuário 123 exista).
 * **Linha 15 (`uponReceiving(...)`)**: Descrição amigável da requisição para documentação no relatório.
 * **Linhas 16-19 (`withRequest(...)`)**: Especifica exatamente qual método (`GET`, `POST`, etc.) e caminho (`/users/123`) o cliente vai disparar.
@@ -128,6 +145,7 @@ describe('Contrato com a API de Usuários', () => {
   * `headers`: Cabeçalhos obrigatórios.
   * `MatchersV3.like('123')`: **Regra importante!** Em vez de travar no valor exato "123", o `like` diz: *"Espero uma string nesse campo"*. Isso evita testes frágeis!
 * **Linha 30 (`await provider.executeTest(...)`)**: O Pact sobe um servidor HTTP temporário na sua máquina (`mockServer.url`), dispara a chamada do seu cliente contra ele, valida a estrutura e **gera o arquivo do contrato em `.json`**.
+* **Linhas 34-35 (`expect(...)`)**: As asserções do **Jest** que confirmam o sucesso do teste no terminal.
 
 ---
 
@@ -143,7 +161,7 @@ npm run test:contract
 
 ### Resultado Esperado quando dá SUCESSO 🟢
 
-Se a chamada feita dentro de `executeTest` for exatamente igual ao que foi configurado no `willRespondWith`, você verá uma saída parecida com esta:
+Se a chamada feita dentro de `executeTest` for exatamente igual ao que foi configurado no `willRespondWith`, você verá a saída do Jest no terminal:
 
 ```bash
  PASS  src/consumer.contract.spec.ts
@@ -159,7 +177,7 @@ Time:        1.45 s
 ```
 
 🎉 **O que aconteceu aqui?**  
-O teste passou e o arquivo `pacts/FrontendApp-UserService.json` foi gerado! Esse arquivo JSON é o contrato oficial que será enviado para o backend validar.
+O Jest executou o arquivo, o Pact validou a chamada e gerou o arquivo `pacts/FrontendApp-UserService.json`! Esse arquivo JSON é o contrato oficial que será enviado para o backend validar.
 
 ---
 
@@ -196,7 +214,7 @@ Exemplo de log de erro no terminal:
 
 ## Passo 5: Validando o Contrato no Backend (Provedor)
 
-No repositório do Backend (`UserService`), instalamos o Pact e criamos o arquivo de teste `provider.contract.spec.ts`:
+No repositório do Backend (`UserService`), instalamos o Pact e o Jest e criamos o arquivo de teste `provider.contract.spec.ts`:
 
 ```typescript
 import { Verifier } from '@pact-foundation/pact';
@@ -211,7 +229,7 @@ describe('Validação do Provedor de Contrato', () => {
 });
 ```
 
-Ao executar esse teste no Backend, o Pact faz requisições reais contra a API do backend (`localhost:3000`) e confirma se ela retorna o status `200` e o JSON no formato exigido pelo Frontend.
+Ao executar esse teste com Jest no Backend, o Pact faz requisições reais contra a API do backend (`localhost:3000`) e confirma se ela retorna o status `200` e o JSON no formato exigido pelo Frontend.
 
 Se o Backend renomear um campo ou remover uma propriedade que o Frontend espera, **o CI do Backend falha na hora!**
 
