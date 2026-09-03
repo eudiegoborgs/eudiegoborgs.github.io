@@ -16,7 +16,7 @@ Agora, imagine o seguinte cenário no mundo real:
 
 Para resolver esse pesadelo sem precisar montar ambientes integrados ultra lentos e caros, surgem os **Testes de Contrato**.
 
-Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados (sucesso e falhas) de um teste de contrato com **Pact**, tanto do lado do **Consumidor (Frontend)** quanto do **Provedor (Backend)**.
+Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados de um teste de contrato com **Pact**, entender o fluxo de verificação do backend e aprender **como hospedar o Pact Broker**.
 
 ---
 
@@ -205,11 +205,6 @@ npm run test:contract
 
 Agora vamos ver **passo a passo como construir e rodar o teste de contrato no repositório do Backend**.
 
-### O papel do Backend no Teste de Contrato:
-> **O Backend não escreve as expectativas do contrato nem gera o JSON.** O papel do Backend é usar a ferramenta `Verifier` do Pact para abrir o contrato gerado pelo Frontend e disparar requisições reais contra a sua API Express para confirmar se a API real responde exatamente o que o Frontend precisa.
-
----
-
 ### Passo 1: Instalação no Repositório do Backend
 
 No terminal do seu projeto Backend (ex: sua API em Node/Express), instale as ferramentas de teste:
@@ -279,13 +274,32 @@ describe('Validação do Provedor Express contra os Contratos dos Consumidores',
 
 ---
 
-### Dissecando o teste do Backend linha por linha:
+## Como o Provedor (Backend) Interage com o Contrato Gerado? 🔍
 
-* **`import { Verifier } from '@pact-foundation/pact'`**: O `Verifier` é a classe do Pact responsável por ler o arquivo `.json` de contrato e efetuar chamadas HTTP de teste.
-* **`beforeAll` / `afterAll`**: Iniciam e encerram a aplicação Express na porta `3001` apenas durante a execução dos testes.
-* **`providerBaseUrl: 'http://localhost:3001'`**: Informa ao Pact onde a sua API real está rodando para que ele envie as requisições.
-* **`pactUrls`**: Indica onde está o arquivo `.json` do contrato. Em ambientes corporativos de CI/CD, em vez de um arquivo local, você passa a URL do **Pact Broker** (o servidor central de contratos).
-* **`verifyProvider()`**: O Pact pega cada chamada registrada no JSON (ex: `GET /api/users/diego-123`), faz a requisição HTTP real contra `http://localhost:3001/api/users/diego-123` e valida se os campos `id`, `name` e `email` estão presentes e com os tipos corretos na resposta.
+É comum surgir a dúvida: *Como o backend lê o arquivo `.json` e como a mágica acontece por baixo dos panos?*
+
+O teste no Backend funciona através de um fluxo em 5 etapas executado pelo `Verifier`:
+
+```
+┌─────────────────┐       ┌────────────────────┐       ┌──────────────────────┐
+│  1. Leitura do  │ ────► │  2. Subida do App  │ ────► │  3. Requisição HTTP  │
+│  Contrato JSON  │       │  Express (Porta)   │       │   Real no Endpoint   │
+└─────────────────┘       └────────────────────┘       └──────────┬───────────┘
+                                                                  │
+┌─────────────────┐       ┌────────────────────┐                  │
+│  5. Resultado   │ ◄──── │  4. Comparação de  │ ◄────────────────┘
+│  PASS ou FAIL   │       │ Resposta com JSON  │
+└─────────────────┘       └────────────────────┘
+```
+
+1. **Leitura e Parse do JSON**: O `Verifier` abre o arquivo `ReactFrontendApp-ExpressBackendAPI.json` (localmente ou via Pact Broker) e extrai a lista de interações esperadas (ex: `GET /api/users/diego-123`).
+2. **Subida do Servidor Real**: O bloco `beforeAll` inicia a sua aplicação Express real na porta local de teste (`http://localhost:3001`).
+3. **Disparo da Requisição HTTP Real**: O `Verifier` atua como um cliente HTTP cliente real e envia a requisição `GET http://localhost:3001/api/users/diego-123` diretamente para a sua API Express.
+4. **Comparação Campo a Campo**: O `Verifier` captura a resposta devolvida pelo Express e compara com o contrato:
+   * O código de status foi `200`?
+   * O header `Content-Type` é `application/json`?
+   * Os campos `id`, `name` e `email` estão presentes no corpo do JSON e têm os tipos esperados?
+5. **Report de Verificação**: Se todos os campos baterem, o teste passa 🟢. Se algum campo foi alterado ou removido pelo backend, o `Verifier` aponta o erro exato e falha a execução com código de saída 1 (interrompendo a pipeline de CI).
 
 ---
 
@@ -307,9 +321,7 @@ No terminal do Backend, rode:
 npm run test:contract:provider
 ```
 
----
-
-### Resultado Esperado no Backend quando a API está CORRETA 🟢
+#### Resultado de Sucesso no Backend 🟢:
 
 ```bash
  PASS  src/provider.contract.spec.ts
@@ -323,49 +335,104 @@ npm run test:contract:provider
           has status code 200 (OK)
           includes headers "Content-Type" with value "application/json"
           has a matching body (OK)
-
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
-Time:        2.10 s
 ```
-
-🎉 **O Backend passou 100%!** A API atende todas as exigências do Frontend sem quebrar nada.
 
 ---
 
-### Exemplo de FALHA no Backend (Quando uma Breaking Change acontece) 🔴
+## Como Hospedar e Compartilhar os Contratos (Pact Broker) 🌐
 
-Suponha que um desenvolvedor backend refatorou o Express alterando a propriedade `name` para `fullName`:
+Em projetos do mundo real com repositórios Git e times de desenvolvimento separados, **não compartilhamos o arquivo `.json` copiando manualmente para a máquina do colega ou enviando via Slack**.
 
-```javascript
-// Alteração indevida no Express:
-app.get('/api/users/:id', (req, res) => {
-  res.json({
-    id: req.params.id,
-    fullName: 'Diego Borges', // ❌ Renomeou 'name' para 'fullName'!
-    email: 'diego@email.com'
+Para resolver o compartilhamento de contratos, existe o **Pact Broker**.
+
+---
+
+### O que é o Pact Broker?
+
+O **Pact Broker** é um servidor central (hub de contratos) open-source que armazena, versiona e serve os arquivos de contrato em uma API REST com painel visual interativo.
+
+Existem duas formas principais de utilizar:
+
+1. **PactFlow (Gerenciado / Cloud SaaS)**: A versão cloud pronta para uso mantida pelos criadores do Pact (com plano gratuito para times pequenos).
+2. **Pact Broker Self-Hosted (Docker / Grátis)**: Subir o Pact Broker na sua própria infraestrutura em nuvem usando Docker Compose.
+
+---
+
+### Como subir o Pact Broker Self-Hosted via Docker Compose 🐳
+
+Para rodar o seu próprio Pact Broker localmente ou no servidor da empresa, crie o arquivo `docker-compose.yml`:
+
+```yaml
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: pactbroker
+      POSTGRES_PASSWORD: pactbrokerpassword
+      POSTGRES_DB: pactbroker
+    ports:
+      - "5432:5432"
+
+  pact-broker:
+    image: pactfoundation/pact-broker:latest
+    ports:
+      - "9292:9292"
+    environment:
+      PACT_BROKER_DATABASE_USERNAME: pactbroker
+      PACT_BROKER_DATABASE_PASSWORD: pactbrokerpassword
+      PACT_BROKER_DATABASE_HOST: postgres
+      PACT_BROKER_DATABASE_NAME: pactbroker
+      PACT_BROKER_BASE_URL: "http://localhost:9292"
+    depends_on:
+      - postgres
+```
+
+Suba os contêineres executando:
+
+```bash
+docker compose up -d
+```
+
+Acesse no seu navegador: `http://localhost:9292`. Você verá a interface visual do seu **Pact Broker**!
+
+---
+
+### Como publicar contratos do Frontend no Pact Broker (no CI/CD)
+
+No pipeline de CI do Frontend (ex: GitHub Actions), após os testes passarem e o `.json` ser gerado, publicamos o contrato no Pact Broker usando o CLI oficial `@pact-foundation/pact-cli`:
+
+```bash
+npx @pact-foundation/pact-cli pact-broker publish ./pacts \
+  --consumer-app-version=$GITHUB_SHA \
+  --branch=$GITHUB_REF_NAME \
+  --broker-base-url=http://localhost:9292
+```
+
+---
+
+### Como o Backend consome do Pact Broker em vez do arquivo local
+
+No repositório do Backend, basta atualizar a propriedade `pactUrls` para `pactBrokerUrl` no `Verifier`:
+
+```typescript
+import { Verifier } from '@pact-foundation/pact';
+
+describe('Validação via Pact Broker', () => {
+  it('deve validar o contrato baixado do Pact Broker', () => {
+    return new Verifier({
+      provider: 'ExpressBackendAPI',
+      providerBaseUrl: 'http://localhost:3001',
+      pactBrokerUrl: process.env.PACT_BROKER_URL || 'http://localhost:9292',
+      // Em produção, passe o token de autenticação:
+      // pactBrokerToken: process.env.PACT_BROKER_TOKEN
+    }).verifyProvider();
   });
 });
 ```
 
-Ao rodar `npm run test:contract:provider` no Backend, **o teste falha no CI na hora**:
-
-```bash
- FAIL  src/provider.contract.spec.ts
-  ● Validação do Provedor Express › deve garantir conformidade com o contrato
-
-    Pact Verification Error:
-    
-    1) Verifying a pact between ReactFrontendApp and ExpressBackendAPI - GET /api/users/diego-123
-       Body Mismatch:
-       -$: String key 'name' is missing from response body
-       +$: Extra key 'fullName' found in response body
-
-      Expected key 'name' with type String, but got undefined.
-```
-
-### Por que isso é incrível? 🚀
-O backend descobriu a quebra de contrato no ambiente dele **antes mesmo de fazer o merge da Pull Request ou subir para staging/produção**, sem precisar que o time de Frontend testasse manualmente ou reclamasse que a tela quebrou!
+Dessa forma, sempre que o Frontend publica uma nova versão de contrato no Broker, a próxima execução do CI do Backend vai buscar automaticamente o contrato atualizado e validar a API antes de autorizar o deploy!
 
 ---
 
