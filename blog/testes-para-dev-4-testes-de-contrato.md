@@ -16,7 +16,7 @@ Agora, imagine o seguinte cenário no mundo real:
 
 Para resolver esse pesadelo sem precisar montar ambientes integrados ultra lentos e caros, surgem os **Testes de Contrato**.
 
-Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados (sucesso e falhas) de um teste de contrato com **Pact**.
+Hoje vamos aprender **passo a passo (baby steps)** como instalar, configurar, escrever linha a linha, executar e ler os resultados (sucesso e falhas) de um teste de contrato com **Pact**, além de ver um exemplo real completo entre **React** e **Express.js**.
 
 ---
 
@@ -28,6 +28,22 @@ Em termos simples: **é um acordo formal em arquivo JSON entre dois sistemas**.
 * **Provedor (Provider)**: A aplicação que responde com os dados (ex: Backend API).
 
 No modelo **Consumer-Driven Contracts (CDC)**, o Consumidor diz exatamente o que precisa consumir e gera o contrato. O Provedor pega esse contrato e valida se sua API responde de acordo.
+
+---
+
+## Quando USAR (e quando NÃO usar) Testes de Contrato? 🎯
+
+Nem todo projeto precisa de teste de contrato. Saber a hora certa de adotar essa ferramenta economiza tempo de arquitetura:
+
+### ✅ Quando USAR:
+1. **Microsserviços e APIs distribuídas**: Quando múltiplos serviços dependem de endpoints mantidos por equipes diferentes.
+2. **Frontend e Backend desacoplados (React / Mobile vs. Node / Java / Go)**: Quando o time de Frontend consome APIs e precisa ter certeza de que o backend não quebrou contratos no deploy.
+3. **Desenvolvimento em Paralelo**: O time de Frontend pode gerar o contrato e continuar construindo a UI antes mesmo do Backend terminar a API real.
+4. **Substituição de Ambientes Integrados Pesados**: Quando o ambiente de staging/homologação é instável, caro de manter e lento.
+
+### 🛑 Quando NÃO usar:
+1. **Monólitos no mesmo repositório**: Se o Frontend e o Backend rodam na mesma base de código em memória, testes de unidade e integração simples resolvem com menos complexidade.
+2. **APIs Públicas de Terceiros sem controle (ex: Stripe, Twitter, GitHub)**: Você não controla o servidor do Stripe para rodar a validação do contrato. Nesses casos, crie *adapters/wrappers* locais no seu código e use testes de integração com Stubs.
 
 ---
 
@@ -247,26 +263,119 @@ Exemplo de log de erro no terminal:
 
 ---
 
-## Passo 6: Validando o Contrato no Backend (Provedor)
+## Exemplo Real: Frontend (React) + Backend (Express.js) ⚛️ 🟢
 
-No repositório do Backend (`UserService`), instalamos o Pact e o Jest e criamos o arquivo de teste `provider.contract.spec.ts`:
+Para fixar o aprendizado, vamos ver como fica a arquitetura de um projeto real conectando um app em **React** com um servidor **Express.js**.
+
+### 1. No Frontend em React (`src/services/userApi.ts`)
+
+Criamos o módulo de serviço que busca os dados do usuário:
 
 ```typescript
-import { Verifier } from '@pact-foundation/pact';
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+}
 
-describe('Validação do Provedor de Contrato', () => {
-  it('deve validar o contrato gerado pelo FrontendApp', async () => {
-    return new Verifier({
-      providerBaseUrl: 'http://localhost:3000', // URL da API local do backend rodando
-      pactUrls: ['./pacts/FrontendApp-UserService.json'] // Arquivo gerado pelo consumidor
-    }).verifyProvider();
+export async function getUserProfile(baseUrl: string, id: string): Promise<UserProfile> {
+  const response = await fetch(`${baseUrl}/api/users/${id}`);
+  if (!response.ok) {
+    throw new Error('Falha ao buscar usuário');
+  }
+  return response.json();
+}
+```
+
+Em seguida, o teste de contrato do cliente React (`src/services/userApi.contract.spec.ts`):
+
+```typescript
+import { PactV3, MatchersV3 } from '@pact-foundation/pact';
+import { getUserProfile } from './userApi';
+
+const provider = new PactV3({
+  consumer: 'ReactFrontendApp',
+  provider: 'ExpressBackendAPI',
+  dir: './pacts'
+});
+
+describe('Contrato: React App -> Express API', () => {
+  it('deve retornar o perfil do usuário no formato esperado pelo React', async () => {
+    provider
+      .given('Usuário diego-123 cadastrado')
+      .uponReceiving('Requisição de busca de perfil GET /api/users/diego-123')
+      .withRequest({
+        method: 'GET',
+        path: '/api/users/diego-123'
+      })
+      .willRespondWith({
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: {
+          id: MatchersV3.like('diego-123'),
+          name: MatchersV3.like('Diego Borges'),
+          email: MatchersV3.like('diego@email.com')
+        }
+      });
+
+    await provider.executeTest(async (mockServer) => {
+      const user = await getUserProfile(mockServer.url, 'diego-123');
+      expect(user.name).toBe('Diego Borges');
+      expect(user.email).toBe('diego@email.com');
+    });
   });
 });
 ```
 
-Ao executar esse teste com Jest no Backend, o Pact faz requisições reais contra a API do backend (`localhost:3000`) e confirma se ela retorna o status `200` e o JSON no formato exigido pelo Frontend.
+---
 
-Se o Backend renomear um campo ou remover uma propriedade que o Frontend espera, **o CI do Backend falha na hora!**
+### 2. No Backend em Express.js (`src/server.js` e `src/provider.contract.spec.ts`)
+
+O arquivo da API Express (`src/server.js`):
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/api/users/:id', (req, res) => {
+  res.json({
+    id: req.params.id,
+    name: 'Diego Borges',
+    email: 'diego@email.com'
+  });
+});
+
+module.exports = app;
+```
+
+E o teste de verificação no Backend (`src/provider.contract.spec.ts`):
+
+```typescript
+import { Verifier } from '@pact-foundation/pact';
+import app from './server';
+import http from 'http';
+
+describe('Validação do Provedor Express', () => {
+  let server: http.Server;
+
+  beforeAll((done) => {
+    // Sobe o servidor Express numa porta de teste
+    server = app.listen(3001, () => done());
+  });
+
+  afterAll((done) => {
+    // Encerra o servidor ao finalizar os testes
+    server.close(() => done());
+  });
+
+  it('deve ser compatível com os contratos emitidos pelo ReactFrontendApp', () => {
+    return new Verifier({
+      providerBaseUrl: 'http://localhost:3001',
+      pactUrls: ['./pacts/ReactFrontendApp-ExpressBackendAPI.json']
+    }).verifyProvider();
+  });
+});
+```
 
 ---
 
