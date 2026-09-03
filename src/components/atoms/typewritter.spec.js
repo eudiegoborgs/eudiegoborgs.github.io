@@ -1,9 +1,10 @@
 import React from "react"
 import { render } from "@testing-library/react"
 import TypeWritter from "./typewritter"
+
 describe("TypeWritter", () => {
   it("renders correctly", () => {
-    const { getByRole } = render(<TypeWritter words={['Writing code with love']} />)
-    const title = getByRole('heading', /Writing code with love/i)
+    const { container } = render(<TypeWritter words={['Writing code with love']} />)
+    expect(container.querySelector('.Typewriter')).not.toBeNull()
   })
 })

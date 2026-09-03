@@ -1,4 +1,8 @@
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./src/components/themes/layout.css";
+
+config.autoAddCss = false;
 
 export const onRouteUpdate = () => {
   const codeBlocks = document.querySelectorAll("code[class*='language-']");

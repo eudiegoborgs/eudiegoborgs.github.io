@@ -1,4 +1,7 @@
 const React = require("react")
+const { config } = require("@fortawesome/fontawesome-svg-core")
+
+config.autoAddCss = false
 
 // Script inline para evitar o flash de conteúdo não estilizado (FOUC)
 const ThemeScriptTag = () => {
@@ -7,10 +10,13 @@ const ThemeScriptTag = () => {
   function setTheme() {
     try {
       var theme = localStorage.getItem('theme');
+      var root = document.documentElement;
       if (theme === 'dark') {
-        document.body.classList.add('nightmode');
+        root.classList.add('nightmode');
+        if (document.body) document.body.classList.add('nightmode');
       } else {
-        document.body.classList.remove('nightmode');
+        root.classList.remove('nightmode');
+        if (document.body) document.body.classList.remove('nightmode');
       }
     } catch (e) {
       // Se localStorage não estiver disponível, mantém o tema claro como padrão

@@ -105,7 +105,14 @@ module.exports = {
     "gatsby-plugin-image", 
     "gatsby-plugin-preload-fonts", 
     "gatsby-plugin-sitemap", 
-    "gatsby-plugin-webpack-bundle-analyser-v2",
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        disable: !process.env.ANALYZE,
+        analyzerMode: "static",
+        openAnalyzer: false,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

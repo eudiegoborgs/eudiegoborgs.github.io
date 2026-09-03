@@ -77,19 +77,19 @@ a.blog-link {
 .blog-box {
   box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
-.nightmode {
+html.nightmode, body.nightmode, .nightmode {
   background-color: var(--black) !important;
   color: var(--white);
   /* Transição mais rápida para reduzir o efeito de flash */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.nightmode a, .bg-super-black a, .bg-black a {
+html.nightmode a, .nightmode a, .bg-super-black a, .bg-black a {
   color: var(--primary-light);
   transition: color 0.2s ease;
 }
 
-.nightmode a.blog-link, .bg-super-black a.blog-link, .bg-black a.blog-link {
+html.nightmode a.blog-link, .nightmode a.blog-link, .bg-super-black a.blog-link, .bg-black a.blog-link {
   color: var(--black);
   transition: color 0.2s ease;
 }
@@ -610,25 +610,21 @@ footer a {
 }
 
 /* Prevenção de flash de conteúdo não estilizado (FOUC) */
-body:not(.nightmode) {
+html:not(.nightmode) body, body:not(.nightmode) {
   background-color: white;
   color: var(--black);
 }
 
 /* Garantir que elementos críticos tenham cores adequadas desde o início */
-body:not(.nightmode) a {
+html:not(.nightmode) a, body:not(.nightmode) a {
   color: var(--primary);
 }
 
-body.nightmode a {
+html.nightmode a, body.nightmode a {
   color: var(--primary-light);
 }
 
-/* Otimização para carregamento mais suave */
-.nightmode * {
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-body:not(.nightmode) * {
+/* Transições aplicadas apenas a elementos estruturais principais, sem coringa * para evitar flash */
+body, main, header, footer, a {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }

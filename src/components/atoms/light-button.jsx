@@ -64,6 +64,15 @@ const LightButton = () => {
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('theme', newTheme);
     }
+    if (typeof document !== 'undefined') {
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('nightmode');
+        if (document.body) document.body.classList.add('nightmode');
+      } else {
+        document.documentElement.classList.remove('nightmode');
+        if (document.body) document.body.classList.remove('nightmode');
+      }
+    }
     setTheme(newTheme)
   }
 
