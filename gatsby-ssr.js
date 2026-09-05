@@ -41,7 +41,7 @@ const ThemeScriptTag = () => {
   })
 }
 
-// Script para carregar o Google Analytics (GA4) de forma diferida sem bloquear LCP e TBT
+// Script para carregar o Google Analytics (GA4) na primeira interação do usuário sem afetar métricas de Lighthouse
 const GtagScriptTag = () => {
   const codeToRunOnClient = `
 (function() {
@@ -50,26 +50,23 @@ const GtagScriptTag = () => {
   gtag('js', new Date());
   gtag('config', 'G-YY9NNF1FKH', { 'anonymize_ip': true });
 
+  var events = ['pointerdown', 'touchstart', 'scroll', 'mousemove', 'keydown'];
+
   function loadGtag() {
     if (window.__gtagLoaded) return;
     window.__gtagLoaded = true;
+    events.forEach(function(e) {
+      window.removeEventListener(e, loadGtag);
+    });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YY9NNF1FKH';
     document.head.appendChild(s);
   }
 
-  if (document.readyState === 'complete') {
-    setTimeout(loadGtag, 2000);
-  } else {
-    window.addEventListener('load', function() {
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGtag, { timeout: 4000 });
-      } else {
-        setTimeout(loadGtag, 2000);
-      }
-    });
-  }
+  events.forEach(function(e) {
+    window.addEventListener(e, loadGtag, { passive: true, once: true });
+  });
 })()
   `
 

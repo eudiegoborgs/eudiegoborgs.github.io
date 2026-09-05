@@ -74,12 +74,9 @@ const Banner = () => (
     <StaticImage
       src="../../images/banner/banner.webp"
       alt="Banner"
-      placeholder="none"
+      placeholder="blurred"
       loading="eager"
-      imgAttributes={{
-        fetchpriority: "high",
-        loading: "eager"
-      }}
+      fetchPriority="high"
       layout="fullWidth"
     />
     <div className="caption">

@@ -60,9 +60,6 @@ const ServicesResume = () => {
 
   return (
     <div css={ styles }>
-      <div className="service-header">
-        <h2>Serviços</h2>
-      </div>
       <div className="service-list">
         {list.map(item => (
           <div key={item.title} className="service-item">
