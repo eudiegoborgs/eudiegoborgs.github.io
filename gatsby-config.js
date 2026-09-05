@@ -87,20 +87,6 @@ module.exports = {
         labelFormat: "[local]",
         cssPropOptimization: true,
       },
-    },
-    {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: ['G-YY9NNF1FKH'],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-          delayOnRouteUpdate: 0,
-        },
-      },
     }, 
     "gatsby-plugin-image", 
     "gatsby-plugin-preload-fonts", 

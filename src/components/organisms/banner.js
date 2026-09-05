@@ -71,7 +71,17 @@ const style = css`
 
 const Banner = () => (
   <div css={style}>
-    <StaticImage src="../../images/banner/banner.webp" alt="Banner" placeholder="blurred" layout="fullWidth" />
+    <StaticImage
+      src="../../images/banner/banner.webp"
+      alt="Banner"
+      placeholder="none"
+      loading="eager"
+      imgAttributes={{
+        fetchpriority: "high",
+        loading: "eager"
+      }}
+      layout="fullWidth"
+    />
     <div className="caption">
       <h1>Writing code with  <TypeWritter words={[
         'php',
