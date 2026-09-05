@@ -42,8 +42,17 @@ const styles = css`
   .post-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--primary-light);
     padding-bottom: 20px;
+
+    a {
+      color: var(--primary-light);
+      transition: color 0.2s ease;
+      &:hover {
+        color: var(--white);
+      }
+    }
   }
 `
 

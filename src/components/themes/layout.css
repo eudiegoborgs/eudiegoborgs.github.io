@@ -616,8 +616,12 @@ html:not(.nightmode) body, body:not(.nightmode) {
 }
 
 /* Garantir que elementos críticos tenham cores adequadas desde o início */
-html:not(.nightmode) a, body:not(.nightmode) a {
+html:not(.nightmode) body:not(.bg-super-black):not(.bg-black) a, body:not(.nightmode) a {
   color: var(--primary);
+}
+
+.bg-super-black a:not(.blog-link), .bg-black a:not(.blog-link) {
+  color: var(--primary-light);
 }
 
 html.nightmode a, body.nightmode a {
